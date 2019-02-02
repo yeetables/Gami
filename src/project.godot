@@ -12,7 +12,3 @@ config_version=3
 
 config/name="Gami"
 config/icon="res://icon.png"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

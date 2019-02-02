@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-2.png-2da1ec0d88a696edebf044d1aa1e4549.stex"
+path="res://.import/fox-piece-6.png-f4050357f74d40de63f941be44fa417b.stex"
 
 [deps]
 
-source_file="res://fox-piece-2.png"
-dest_files=[ "res://.import/fox-piece-2.png-2da1ec0d88a696edebf044d1aa1e4549.stex" ]
+source_file="res://Assets/fox-piece-6.png"
+dest_files=[ "res://.import/fox-piece-6.png-f4050357f74d40de63f941be44fa417b.stex" ]
 
 [params]
 
