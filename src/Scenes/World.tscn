@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Tileset.res" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player_squirrel.tscn" type="PackedScene" id=2]
 
 [node name="World" type="Node2D" index="0"]
 
@@ -27,8 +27,12 @@ occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0 )
 
-[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Player_squirrel" parent="." index="1" instance=ExtResource( 2 )]
 
-position = Vector2( 65.374, 541.828 )
+position = Vector2( 64.2659, 537.396 )
+NORMAL_SPEED = 300
+JUMP_SPEED = 10
+GRAVITY = 15
+JUMP_HEIGHT = 100
 
 
