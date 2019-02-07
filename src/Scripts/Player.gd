@@ -30,11 +30,11 @@ func _physics_process(delta):
     
     if Input.is_action_pressed("ui_right"):
         velocity.x = SPEED.x
-        $Fox/Basic.set_flip_h(false)
+        $Body/Basic.set_flip_h(false)
         
     elif Input.is_action_pressed("ui_left"):
         velocity.x = -SPEED.x
-        $Fox/Basic.set_flip_h(true)
+        $Body/Basic.set_flip_h(true)
     else:
         velocity.x = 0
         
@@ -42,7 +42,7 @@ func _physics_process(delta):
     if Input.is_action_just_pressed("ui_up"):
         velocity.y = -SPEED.y
 
-    if $Fox.is_on_floor():
+    if $Body.is_on_floor():
        
         if Input.is_key_pressed(KEY_SPACE):
             velocity.y = -SPEED.y
@@ -53,8 +53,10 @@ func _physics_process(delta):
                 velocity.x = -SPEED.x * 2
             else:
                 velocity.x = 0     
-
-    velocity = $Fox.move_and_slide(velocity, UP)
+        elif Input.is_action_just_released("ui_shift"):
+            Global.switch_form()
+            
+    velocity = $Body.move_and_slide(velocity, UP)
     
     check_digging()
     

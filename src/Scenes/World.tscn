@@ -1,13 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Tileset.res" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Dirt16x16.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Dirt16x16.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
-position = Vector2( 2.21606, 1.10804 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
@@ -34,111 +32,122 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." index="1" groups=[
-"player",
-] instance=ExtResource( 2 )]
-
-position = Vector2( 187.878, 508.975 )
-script = ExtResource( 3 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="DirtRegion1" type="Node2D" parent="." index="2"]
+[node name="DirtRegion1" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
 position = Vector2( 1223.79, 204.061 )
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
-[node name="Dirt16x16" parent="DirtRegion1" index="0" instance=ExtResource( 4 )]
+[node name="Dirt16x16" parent="DirtRegion1" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( -64, 0.189133 )
 
-[node name="Dirt16x19" parent="DirtRegion1" index="1" instance=ExtResource( 4 )]
+[node name="Dirt16x19" parent="DirtRegion1" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -64, 64.1891 )
 
-[node name="Dirt16x22" parent="DirtRegion1" index="2" instance=ExtResource( 4 )]
+[node name="Dirt16x22" parent="DirtRegion1" index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -64, 128.189 )
 
-[node name="Dirt16x27" parent="DirtRegion1" index="3" instance=ExtResource( 4 )]
+[node name="Dirt16x27" parent="DirtRegion1" index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -64, 191.189 )
 
-[node name="Dirt16x17" parent="DirtRegion1" index="4" instance=ExtResource( 4 )]
+[node name="Dirt16x17" parent="DirtRegion1" index="4" instance=ExtResource( 2 )]
 
-[node name="Dirt16x21" parent="DirtRegion1" index="5" instance=ExtResource( 4 )]
+[node name="Dirt16x21" parent="DirtRegion1" index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 64 )
 
-[node name="Dirt16x24" parent="DirtRegion1" index="6" instance=ExtResource( 4 )]
+[node name="Dirt16x24" parent="DirtRegion1" index="6" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 128 )
 
-[node name="Dirt16x25" parent="DirtRegion1" index="7" instance=ExtResource( 4 )]
+[node name="Dirt16x25" parent="DirtRegion1" index="7" instance=ExtResource( 2 )]
 
 position = Vector2( 0, 191 )
 
-[node name="Dirt16x18" parent="DirtRegion1" index="8" instance=ExtResource( 4 )]
+[node name="Dirt16x18" parent="DirtRegion1" index="8" instance=ExtResource( 2 )]
 
 position = Vector2( 64, 0 )
 
-[node name="Dirt16x20" parent="DirtRegion1" index="9" instance=ExtResource( 4 )]
+[node name="Dirt16x20" parent="DirtRegion1" index="9" instance=ExtResource( 2 )]
 
 position = Vector2( 64, 64 )
 
-[node name="Dirt16x23" parent="DirtRegion1" index="10" instance=ExtResource( 4 )]
+[node name="Dirt16x23" parent="DirtRegion1" index="10" instance=ExtResource( 2 )]
 
 position = Vector2( 64, 128 )
 
-[node name="Dirt16x26" parent="DirtRegion1" index="11" instance=ExtResource( 4 )]
+[node name="Dirt16x26" parent="DirtRegion1" index="11" instance=ExtResource( 2 )]
 
 position = Vector2( 64, 191 )
 
-[node name="DirtRegion2" type="Node2D" parent="." index="3"]
+[node name="DirtRegion2" type="Node2D" parent="." index="2"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
 
 [node name="DirtRegion3" type="Node2D" parent="DirtRegion2" index="0"]
 
-[node name="Dirt16x24" parent="DirtRegion2/DirtRegion3" index="0" instance=ExtResource( 4 )]
+editor/display_folded = true
+
+[node name="Dirt16x24" parent="DirtRegion2/DirtRegion3" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 71.8578, -1287.93 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dirt16x25" parent="DirtRegion2/DirtRegion3" index="1" instance=ExtResource( 4 )]
+[node name="Dirt16x25" parent="DirtRegion2/DirtRegion3" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 71.8578, -1223.93 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dirt16x16" parent="DirtRegion2" index="1" instance=ExtResource( 4 )]
+[node name="Dirt16x16" parent="DirtRegion2" index="1" instance=ExtResource( 2 )]
 
 position = Vector2( -56.2292, -1457.7 )
 
-[node name="Dirt16x18" parent="DirtRegion2" index="2" instance=ExtResource( 4 )]
+[node name="Dirt16x18" parent="DirtRegion2" index="2" instance=ExtResource( 2 )]
 
 position = Vector2( -56.2292, -1393.7 )
 
-[node name="Dirt16x20" parent="DirtRegion2" index="3" instance=ExtResource( 4 )]
+[node name="Dirt16x20" parent="DirtRegion2" index="3" instance=ExtResource( 2 )]
 
 position = Vector2( -56.2292, -1329.7 )
 
-[node name="Dirt16x23" parent="DirtRegion2" index="4" instance=ExtResource( 4 )]
+[node name="Dirt16x23" parent="DirtRegion2" index="4" instance=ExtResource( 2 )]
 
 position = Vector2( -56.2292, -1265.7 )
 
-[node name="Dirt16x17" parent="DirtRegion2" index="5" instance=ExtResource( 4 )]
+[node name="Dirt16x17" parent="DirtRegion2" index="5" instance=ExtResource( 2 )]
 
 position = Vector2( 8.03434, -1457.7 )
 
-[node name="Dirt16x19" parent="DirtRegion2" index="6" instance=ExtResource( 4 )]
+[node name="Dirt16x19" parent="DirtRegion2" index="6" instance=ExtResource( 2 )]
 
 position = Vector2( 8.03434, -1393.7 )
 
-[node name="Dirt16x21" parent="DirtRegion2" index="7" instance=ExtResource( 4 )]
+[node name="Dirt16x21" parent="DirtRegion2" index="7" instance=ExtResource( 2 )]
 
 position = Vector2( 8.03434, -1329.7 )
 
-[node name="Dirt16x22" parent="DirtRegion2" index="8" instance=ExtResource( 4 )]
+[node name="Dirt16x22" parent="DirtRegion2" index="8" instance=ExtResource( 2 )]
 
 position = Vector2( 8.03434, -1265.7 )
+
+[node name="Player" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 107, 481.92 )
+_sections_unfolded = [ "Transform" ]
 
 
