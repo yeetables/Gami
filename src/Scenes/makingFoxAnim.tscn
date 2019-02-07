@@ -8,6 +8,8 @@
 [ext_resource path="res://Assets/fox-piece-6.png" type="Texture" id=6]
 
 
+
+
 [sub_resource type="Animation" id=3]
 
 resource_name = "dig"
