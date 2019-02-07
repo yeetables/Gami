@@ -39,7 +39,7 @@ func _physics_process(delta):
         velocity.x = 0
         
     #TODO: remove this hack
-    if Input.is_action_just_pressed("ui_up"):
+    if Input.is_action_pressed("ui_up") and Global.CURRENT_FORM == Global.SQUIRREL:
         velocity.y = -SPEED.y
 
     if $Body.is_on_floor():
@@ -62,8 +62,8 @@ func _physics_process(delta):
     
 func check_digging():
     if Input.is_mouse_button_pressed(BUTTON_LEFT):
-        print("digging")
-#        pass
+#        print("digging")
+        pass
         # TODO: change sprit here
 
         
