@@ -11,4 +11,5 @@ config_version=3
 [application]
 
 config/name="Gami"
+run/main_scene="res://Scenes/World.tscn"
 config/icon="res://icon.png"

@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Dirt.tscn" type="PackedScene" id=1]
+
+[node name="Dirt16x16" type="Node2D"]
+
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Dirt1" parent="." index="0" instance=ExtResource( 1 )]
+
+[node name="Dirt5" parent="." index="1" instance=ExtResource( 1 )]
+
+position = Vector2( 0, 16 )
+
+[node name="Dirt9" parent="." index="2" instance=ExtResource( 1 )]
+
+position = Vector2( 0, 32 )
+
+[node name="Dirt15" parent="." index="3" instance=ExtResource( 1 )]
+
+position = Vector2( 0, 48 )
+
+[node name="Dirt2" parent="." index="4" instance=ExtResource( 1 )]
+
+position = Vector2( 16, 0 )
+
+[node name="Dirt6" parent="." index="5" instance=ExtResource( 1 )]
+
+position = Vector2( 16, 16 )
+
+[node name="Dirt11" parent="." index="6" instance=ExtResource( 1 )]
+
+position = Vector2( 16, 32 )
+
+[node name="Dirt16" parent="." index="7" instance=ExtResource( 1 )]
+
+position = Vector2( 16, 48 )
+
+[node name="Dirt3" parent="." index="8" instance=ExtResource( 1 )]
+
+position = Vector2( 32, 0 )
+
+[node name="Dirt7" parent="." index="9" instance=ExtResource( 1 )]
+
+position = Vector2( 32, 16 )
+
+[node name="Dirt10" parent="." index="10" instance=ExtResource( 1 )]
+
+position = Vector2( 32, 32 )
+
+[node name="Dirt14" parent="." index="11" instance=ExtResource( 1 )]
+
+position = Vector2( 32, 48 )
+
+[node name="Dirt4" parent="." index="12" instance=ExtResource( 1 )]
+
+position = Vector2( 48, 0 )
+
+[node name="Dirt8" parent="." index="13" instance=ExtResource( 1 )]
+
+position = Vector2( 48, 16 )
+
+[node name="Dirt12" parent="." index="14" instance=ExtResource( 1 )]
+
+position = Vector2( 48, 32 )
+
+[node name="Dirt13" parent="." index="15" instance=ExtResource( 1 )]
+
+position = Vector2( 48, 48 )
+
+
