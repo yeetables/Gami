@@ -26,8 +26,8 @@ collision/safe_margin = 0.08
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="0"]
 
-position = Vector2( 0, 4.44044 )
-scale = Vector2( 4.67292, 3.08609 )
+position = Vector2( -0.757123, 4.25925 )
+scale = Vector2( 5.77707, 3.67632 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
