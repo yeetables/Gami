@@ -16,6 +16,8 @@ var PLAYER_POS = Vector2()
 var CAMERA_POS = Vector2()
 var PLAYER_INSTANCE = null
 
+var PLAYER_IN_CLIMING_AREA = false
+
 func _ready():
     var root = get_tree().get_root()
     PLAYER_INSTANCE = root.get_node(FOX_INSTANCE_PATH)
