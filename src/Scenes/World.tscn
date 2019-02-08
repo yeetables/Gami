@@ -1,17 +1,82 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Scenes/Tileset.res" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Dirt16x16.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/world.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Tileset.res" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Dirt16x16.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/squirrel_pic_temp.jpg" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "text"
+length = 5.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("NarrativeLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9, 3.1, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "squirrel_text"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("SquirrelLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 2.3, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "goal_text"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("SquirrelLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 2.3, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="World" type="Node2D"]
 
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -42,49 +107,49 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Dirt16x16" parent="DirtRegion1" index="0" instance=ExtResource( 2 )]
+[node name="Dirt16x16" parent="DirtRegion1" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( -64, 0.189133 )
 
-[node name="Dirt16x19" parent="DirtRegion1" index="1" instance=ExtResource( 2 )]
+[node name="Dirt16x19" parent="DirtRegion1" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -64, 64.1891 )
 
-[node name="Dirt16x22" parent="DirtRegion1" index="2" instance=ExtResource( 2 )]
+[node name="Dirt16x22" parent="DirtRegion1" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -64, 128.189 )
 
-[node name="Dirt16x27" parent="DirtRegion1" index="3" instance=ExtResource( 2 )]
+[node name="Dirt16x27" parent="DirtRegion1" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -64, 191.189 )
 
-[node name="Dirt16x17" parent="DirtRegion1" index="4" instance=ExtResource( 2 )]
+[node name="Dirt16x17" parent="DirtRegion1" index="4" instance=ExtResource( 3 )]
 
-[node name="Dirt16x21" parent="DirtRegion1" index="5" instance=ExtResource( 2 )]
+[node name="Dirt16x21" parent="DirtRegion1" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 64 )
 
-[node name="Dirt16x24" parent="DirtRegion1" index="6" instance=ExtResource( 2 )]
+[node name="Dirt16x24" parent="DirtRegion1" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 128 )
 
-[node name="Dirt16x25" parent="DirtRegion1" index="7" instance=ExtResource( 2 )]
+[node name="Dirt16x25" parent="DirtRegion1" index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 0, 191 )
 
-[node name="Dirt16x18" parent="DirtRegion1" index="8" instance=ExtResource( 2 )]
+[node name="Dirt16x18" parent="DirtRegion1" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 64, 0 )
 
-[node name="Dirt16x20" parent="DirtRegion1" index="9" instance=ExtResource( 2 )]
+[node name="Dirt16x20" parent="DirtRegion1" index="9" instance=ExtResource( 3 )]
 
 position = Vector2( 64, 64 )
 
-[node name="Dirt16x23" parent="DirtRegion1" index="10" instance=ExtResource( 2 )]
+[node name="Dirt16x23" parent="DirtRegion1" index="10" instance=ExtResource( 3 )]
 
 position = Vector2( 64, 128 )
 
-[node name="Dirt16x26" parent="DirtRegion1" index="11" instance=ExtResource( 2 )]
+[node name="Dirt16x26" parent="DirtRegion1" index="11" instance=ExtResource( 3 )]
 
 position = Vector2( 64, 191 )
 
@@ -101,53 +166,399 @@ __meta__ = {
 
 editor/display_folded = true
 
-[node name="Dirt16x24" parent="DirtRegion2/DirtRegion3" index="0" instance=ExtResource( 2 )]
+[node name="Dirt16x24" parent="DirtRegion2/DirtRegion3" index="0" instance=ExtResource( 3 )]
 
 position = Vector2( 71.8578, -1287.93 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dirt16x25" parent="DirtRegion2/DirtRegion3" index="1" instance=ExtResource( 2 )]
+[node name="Dirt16x25" parent="DirtRegion2/DirtRegion3" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( 71.8578, -1223.93 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dirt16x16" parent="DirtRegion2" index="1" instance=ExtResource( 2 )]
+[node name="Dirt16x16" parent="DirtRegion2" index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -56.2292, -1457.7 )
 
-[node name="Dirt16x18" parent="DirtRegion2" index="2" instance=ExtResource( 2 )]
+[node name="Dirt16x18" parent="DirtRegion2" index="2" instance=ExtResource( 3 )]
 
 position = Vector2( -56.2292, -1393.7 )
 
-[node name="Dirt16x20" parent="DirtRegion2" index="3" instance=ExtResource( 2 )]
+[node name="Dirt16x20" parent="DirtRegion2" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( -56.2292, -1329.7 )
 
-[node name="Dirt16x23" parent="DirtRegion2" index="4" instance=ExtResource( 2 )]
+[node name="Dirt16x23" parent="DirtRegion2" index="4" instance=ExtResource( 3 )]
 
 position = Vector2( -56.2292, -1265.7 )
 
-[node name="Dirt16x17" parent="DirtRegion2" index="5" instance=ExtResource( 2 )]
+[node name="Dirt16x17" parent="DirtRegion2" index="5" instance=ExtResource( 3 )]
 
 position = Vector2( 8.03434, -1457.7 )
 
-[node name="Dirt16x19" parent="DirtRegion2" index="6" instance=ExtResource( 2 )]
+[node name="Dirt16x19" parent="DirtRegion2" index="6" instance=ExtResource( 3 )]
 
 position = Vector2( 8.03434, -1393.7 )
 
-[node name="Dirt16x21" parent="DirtRegion2" index="7" instance=ExtResource( 2 )]
+[node name="Dirt16x21" parent="DirtRegion2" index="7" instance=ExtResource( 3 )]
 
 position = Vector2( 8.03434, -1329.7 )
 
-[node name="Dirt16x22" parent="DirtRegion2" index="8" instance=ExtResource( 2 )]
+[node name="Dirt16x22" parent="DirtRegion2" index="8" instance=ExtResource( 3 )]
 
 position = Vector2( 8.03434, -1265.7 )
 
-[node name="Player" parent="." index="3" instance=ExtResource( 3 )]
+[node name="Player" parent="." index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 107, 481.92 )
+position = Vector2( 125.913, 473.815 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="TextLabels" type="Control" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="intro" type="Label" parent="TextLabels" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 296.0
+margin_right = 524.0
+margin_bottom = 317.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Insert intro scene and tutorial here. Press space to jump. ------------->>>>>>"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="dig1" type="Label" parent="TextLabels" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1081.0
+margin_top = 151.0
+margin_right = 1338.0
+margin_bottom = 198.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Press 'j' to perfoorm special action"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="dig2" type="Label" parent="TextLabels" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1608.0
+margin_top = 494.0
+margin_right = 1966.0
+margin_bottom = 541.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "gotta climb up now, press 'shift' and then spam j"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="dig3" type="Label" parent="TextLabels" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1971.0
+margin_top = 28.0
+margin_right = 2329.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "--------->>>>>>>>>"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="dig4" type="Label" parent="TextLabels" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2272.0
+margin_top = -142.0
+margin_right = 2630.0
+margin_bottom = -95.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Go up"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="dig5" type="Label" parent="TextLabels" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 499.0
+margin_top = -942.0
+margin_right = 857.0
+margin_bottom = -895.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Go up"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="PapaSquirrelLabel" type="Label" parent="TextLabels" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1759.0
+margin_top = -954.0
+margin_right = 2117.0
+margin_bottom = -907.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "help me find my daughter!"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="GoalLabel" type="Label" parent="TextLabels" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -285.0
+margin_top = -1957.0
+margin_right = 73.0
+margin_bottom = -1910.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "You found me!"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="dig6" type="Label" parent="TextLabels" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 73.0
+margin_top = -1602.0
+margin_right = 431.0
+margin_bottom = -1555.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Dig here"
+uppercase = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/text = SubResource( 1 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="NarrativeLabel" type="Label" parent="." index="6"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -345.0
+margin_top = 657.0
+margin_right = 118.0
+margin_bottom = 707.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Your time of rest has ended"
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="squirrel_pic_temp" type="Sprite" parent="." index="7"]
+
+position = Vector2( 1011.99, 151.107 )
+scale = Vector2( 0.167018, 0.195487 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Z Index" ]
+
+[node name="squirrel_pic_temp2" type="Sprite" parent="." index="8"]
+
+position = Vector2( 1925.98, -873.358 )
+scale = Vector2( 0.167018, 0.195487 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="squirrel_pic_temp3" type="Sprite" parent="." index="9"]
+
+position = Vector2( -77.5244, -1828.87 )
+scale = Vector2( 0.167018, 0.195487 )
+z_index = -1
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="SquirrelLabel" type="Label" parent="." index="10"]
+
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 546.0
+margin_top = -6.0
+margin_right = 828.0
+margin_bottom = 47.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "A fox? You sure woke up early."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="SquirrelCollision" type="Area2D" parent="." index="11"]
+
+position = Vector2( 1011, 147.429 )
+scale = Vector2( 1.48653, 1.27512 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SquirrelCollision" index="0"]
+
+position = Vector2( 0, 11.4647 )
+scale = Vector2( 1, 1.8819 )
+shape = SubResource( 2 )
+
+[node name="SquirrelDialogPlayer" type="AnimationPlayer" parent="." index="12"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/squirrel_text = SubResource( 3 )
+blend_times = [  ]
+
+[node name="GoalDialogPlayer" type="AnimationPlayer" parent="." index="13"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/goal_text = SubResource( 4 )
+blend_times = [  ]
+
+[connection signal="animation_finished" from="TextPlayer" to="." method="_on_TextPlayer_animation_finished"]
+
+[connection signal="body_entered" from="SquirrelCollision" to="." method="_on_SquirrelCollision_body_entered"]
+
+[connection signal="animation_finished" from="SquirrelDialogPlayer" to="." method="_on_SquirrelDialogPlayer_animation_finished"]
+
+[connection signal="animation_finished" from="GoalDialogPlayer" to="." method="_on_SquirrelDialogPlayer_animation_finished"]
 
 
