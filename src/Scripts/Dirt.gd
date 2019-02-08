@@ -23,5 +23,5 @@ func _on_Area2D_body_exited(body):
         
 func _physics_process(delta):
     #TODO: add condition: only check this if player form is FOX
-    if PLAYER_ON_ME and Input.is_mouse_button_pressed(BUTTON_LEFT) and Global.CURRENT_FORM==Global.FOX:
+    if PLAYER_ON_ME and Input.is_action_pressed("ui_down") and Global.CURRENT_FORM==Global.FOX:
         queue_free()

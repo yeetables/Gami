@@ -16,7 +16,7 @@ __meta__ = {
 }
 
 [node name="Body" type="KinematicBody2D" parent="." index="0" groups=[
-"plauer",
+"player",
 ]]
 
 input_pickable = false

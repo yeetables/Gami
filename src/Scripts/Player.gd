@@ -31,31 +31,29 @@ func _physics_process(delta):
     if Input.is_action_pressed("ui_right"):
         velocity.x = SPEED.x
         $Body/Basic.set_flip_h(false)
+        if Global.CURRENT_FORM != Global.FOX and !$Body.is_on_floor():
+            velocity.x = (SPEED.x - 100)
         
     elif Input.is_action_pressed("ui_left"):
         velocity.x = -SPEED.x
         $Body/Basic.set_flip_h(true)
+        if Global.CURRENT_FORM != Global.FOX and !$Body.is_on_floor():
+            velocity.x = -(SPEED.x -100)
     else:
         velocity.x = 0
         
     #TODO: remove this hack
-    if Input.is_action_pressed("ui_up") and Global.CURRENT_FORM == Global.SQUIRREL:
+    if Input.is_action_pressed("ui_up") and Global.CURRENT_FORM == Global.SQUIRREL and Global.PLAYER_IN_CLIMING_AREA:
         velocity.y = -SPEED.y
 
     if $Body.is_on_floor():
        
         if Input.is_key_pressed(KEY_SPACE):
             velocity.y = -SPEED.y
-            
-            if Input.is_action_pressed("ui_right"):
-                velocity.x = SPEED.x * 2
-            elif Input.is_action_pressed("ui_left"):
-                velocity.x = -SPEED.x * 2
-            else:
-                velocity.x = 0     
+  
         elif Input.is_action_just_released("ui_shift"):
             Global.switch_form()
-            
+    
     velocity = $Body.move_and_slide(velocity, UP)
     
     check_digging()

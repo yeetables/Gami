@@ -16,6 +16,12 @@ var PLAYER_POS = Vector2()
 var CAMERA_POS = Vector2()
 var PLAYER_INSTANCE = null
 
+var PLAYER_IN_CLIMING_AREA = false
+
+const TREE_LOCATION = Vector2(415.55,-798.63)
+var WATERAREA_ENTERED = false
+var WATERAREA_DIGGED = false
+
 func _ready():
     var root = get_tree().get_root()
     PLAYER_INSTANCE = root.get_node(FOX_INSTANCE_PATH)
@@ -24,7 +30,6 @@ func _physics_process(delta):
     if PLAYER_INSTANCE:
         PLAYER_POS = PLAYER_INSTANCE.get_node("Body").get_global_position()
         CAMERA_POS = PLAYER_INSTANCE.get_node("Body/Camera2D").get_global_position()
-#        print(PLAYER_POS)
     
 func switch_form():
     PLAYER_INSTANCE.queue_free()
@@ -53,6 +58,14 @@ func add_new_player(scene_path):
     print(instance.get_node("Body").get_global_position())
     
     return instance
+    
+func spawn_holy_tree():
+    var scene = ResourceLoader.load("res://Scenes/tree.tscn")
+    var instance = scene.instance()
+    var world_node = get_tree().get_root().get_node("/root/World")
+    var second_last_node = world_node.get_child(world_node.get_child_count()-2)
+    world_node.add_child_below_node(second_last_node, instance)
+    instance.set_global_position(TREE_LOCATION)
 #
 #func set_child_pos(instance, pos):
 #    for child in instance.get_children():
