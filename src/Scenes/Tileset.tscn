@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 28.8116, 26.6731 )
 
-[node name="Tileset" type="Node2D"]
+[node name="Tileset" type="Node2D" index="0"]
 
 [node name="base_ground" type="Sprite" parent="." index="0"]
 
