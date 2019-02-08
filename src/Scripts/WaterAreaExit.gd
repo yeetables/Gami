@@ -11,9 +11,13 @@ func _ready():
 #    pass
 
 func _on_Area2D_body_entered(body):
-    if body.is_in_group("player"):
-        Global.PLAYER_IN_CLIMING_AREA = true
+    if body.is_in_group("player") and Global.WATERAREA_ENTERED:
+        Global.WATERAREA_DIGGED = true
+        
+        # spawn the tree
+        Global.spawn_holy_tree()
 
 func _on_Area2D_body_exited(body):
-    if body.is_in_group("player"):
-        Global.PLAYER_IN_CLIMING_AREA = false
+#    if body.is_in_group("player"):
+#        Global.PLAYER_IN_CLIMING_AREA = false
+    pass

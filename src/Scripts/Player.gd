@@ -54,7 +54,6 @@ func _physics_process(delta):
         elif Input.is_action_just_released("ui_shift"):
             Global.switch_form()
     
-    print(velocity)
     velocity = $Body.move_and_slide(velocity, UP)
     
     check_digging()

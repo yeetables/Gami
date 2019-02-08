@@ -12,8 +12,7 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
     if body.is_in_group("player"):
-        Global.PLAYER_IN_CLIMING_AREA = true
+        Global.WATERAREA_ENTERED = true
 
 func _on_Area2D_body_exited(body):
-    if body.is_in_group("player"):
-        Global.PLAYER_IN_CLIMING_AREA = false
+    pass
