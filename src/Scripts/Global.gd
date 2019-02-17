@@ -13,7 +13,7 @@ const SQUIRREL_INSTANCE_PATH = "/root/World/PlayerSquirrel"
 
 var CURRENT_FORM = FOX
 var PLAYER_POS = Vector2()
-var CAMERA_POS = Vector2()
+#var CAMERA_POS = Vector2()
 var PLAYER_INSTANCE = null
 
 var PLAYER_IN_CLIMING_AREA = false
@@ -29,7 +29,7 @@ func _ready():
 func _physics_process(delta):
     if PLAYER_INSTANCE:
         PLAYER_POS = PLAYER_INSTANCE.get_node("Body").get_global_position()
-        CAMERA_POS = PLAYER_INSTANCE.get_node("Body/Camera2D").get_global_position()
+        #CAMERA_POS = PLAYER_INSTANCE.get_node("Body/Camera2D").get_global_position()
     
 func switch_form():
     PLAYER_INSTANCE.queue_free()
@@ -52,8 +52,8 @@ func add_new_player(scene_path):
 #    get_tree().set_current_scene(instance)
 #    set_child_pos(instance, PLAYER_POS)
     instance.get_node("Body").set_global_position(PLAYER_POS)
-    instance.get_node("Body/Camera2D").set_global_position(CAMERA_POS)
-    print(PLAYER_POS, CAMERA_POS)
+    #instance.get_node("Body/Camera2D").set_global_position(CAMERA_POS)
+    print(PLAYER_POS) #CAMERA_POS)
     print(instance.get_global_position())
     print(instance.get_node("Body").get_global_position())
     
