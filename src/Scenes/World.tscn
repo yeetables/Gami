@@ -1,16 +1,18 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/world.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Tileset.res" type="TileSet" id=2]
-[ext_resource path="res://Scenes/Dirt16x16.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/squirrel_pic_temp.jpg" type="Texture" id=5]
-[ext_resource path="res://Scenes/ClimbableArea.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/WaterAreaExit.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/WaterAreaEnter.gd" type="Script" id=8]
-[ext_resource path="res://Assets/Sounds/BGambience1.WAV" type="AudioStream" id=9]
-[ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=10]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/spike/spike.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/crumbling/crumbling.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Tileset.res" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Dirt16x16.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/squirrel_pic_temp.jpg" type="Texture" id=7]
+[ext_resource path="res://Scenes/ClimbableArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/WaterAreaExit.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/WaterAreaEnter.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Sounds/BGambience1.WAV" type="AudioStream" id=11]
+[ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=12]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=1]
 
@@ -76,16 +78,34 @@ tracks/0/keys = {
 
 [node name="World" type="Node2D" index="0"]
 
+position = Vector2( 47.8818, 68.7533 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
+"_edit_group_": true,
 "_edit_horizontal_guides_": [  ]
 }
 
-[node name="TileMap" type="TileMap" parent="." index="0"]
+[node name="SpawnPoint" type="Node2D" parent="." index="0"]
+
+position = Vector2( 327, 287 )
+
+[node name="spike" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 750.887, 226.703 )
+
+[node name="crumbling" parent="." index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 417, 290 )
+
+[node name="crumbling2" parent="." index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 553, 290 )
+
+[node name="TileMap" type="TileMap" parent="." index="4"]
 
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -106,11 +126,11 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="TileMap2" type="TileMap" parent="." index="1"]
+[node name="TileMap2" type="TileMap" parent="." index="5"]
 
 modulate = Color( 0, 0, 0, 1 )
 mode = 0
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -128,7 +148,7 @@ format = 1
 tile_data = PoolIntArray( -2359294, 0, 0, -2293758, 0, 0, -2228222, 0, 0, -2162686, 0, 0, -2097150, 0, 0, -2031614, 0, 0, -1966078, 0, 0, -1900542, 0, 0, -1507327, 0, 0, -1441791, 0, 0, -1245183, 0, 0, -1179647, 0, 0, -1114111, 0, 0, -1048575, 0, 0, -983039, 0, 0, -917503, 0, 0, -851946, 0, 0, -851934, 0, 0, -786410, 0, 0, -786398, 0, 0, -720874, 0, 0, -720862, 0, 0, -655338, 0, 0, -655326, 0, 0, -589802, 0, 0, -589790, 0, 0, -524254, 0, 0, -458718, 0, 0, -393182, 0, 0, -327646, 0, 0, -262110, 0, 0, -196574, 0, 0, -131038, 0, 0, 131103, 0, 0, 196639, 0, 0, 262175, 0, 0, 327711, 0, 0, 393247, 0, 0, 458783, 0, 0, 524319, 0, 0 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="TreeTile" type="TileMap" parent="." index="2"]
+[node name="TreeTile" type="TileMap" parent="." index="6"]
 
 modulate = Color( 0, 0, 0, 1 )
 mode = 0
@@ -150,7 +170,7 @@ format = 1
 tile_data = PoolIntArray( -2359294, 0, 0, -2293758, 0, 0, -2228222, 0, 0, -2162686, 0, 0, -2097150, 0, 0, -2031614, 0, 0, -1966078, 0, 0, -1900542, 0, 0, -1507327, 0, 0, -1441791, 0, 0, -1245183, 0, 0, -1179647, 0, 0, -1114111, 0, 0, -1048575, 0, 0, -983039, 0, 0, -917503, 0, 0, -851946, 0, 0, -851934, 0, 0, -786410, 0, 0, -786398, 0, 0, -720874, 0, 0, -720862, 0, 0, -655338, 0, 0, -655326, 0, 0, -589802, 0, 0, -589790, 0, 0, -524254, 0, 0, -458718, 0, 0, -393182, 0, 0, -327646, 0, 0, -262110, 0, 0, -196574, 0, 0, -131038, 0, 0, 131103, 0, 0, 196639, 0, 0, 262175, 0, 0, 327711, 0, 0, 393247, 0, 0, 458783, 0, 0, 524319, 0, 0 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="DirtRegion1" type="Node2D" parent="." index="3"]
+[node name="DirtRegion1" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 1223.79, 204.061 )
@@ -160,59 +180,60 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Dirt16x16" parent="DirtRegion1" index="0" instance=ExtResource( 3 )]
+[node name="Dirt16x16" parent="DirtRegion1" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( -64, 0.189133 )
 
-[node name="Dirt16x19" parent="DirtRegion1" index="1" instance=ExtResource( 3 )]
+[node name="Dirt16x19" parent="DirtRegion1" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( -64, 64.1891 )
 
-[node name="Dirt16x22" parent="DirtRegion1" index="2" instance=ExtResource( 3 )]
+[node name="Dirt16x22" parent="DirtRegion1" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( -64, 128.189 )
 
-[node name="Dirt16x27" parent="DirtRegion1" index="3" instance=ExtResource( 3 )]
+[node name="Dirt16x27" parent="DirtRegion1" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( -64, 191.189 )
 
-[node name="Dirt16x17" parent="DirtRegion1" index="4" instance=ExtResource( 3 )]
+[node name="Dirt16x17" parent="DirtRegion1" index="4" instance=ExtResource( 5 )]
 
-[node name="Dirt16x21" parent="DirtRegion1" index="5" instance=ExtResource( 3 )]
+[node name="Dirt16x21" parent="DirtRegion1" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 0, 64 )
 
-[node name="Dirt16x24" parent="DirtRegion1" index="6" instance=ExtResource( 3 )]
+[node name="Dirt16x24" parent="DirtRegion1" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 0, 128 )
 
-[node name="Dirt16x25" parent="DirtRegion1" index="7" instance=ExtResource( 3 )]
+[node name="Dirt16x25" parent="DirtRegion1" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 0, 191 )
 
-[node name="Dirt16x18" parent="DirtRegion1" index="8" instance=ExtResource( 3 )]
+[node name="Dirt16x18" parent="DirtRegion1" index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 64, 0 )
 
-[node name="Dirt16x20" parent="DirtRegion1" index="9" instance=ExtResource( 3 )]
+[node name="Dirt16x20" parent="DirtRegion1" index="9" instance=ExtResource( 5 )]
 
 position = Vector2( 64, 64 )
 
-[node name="Dirt16x23" parent="DirtRegion1" index="10" instance=ExtResource( 3 )]
+[node name="Dirt16x23" parent="DirtRegion1" index="10" instance=ExtResource( 5 )]
 
 position = Vector2( 64, 128 )
 
-[node name="Dirt16x26" parent="DirtRegion1" index="11" instance=ExtResource( 3 )]
+[node name="Dirt16x26" parent="DirtRegion1" index="11" instance=ExtResource( 5 )]
 
 position = Vector2( 64, 191 )
 
-[node name="Player" parent="." index="4" instance=ExtResource( 4 )]
+[node name="Player" parent="." index="8" instance=ExtResource( 6 )]
 
-position = Vector2( 190, 530 )
+position = Vector2( 1390, -3000 )
 _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
-[node name="TextLabels" type="Control" parent="." index="5"]
+[node name="TextLabels" type="Control" parent="." index="9"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -453,7 +474,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Material", "Rect", "Visibility" ]
 
-[node name="TextPlayer" type="AnimationPlayer" parent="." index="6"]
+[node name="TextPlayer" type="AnimationPlayer" parent="." index="10"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -464,7 +485,7 @@ anims/text = SubResource( 1 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="NarrativeLabel" type="Label" parent="." index="7"]
+[node name="NarrativeLabel" type="Label" parent="." index="11"]
 
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
@@ -488,31 +509,31 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="squirrel_pic_temp" type="Sprite" parent="." index="8"]
+[node name="squirrel_pic_temp" type="Sprite" parent="." index="12"]
 
 position = Vector2( 1011.99, 151.107 )
 scale = Vector2( 0.167018, 0.195487 )
 z_index = -1
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="squirrel_pic_temp2" type="Sprite" parent="." index="9"]
+[node name="squirrel_pic_temp2" type="Sprite" parent="." index="13"]
 
 position = Vector2( 1925.98, -873.358 )
 scale = Vector2( 0.167018, 0.195487 )
 z_index = -1
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="squirrel_pic_temp3" type="Sprite" parent="." index="10"]
+[node name="squirrel_pic_temp3" type="Sprite" parent="." index="14"]
 
 position = Vector2( -77.5244, -1828.87 )
 scale = Vector2( 0.167018, 0.195487 )
 z_index = -1
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="SquirrelLabel" type="Label" parent="." index="11"]
+[node name="SquirrelLabel" type="Label" parent="." index="15"]
 
 modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
@@ -536,7 +557,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="SquirrelCollision" type="Area2D" parent="." index="12"]
+[node name="SquirrelCollision" type="Area2D" parent="." index="16"]
 
 editor/display_folded = true
 position = Vector2( 1011, 147.429 )
@@ -555,7 +576,7 @@ position = Vector2( 0, 11.4647 )
 scale = Vector2( 1, 1.8819 )
 shape = SubResource( 2 )
 
-[node name="SquirrelDialogPlayer" type="AnimationPlayer" parent="." index="13"]
+[node name="SquirrelDialogPlayer" type="AnimationPlayer" parent="." index="17"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -565,7 +586,7 @@ playback_speed = 1.0
 anims/squirrel_text = SubResource( 3 )
 blend_times = [  ]
 
-[node name="GoalDialogPlayer" type="AnimationPlayer" parent="." index="14"]
+[node name="GoalDialogPlayer" type="AnimationPlayer" parent="." index="18"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -575,7 +596,7 @@ playback_speed = 1.0
 anims/goal_text = SubResource( 4 )
 blend_times = [  ]
 
-[node name="DirtRegion2" type="Node2D" parent="." index="15"]
+[node name="DirtRegion2" type="Node2D" parent="." index="19"]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
@@ -588,103 +609,103 @@ __meta__ = {
 
 editor/display_folded = true
 
-[node name="Dirt16x24" parent="DirtRegion2/DirtRegion3" index="0" instance=ExtResource( 3 )]
+[node name="Dirt16x24" parent="DirtRegion2/DirtRegion3" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 69.8578, -1287.93 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dirt16x25" parent="DirtRegion2/DirtRegion3" index="1" instance=ExtResource( 3 )]
+[node name="Dirt16x25" parent="DirtRegion2/DirtRegion3" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 69.8578, -1223.93 )
 rotation = -1.5708
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dirt16x16" parent="DirtRegion2" index="1" instance=ExtResource( 3 )]
+[node name="Dirt16x16" parent="DirtRegion2" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( -56.2292, -1457.7 )
 
-[node name="Dirt16x18" parent="DirtRegion2" index="2" instance=ExtResource( 3 )]
+[node name="Dirt16x18" parent="DirtRegion2" index="2" instance=ExtResource( 5 )]
 
 position = Vector2( -56.2292, -1393.7 )
 
-[node name="Dirt16x20" parent="DirtRegion2" index="3" instance=ExtResource( 3 )]
+[node name="Dirt16x20" parent="DirtRegion2" index="3" instance=ExtResource( 5 )]
 
 position = Vector2( -56.2292, -1329.7 )
 
-[node name="Dirt16x23" parent="DirtRegion2" index="4" instance=ExtResource( 3 )]
+[node name="Dirt16x23" parent="DirtRegion2" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( -56.2292, -1265.7 )
 
-[node name="Dirt16x17" parent="DirtRegion2" index="5" instance=ExtResource( 3 )]
+[node name="Dirt16x17" parent="DirtRegion2" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( 8.03434, -1457.7 )
 
-[node name="Dirt16x19" parent="DirtRegion2" index="6" instance=ExtResource( 3 )]
+[node name="Dirt16x19" parent="DirtRegion2" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 8.03434, -1393.7 )
 
-[node name="Dirt16x21" parent="DirtRegion2" index="7" instance=ExtResource( 3 )]
+[node name="Dirt16x21" parent="DirtRegion2" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 8.03434, -1329.7 )
 
-[node name="Dirt16x22" parent="DirtRegion2" index="8" instance=ExtResource( 3 )]
+[node name="Dirt16x22" parent="DirtRegion2" index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 8.03434, -1265.7 )
 
-[node name="DirtRegion3" type="Node2D" parent="." index="16"]
+[node name="DirtRegion3" type="Node2D" parent="." index="20"]
 
 editor/display_folded = true
 
-[node name="Dirt16x16" parent="DirtRegion3" index="0" instance=ExtResource( 3 )]
+[node name="Dirt16x16" parent="DirtRegion3" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 8.35373, -2292.11 )
 
-[node name="Dirt16x17" parent="DirtRegion3" index="1" instance=ExtResource( 3 )]
+[node name="Dirt16x17" parent="DirtRegion3" index="1" instance=ExtResource( 5 )]
 
 position = Vector2( 72.3537, -2292.11 )
 
-[node name="tree1" parent="." index="17" instance=ExtResource( 6 )]
+[node name="tree1" parent="." index="21" instance=ExtResource( 8 )]
 
 position = Vector2( 2014.79, 385.46 )
 scale = Vector2( 0.9375, 5.93662 )
 
-[node name="tree2" parent="." index="18" instance=ExtResource( 6 )]
+[node name="tree2" parent="." index="22" instance=ExtResource( 8 )]
 
 position = Vector2( 1439.5, -645.575 )
 scale = Vector2( 0.9375, 4.23028 )
 
-[node name="tree4" parent="." index="19" instance=ExtResource( 6 )]
+[node name="tree4" parent="." index="23" instance=ExtResource( 8 )]
 
 position = Vector2( 95.9668, -1125.19 )
 scale = Vector2( 0.9375, 9.25765 )
 
-[node name="tree5" parent="." index="20" instance=ExtResource( 6 )]
+[node name="tree5" parent="." index="24" instance=ExtResource( 8 )]
 
 position = Vector2( 158.174, -2008.54 )
 scale = Vector2( 1.04351, 7.42656 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="tree3" parent="." index="21" instance=ExtResource( 6 )]
+[node name="tree3" parent="." index="25" instance=ExtResource( 8 )]
 
 position = Vector2( 2207.5, -409.817 )
 scale = Vector2( 0.9375, 11.0546 )
 
-[node name="ClimbableArea2" parent="." index="22" instance=ExtResource( 6 )]
+[node name="ClimbableArea2" parent="." index="26" instance=ExtResource( 8 )]
 
 position = Vector2( 154.888, -1272.32 )
 scale = Vector2( 0.456487, 1.51796 )
-script = ExtResource( 7 )
+script = ExtResource( 9 )
 
-[node name="ClimbableArea3" parent="." index="23" instance=ExtResource( 6 )]
+[node name="ClimbableArea3" parent="." index="27" instance=ExtResource( 8 )]
 
 position = Vector2( 100.316, -1271.51 )
 scale = Vector2( 0.456487, 1.51796 )
-script = ExtResource( 8 )
+script = ExtResource( 10 )
 
-[node name="BGambience1" type="AudioStreamPlayer2D" parent="." index="24"]
+[node name="BGambience1" type="AudioStreamPlayer2D" parent="." index="28"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 11 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = true
@@ -693,14 +714,14 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
-[node name="CameraMan" type="KinematicBody2D" parent="." index="25"]
+[node name="CameraMan" type="KinematicBody2D" parent="." index="29"]
 
 position = Vector2( 190, 540 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
-script = ExtResource( 10 )
+script = ExtResource( 12 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="CameraMan" index="0"]
@@ -731,7 +752,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="icon" type="Sprite" parent="CameraMan" index="1"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform" ]
 
 [connection signal="animation_finished" from="TextPlayer" to="." method="_on_TextPlayer_animation_finished"]
