@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex"
+path="res://.import/spike4.png-9e0ad972057c4cbb7d9695808292eebc.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-3.png"
-dest_files=[ "res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/spike4.png"
+dest_files=[ "res://.import/spike4.png-9e0ad972057c4cbb7d9695808292eebc.stex" ]
 
 [params]
 

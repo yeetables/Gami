@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex"
+path="res://.import/moss_tree_textured.png-1c6869a13e76abe22f1bd4ecbbc626b8.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-3.png"
-dest_files=[ "res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Trees/moss_tree_textured.png"
+dest_files=[ "res://.import/moss_tree_textured.png-1c6869a13e76abe22f1bd4ecbbc626b8.stex" ]
 
 [params]
 

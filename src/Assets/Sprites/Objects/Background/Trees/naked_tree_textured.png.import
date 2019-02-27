@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex"
+path="res://.import/naked_tree_textured.png-c82ea5c267bbe19cb0140a9043711146.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-3.png"
-dest_files=[ "res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Trees/naked_tree_textured.png"
+dest_files=[ "res://.import/naked_tree_textured.png-c82ea5c267bbe19cb0140a9043711146.stex" ]
 
 [params]
 

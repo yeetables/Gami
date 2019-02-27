@@ -1,8 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Assets/fox-stand-1.png" type="Texture" id=2]
-
+[ext_resource path="res://Assets/Sprites/Objects/Player/fox-stand-1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 

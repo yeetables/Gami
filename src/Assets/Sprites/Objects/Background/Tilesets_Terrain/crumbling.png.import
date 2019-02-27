@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/crumbling.png-13134a950daf81b3d79b61937db16f0e.stex"
+path="res://.import/crumbling.png-91c60ffe68c5eeca5c2b2a4c75592245.stex"
 
 [deps]
 
-source_file="res://Assets/crumbling.png"
-dest_files=[ "res://.import/crumbling.png-13134a950daf81b3d79b61937db16f0e.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/crumbling.png"
+dest_files=[ "res://.import/crumbling.png-91c60ffe68c5eeca5c2b2a4c75592245.stex" ]
 
 [params]
 

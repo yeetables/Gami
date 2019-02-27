@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spike.png-fb9908511d069deb9cc04a78c96eefc3.stex"
+path="res://.import/spike.png-98ed00e0ec44d00a2e3d345dfecddf5e.stex"
 
 [deps]
 
-source_file="res://Assets/spike.png"
-dest_files=[ "res://.import/spike.png-fb9908511d069deb9cc04a78c96eefc3.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/spike.png"
+dest_files=[ "res://.import/spike.png-98ed00e0ec44d00a2e3d345dfecddf5e.stex" ]
 
 [params]
 
