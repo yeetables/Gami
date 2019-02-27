@@ -5,14 +5,14 @@ var ACC = 6
 var velocity = Vector2()
 var xspeed = 0
 
-var jforce = 300
+var jforce = 450
 var yspeed = 0
 const UP = Vector2(0,-1)
 
 func _physics_process(delta):
     if Input.is_key_pressed(KEY_1):
         MAX_SPEED = 500
-        jforce = 300
+        jforce = 450
         ACC = 6
         print("1st gear")
     elif Input.is_key_pressed(KEY_2):

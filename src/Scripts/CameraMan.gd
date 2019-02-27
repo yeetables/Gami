@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var b = "textvar"
 var velocity = Vector2()
 var target = Vector2()
-var speed = 300
+var speed = 500
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
