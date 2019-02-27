@@ -1,69 +1,80 @@
-extends Node2D
+extends KinematicBody2D
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var MAX_SPEED = 500
+var ACC = 6
+var velocity = Vector2()
+var xspeed = 0
+
+var jforce = 300
+var yspeed = 0
+const UP = Vector2(0,-1)
+
+func _physics_process(delta):
+    if Input.is_key_pressed(KEY_1):
+        MAX_SPEED = 500
+        jforce = 300
+        ACC = 6
+        print("1st gear")
+    elif Input.is_key_pressed(KEY_2):
+        MAX_SPEED = 450
+        jforce = 650
+        ACC = 8
+        print("2nd gear")
+    elif Input.is_key_pressed(KEY_3):
+        MAX_SPEED = 600
+        jforce = 800
+        ACC = 10
+        print("3rd gear")
+    else:
+        pass
+    
+    if Input.is_key_pressed(KEY_L):
+        if xspeed < 0:
+            xspeed += 3 * ACC
+        else:
+            xspeed += ACC
+            if xspeed > MAX_SPEED:
+                xspeed = MAX_SPEED
+    
+    elif Input.is_key_pressed(KEY_J):
+        if xspeed > 0:
+            xspeed -= 3 * ACC
+        else:
+            xspeed -= ACC
+            if xspeed < -MAX_SPEED:
+                xspeed = -MAX_SPEED
+    
+    else:
+        if xspeed > ((ACC * 2) + 1):
+            xspeed -= 2 * ACC
+        elif xspeed < -16:
+            xspeed += 2 * ACC
+        else:
+            xspeed = 0
+    
+    #Jumping is gonna be a pain in the butt.
+    #Start with an upwards speed, and constantly decrement.
+    #While in the air you don't decelerate like you do on the ground.
+    #But you can still use the keys to adjust trajectory, at a penalty. 
+    if Input.is_key_pressed(KEY_I) and is_on_floor():
+#        print("on floor:", is_on_floor())
+        yspeed = jforce
+        
+#    if is_on_floor():
+#        yspeed = 0
+    
+    if not is_on_floor():
+        yspeed -= 8
+        if yspeed <= 0:
+            yspeed -= 16
+    
+    #print(xspeed, yspeed)
+    velocity.x = 1 * xspeed
+    velocity.y = -1 * yspeed
+    #print(velocity)
+    move_and_slide(velocity, UP)
 
 func _ready():
     # Called when the node is added to the scene for the first time.
     # Initialization here
     pass
-
-#func _process(delta):
-#    var velocity = Vector2()
-#    # Called every frame. Delta is time since last frame.
-#    # Update game logic here.
-#    if Input.is_action_pressed("ui_left"):
-#        velocity.x -= 1
-#        print("left pressed")
-#    elif Input.is_action_pressed("ui_right"):
-#        velocity.x += 1
-
-const GRAVITY = 10# per frame
-const UP = Vector2(0,-1)
-const SPEED = Vector2(300, 300) # default speed
-var velocity = Vector2()
-
-func _physics_process(delta):
-    # movement
-    velocity.y += GRAVITY
-    
-    if Input.is_action_pressed("ui_right"):
-        velocity.x = SPEED.x
-        $Body/Basic.set_flip_h(false)
-        if Global.CURRENT_FORM != Global.FOX and !$Body.is_on_floor():
-            velocity.x = (SPEED.x - 100)
-        
-    elif Input.is_action_pressed("ui_left"):
-        velocity.x = -SPEED.x
-        $Body/Basic.set_flip_h(true)
-        if Global.CURRENT_FORM != Global.FOX and !$Body.is_on_floor():
-            velocity.x = -(SPEED.x -100)
-    else:
-        velocity.x = 0
-        
-    #TODO: remove this hack
-    if Input.is_action_pressed("ui_up") and Global.CURRENT_FORM == Global.SQUIRREL and Global.PLAYER_IN_CLIMING_AREA:
-        velocity.y = -SPEED.y
-
-    if $Body.is_on_floor():
-       
-        if Input.is_key_pressed(KEY_SPACE):
-            velocity.y = -SPEED.y
-  
-        elif Input.is_action_just_released("ui_shift"):
-            Global.switch_form()
-    
-    velocity = $Body.move_and_slide(velocity, UP)
-    
-    check_digging()
-    
-func check_digging():
-    if Input.is_mouse_button_pressed(BUTTON_LEFT):
-#        print("digging")
-        pass
-        # TODO: change sprit here
-
-        
-        
-    
