@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/squirrel_pic_temp.jpg-e2f281b007964c73c6bae1d1b1ca93e6.stex"
+path="res://.import/squirrel_pic_temp.jpg-56261fb0962c6a2385aef615a0ac9651.stex"
 
 [deps]
 
-source_file="res://Assets/squirrel_pic_temp.jpg"
-dest_files=[ "res://.import/squirrel_pic_temp.jpg-e2f281b007964c73c6bae1d1b1ca93e6.stex" ]
+source_file="res://Assets/Sprites/Objects/Player/squirrel_pic_temp.jpg"
+dest_files=[ "res://.import/squirrel_pic_temp.jpg-56261fb0962c6a2385aef615a0ac9651.stex" ]
 
 [params]
 

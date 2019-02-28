@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/BGambience1.WAV-e512ad4f082860ccff15172d33c5c9a7.sample"
+path="res://.import/BGambience1.WAV-b4cfb61230a80e376f0478063c5b79d3.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/BGambience1.WAV"
-dest_files=[ "res://.import/BGambience1.WAV-e512ad4f082860ccff15172d33c5c9a7.sample" ]
+source_file="res://Assets/Sounds/Background/BGambience1.WAV"
+dest_files=[ "res://.import/BGambience1.WAV-b4cfb61230a80e376f0478063c5b79d3.sample" ]
 
 [params]
 
