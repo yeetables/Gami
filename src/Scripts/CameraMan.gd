@@ -16,7 +16,7 @@ func _ready():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-func _physics_process(delta):
+func _process(delta):
 	if Input.is_mouse_button_pressed(BUTTON_RIGHT) == false:
 		#print(Global.PLAYER_POS, position)
 		target = Global.PLAYER_POS
