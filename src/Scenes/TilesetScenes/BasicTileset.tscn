@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13, 32 )
+extents = Vector2( 7.14442, 30 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -18,7 +18,7 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 96, 32 )
+extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -28,7 +28,7 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 160, 10 )
+extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
@@ -38,9 +38,9 @@ extents = Vector2( 32, 10 )
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 47.4771, 10 )
+extents = Vector2( 36.991, 31.9999 )
 
-[node name="BasicTileset" type="Node2D" index="0"]
+[node name="BasicTileset" type="Node2D"]
 
 [node name="grassground" type="Sprite" parent="." index="0"]
 
@@ -52,6 +52,8 @@ _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="grassground" index="0"]
 
+position = Vector2( -2, -2 )
+scale = Vector2( 5.46875, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -62,12 +64,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="grassground/StaticBody2D" index="0"]
 
-scale = Vector2( 13.5385, 1 )
+position = Vector2( 0.393861, 3.5 )
+scale = Vector2( 4.46752, 1.10606 )
 shape = SubResource( 1 )
 
 [node name="spikerightend" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 208, 240 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -99,6 +101,8 @@ _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="spikemiddle" index="0"]
 
+position = Vector2( -0.999998, 0 )
+scale = Vector2( 2.96875, 1 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -149,6 +153,8 @@ _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="longplatform" index="0"]
 
+position = Vector2( -2.00002, 1.99999 )
+scale = Vector2( 5, 0.3125 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -194,6 +200,8 @@ _sections_unfolded = [ "Region" ]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="crumbling" index="0"]
 
+position = Vector2( -2.06421, 0 )
+scale = Vector2( 1.41915, 0.46875 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -205,6 +213,8 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crumbling/StaticBody2D" index="0"]
 
+position = Vector2( 2.16231, 0 )
+scale = Vector2( 0.926995, 0.804762 )
 shape = SubResource( 7 )
 
 

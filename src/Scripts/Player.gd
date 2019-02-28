@@ -70,7 +70,7 @@ func _physics_process(delta):
     if Input.is_key_pressed(KEY_I) and is_on_floor():
 #        print("on floor:", is_on_floor())
         yspeed = jforce
-        
+        $jumpsound1.play()
 #    if is_on_floor():
 #        yspeed = 0
     

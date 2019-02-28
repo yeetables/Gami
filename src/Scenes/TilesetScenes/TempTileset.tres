@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 13, 32 )
+extents = Vector2( 7.14442, 30 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -16,7 +16,7 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 96, 32 )
+extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
@@ -26,7 +26,7 @@ extents = Vector2( 32, 32 )
 [sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
-extents = Vector2( 160, 10 )
+extents = Vector2( 32, 32 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
@@ -36,7 +36,7 @@ extents = Vector2( 32, 10 )
 [sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
-extents = Vector2( 47.4771, 10 )
+extents = Vector2( 36.991, 31.9999 )
 
 [resource]
 
@@ -52,7 +52,7 @@ extents = Vector2( 47.4771, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 13.5385, 0, 0, 1, 175, 30 )
+"shape_transform": Transform2D( 4.4287, 0, 0, 1, 175, 30 )
 } ]
 1/name = "spikerightend"
 1/texture = ExtResource( 2 )
@@ -136,6 +136,6 @@ extents = Vector2( 47.4771, 10 )
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 45, 10 )
+"shape_transform": Transform2D( 0.926995, 0, 0, 0.804762, 47.1623, 10 )
 } ]
 
