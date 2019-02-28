@@ -6,9 +6,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 27.8845, 34.0584 )
+extents = Vector2( 32.7375, 18.5288 )
 
-[node name="crumbling" type="Area2D"]
+[node name="crumbling" type="Area2D" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

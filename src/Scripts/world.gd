@@ -17,31 +17,31 @@ var squirrelNarrativeArray = [
 
 
 func _ready():
-    # Called when the node is added to the scene for the first time.
-    # Initialization here
-    $TextPlayer.play("text")
-    pass
+	# Called when the node is added to the scene for the first time.
+	# Initialization here
+	$TextPlayer.play("text")
+	pass
 
 func _process(delta):
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
-    pass
+	pass
 
 func _on_TextPlayer_animation_finished(anim_name):
-    if i < introNarrativeArray.size()+1:
-        $NarrativeLabel.text = introNarrativeArray[i-1]
-        i += 1
-        $TextPlayer.play("text")
+	if i < introNarrativeArray.size()+1:
+		$NarrativeLabel.text = introNarrativeArray[i-1]
+		i += 1
+		$TextPlayer.play("text")
 
 func _on_SquirrelCollision_body_entered(body):
-    $SquirrelDialogPlayer.play("squirrel_text")
+	$SquirrelDialogPlayer.play("squirrel_text")
 
 func _on_SquirrelDialogPlayer_animation_finished(anim_name):
-    if j < squirrelNarrativeArray.size()+1:
-        $SquirrelLabel.text = squirrelNarrativeArray[j-1]
-        j += 1
-        $SquirrelDialogPlayer.play("squirrel_text")
+	if j < squirrelNarrativeArray.size()+1:
+		$SquirrelLabel.text = squirrelNarrativeArray[j-1]
+		j += 1
+		$SquirrelDialogPlayer.play("squirrel_text")
 
 
 func _on_GoalDialogPlayer_animation_finished(anim_name):
-    pass
+	pass
