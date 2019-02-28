@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 9.03735, 7.35089 )
 
 [sub_resource type="Animation" id=2]
 
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[node name="Player" type="Node2D" index="0"]
+[node name="Player" type="Node2D"]
 
 position = Vector2( 0.975342, 0 )
 _sections_unfolded = [ "Transform" ]
