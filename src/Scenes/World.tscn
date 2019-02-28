@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/GrassTiles.tres" type="TileSet" id=2]
@@ -6,16 +6,17 @@
 [ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/crumbling/crumbling.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sprites/Objects/Background/background_level1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sounds/Background/BGambience1.WAV" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=8]
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 938.297, 174.389 )
+position = Vector2( 265.763, 515.2 )
 
 [node name="Camera" type="KinematicBody2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 61.3459, 443.054 )
 input_pickable = false
 collision_layer = 1
@@ -25,6 +26,7 @@ _sections_unfolded = [ "Material", "Pause" ]
 
 [node name="Camera2D" type="Camera2D" parent="Camera" index="0"]
 
+position = Vector2( -1941.07, -98.9078 )
 anchor_mode = 1
 rotating = false
 current = false
@@ -47,6 +49,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
+_sections_unfolded = [ "Visibility" ]
 
 [node name="TileMap" type="TileMap" parent="." index="2"]
 
@@ -245,29 +248,30 @@ scale = Vector2( 4.05374, 0.727391 )
 position = Vector2( 151.255, 539.598 )
 rotation = 0.0190615
 
-[node name="Node2D" type="Node2D" parent="." index="8"]
+[node name="bg1" type="Node2D" parent="." index="8"]
 
+editor/display_folded = true
 position = Vector2( 3076.99, -792.572 )
 scale = Vector2( 1, 2.32378 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="background_level1" type="Sprite" parent="Node2D" index="0"]
+[node name="background_level1" type="Sprite" parent="bg1" index="0"]
 
 position = Vector2( -2406.91, 118.959 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="background_level5" type="Sprite" parent="Node2D" index="1"]
+[node name="background_level5" type="Sprite" parent="bg1" index="1"]
 
 position = Vector2( -3675.14, 553.229 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="background_level2" type="Sprite" parent="Node2D" index="2"]
+[node name="background_level2" type="Sprite" parent="bg1" index="2"]
 
 position = Vector2( -1126.2, 118.639 )
 z_index = -1
@@ -275,14 +279,14 @@ texture = ExtResource( 6 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="background_level3" type="Sprite" parent="Node2D" index="3"]
+[node name="background_level3" type="Sprite" parent="bg1" index="3"]
 
 position = Vector2( 37.1262, 84.3765 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="background_level4" type="Sprite" parent="Node2D" index="4"]
+[node name="background_level4" type="Sprite" parent="bg1" index="4"]
 
 position = Vector2( 1171.45, -56.5999 )
 z_index = -2
@@ -290,9 +294,10 @@ texture = ExtResource( 6 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="Node2D2" type="Node2D" parent="." index="9"]
+[node name="bg2" type="Node2D" parent="." index="9"]
 
-position = Vector2( 3284.85, -340.495 )
+editor/display_folded = true
+position = Vector2( 3028.11, -260.972 )
 scale = Vector2( 1, 2.32378 )
 z_index = -3
 _sections_unfolded = [ "Z Index" ]
@@ -300,21 +305,21 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="background_level1" type="Sprite" parent="Node2D2" index="0"]
+[node name="background_level1" type="Sprite" parent="bg2" index="0"]
 
 position = Vector2( -2406.91, 118.959 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="background_level5" type="Sprite" parent="Node2D2" index="1"]
+[node name="background_level5" type="Sprite" parent="bg2" index="1"]
 
 position = Vector2( -3675.14, 553.229 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Z Index" ]
 
-[node name="background_level2" type="Sprite" parent="Node2D2" index="2"]
+[node name="background_level2" type="Sprite" parent="bg2" index="2"]
 
 position = Vector2( -1126.2, 118.639 )
 z_index = -1
@@ -322,19 +327,41 @@ texture = ExtResource( 6 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="background_level3" type="Sprite" parent="Node2D2" index="3"]
+[node name="background_level3" type="Sprite" parent="bg2" index="3"]
 
 position = Vector2( 37.1262, 84.3765 )
 z_index = -1
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
-[node name="background_level4" type="Sprite" parent="Node2D2" index="4"]
+[node name="background_level4" type="Sprite" parent="bg2" index="4"]
 
 position = Vector2( 1171.45, -56.5999 )
 z_index = -2
 texture = ExtResource( 6 )
 flip_h = true
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="sound" type="Node2D" parent="." index="10"]
+
+[node name="bg" type="AudioStreamPlayer" parent="sound" index="0"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="scream" type="AudioStreamPlayer2D" parent="sound" index="1"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.5
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

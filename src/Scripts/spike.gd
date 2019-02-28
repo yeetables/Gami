@@ -13,9 +13,24 @@ func _ready():
 #    # Called every frame. Delta is time since last frame.
 #    # Update game logic here.
 #    pass
-
+var count = 0
+var die = false
+func _physics_process(delta):
+	if die:
+		count+=1
+	
+	if count >= 30:
+		count = 0
+		die = false
+		Global.respawn_player()
+		get_node("/root/World/Camera/Camera2D").current = false
+		get_node("/root/World/Player/Body/Camera2D").current = true
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		print("yooo player should die now")
-		Global.respawn_player()
+		die = true
+		get_node("/root/World/sound/scream").play()
+		get_node("/root/World/Camera/Camera2D").current = true
+		get_node("/root/World/Player/Body/Camera2D").current = false
+		
