@@ -27,17 +27,17 @@ extents = Vector2( 32, 32 )
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 16 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 32 )
 
-[node name="Tileset_level1" type="Node2D" index="0"]
+[node name="Tileset_level1" type="Node2D"]
 
 [node name="Grass1" type="Sprite" parent="." index="0"]
 
@@ -199,7 +199,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrassPlat1/StaticBody2D" index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Grass6" type="Sprite" parent="." index="7"]
@@ -222,7 +222,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grass6/StaticBody2D" index="0"]
 
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 _sections_unfolded = [ "Transform" ]
 
 
