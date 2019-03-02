@@ -9,6 +9,9 @@ var animPlay = false
 var jforce = 377
 var yspeed = 0
 const UP = Vector2(0,-1)
+#
+#const hit_box_offset_flipped = Vector2(50,0)
+#const hit_box_offset_normal = Vector2(0,0)
 
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_1):
@@ -84,7 +87,11 @@ func _physics_process(delta):
 	velocity.y = -1 * yspeed
 	#print(velocity)
 	move_and_slide(velocity, UP)
-
+	
+#	if $Basic.is_flipped_h():
+#		$CollisionShape2D.set_position(hit_box_offset_flipped)
+#	else:
+#		$CollisionShape2D.set_position(hit_box_offset_normal)
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here

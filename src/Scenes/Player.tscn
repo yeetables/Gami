@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.03735, 7.35089 )
+extents = Vector2( 5.42885, 7.35089 )
 
 [sub_resource type="Animation" id=2]
 
@@ -28,13 +28,10 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" index="0"]
 
-position = Vector2( 0.975342, 0 )
+position = Vector2( 9.26584, 0.487671 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Body" type="KinematicBody2D" parent="." index="0" groups=[
 "player",
@@ -49,18 +46,19 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="0"]
 
-position = Vector2( -32.1792, 8.29047 )
 scale = Vector2( 7.97159, 3.06611 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Basic" type="Sprite" parent="Body" index="1"]
 
+position = Vector2( 0, -9 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 5
-_sections_unfolded = [ "Animation", "Region", "Transform" ]
+frame = 4
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body" index="2"]
 
