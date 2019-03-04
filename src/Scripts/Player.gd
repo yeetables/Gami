@@ -13,6 +13,10 @@ const UP = Vector2(0,-1)
 #const hit_box_offset_flipped = Vector2(50,0)
 #const hit_box_offset_normal = Vector2(0,0)
 
+var dash = false
+var count = 0
+var landed = true
+
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_1):
 		MAX_SPEED = 450
@@ -66,6 +70,10 @@ func _physics_process(delta):
 			xspeed += 2 * ACC
 		else:
 			xspeed = 0
+			
+	if Input.is_key_pressed(KEY_A):
+		if not is_on_floor() and landed == true:
+			dash = true
 	
 	#Jumping is gonna be a pain in the butt.
 	#Start with an upwards speed, and constantly decrement.
@@ -77,12 +85,32 @@ func _physics_process(delta):
 		$jumpsound1.play()
 #    if is_on_floor():
 #        yspeed = 0
+
+	if dash == true:
+		landed = false
+		if xspeed > 0:
+			xspeed = 900
+			yspeed = 0
+			count += 1
+		elif xspeed < 0:
+			xspeed = -900
+			yspeed = 0
+			count += 1
+		else:
+			dash = false
 	
-	if not is_on_floor():
+	if not is_on_floor() and dash == false:
 		if yspeed > 0:
 			yspeed -= 24
 		elif yspeed <= 0:
 			yspeed -= 18
+			
+	if count >= 15:
+		dash = false
+		count = 0
+		
+	if is_on_floor():
+		landed = true
 	
 	#print(xspeed, yspeed)
 	velocity.x = 1 * xspeed
