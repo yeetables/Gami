@@ -66,6 +66,10 @@ func spawn_holy_tree():
     var second_last_node = world_node.get_child(world_node.get_child_count()-2)
     world_node.add_child_below_node(second_last_node, instance)
     instance.set_global_position(TREE_LOCATION)
+    
+func respawn_player():
+    var spawn_pos = get_tree().get_root().get_node("/root/World/SpawnPoint").get_global_position()
+    PLAYER_INSTANCE.get_node("Body").set_global_position(spawn_pos)
 #
 #func set_child_pos(instance, pos):
 #    for child in instance.get_children():
