@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
 var MAX_SPEED = 500
-var ACC = 8
+var ACC = 100
 var velocity = Vector2()
 var xspeed = 0
 var animPlay = false
 
-var jforce = 377
+var jforce = 500
 var yspeed = 0
 const UP = Vector2(0,-1)
 #
@@ -15,19 +15,19 @@ const UP = Vector2(0,-1)
 
 func _physics_process(delta):
 	if Input.is_key_pressed(KEY_1):
-		MAX_SPEED = 400
-		jforce = 400
-		ACC = 6
+		MAX_SPEED = 450
+		jforce = 500
+#		ACC = 6
 		print("1st gear")
 	elif Input.is_key_pressed(KEY_2):
-		MAX_SPEED = 450
-		jforce = 650
-		ACC = 8
+		MAX_SPEED = 540
+		jforce = 530
+#		ACC = 8
 		print("2nd gear")
 	elif Input.is_key_pressed(KEY_3):
-		MAX_SPEED = 600
-		jforce = 800
-		ACC = 10
+		MAX_SPEED = 625
+		jforce = 560
+#		ACC = 10
 		print("3rd gear")
 	else:
 		pass
@@ -55,6 +55,7 @@ func _physics_process(delta):
 			xspeed -= ACC
 			if xspeed < -MAX_SPEED:
 				xspeed = -MAX_SPEED
+				
 	
 	else:
 		$AnimationPlayer.stop()
@@ -78,13 +79,14 @@ func _physics_process(delta):
 #        yspeed = 0
 	
 	if not is_on_floor():
-		yspeed -= 8
-		if yspeed <= 0:
-			yspeed -= 16
+		if yspeed > 0:
+			yspeed -= 24
+		elif yspeed <= 0:
+			yspeed -= 18
 	
 	#print(xspeed, yspeed)
 	velocity.x = 1 * xspeed
-	velocity.y = -1 * yspeed
+	velocity.y = min(-1 * yspeed, 800)
 	#print(velocity)
 	move_and_slide(velocity, UP)
 	
