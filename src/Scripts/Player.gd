@@ -35,6 +35,7 @@ func _physics_process(delta):
 		print("3rd gear")
 	else:
 		pass
+		
 	
 	if Input.is_key_pressed(KEY_L):
 		$Basic.set_flip_h(false) 
@@ -86,7 +87,12 @@ func _physics_process(delta):
 #    if is_on_floor():
 #        yspeed = 0
 
+	# Dashing code
 	if dash == true:
+		# Checking for pauseability
+		if Input.is_key_pressed(KEY_S):
+			#get_tree().paused = true
+			Engine.time_scale = 0.01
 		landed = false
 		if xspeed > 0:
 			xspeed = 900

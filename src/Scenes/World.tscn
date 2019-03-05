@@ -21,9 +21,10 @@ extents = Vector2( 10, 10 )
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
+pause_mode = 2
 position = Vector2( 500, 500 )
 z_index = 1
-_sections_unfolded = [ "Transform", "Z Index" ]
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 
 [node name="Camera" type="KinematicBody2D" parent="." index="1"]
 
