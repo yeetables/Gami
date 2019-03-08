@@ -19,3 +19,4 @@ func _on_rock_body_entered(body):
 	else:
 		get_node("/root/World/sound/scream").play()
 		Global.respawn_player()
+		queue_free()

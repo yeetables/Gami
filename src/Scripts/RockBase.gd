@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 const ROCK_SCENE = "res://Scenes/fallRocks/Rock.tscn"
 var start = false
@@ -13,10 +13,7 @@ func _physics_process(delta):
 	if start:
 		if frame_count == 0:
 			create_rock()
-			$CollisionShape2D.disabled = true
-		if frame_count == 70:
-			$CollisionShape2D.disabled = false
-		
+
 		frame_count = (frame_count+1) % 100
 	
 func create_rock():

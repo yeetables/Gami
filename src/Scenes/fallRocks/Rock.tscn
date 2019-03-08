@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Rock.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Other/rock1.png" type="Texture" id=2]
 
-[node name="rock" type="RigidBody2D" index="0"]
+[node name="rock" type="RigidBody2D"]
 
 input_pickable = false
 collision_layer = 1
