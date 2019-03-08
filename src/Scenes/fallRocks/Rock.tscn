@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Rock.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Other/rock1.png" type="Texture" id=2]
 
-[node name="rock" type="RigidBody2D"]
+[node name="rock" type="RigidBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 1
@@ -12,7 +12,7 @@ mode = 0
 mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 6.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 1
@@ -24,6 +24,7 @@ linear_damp = -1.0
 angular_velocity = 0.0
 angular_damp = -1.0
 script = ExtResource( 1 )
+_sections_unfolded = [ "Linear" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

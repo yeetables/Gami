@@ -14,7 +14,7 @@ func _physics_process(delta):
 		if frame_count == 0:
 			create_rock()
 
-		frame_count = (frame_count+1) % 100
+		frame_count = (frame_count+1) % 70
 	
 func create_rock():
 	var scene = ResourceLoader.load(ROCK_SCENE)

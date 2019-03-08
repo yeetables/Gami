@@ -13,7 +13,7 @@ func _physics_process(delta):
 	pass
 
 func _on_rock_body_entered(body):
-	print("someone entered")
+#	print("someone entered")
 	if not body.is_in_group("player"):
 		queue_free()
 	else:
