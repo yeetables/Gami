@@ -22,12 +22,13 @@ extents = Vector2( 10, 10 )
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
 pause_mode = 2
-position = Vector2( 500, 500 )
+position = Vector2( 150, 530 )
 z_index = 1
 _sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 
 [node name="Camera" type="KinematicBody2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 61.3459, 443.054 )
 input_pickable = false
 collision_layer = 1
@@ -107,6 +108,7 @@ _sections_unfolded = [ "Cell", "Transform", "Z Index" ]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." index="4"]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -129,6 +131,8 @@ motion_mirroring = Vector2( 0, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
 
 [node name="Spikes" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="spike" parent="Spikes" index="0" instance=ExtResource( 5 )]
 
@@ -186,6 +190,8 @@ scale = Vector2( 3.07714, 0.639072 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="crumbles" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
 
 [node name="crumbling" parent="crumbles" index="0" instance=ExtResource( 6 )]
 
@@ -368,6 +374,7 @@ area_mask = 1
 
 [node name="SpawnPoint2" type="Area2D" parent="." index="11"]
 
+editor/display_folded = true
 position = Vector2( 2539.05, -231.902 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -390,6 +397,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="SpawnPoint3" type="Area2D" parent="." index="12"]
 
+editor/display_folded = true
 position = Vector2( 2975.49, -856.2 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -406,6 +414,213 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnPoint3" index="0"]
 
 shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="." index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -15.0
+margin_top = 396.0
+margin_right = 201.0
+margin_bottom = 467.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "My child..."
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label3" type="Label" parent="." index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 561.0
+margin_top = 394.0
+margin_right = 810.0
+margin_bottom = 478.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Our lands are wrought with sickness. The most abled creatures have been forced to flee."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label4" type="Label" parent="." index="15"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 915.0
+margin_top = 393.0
+margin_right = 1177.0
+margin_bottom = 477.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Those who cannot leave struggle greatly. Our state is dire, and I fear the worst."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label5" type="Label" parent="." index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1333.0
+margin_top = 395.0
+margin_right = 1595.0
+margin_bottom = 479.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Yet you...you have remained untouched. Whether through resilience or pure luck, you have continued to flourish in the midst of the mountain’s decay."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label6" type="Label" parent="." index="17"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1799.0
+margin_top = 403.0
+margin_right = 2076.0
+margin_bottom = 487.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "I can only hope that your shining spirit will be enough to free us from this darkness."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label7" type="Label" parent="." index="18"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2217.0
+margin_top = 398.0
+margin_right = 2506.0
+margin_bottom = 482.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Two hearts of the mountain have been lost. The stones of vitality and strength. You must retrieve them and ascend the mountain."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label8" type="Label" parent="." index="19"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2657.0
+margin_top = 430.0
+margin_right = 2946.0
+margin_bottom = 514.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "We must restore our home and save our people."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label2" type="Label" parent="." index="20"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 238.0
+margin_top = 370.0
+margin_right = 466.0
+margin_bottom = 483.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Your time of rest must now end. Wake up."
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
 
 [connection signal="body_entered" from="SpawnPoint2" to="SpawnPoint2" method="_on_SpawnPoint2_body_entered"]
 

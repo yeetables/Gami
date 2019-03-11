@@ -29,7 +29,8 @@ func _process(delta):
 			#position = target
 	else:
 		#print("camera")
-		velocity.y = 0
-		velocity.x = -1
-		velocity = velocity.normalized() * speed
-		move_and_slide(velocity)
+		#velocity.y = 0
+		#velocity.x = -1
+		#velocity = velocity.normalized() * speed
+		#move_and_slide(velocity)
+		pass
