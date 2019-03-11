@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=2]
@@ -9,8 +9,9 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/background_level1.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sounds/Background/BGambience1.WAV" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=9]
-[ext_resource path="res://Scenes/SpawnPoint2.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/SpawnPoint3.gd" type="Script" id=11]
+[ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scenes/SpawnPoint2.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/SpawnPoint3.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -350,8 +351,6 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="sound" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
-
 [node name="bg" type="AudioStreamPlayer" parent="sound" index="0"]
 
 stream = ExtResource( 8 )
@@ -372,6 +371,15 @@ attenuation = 1.0
 bus = "Master"
 area_mask = 1
 
+[node name="rock2" type="AudioStreamPlayer" parent="sound" index="2"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [node name="SpawnPoint2" type="Area2D" parent="." index="11"]
 
 editor/display_folded = true
@@ -383,7 +391,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
@@ -406,7 +414,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 __meta__ = {
 "_edit_group_": true
 }
