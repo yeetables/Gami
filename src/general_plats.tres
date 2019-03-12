@@ -1,14 +1,15 @@
 [gd_resource type="TileSet" load_steps=10 format=2]
 
-[ext_resource path="res://FLOAT-grass-smoll-1.png" type="Texture" id=1]
-[ext_resource path="res://stony-smoll-FLOAT.png" type="Texture" id=2]
-[ext_resource path="res://dirt-3-small.png" type="Texture" id=3]
-[ext_resource path="res://dirt-2-smoll.png" type="Texture" id=4]
-[ext_resource path="res://dirt-1-smoll.png" type="Texture" id=5]
-[ext_resource path="res://grass-night-smoll-1.png" type="Texture" id=6]
-[ext_resource path="res://grass-night-smoll-2.png" type="Texture" id=7]
-[ext_resource path="res://stony-smoll.png" type="Texture" id=8]
-[ext_resource path="res://FLOAT-grass-smoll-2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/FLOAT-grass-smoll-1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/stony-smoll-FLOAT.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/dirt-3-small.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/dirt-2-smoll.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/dirt-1-smoll.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/grass-night-smoll-1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/grass-night-smoll-2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/stony-smoll.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/FLOAT-grass-smoll-2.png" type="Texture" id=9]
+
 
 [resource]
 

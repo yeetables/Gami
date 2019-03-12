@@ -1,8 +1,9 @@
 [gd_resource type="TileSet" load_steps=4 format=2]
 
-[ext_resource path="res://crumbly-float-platform-smoll-1.png" type="Texture" id=1]
-[ext_resource path="res://crumbly-float-platform-smoll-2.png" type="Texture" id=2]
-[ext_resource path="res://crumbly-float-platform-smoll-3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/crumbly-float-platform-smoll-1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/crumbly-float-platform-smoll-2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/crumbly-float-platform-smoll-3.png" type="Texture" id=3]
+
 
 [resource]
 
