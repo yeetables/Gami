@@ -73,10 +73,11 @@ func respawn_player():
 	PLAYER_INSTANCE.get_node("Body").set_global_position(spawn_pos)
 #
 func change_checkPoint(n):
-	if n == 2:
-		respawn_node = "/root/World/CheckPoints/SpawnPoint2"
-	if n == 3:
-		respawn_node = "/root/World/CheckPoints/SpawnPoint3"
+#	if n == 2:
+#		respawn_node = "/root/World/CheckPoints/SpawnPoint2"
+#	if n == 3:
+#		respawn_node = "/root/World/CheckPoints/SpawnPoint3"
+	respawn_node = n
 #func set_child_pos(instance, pos):
 #    for child in instance.get_children():
 #        if child.get_child_count() > 0:
