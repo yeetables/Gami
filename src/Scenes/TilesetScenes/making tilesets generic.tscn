@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/FLOAT-grass-smoll-1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/FLOAT-grass-smoll-2.png" type="Texture" id=2]
@@ -13,7 +13,22 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 30, 24.5036 )
+extents = Vector2( 33.925, 24.5036 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64.6967, 24.3509 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 63.8328, 24.5002 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 63.7907, 24.3972 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -89,7 +104,35 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg13_float" type="Sprite" parent="." index="2"]
+[node name="bg1_float_long" type="Sprite" parent="." index="2"]
+
+position = Vector2( 460, 660 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="bg1_float_long" index="0"]
+
+position = Vector2( 1, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg1_float_long/StaticBody2D3" index="0"]
+
+position = Vector2( 0, 2.51251 )
+scale = Vector2( 1, 1.11502 )
+shape = SubResource( 5 )
+
+[node name="bg13_float" type="Sprite" parent="." index="3"]
 
 editor/display_folded = true
 position = Vector2( 192, 32 )
@@ -117,7 +160,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg14_float" type="Sprite" parent="." index="3"]
+[node name="bg14_float" type="Sprite" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( 272, 32 )
@@ -145,8 +188,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg15_float" type="Sprite" parent="." index="4"]
+[node name="bg15_float" type="Sprite" parent="." index="5"]
 
+editor/display_folded = true
 position = Vector2( 352, 32 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -173,8 +217,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg21_float" type="Sprite" parent="." index="5"]
+[node name="bg21_float" type="Sprite" parent="." index="6"]
 
+editor/display_folded = true
 position = Vector2( 32, 112 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -201,8 +246,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg22_float" type="Sprite" parent="." index="6"]
+[node name="bg22_float" type="Sprite" parent="." index="7"]
 
+editor/display_folded = true
 position = Vector2( 112, 112 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -229,8 +275,37 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg23_float" type="Sprite" parent="." index="7"]
+[node name="bg2_float_long" type="Sprite" parent="." index="8"]
 
+position = Vector2( 670, 580 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="bg2_float_long" index="0"]
+
+position = Vector2( 1.07672, 1.05417 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg2_float_long/StaticBody2D9" index="0"]
+
+position = Vector2( -1, 2.51251 )
+scale = Vector2( 1, 1.11502 )
+shape = SubResource( 6 )
+
+[node name="bg23_float" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
 position = Vector2( 192, 112 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -257,8 +332,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg24_float" type="Sprite" parent="." index="8"]
+[node name="bg24_float" type="Sprite" parent="." index="10"]
 
+editor/display_folded = true
 position = Vector2( 272, 112 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -285,8 +361,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg25_float" type="Sprite" parent="." index="9"]
+[node name="bg25_float" type="Sprite" parent="." index="11"]
 
+editor/display_folded = true
 position = Vector2( 352, 112 )
 texture = ExtResource( 2 )
 region_enabled = true
@@ -313,8 +390,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg31_float" type="Sprite" parent="." index="10"]
+[node name="bg31_float" type="Sprite" parent="." index="12"]
 
+editor/display_folded = true
 position = Vector2( 32, 192 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -341,8 +419,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg32_float" type="Sprite" parent="." index="11"]
+[node name="bg32_float" type="Sprite" parent="." index="13"]
 
+editor/display_folded = true
 position = Vector2( 112, 192 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -369,8 +448,39 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg33_float" type="Sprite" parent="." index="12"]
+[node name="bg3_float_long" type="Sprite" parent="." index="14"]
 
+editor/display_folded = true
+position = Vector2( 450, 480 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="bg3_float_long" index="0"]
+
+editor/display_folded = true
+position = Vector2( -2, -2 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg3_float_long/StaticBody2D16" index="0"]
+
+position = Vector2( 1, 2.51251 )
+scale = Vector2( 1, 1.11502 )
+shape = SubResource( 7 )
+
+[node name="bg33_float" type="Sprite" parent="." index="15"]
+
+editor/display_folded = true
 position = Vector2( 192, 192 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -397,8 +507,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg34_float" type="Sprite" parent="." index="13"]
+[node name="bg34_float" type="Sprite" parent="." index="16"]
 
+editor/display_folded = true
 position = Vector2( 272, 192 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -425,8 +536,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg35_float" type="Sprite" parent="." index="14"]
+[node name="bg35_float" type="Sprite" parent="." index="17"]
 
+editor/display_folded = true
 position = Vector2( 352, 192 )
 texture = ExtResource( 3 )
 region_enabled = true
@@ -453,8 +565,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg11" type="Sprite" parent="." index="15"]
+[node name="bg11" type="Sprite" parent="." index="18"]
 
+editor/display_folded = true
 position = Vector2( 448, 32 )
 texture = ExtResource( 4 )
 region_enabled = true
@@ -481,8 +594,9 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg12" type="Sprite" parent="." index="16"]
+[node name="bg12" type="Sprite" parent="." index="19"]
 
+editor/display_folded = true
 position = Vector2( 528, 32 )
 texture = ExtResource( 4 )
 region_enabled = true
@@ -509,7 +623,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg13" type="Sprite" parent="." index="17"]
+[node name="bg13" type="Sprite" parent="." index="20"]
 
 position = Vector2( 608, 32 )
 texture = ExtResource( 4 )
@@ -537,7 +651,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg14" type="Sprite" parent="." index="18"]
+[node name="bg14" type="Sprite" parent="." index="21"]
 
 position = Vector2( 688, 32 )
 texture = ExtResource( 4 )
@@ -565,7 +679,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="inside31" type="Sprite" parent="." index="19"]
+[node name="inside31" type="Sprite" parent="." index="22"]
 
 position = Vector2( 32, 448 )
 texture = ExtResource( 5 )
@@ -573,7 +687,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite40" type="Sprite" parent="." index="20"]
+[node name="Sprite40" type="Sprite" parent="." index="23"]
 
 position = Vector2( 112, 448 )
 texture = ExtResource( 5 )
@@ -581,7 +695,7 @@ region_enabled = true
 region_rect = Rect2( 64, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite41" type="Sprite" parent="." index="21"]
+[node name="Sprite41" type="Sprite" parent="." index="24"]
 
 position = Vector2( 192, 448 )
 texture = ExtResource( 5 )
@@ -589,7 +703,7 @@ region_enabled = true
 region_rect = Rect2( 128, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite42" type="Sprite" parent="." index="22"]
+[node name="Sprite42" type="Sprite" parent="." index="25"]
 
 position = Vector2( 352, 448 )
 texture = ExtResource( 5 )
@@ -597,7 +711,7 @@ region_enabled = true
 region_rect = Rect2( 256, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite31" type="Sprite" parent="." index="23"]
+[node name="Sprite31" type="Sprite" parent="." index="26"]
 
 position = Vector2( 32, 368 )
 texture = ExtResource( 6 )
@@ -605,7 +719,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite37" type="Sprite" parent="." index="24"]
+[node name="Sprite37" type="Sprite" parent="." index="27"]
 
 position = Vector2( 112, 373 )
 scale = Vector2( 1, 1.15625 )
@@ -614,7 +728,7 @@ region_enabled = true
 region_rect = Rect2( 64, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite38" type="Sprite" parent="." index="25"]
+[node name="Sprite38" type="Sprite" parent="." index="28"]
 
 position = Vector2( 192, 368 )
 texture = ExtResource( 6 )
@@ -622,7 +736,7 @@ region_enabled = true
 region_rect = Rect2( 128, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite39" type="Sprite" parent="." index="26"]
+[node name="Sprite39" type="Sprite" parent="." index="29"]
 
 position = Vector2( 352, 368 )
 texture = ExtResource( 6 )
@@ -630,7 +744,7 @@ region_enabled = true
 region_rect = Rect2( 256, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite32" type="Sprite" parent="." index="27"]
+[node name="Sprite32" type="Sprite" parent="." index="30"]
 
 position = Vector2( 32, 288 )
 texture = ExtResource( 7 )
@@ -638,7 +752,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite33" type="Sprite" parent="." index="28"]
+[node name="Sprite33" type="Sprite" parent="." index="31"]
 
 position = Vector2( 112, 288 )
 texture = ExtResource( 7 )
@@ -646,7 +760,7 @@ region_enabled = true
 region_rect = Rect2( 64, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite34" type="Sprite" parent="." index="29"]
+[node name="Sprite34" type="Sprite" parent="." index="32"]
 
 position = Vector2( 192, 288 )
 texture = ExtResource( 7 )
@@ -654,7 +768,7 @@ region_enabled = true
 region_rect = Rect2( 128, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="Sprite35" type="Sprite" parent="." index="30"]
+[node name="Sprite35" type="Sprite" parent="." index="33"]
 
 position = Vector2( 352, 288 )
 texture = ExtResource( 7 )
@@ -662,7 +776,7 @@ region_enabled = true
 region_rect = Rect2( 256, 0, 64, 64 )
 _sections_unfolded = [ "Region" ]
 
-[node name="bg1_long" type="Sprite" parent="." index="31"]
+[node name="bg1_long" type="Sprite" parent="." index="34"]
 
 position = Vector2( 510, 290 )
 texture = ExtResource( 4 )
@@ -690,7 +804,7 @@ position = Vector2( 9.64312, 2.51251 )
 scale = Vector2( 0.906841, 1.11502 )
 shape = SubResource( 2 )
 
-[node name="bg15" type="Sprite" parent="." index="32"]
+[node name="bg15" type="Sprite" parent="." index="35"]
 
 position = Vector2( 768, 32 )
 texture = ExtResource( 4 )
@@ -718,7 +832,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg22" type="Sprite" parent="." index="33"]
+[node name="bg22" type="Sprite" parent="." index="36"]
 
 position = Vector2( 528, 112 )
 texture = ExtResource( 8 )
@@ -746,7 +860,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg23" type="Sprite" parent="." index="34"]
+[node name="bg23" type="Sprite" parent="." index="37"]
 
 position = Vector2( 608, 112 )
 texture = ExtResource( 8 )
@@ -774,7 +888,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg24" type="Sprite" parent="." index="35"]
+[node name="bg24" type="Sprite" parent="." index="38"]
 
 position = Vector2( 688, 112 )
 texture = ExtResource( 8 )
@@ -802,7 +916,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg25" type="Sprite" parent="." index="36"]
+[node name="bg25" type="Sprite" parent="." index="39"]
 
 position = Vector2( 768, 112 )
 texture = ExtResource( 8 )
@@ -830,7 +944,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg2_long" type="Sprite" parent="." index="37"]
+[node name="bg2_long" type="Sprite" parent="." index="40"]
 
 position = Vector2( 600, 390 )
 texture = ExtResource( 8 )
@@ -857,7 +971,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 3 )
 
-[node name="bg21" type="Sprite" parent="." index="38"]
+[node name="bg21" type="Sprite" parent="." index="41"]
 
 position = Vector2( 448, 112 )
 texture = ExtResource( 8 )
@@ -885,7 +999,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg31" type="Sprite" parent="." index="39"]
+[node name="bg31" type="Sprite" parent="." index="42"]
 
 position = Vector2( 448, 192 )
 texture = ExtResource( 9 )
@@ -913,7 +1027,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg3_long" type="Sprite" parent="." index="40"]
+[node name="bg3_long" type="Sprite" parent="." index="43"]
 
 position = Vector2( 760, 290 )
 texture = ExtResource( 9 )
@@ -941,7 +1055,7 @@ position = Vector2( 2.22864, 2.51251 )
 scale = Vector2( 0.977592, 1.11502 )
 shape = SubResource( 4 )
 
-[node name="bg32" type="Sprite" parent="." index="41"]
+[node name="bg32" type="Sprite" parent="." index="44"]
 
 position = Vector2( 530, 190 )
 texture = ExtResource( 9 )
@@ -968,7 +1082,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg33" type="Sprite" parent="." index="42"]
+[node name="bg33" type="Sprite" parent="." index="45"]
 
 position = Vector2( 608, 192 )
 texture = ExtResource( 9 )
@@ -996,7 +1110,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg34" type="Sprite" parent="." index="43"]
+[node name="bg34" type="Sprite" parent="." index="46"]
 
 position = Vector2( 688, 192 )
 texture = ExtResource( 9 )
@@ -1024,7 +1138,7 @@ position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
 
-[node name="bg35" type="Sprite" parent="." index="44"]
+[node name="bg35" type="Sprite" parent="." index="47"]
 
 position = Vector2( 768, 192 )
 texture = ExtResource( 9 )
