@@ -30,7 +30,7 @@ scale = Vector2( 0.46875, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 192, 0, 128, 64 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Material", "Region", "Visibility" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 

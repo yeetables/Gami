@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var MAX_SPEED = 500
+var MAX_SPEED = 530
 var ACC = 100
 var velocity = Vector2()
 var xspeed = 0
@@ -12,6 +12,10 @@ var jforce = 500
 var yspeed = 0
 const UP = Vector2(0,-1)
 var move_dir = Vector2(0,0)
+
+var timeHeld = 0
+var timeForFullJump = 0.1
+var maxjforce = 600
 #
 #const hit_box_offset_flipped = Vector2(50,0)
 #const hit_box_offset_normal = Vector2(0,0)
@@ -123,12 +127,19 @@ func _physics_process(delta):
 	#Start with an upwards speed, and constantly decrement.
 	#While in the air you don't decelerate like you do on the ground.
 	#But you can still use the keys to adjust trajectory, at a penalty. 
-	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
+	#if Input.is_action_just_pressed("space") and is_on_floor():
 #        print("on floor:", is_on_floor())
-		yspeed = jforce
-		$jumpsound1.play()
-#    if is_on_floor():
-#        yspeed = 0
+		#yspeed = jforce
+		#$jumpsound1.play()
+		
+	if is_on_floor():
+		if Input.is_action_pressed("space"):
+			timeHeld += delta
+			if timeHeld >= timeForFullJump:
+				yspeed = maxjforce
+		if Input.is_action_just_released("space"):
+			yspeed = ((maxjforce - jforce) * (timeHeld / timeForFullJump) + jforce)
+			
 
 	# Dashing code
 	if dash == true:
