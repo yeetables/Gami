@@ -16,8 +16,10 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
-	get_parent().start()
+	if body.is_in_group("player"):
+		get_parent().start()
 
 
 func _on_Area2D_body_exited(body):
-	get_parent().stop()
+	if body.is_in_group("player"):
+		get_parent().stop()
