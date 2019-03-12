@@ -59,7 +59,7 @@ func add_new_player(scene_path):
 	
 	return instance
 	
-var respawn_node = "/root/World/SpawnPoint"
+var respawn_node = "/root/World/CheckPoints/SpawnPoint"
 func spawn_holy_tree():
 	var scene = ResourceLoader.load("res://Scenes/tree.tscn")
 	var instance = scene.instance()
@@ -74,9 +74,9 @@ func respawn_player():
 #
 func change_checkPoint(n):
 	if n == 2:
-		respawn_node = "/root/World/SpawnPoint2"
+		respawn_node = "/root/World/CheckPoints/SpawnPoint2"
 	if n == 3:
-		respawn_node = "/root/World/SpawnPoint3"
+		respawn_node = "/root/World/CheckPoints/SpawnPoint3"
 #func set_child_pos(instance, pos):
 #    for child in instance.get_children():
 #        if child.get_child_count() > 0:
