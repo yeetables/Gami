@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rock1.wav-0bbd57115b5f05d35d78ca15ff7d2e1c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Effects/rock1.wav"
+dest_files=[ "res://.import/rock1.wav-0bbd57115b5f05d35d78ca15ff7d2e1c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
