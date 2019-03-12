@@ -26,6 +26,10 @@ var duration_ms
 var start_value
 const END_VALUE = 1
 
+var second_dash = false
+var second_count = 0
+var direction = 0
+
 
 # Function to slow engine time
 func slow_mode(duration = 2.25, strength = 0.99):
@@ -69,7 +73,7 @@ func _physics_process(delta):
 		print("2nd gear")
 	elif Input.is_key_pressed(KEY_3):
 		MAX_SPEED = 625
-		jforce = 560
+		jforce = 700 #Should be 560
 #		ACC = 10
 		print("3rd gear")
 	else:
@@ -157,6 +161,16 @@ func _physics_process(delta):
 		
 	if is_on_floor():
 		landed = true
+		
+	if second_dash == true:
+		xspeed = 0
+		yspeed = 0
+		move_and_slide(direction * DASH_SPEED, UP)
+		second_count += 1
+		
+	if second_count >= 100:
+		second_dash = false
+		second_count = 0
 	
 	#print(xspeed, yspeed)
 	velocity.x = 1 * xspeed
@@ -174,11 +188,12 @@ func circl_ease_in(t, b, c, d):
 	return -c * (sqrt(1 - t * t) - 1) + b
 	
 func second_dash():
-	mousepos = get_viewport().get_mouse_position()
-	var direction = (mousepos - self.global_position).normalized()
-	print(direction)
-	move_and_slide(direction * DASH_SPEED)
-	direction = 0
+	mousepos = get_global_mouse_position()
+	direction = (mousepos - self.global_position).normalized()
+	print(mousepos, self.global_position)
+	#print(direction)
+	dash = false
+	second_dash = true
 	
 func _ready():
 	# Called when the node is added to the scene for the first time.
