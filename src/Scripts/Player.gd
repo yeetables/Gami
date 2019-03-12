@@ -62,8 +62,8 @@ func _physics_process(delta):
 	###################################################################################################
 
 	if Input.is_key_pressed(KEY_1):
-		MAX_SPEED = 700
-		jforce = 500
+		MAX_SPEED = 450
+		jforce = 650
 #		ACC = 6
 		print("1st gear")
 	elif Input.is_key_pressed(KEY_2):

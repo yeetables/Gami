@@ -15,41 +15,40 @@
 custom_solver_bias = 0.0
 extents = Vector2( 33.925, 24.5036 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 64.6967, 24.3509 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 63.8328, 24.5002 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 63.7907, 24.3972 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 105.79, 22.5548 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 95.8937, 24.3074 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 98.1367, 23.683 )
 
-[node name="Node2D" type="Node2D" index="0"]
+[node name="Node2D" type="Node2D"]
 
 [node name="bg11_float" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -74,6 +73,7 @@ __meta__ = {
 position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="bg12_float" type="Sprite" parent="." index="1"]
 
@@ -130,7 +130,7 @@ __meta__ = {
 
 position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
 [node name="bg13_float" type="Sprite" parent="." index="3"]
 
@@ -301,7 +301,7 @@ __meta__ = {
 
 position = Vector2( -1, 2.51251 )
 scale = Vector2( 1, 1.11502 )
-shape = SubResource( 6 )
+shape = SubResource( 3 )
 
 [node name="bg23_float" type="Sprite" parent="." index="9"]
 
@@ -476,7 +476,7 @@ __meta__ = {
 
 position = Vector2( 1, 2.51251 )
 scale = Vector2( 1, 1.11502 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="bg33_float" type="Sprite" parent="." index="15"]
 
@@ -802,7 +802,7 @@ __meta__ = {
 
 position = Vector2( 9.64312, 2.51251 )
 scale = Vector2( 0.906841, 1.11502 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
 [node name="bg15" type="Sprite" parent="." index="35"]
 
@@ -969,7 +969,7 @@ __meta__ = {
 
 position = Vector2( 0, 2.51251 )
 scale = Vector2( 1, 1.11502 )
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="bg21" type="Sprite" parent="." index="41"]
 
@@ -1053,7 +1053,7 @@ __meta__ = {
 
 position = Vector2( 2.22864, 2.51251 )
 scale = Vector2( 0.977592, 1.11502 )
-shape = SubResource( 4 )
+shape = SubResource( 7 )
 
 [node name="bg32" type="Sprite" parent="." index="44"]
 
