@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_level1.png-3a7d352ea28bbf939226da9eb2c69bf7.stex"
+path="res://.import/parallax-bg-stuff-forest-edition-Recovered-2.png-38320adbd5fd4642304a4fa2759c6ca6.stex"
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Background/background_level1.png"
-dest_files=[ "res://.import/background_level1.png-3a7d352ea28bbf939226da9eb2c69bf7.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png"
+dest_files=[ "res://.import/parallax-bg-stuff-forest-edition-Recovered-2.png-38320adbd5fd4642304a4fa2759c6ca6.stex" ]
 
 [params]
 

@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 5.42885, 7.35089 )
+extents = Vector2( 5.42885, 6.08079 )
 
 [sub_resource type="Animation" id=2]
 

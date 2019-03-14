@@ -8,7 +8,7 @@ var animPlay = false
 var DASH_SPEED = 300
 var mousepos
 
-var jforce = 500
+var jforce = 600
 var yspeed = 0
 const UP = Vector2(0,-1)
 var move_dir = Vector2(0,0)
