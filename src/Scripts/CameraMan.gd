@@ -23,9 +23,14 @@ func _process(delta):
 		velocity = (target - position).normalized() * speed
 		if(target - position).length() > 5:
 			move_and_slide(velocity)
+		if(target - position).length() < 500 and (target - position).length() > 5:
+			velocity = (target - position).normalized() * (target-position).length()
+			move_and_slide(velocity)
+			#position = target
 	else:
 		#print("camera")
-		velocity.y = 0
-		velocity.x = -1
-		velocity = velocity.normalized() * speed
-		move_and_slide(velocity)
+		#velocity.y = 0
+		#velocity.x = -1
+		#velocity = velocity.normalized() * speed
+		#move_and_slide(velocity)
+		pass
