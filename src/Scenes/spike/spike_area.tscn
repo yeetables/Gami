@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/spike.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/spikes1.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 29.7832, 30.3427 )
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
 
 [node name="spike" type="Area2D"]
 
@@ -25,12 +29,14 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+modulate = Color( 0.166901, 0.5, 0.138672, 1 )
+material = SubResource( 2 )
 position = Vector2( 1.90735e-006, -7 )
 scale = Vector2( 0.46875, 1 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 192, 0, 128, 64 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Visibility" ]
 
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 

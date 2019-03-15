@@ -17,4 +17,5 @@ func _ready():
 
 func _on_SpawnPoint3_body_entered(body):
 	if body.is_in_group('player'):
-		Global.change_checkPoint(3)
+		
+		Global.change_checkPoint(get_path())
