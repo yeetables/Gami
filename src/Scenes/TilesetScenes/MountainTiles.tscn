@@ -1,0 +1,988 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-solo-float smoll.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-2-FLOAT smoll.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-1 smoll.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-dirt smoll.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Node" type="Node" index="0"]
+
+[node name="mountain-solo-float smoll" type="Sprite" parent="." index="0"]
+
+position = Vector2( 32, 32 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mountain-solo-float smoll" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-solo-float smoll/StaticBody2D" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 1 )
+
+[node name="mountain-solo-float smoll2" type="Sprite" parent="." index="1"]
+
+position = Vector2( 976, 416 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="mountain-solo-float smoll2" index="0"]
+
+position = Vector2( 3.05176e-005, 1.52588e-005 )
+scale = Vector2( 0.999999, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-solo-float smoll2/StaticBody2D2" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="mountain-2-FLOAT smoll" type="Sprite" parent="." index="2"]
+
+position = Vector2( 528, 96 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="mountain-2-FLOAT smoll" index="0"]
+
+position = Vector2( -7.62939e-005, 0 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll/StaticBody2D3" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 3 )
+
+[node name="mountain-2-FLOAT smoll13" type="Sprite" parent="." index="3"]
+
+position = Vector2( 528, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="mountain-2-FLOAT smoll13" index="0"]
+
+position = Vector2( -3.05176e-005, 3.8147e-006 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll13/StaticBody2D4" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 4 )
+
+[node name="mountain-2-FLOAT smoll6" type="Sprite" parent="." index="4"]
+
+position = Vector2( 672, 32 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="mountain-2-FLOAT smoll6" index="0"]
+
+position = Vector2( -9.53674e-006, 0 )
+scale = Vector2( 5, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll6/StaticBody2D5" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll2" type="Sprite" parent="." index="5"]
+
+position = Vector2( 608, 96 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="mountain-2-FLOAT smoll2" index="0"]
+
+editor/display_folded = true
+position = Vector2( -1.52588e-005, 0 )
+scale = Vector2( 0.999999, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll2/StaticBody2D6" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll12" type="Sprite" parent="." index="6"]
+
+position = Vector2( 592, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="mountain-2-FLOAT smoll12" index="0"]
+
+editor/display_folded = true
+position = Vector2( -1.19209e-005, -3.8147e-006 )
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll12/StaticBody2D7" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll3" type="Sprite" parent="." index="7"]
+
+position = Vector2( 688, 96 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="mountain-2-FLOAT smoll3" index="0"]
+
+editor/display_folded = true
+position = Vector2( 3.8147e-006, 7.62939e-006 )
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll3/StaticBody2D8" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll8" type="Sprite" parent="." index="8"]
+
+editor/display_folded = true
+position = Vector2( 688, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="mountain-2-FLOAT smoll8" index="0"]
+
+editor/display_folded = true
+position = Vector2( 4.43459e-005, -1.14441e-005 )
+scale = Vector2( 2, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll8/StaticBody2D9" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll9" type="Sprite" parent="." index="9"]
+
+editor/display_folded = true
+position = Vector2( 816, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="mountain-2-FLOAT smoll9" index="0"]
+
+position = Vector2( 4.43459e-005, -1.14441e-005 )
+scale = Vector2( 2, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll9/StaticBody2D9" index="0"]
+
+position = Vector2( -3.05176e-005, 1.52588e-005 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll10" type="Sprite" parent="." index="10"]
+
+editor/display_folded = true
+position = Vector2( 944, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="mountain-2-FLOAT smoll10" index="0"]
+
+position = Vector2( 4.43459e-005, -1.14441e-005 )
+scale = Vector2( 2, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll10/StaticBody2D9" index="0"]
+
+position = Vector2( -3.05176e-005, 1.52588e-005 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll4" type="Sprite" parent="." index="11"]
+
+position = Vector2( 768, 96 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="mountain-2-FLOAT smoll4" index="0"]
+
+editor/display_folded = true
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll4/StaticBody2D9" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll5" type="Sprite" parent="." index="12"]
+
+position = Vector2( 848, 96 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="mountain-2-FLOAT smoll5" index="0"]
+
+editor/display_folded = true
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll5/StaticBody2D10" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-2-FLOAT smoll11" type="Sprite" parent="." index="13"]
+
+position = Vector2( 1040, 176 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="mountain-2-FLOAT smoll11" index="0"]
+
+editor/display_folded = true
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-2-FLOAT smoll11/StaticBody2D11" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll" type="Sprite" parent="." index="14"]
+
+position = Vector2( 256, 32 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="mountain-1 smoll" index="0"]
+
+scale = Vector2( 5, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll/StaticBody2D12" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll13" type="Sprite" parent="." index="15"]
+
+position = Vector2( 736, 368 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="mountain-1 smoll13" index="0"]
+
+scale = Vector2( 5, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll13/StaticBody2D13" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll2" type="Sprite" parent="." index="16"]
+
+position = Vector2( 96, 96 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="mountain-1 smoll2" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll2/StaticBody2D14" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll11" type="Sprite" parent="." index="17"]
+
+position = Vector2( -96, 176 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="mountain-1 smoll11" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll11/StaticBody2D15" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll3" type="Sprite" parent="." index="18"]
+
+position = Vector2( 176, 96 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="mountain-1 smoll3" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll3/StaticBody2D15" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll10" type="Sprite" parent="." index="19"]
+
+position = Vector2( -32, 176 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D16" type="StaticBody2D" parent="mountain-1 smoll10" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll10/StaticBody2D16" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll4" type="Sprite" parent="." index="20"]
+
+editor/display_folded = true
+position = Vector2( 256, 96 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="mountain-1 smoll4" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll4/StaticBody2D17" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll7" type="Sprite" parent="." index="21"]
+
+editor/display_folded = true
+position = Vector2( 64, 176 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="mountain-1 smoll7" index="0"]
+
+position = Vector2( 9.53674e-006, 0 )
+scale = Vector2( 2, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll7/StaticBody2D18" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll8" type="Sprite" parent="." index="22"]
+
+editor/display_folded = true
+position = Vector2( 192, 176 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="mountain-1 smoll8" index="0"]
+
+position = Vector2( 9.53674e-006, 0 )
+scale = Vector2( 2, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll8/StaticBody2D18" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll9" type="Sprite" parent="." index="23"]
+
+editor/display_folded = true
+position = Vector2( 320, 176 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="mountain-1 smoll9" index="0"]
+
+position = Vector2( 9.53674e-006, 0 )
+scale = Vector2( 2, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll9/StaticBody2D18" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll5" type="Sprite" parent="." index="24"]
+
+position = Vector2( 336, 96 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D18" type="StaticBody2D" parent="mountain-1 smoll5" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll5/StaticBody2D18" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll6" type="Sprite" parent="." index="25"]
+
+position = Vector2( 416, 96 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D19" type="StaticBody2D" parent="mountain-1 smoll6" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll6/StaticBody2D19" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-1 smoll12" type="Sprite" parent="." index="26"]
+
+position = Vector2( 416, 176 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D20" type="StaticBody2D" parent="mountain-1 smoll12" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-1 smoll12/StaticBody2D20" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll" type="Sprite" parent="." index="27"]
+
+position = Vector2( 256, 256 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D21" type="StaticBody2D" parent="mountain-dirt smoll" index="0"]
+
+scale = Vector2( 5, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll/StaticBody2D21" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll9" type="Sprite" parent="." index="28"]
+
+position = Vector2( 736, 432 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D22" type="StaticBody2D" parent="mountain-dirt smoll9" index="0"]
+
+scale = Vector2( 5, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll9/StaticBody2D22" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll10" type="Sprite" parent="." index="29"]
+
+position = Vector2( 736, 496 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="mountain-dirt smoll10" index="0"]
+
+scale = Vector2( 5, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll10/StaticBody2D23" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll2" type="Sprite" parent="." index="30"]
+
+position = Vector2( 96, 320 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D24" type="StaticBody2D" parent="mountain-dirt smoll2" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll2/StaticBody2D24" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll3" type="Sprite" parent="." index="31"]
+
+position = Vector2( 176, 320 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D25" type="StaticBody2D" parent="mountain-dirt smoll3" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll3/StaticBody2D25" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll7" type="Sprite" parent="." index="32"]
+
+editor/display_folded = true
+position = Vector2( 160, 400 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 192, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="mountain-dirt smoll7" index="0"]
+
+position = Vector2( 9.53674e-006, 0 )
+scale = Vector2( 3, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll7/StaticBody2D26" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll8" type="Sprite" parent="." index="33"]
+
+editor/display_folded = true
+position = Vector2( 352, 400 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 192, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="mountain-dirt smoll8" index="0"]
+
+position = Vector2( 9.53674e-006, 0 )
+scale = Vector2( 3, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll8/StaticBody2D26" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll4" type="Sprite" parent="." index="34"]
+
+position = Vector2( 256, 320 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="mountain-dirt smoll4" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll4/StaticBody2D26" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll5" type="Sprite" parent="." index="35"]
+
+position = Vector2( 336, 320 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 192, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D27" type="StaticBody2D" parent="mountain-dirt smoll5" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll5/StaticBody2D27" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+[node name="mountain-dirt smoll6" type="Sprite" parent="." index="36"]
+
+position = Vector2( 416, 320 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 256, 0, 64, 64 )
+_sections_unfolded = [ "Region" ]
+
+[node name="StaticBody2D28" type="StaticBody2D" parent="mountain-dirt smoll6" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mountain-dirt smoll6/StaticBody2D28" index="0"]
+
+position = Vector2( 1.90735e-006, 1.90735e-006 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 5 )
+
+
