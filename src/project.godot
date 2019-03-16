@@ -41,4 +41,4 @@ space=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"",
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.105882, 0.0941176, 0.152941, 1 )

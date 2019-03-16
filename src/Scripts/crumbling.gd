@@ -10,11 +10,12 @@ func _on_crumbling_body_entered(body):
 	if body.is_in_group("player") and not START_CRUMBLING:
 		START_CRUMBLING = true
 		count += 5
+		get_node("/root/World/Music/sound/rock2").play()
 		
 var count = 0
 func _physics_process(delta):
 	if START_CRUMBLING:
-		get_node("/root/World/Music/sound/rock2").play()
+		
 		var step = float(count) /  blink_frames # this should be an integer
 		if fmod(step, 2) == 0:
 			hide()
