@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/danger.tres" type="TileSet" id=2]
@@ -9,23 +9,24 @@
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/crumbling/crumbling.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Area2DBasic.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scripts/RockArea.gd" type="Script" id=13]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-3.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-4.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/crumbling/crumbling_30.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Area2DBasic.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/RockArea.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-3.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-4.png" type="Texture" id=20]
 
-
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
@@ -47,7 +48,6 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="RectangleShape2D" id=6]
 
-
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
@@ -56,6 +56,8 @@ extents = Vector2( 10, 10 )
 _sections_unfolded = [ "Material" ]
 
 [node name="Tilemaps" type="Node2D" parent="." index="0"]
+
+editor/display_folded = true
 
 [node name="platforms" type="TileMap" parent="Tilemaps" index="0"]
 
@@ -108,7 +110,7 @@ _sections_unfolded = [ "Cell", "Transform" ]
 [node name="Player" parent="." index="1" instance=ExtResource( 3 )]
 
 pause_mode = 2
-position = Vector2( 64, 500 )
+position = Vector2( 164.862, 482.903 )
 z_index = 1
 _sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 
@@ -389,6 +391,8 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Music" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
+
 [node name="sound" type="Node2D" parent="Music" index="0"]
 
 [node name="bg" type="AudioStreamPlayer" parent="Music/sound" index="0"]
@@ -422,8 +426,6 @@ bus = "Master"
 
 [node name="CheckPoints" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
-
 [node name="SpawnPoint" type="Node2D" parent="CheckPoints" index="0"]
 
 position = Vector2( 151.255, 539.598 )
@@ -449,9 +451,7 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint2" index="0"]
 
 position = Vector2( 0, -2 )
-
-shape = SubResource( 7 )
-
+shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="SpawnPoint3" type="Area2D" parent="CheckPoints" index="2"]
@@ -472,8 +472,7 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint3" index="0"]
 
-
-shape = SubResource( 8 )
+shape = SubResource( 2 )
 
 [node name="SpawnPoint4" type="Area2D" parent="CheckPoints" index="3"]
 
@@ -537,7 +536,8 @@ shape = SubResource( 5 )
 
 [node name="SpawnPoint7" type="Area2D" parent="CheckPoints" index="6"]
 
-position = Vector2( 1305.93, -1586.77 )
+position = Vector2( 1276.93, -1585.54 )
+scale = Vector2( 1.7482, 2.44352 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -556,12 +556,10 @@ shape = SubResource( 6 )
 
 [node name="Obstacls" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Material" ]
 
 [node name="Spikes" type="Node2D" parent="Obstacls" index="0"]
 
-editor/display_folded = true
 z_index = -1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -598,14 +596,14 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="spike4" parent="Obstacls/Spikes" index="5" instance=ExtResource( 9 )]
 
-position = Vector2( 1320.37, -307.533 )
-scale = Vector2( 2.67121, 0.639072 )
+position = Vector2( 1318.16, -309.146 )
+scale = Vector2( 2.67121, 0.503204 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="spike5" parent="Obstacls/Spikes" index="6" instance=ExtResource( 9 )]
 
-position = Vector2( 1827.06, -308.368 )
-scale = Vector2( 2.38351, 0.639072 )
+position = Vector2( 1829.44, -313.586 )
+scale = Vector2( 2.38351, 0.618984 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="spike6" parent="Obstacls/Spikes" index="7" instance=ExtResource( 9 )]
@@ -681,216 +679,209 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 
-[node name="crumbling" parent="Obstacls/crumbles" index="0" instance=ExtResource( 10 )]
+[node name="crumbling18" parent="Obstacls/crumbles" index="0" instance=ExtResource( 10 )]
 
-position = Vector2( 468.152, 184.027 )
-scale = Vector2( 3.11878, 0.727391 )
+position = Vector2( 1229.78, 10.8168 )
 
-[node name="crumbling2" parent="Obstacls/crumbles" index="1" instance=ExtResource( 10 )]
+[node name="crumbling20" parent="Obstacls/crumbles" index="1" instance=ExtResource( 10 )]
 
-position = Vector2( 1232.01, 9.63425 )
-scale = Vector2( 2.20209, 0.684353 )
+position = Vector2( 992.786, -555.315 )
+scale = Vector2( 0.540934, 0.5 )
 
-[node name="crumbling3" parent="Obstacls/crumbles" index="2" instance=ExtResource( 10 )]
+[node name="crumbling19" parent="Obstacls/crumbles" index="2" instance=ExtResource( 10 )]
 
-position = Vector2( 1584.88, -53.1208 )
-scale = Vector2( 3.11878, 0.727391 )
+position = Vector2( 485.93, 188.005 )
 
-[node name="crumbling4" parent="Obstacls/crumbles" index="3" instance=ExtResource( 10 )]
+[node name="crumbling2" parent="Obstacls/crumbles" index="3" instance=ExtResource( 11 )]
 
-position = Vector2( 2064.57, -118.096 )
-scale = Vector2( 3.98192, 0.727391 )
+position = Vector2( 1588.03, -48.078 )
 
-[node name="crumbling5" parent="Obstacls/crumbles" index="4" instance=ExtResource( 10 )]
+[node name="crumbling4" parent="Obstacls/crumbles" index="4" instance=ExtResource( 11 )]
 
-position = Vector2( 995.121, -565.611 )
-scale = Vector2( 2.67502, 0.727391 )
-_sections_unfolded = [ "Visibility", "Z Index" ]
+position = Vector2( 1343.39, -940.524 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling6" parent="Obstacls/crumbles" index="5" instance=ExtResource( 10 )]
+[node name="crumbling5" parent="Obstacls/crumbles" index="5" instance=ExtResource( 11 )]
 
-position = Vector2( 1345.05, -949.528 )
-scale = Vector2( 3.73978, 0.727391 )
+position = Vector2( 770.534, -1051.33 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling7" parent="Obstacls/crumbles" index="6" instance=ExtResource( 10 )]
+[node name="crumbling6" parent="Obstacls/crumbles" index="6" instance=ExtResource( 11 )]
 
-position = Vector2( 768, -1056 )
-scale = Vector2( 4.05282, 0.727391 )
+position = Vector2( 361.691, -1113.73 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling8" parent="Obstacls/crumbles" index="7" instance=ExtResource( 10 )]
+[node name="crumbling21" parent="Obstacls/crumbles" index="7" instance=ExtResource( 11 )]
 
-position = Vector2( 384, -1120 )
-scale = Vector2( 3.11878, 0.727391 )
+position = Vector2( 790.636, -1210.84 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling9" parent="Obstacls/crumbles" index="8" instance=ExtResource( 10 )]
+[node name="crumbling22" parent="Obstacls/crumbles" index="8" instance=ExtResource( 11 )]
 
-position = Vector2( 384, -1280 )
-scale = Vector2( 3.11878, 0.727391 )
+position = Vector2( 364.025, -1274.77 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling10" parent="Obstacls/crumbles" index="9" instance=ExtResource( 10 )]
+[node name="crumbling23" parent="Obstacls/crumbles" index="9" instance=ExtResource( 11 )]
 
-position = Vector2( 800, -1216 )
-scale = Vector2( 3.99998, 0.727391 )
+position = Vector2( 787.422, -1370.52 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling11" parent="Obstacls/crumbles" index="10" instance=ExtResource( 10 )]
+[node name="crumbling24" parent="Obstacls/crumbles" index="10" instance=ExtResource( 11 )]
 
-position = Vector2( 800, -1376 )
-scale = Vector2( 4.05374, 0.727391 )
+position = Vector2( 787.422, -1370.52 )
+scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling12" parent="Obstacls/crumbles" index="11" instance=ExtResource( 10 )]
+[node name="crumbling3" parent="Obstacls/crumbles" index="11" instance=ExtResource( 11 )]
 
-position = Vector2( 935.754, -1889.56 )
-scale = Vector2( 2.73085, 0.727391 )
+position = Vector2( 2067.46, -93.8495 )
 
-[node name="crumbling13" parent="Obstacls/crumbles" index="12" instance=ExtResource( 10 )]
+[node name="crumbling" parent="Obstacls/crumbles" index="12" instance=ExtResource( 10 )]
 
-position = Vector2( 527.189, -1985.93 )
-scale = Vector2( 2.73545, 0.727391 )
+position = Vector2( 930.463, -1884.29 )
 
-[node name="crumbling14" parent="Obstacls/crumbles" index="13" instance=ExtResource( 10 )]
+[node name="crumbling7" parent="Obstacls/crumbles" index="13" instance=ExtResource( 10 )]
 
-position = Vector2( 935.794, -2088.72 )
-scale = Vector2( 2.78127, 0.727391 )
+position = Vector2( 529.462, -1981.29 )
 
-[node name="crumbling15" parent="Obstacls/crumbles" index="14" instance=ExtResource( 10 )]
+[node name="crumbling8" parent="Obstacls/crumbles" index="14" instance=ExtResource( 10 )]
 
-position = Vector2( 1706.7, -2186.1 )
-scale = Vector2( 13.5441, 0.727391 )
+position = Vector2( 929.463, -2084.29 )
 
-[node name="crumbling16" parent="Obstacls/crumbles" index="15" instance=ExtResource( 10 )]
+[node name="crumbling9" parent="Obstacls/crumbles" index="15" instance=ExtResource( 12 )]
 
-position = Vector2( 1207.44, -3047.84 )
-scale = Vector2( 4.1066, 0.727391 )
+position = Vector2( 1680.1, -2179.85 )
 
-[node name="crumbling17" parent="Obstacls/crumbles" index="16" instance=ExtResource( 10 )]
+[node name="crumbling10" parent="Obstacls/crumbles" index="16" instance=ExtResource( 11 )]
 
-position = Vector2( 1657.59, -3143.31 )
-scale = Vector2( 4.13785, 0.727391 )
+position = Vector2( 1196.14, -3041.96 )
+
+[node name="crumbling11" parent="Obstacls/crumbles" index="17" instance=ExtResource( 11 )]
+
+position = Vector2( 1658.43, -3137.17 )
 
 [node name="Rocks" type="Node2D" parent="Obstacls" index="2"]
 
 editor/display_folded = true
 
-[node name="rock1" parent="Obstacls/Rocks" index="0" instance=ExtResource( 11 )]
+[node name="rock1" parent="Obstacls/Rocks" index="0" instance=ExtResource( 13 )]
 
-editor/display_folded = true
 position = Vector2( 2129.94, -1155.24 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock1" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock1" index="0" instance=ExtResource( 14 )]
 
-position = Vector2( 148.857, 91.9298 )
-scale = Vector2( 7.79937, 4.27024 )
-script = ExtResource( 13 )
+position = Vector2( 262.948, 91.9298 )
+scale = Vector2( 11.3647, 4.27024 )
+script = ExtResource( 15 )
 
-[node name="rock2" parent="Obstacls/Rocks" index="1" instance=ExtResource( 11 )]
+[node name="rock2" parent="Obstacls/Rocks" index="1" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 1336.71, -2410.08 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock2" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock2" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 62.3516, 166.275 )
 scale = Vector2( 19.5128, 6.59353 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock3" parent="Obstacls/Rocks" index="2" instance=ExtResource( 11 )]
+[node name="rock3" parent="Obstacls/Rocks" index="2" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 1585.38, -2407.35 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock3" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock3" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( -208.183, 162.348 )
 scale = Vector2( 18.9569, 6.47082 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock4" parent="Obstacls/Rocks" index="3" instance=ExtResource( 11 )]
+[node name="rock4" parent="Obstacls/Rocks" index="3" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 1834.27, -2408.84 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock4" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock4" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( -436.234, 162.943 )
 scale = Vector2( 19.6934, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock5" parent="Obstacls/Rocks" index="4" instance=ExtResource( 11 )]
+[node name="rock5" parent="Obstacls/Rocks" index="4" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 2526.17, -2861.51 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock5" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock5" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 348.413, 162.943 )
 scale = Vector2( 17.458, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock6" parent="Obstacls/Rocks" index="5" instance=ExtResource( 11 )]
+[node name="rock6" parent="Obstacls/Rocks" index="5" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 2704.64, -2860.83 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock6" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock6" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 181.648, 162.943 )
 scale = Vector2( 17.7718, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock7" parent="Obstacls/Rocks" index="6" instance=ExtResource( 11 )]
+[node name="rock7" parent="Obstacls/Rocks" index="6" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 2537.13, -3359.52 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock7" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock7" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 169.217, 162.943 )
 scale = Vector2( 22.9331, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock8" parent="Obstacls/Rocks" index="7" instance=ExtResource( 11 )]
+[node name="rock8" parent="Obstacls/Rocks" index="7" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 2834.35, -3357.5 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock8" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock8" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( -125.713, 162.943 )
 scale = Vector2( 22.9765, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock9" parent="Obstacls/Rocks" index="8" instance=ExtResource( 11 )]
+[node name="rock9" parent="Obstacls/Rocks" index="8" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 2994.84, -3355.5 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock9" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock9" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( -287.682, 162.943 )
 scale = Vector2( 22.8146, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock10" parent="Obstacls/Rocks" index="9" instance=ExtResource( 11 )]
+[node name="rock10" parent="Obstacls/Rocks" index="9" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 3146.23, -3354.5 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock10" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock10" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( -444.627, 162.943 )
 scale = Vector2( 22.7568, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
-[node name="rock11" parent="Obstacls/Rocks" index="10" instance=ExtResource( 11 )]
+[node name="rock11" parent="Obstacls/Rocks" index="10" instance=ExtResource( 13 )]
 
 editor/display_folded = true
 position = Vector2( 3288.99, -3356.18 )
 
-[node name="Area2D" parent="Obstacls/Rocks/rock11" index="0" instance=ExtResource( 12 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock11" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( -562.403, 162.943 )
 scale = Vector2( 22.0339, 6.48941 )
-script = ExtResource( 13 )
+script = ExtResource( 15 )
 
 [node name="FLOOR" type="Node2D" parent="." index="7"]
 
@@ -901,7 +892,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="Sprite" type="Sprite" parent="FLOOR" index="0"]
 
 z_index = -10
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 centered = false
 _sections_unfolded = [ "Visibility", "Z Index" ]
 
@@ -909,7 +900,7 @@ _sections_unfolded = [ "Visibility", "Z Index" ]
 
 position = Vector2( 1123, 0 )
 z_index = -10
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 centered = false
 _sections_unfolded = [ "Z Index" ]
 
@@ -917,7 +908,7 @@ _sections_unfolded = [ "Z Index" ]
 
 position = Vector2( 2236, 7 )
 z_index = -10
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 centered = false
 _sections_unfolded = [ "Z Index" ]
 
@@ -925,7 +916,7 @@ _sections_unfolded = [ "Z Index" ]
 
 position = Vector2( 3380.99, 6.99994 )
 z_index = -10
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 centered = false
 _sections_unfolded = [ "Z Index" ]
 
@@ -933,7 +924,7 @@ _sections_unfolded = [ "Z Index" ]
 
 position = Vector2( 4041.13, 6.99994 )
 z_index = -10
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 centered = false
 _sections_unfolded = [ "Z Index" ]
 
@@ -964,7 +955,7 @@ _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost" index="0"]
 
-texture = ExtResource( 15 )
+texture = ExtResource( 17 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Visibility", "Z Index" ]
 
@@ -980,7 +971,7 @@ _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine" index="0"]
 
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Visibility", "Z Index" ]
 
@@ -996,7 +987,7 @@ _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree" index="0"]
 
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 centered = false
 _sections_unfolded = [ "Animation", "Offset", "Region", "Visibility", "Z Index" ]
 
@@ -1011,7 +1002,7 @@ _sections_unfolded = [ "Material", "Motion", "Transform", "Visibility", "Z Index
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree" index="0"]
 
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 centered = false
 offset = Vector2( 0, -120 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Visibility", "Z Index" ]
