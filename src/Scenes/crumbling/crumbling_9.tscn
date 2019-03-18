@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/crumbling.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/crumbling/base/crumbling_base_9.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 265.738, 27.9083 )
+
+[node name="crumbling" type="Area2D"]
+
+scale = Vector2( 0.5, 0.5 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 0, -9 )
+shape = SubResource( 1 )
+
+[node name="crumbling_base" parent="." index="1" instance=ExtResource( 2 )]
+
+[connection signal="body_entered" from="." to="." method="_on_crumbling_body_entered"]
+
+
