@@ -62,13 +62,13 @@ position = Vector2( 164.862, 482.903 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 64, 500 )
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 position = Vector2( 16, 0 )
 current = true
+zoom = Vector2( 1.6, 1.6 )
 
 [node name="Text" type="Node2D" parent="."]
 editor/display_folded = true
@@ -543,9 +543,10 @@ texture = ExtResource( 16 )
 centered = false
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 offset = Vector2( -10, -285 )
-transform = Transform2D( 1, 0, 0, 1, -10, -285 )
+scale = Vector2( 1.5, 1.5 )
+transform = Transform2D( 1.5, 0, 0, 1.5, -10, -285 )
+scroll_base_scale = Vector2( 0.25, 0.25 )
 
 [node name="backmost" type="ParallaxLayer" parent="ParallaxBackground"]
 editor/display_folded = true
