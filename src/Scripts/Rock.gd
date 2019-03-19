@@ -7,7 +7,7 @@ extends RigidBody2D
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	set_linear_velocity(Vector2(0,200))
+	set_linear_velocity(Vector2(0,100))
 
 func _physics_process(delta):
 	pass

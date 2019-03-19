@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/danger.tres" type="TileSet" id=2]
@@ -7,34 +7,25 @@
 [ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=7]
-[ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/spike.gd" type="Script" id=10]
-[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scripts/crumbling.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/crumbling/crumbling_30.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scripts/RockBase.gd" type="Script" id=16]
-[ext_resource path="res://Scenes/Area2DBasic.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scripts/RockArea.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-3.png" type="Texture" id=22]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-4.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/crumbling/crumbling_30.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Area2DBasic.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/RockArea.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-3.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-4.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 560, 1636.9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-
-[sub_resource type="RectangleShape2D" id=3]
-
-[sub_resource type="RectangleShape2D" id=4]
-
-[sub_resource type="RectangleShape2D" id=5]
-
-[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 680, 1550 )
 
 [node name="World" type="Node2D"]
 
@@ -70,9 +61,9 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -28114631, 1610612743, 0, -28114627, 1610612743, 0, -28114594, 1610612743, 0, -28114590, 1610612743, 0, -28114574, 1610612743, 0, -28114570, 1610612743, 0, -28114555, 1610612743, 0, -28114551, 1610612743, 0, -28114537, 1610612743, 0, -28114533, 1610612743, 0, -27721479, 1610612741, 0, -27721475, 1610612741, 0, -27721471, 1610612741, 0, -27721467, 1610612741, 0, -27721463, 1610612741, 0, -27721459, 1610612741, 0, -27262924, -1610612731, 0, -27000780, -1610612731, 0, -26738636, -1610612731, 0, -26541831, 5, 0, -26541827, 5, 0, -26541823, 5, 0, -26541819, 5, 0, -26541815, 5, 0, -26541811, 5, 0, -26476492, -1610612731, 0, -26214348, -1610612731, 0, -25952204, -1610612731, 0, -24313804, -1610612731, 0, -24051660, -1610612731, 0, -23985864, 1610612743, 0, -23985860, 1610612743, 0, -23985842, 1610612743, 0, -23985838, 1610612743, 0, -23789516, -1610612731, 0, -23527372, -1610612731, 0, -23265228, -1610612731, 0, -23003084, -1610612731, 0, -22740940, -1610612731, 0, -22478796, -1610612731, 0, -22216652, -1610612731, 0, -21954508, -1610612731, 0, -21692364, -1610612731, 0, -21560990, 5, 0, -21560986, 5, 0, -21430220, -1610612731, 0, -21429970, 1073741829, 0, -21429966, 1073741829, 0, -21429962, 1073741829, 0, -21429958, 1073741829, 0, -21429954, 1073741829, 0, -21429950, 1073741829, 0, -21429946, 1073741829, 0, -21429942, 1073741829, 0, -21429938, 1073741829, 0, -21429934, 1073741829, 0, -21429930, 1073741829, 0, -21429926, 1073741829, 0, -21429922, 1073741829, 0, -21429918, 1073741829, 0, -21429914, 1073741829, 0, -20315997, 1610612743, 0, -20315993, 1610612743, 0, -20315966, 1610612743, 0, -20315962, 1610612743, 0, -20315935, 1610612743, 0, -20315931, 1610612743, 0, -19725937, -1073741819, 0, -19463793, -1073741819, 0, -19201649, -1073741819, 0, -18939602, 5, 0, -18939598, 5, 0, -18939594, 5, 0, -18939590, 5, 0, -18939586, 5, 0, -18939582, 5, 0, -18939578, 5, 0, -18939574, 5, 0, -18939570, 5, 0, -18939566, 5, 0, -18939562, 5, 0, -18939558, 5, 0, -18939554, 5, 0, -18939550, 5, 0, -18939546, 5, 0, -18939542, 5, 0, -18939505, -1073741819, 0, -14679894, 5, 0, -14679890, 5, 0, -14679886, 5, 0, -14679882, 5, 0, -14679878, 5, 0, -14679874, 5, 0, -14679870, 5, 0, -14679866, 5, 0, -14679862, 5, 0, -14679858, 5, 0, -14679854, 5, 0, -14679850, 5, 0, -14679846, 5, 0, -14679844, 5, 0, -7864060, 1073741831, 0, -7864056, 1073741831, 0, -7864052, 1073741831, 0, -6029128, 5, 0, -6029124, 5, 0, -6029120, 5, 0, -6029116, 5, 0, -6029112, 5, 0, -6029108, 5, 0, -5373912, -1610612731, 0, -5111768, -1610612731, 0, -4915160, -1610612731, 0, -4653016, -1610612731, 0, -4521838, -2147483643, 0, -4456343, -1073741819, 0, -4456302, -2147483643, 0, -4259800, -1610612731, 0, -4259694, -2147483643, 0, -4194199, -2147483643, 0, -4128728, -1610612731, 0, -4063052, 1073741829, 0, -4063048, 1073741829, 0, -4063044, 1073741829, 0, -4063040, 1073741829, 0, -4063036, 1073741829, 0, -4063032, 1073741829, 0, -4063028, 1073741829, 0, -4063024, 1073741829, 0, -3997591, -2147483643, 0, -3866584, -1610612731, 0, -3604440, -1610612731, 0, -3342296, -1610612731, 0, -2490213, 5, 0, -2490209, 5, 0, -2490205, 5, 0, -2490201, 5, 0, -2490197, 5, 0, -2490149, 5, 0, -2490145, 5, 0, -2490141, 5, 0, -2490137, 5, 0, -2490134, 5, 0, 4718640, 5, 0, 4718642, 5, 0, 4718646, 5, 0, 4718650, 5, 0, 4718654, 5, 0, 4718658, 5, 0, 4718660, 5, 0, 4718787, 5, 0, 4718789, 5, 0, 4718793, 5, 0, 4718797, 5, 0, 4718801, 5, 0, 4718805, 5, 0, 4718809, 5, 0, 4718811, 5, 0, 6815749, 4, 0 )
 
-[node name="Player" type="Node2D" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
-position = Vector2( 1076.69, -368.651 )
+position = Vector2( 240, 490 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
@@ -204,460 +195,326 @@ stream = ExtResource( 7 )
 [node name="CheckPoints" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="SpawnPoint" type="Node2D" parent="CheckPoints"]
-position = Vector2( 151.255, 539.598 )
-rotation = 0.0190615
+[node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 180, 534.959 )
 
-[node name="SpawnPoint2" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2539.05, -231.902 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 853.259, 220 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint2"]
-position = Vector2( 0, -2 )
-shape = SubResource( 1 )
+[node name="SpawnPoint3" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 2460, -260 )
 
-[node name="SpawnPoint3" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2975.49, -856.2 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnPoint4" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 670, -350 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint3"]
-shape = SubResource( 2 )
+[node name="SpawnPoint5" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 1270, -610 )
 
-[node name="SpawnPoint4" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2201.49, -2341.93 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnPoint6" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 1020, -780 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint4"]
-shape = SubResource( 3 )
-
-[node name="SpawnPoint5" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2459.84, -2655.78 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint5"]
-shape = SubResource( 4 )
-
-[node name="SpawnPoint6" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 3383.74, -3212.42 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint6"]
-shape = SubResource( 5 )
-
-[node name="SpawnPoint7" type="Area2D" parent="CheckPoints"]
-position = Vector2( 1276.93, -1585.54 )
-scale = Vector2( 1.7482, 2.44352 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint7"]
-shape = SubResource( 6 )
+[node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 1089.45, -1240 )
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
+editor/display_folded = true
 z_index = -1
 
-[node name="spike" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 487.354, 588.151 )
 scale = Vector2( 2.97941, 0.639072 )
-script = ExtResource( 10 )
 
-[node name="spike2" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1675.8, 586.801 )
 scale = Vector2( 3.41515, 0.639072 )
-script = ExtResource( 10 )
 
-[node name="spike3" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 352.278, -511.803 )
 rotation = -1.5708
 scale = Vector2( 4.77121, 0.531949 )
-script = ExtResource( 10 )
 
-[node name="spike8" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike8" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 848.079, -493.962 )
 rotation = -1.5708
 scale = Vector2( 1.63579, 0.639072 )
-script = ExtResource( 10 )
 
-[node name="spike9" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike9" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1169.22, -519.024 )
 rotation = -1.5708
 scale = Vector2( 0.772995, 0.639072 )
-script = ExtResource( 10 )
 
-[node name="spike4" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1318.16, -309.146 )
 scale = Vector2( 2.67121, 0.503204 )
-script = ExtResource( 10 )
 
-[node name="spike5" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike5" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1829.44, -313.586 )
 scale = Vector2( 2.38351, 0.618984 )
-script = ExtResource( 10 )
 
-[node name="spike6" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1565.86, -450 )
 scale = Vector2( 4.3183, 0.639072 )
-script = ExtResource( 10 )
 
-[node name="spike10" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike10" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1567.97, -728.177 )
 scale = Vector2( 3.07714, 0.639072 )
-script = ExtResource( 10 )
 
-[node name="spike_2_1" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_1" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1576, -1785.76 )
 scale = Vector2( 7.25, 0.618293 )
-script = ExtResource( 10 )
 
-[node name="spike_2_2" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_2" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 2672, -2304 )
 scale = Vector2( 8.50001, 1 )
-script = ExtResource( 10 )
 
-[node name="spike_2_4" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_4" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 2656, -2560 )
 scale = Vector2( 7.75, 0.96875 )
-script = ExtResource( 10 )
 
-[node name="spike_2_5" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_5" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 445.14, -2775.03 )
 rotation = 1.5708
 scale = Vector2( 6.45163, 0.484375 )
-script = ExtResource( 10 )
 
-[node name="spike_2_8" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_8" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 2088.9, -3227.88 )
 scale = Vector2( 3.27823, 0.871092 )
-script = ExtResource( 10 )
 
-[node name="spike_2_9" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_9" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 2088, -3360 )
 scale = Vector2( 3.25, 0.967774 )
-script = ExtResource( 10 )
 
-[node name="spike_2_6" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_6" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 442.003, -3238.84 )
 rotation = 1.5708
 scale = Vector2( 2.98984, 0.494537 )
-script = ExtResource( 10 )
 
-[node name="spike_2_3" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_3" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 3188.67, -2344.98 )
 rotation = 1.5708
 scale = Vector2( 1.78077, 0.5 )
-script = ExtResource( 10 )
 
-[node name="spike_2_7" type="Area2D" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike_2_7" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 2864.13, -2622.97 )
 scale = Vector2( 1.04185, 0.5 )
-script = ExtResource( 10 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
 
-[node name="crumbling18" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 1230.36, 31.7924 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling20" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling20" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 989.918, -480.75 )
 scale = Vector2( 0.540934, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling19" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling19" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 485.93, 188.005 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling2" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling2" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 1588.03, -48.078 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling4" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling4" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 1343.39, -717.751 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling5" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling5" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 792.206, -801.634 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling6" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling6" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 385.697, -880 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling21" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling21" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 812.308, -961.145 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling22" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling22" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 385.697, -1040 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling23" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling23" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 809.094, -1120.82 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling24" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling24" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 809.094, -1120.82 )
 scale = Vector2( 0.480058, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling3" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling3" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 2077.21, -123.11 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 930.463, -1884.29 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling7" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling7" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 529.462, -1981.29 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling8" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling8" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 929.463, -2084.29 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling9" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 14 )]
+[node name="crumbling9" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 1680.1, -2179.85 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling10" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling10" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 1196.14, -3041.96 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="crumbling11" type="Area2D" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
+[node name="crumbling11" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 1658.43, -3137.17 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Rocks" type="Node2D" parent="Obstacls"]
 
-[node name="rock1" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock1" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 2130.1, -880 )
-script = ExtResource( 16 )
 
-[node name="rock2" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock2" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 1336.71, -2410.08 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock2" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock2" instance=ExtResource( 14 )]
 position = Vector2( 62.3516, 166.275 )
 scale = Vector2( 19.5128, 6.59353 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock3" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock3" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 1585.38, -2407.35 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock3" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock3" instance=ExtResource( 14 )]
 position = Vector2( -208.183, 162.348 )
 scale = Vector2( 18.9569, 6.47082 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock4" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock4" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 1834.27, -2408.84 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock4" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock4" instance=ExtResource( 14 )]
 position = Vector2( -436.234, 162.943 )
 scale = Vector2( 19.6934, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock5" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock5" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 2526.17, -2861.51 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock5" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock5" instance=ExtResource( 14 )]
 position = Vector2( 348.413, 162.943 )
 scale = Vector2( 17.458, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock6" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock6" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 2704.64, -2860.83 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock6" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock6" instance=ExtResource( 14 )]
 position = Vector2( 181.648, 162.943 )
 scale = Vector2( 17.7718, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock7" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock7" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 2537.13, -3359.52 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock7" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock7" instance=ExtResource( 14 )]
 position = Vector2( 169.217, 162.943 )
 scale = Vector2( 22.9331, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock8" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock8" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 2834.35, -3357.5 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock8" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock8" instance=ExtResource( 14 )]
 position = Vector2( -125.713, 162.943 )
 scale = Vector2( 22.9765, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock9" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock9" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 2994.84, -3355.5 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock9" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock9" instance=ExtResource( 14 )]
 position = Vector2( -287.682, 162.943 )
 scale = Vector2( 22.8146, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock10" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock10" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 3146.23, -3354.5 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock10" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock10" instance=ExtResource( 14 )]
 position = Vector2( -444.627, 162.943 )
 scale = Vector2( 22.7568, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
-[node name="rock11" type="Node2D" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
+[node name="rock11" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 editor/display_folded = true
 position = Vector2( 3288.99, -3356.18 )
-script = ExtResource( 16 )
 
-[node name="Area2D" type="Area2D" parent="Obstacls/Rocks/rock11" instance=ExtResource( 17 )]
+[node name="Area2D" parent="Obstacls/Rocks/rock11" instance=ExtResource( 14 )]
 position = Vector2( -562.403, 162.943 )
 scale = Vector2( 22.0339, 6.48941 )
-script = ExtResource( 18 )
+script = ExtResource( 15 )
 
 [node name="FLOOR" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
 z_index = -10
-texture = ExtResource( 19 )
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Sprite6" type="Sprite" parent="FLOOR"]
+position = Vector2( -683.747, 262 )
+scale = Vector2( 1, -14.3867 )
+z_index = -10
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Sprite7" type="Sprite" parent="FLOOR"]
+position = Vector2( 3856.25, 245.688 )
+scale = Vector2( 1, -17.36 )
+z_index = -10
+texture = ExtResource( 16 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
 position = Vector2( 1123, 0 )
 z_index = -10
-texture = ExtResource( 19 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="FLOOR"]
 position = Vector2( 2236, 7 )
 z_index = -10
-texture = ExtResource( 19 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="Sprite4" type="Sprite" parent="FLOOR"]
 position = Vector2( 3380.99, 6.99994 )
 z_index = -10
-texture = ExtResource( 19 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="Sprite5" type="Sprite" parent="FLOOR"]
-position = Vector2( 4041.13, 6.99994 )
+position = Vector2( 4041.13, 5.99994 )
 z_index = -10
-texture = ExtResource( 19 )
+texture = ExtResource( 16 )
 centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
+position = Vector2( -83.747, -1347.41 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="FLOOR"]
+position = Vector2( 4546.25, -1294.31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D2"]
+shape = SubResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2( -10, -285 )
@@ -672,7 +529,7 @@ motion_scale = Vector2( 0.35, 0.17 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 20 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -683,7 +540,7 @@ motion_scale = Vector2( 0.5, 0.2 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 21 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -693,7 +550,7 @@ motion_scale = Vector2( 0.65, 0.25 )
 motion_mirroring = Vector2( 1023, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 22 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="fgtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -703,52 +560,10 @@ motion_scale = Vector2( 0.8, 0.3 )
 motion_mirroring = Vector2( 1024, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 23 )
+texture = ExtResource( 20 )
 centered = false
 offset = Vector2( 0, -120 )
 
-[connection signal="body_entered" from="CheckPoints/SpawnPoint2" to="CheckPoints/SpawnPoint2" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint3" to="CheckPoints/SpawnPoint3" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint4" to="CheckPoints/SpawnPoint4" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint5" to="CheckPoints/SpawnPoint5" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint6" to="CheckPoints/SpawnPoint6" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint7" to="CheckPoints/SpawnPoint7" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike" to="Obstacls/Spikes/spike" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike2" to="Obstacls/Spikes/spike2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike3" to="Obstacls/Spikes/spike3" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike8" to="Obstacls/Spikes/spike8" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike9" to="Obstacls/Spikes/spike9" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike4" to="Obstacls/Spikes/spike4" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike5" to="Obstacls/Spikes/spike5" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike6" to="Obstacls/Spikes/spike6" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike10" to="Obstacls/Spikes/spike10" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_1" to="Obstacls/Spikes/spike_2_1" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_2" to="Obstacls/Spikes/spike_2_2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_4" to="Obstacls/Spikes/spike_2_4" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_5" to="Obstacls/Spikes/spike_2_5" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_8" to="Obstacls/Spikes/spike_2_8" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_9" to="Obstacls/Spikes/spike_2_9" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_6" to="Obstacls/Spikes/spike_2_6" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_3" to="Obstacls/Spikes/spike_2_3" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/Spikes/spike_2_7" to="Obstacls/Spikes/spike_2_7" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling18" to="Obstacls/crumbles/crumbling18" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling20" to="Obstacls/crumbles/crumbling20" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling19" to="Obstacls/crumbles/crumbling19" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling2" to="Obstacls/crumbles/crumbling2" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling4" to="Obstacls/crumbles/crumbling4" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling5" to="Obstacls/crumbles/crumbling5" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling6" to="Obstacls/crumbles/crumbling6" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling21" to="Obstacls/crumbles/crumbling21" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling22" to="Obstacls/crumbles/crumbling22" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling23" to="Obstacls/crumbles/crumbling23" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling24" to="Obstacls/crumbles/crumbling24" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling3" to="Obstacls/crumbles/crumbling3" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling" to="Obstacls/crumbles/crumbling" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling7" to="Obstacls/crumbles/crumbling7" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling8" to="Obstacls/crumbles/crumbling8" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling9" to="Obstacls/crumbles/crumbling9" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling10" to="Obstacls/crumbles/crumbling10" method="_on_crumbling_body_entered"]
-[connection signal="body_entered" from="Obstacls/crumbles/crumbling11" to="Obstacls/crumbles/crumbling11" method="_on_crumbling_body_entered"]
 [connection signal="body_entered" from="Obstacls/Rocks/rock2/Area2D" to="Obstacls/Rocks/rock2/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Obstacls/Rocks/rock2/Area2D" to="Obstacls/Rocks/rock2/Area2D" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Obstacls/Rocks/rock3/Area2D" to="Obstacls/Rocks/rock3/Area2D" method="_on_Area2D_body_entered"]

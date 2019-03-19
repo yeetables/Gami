@@ -3,7 +3,7 @@ extends Area2D
 var START_CRUMBLING = false
 var blink_frames = 10
 var blink_times = 3
-var wait_frames = 300
+var wait_frames = 200
 var wait = false
 
 func _on_crumbling_body_entered(body):
