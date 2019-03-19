@@ -1,7 +1,7 @@
 extends Node2D
 
 const ROCK_SCENE = "res://Scenes/fallRocks/Rock.tscn"
-var start = false
+var start = true
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
