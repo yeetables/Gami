@@ -8,14 +8,14 @@ var animPlay = false
 var DASH_SPEED = 300
 var mousepos
 
-var jforce = 600
+var jforce = 500
 var yspeed = 0
 const UP = Vector2(0,-1)
 var move_dir = Vector2(0,0)
 
 var timeHeld = 0
 var timeForFullJump = 0.1
-var maxjforce = 600
+var maxjforce = 500
 #
 #const hit_box_offset_flipped = Vector2(50,0)
 #const hit_box_offset_normal = Vector2(0,0)
@@ -34,6 +34,7 @@ var second_dash = false
 var second_count = 0
 var direction = 0
 
+var JUMPING = false
 
 # Function to slow engine time
 func slow_mode(duration = 2.25, strength = 0.99):
@@ -135,11 +136,8 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_pressed("space"):
 			$jumpsound1.play() 
-			timeHeld += delta
-			if timeHeld >= timeForFullJump:
-				yspeed = maxjforce
-		if Input.is_action_just_released("space"):
-			yspeed = ((maxjforce - jforce) * (timeHeld / timeForFullJump) + jforce)
+			yspeed = jforce
+			
 			
 
 	# Dashing code
@@ -162,14 +160,23 @@ func _physics_process(delta):
 			dash = false
 	
 	if not is_on_floor() and dash == false:
+		JUMPING = true
+		
 		if yspeed > 0:
 			yspeed -= 24
 		elif yspeed <= 0:
-			yspeed -= 18
+#			ACC = 200
+			MAX_SPEED = 550
+			yspeed -= 15
 			
 	if count >= 15:
 		dash = false
 		count = 0
+		
+	if is_on_floor() and JUMPING:
+		ACC = 100
+		MAX_SPEED = 530
+		JUMPING = false
 		
 	if is_on_floor():
 		landed = true
@@ -186,8 +193,11 @@ func _physics_process(delta):
 	
 	#print(xspeed, yspeed)
 	velocity.x = 1 * xspeed
-	velocity.y = min(-1 * yspeed, 800)
+	# control falling speed
+	velocity.y = min(-1 * yspeed, 2000)
+		
 	#print(velocity)
+#	print(MAX_SPEED)
 	move_and_slide(velocity, UP)
 	
 #	if $Basic.is_flipped_h():
