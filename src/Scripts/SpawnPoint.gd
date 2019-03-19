@@ -15,8 +15,10 @@ func _ready():
 #	pass
 
 
-func _on_SpawnPoint3_body_entered(body):
+
+func _on_CheckPoint_body_entered(body):
 	if body.is_in_group('player'):
 		print(get_path(), "new point")
 		
 		Global.change_checkPoint(get_path())
+
