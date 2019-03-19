@@ -23,14 +23,14 @@ func _physics_process(delta):
 		count = 0
 		die = false
 		Global.respawn_player()
-		get_node("/root/World/Camera/Camera2D").current = false
-		get_node("/root/World/Player/Body/Camera2D").current = true
+		#get_node("/root/World/Camera/Camera2D").current = false
+		#get_node("/root/World/Player/Body/Camera2D").current = true
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("player"):
 		print("yooo player should die now")
 		die = true
-		get_node("/root/World/sound/scream").play()
-		get_node("/root/World/Camera/Camera2D").current = true
-		get_node("/root/World/Player/Body/Camera2D").current = false
+		get_node("/root/World/Music/sound/scream").play()
+		#get_node("/root/World/Camera/Camera2D").current = true
+		#get_node("/root/World/Player/Body/Camera2D").current = false
 		

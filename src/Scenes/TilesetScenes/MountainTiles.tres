@@ -1,0 +1,553 @@
+[gd_resource type="TileSet" load_steps=10 format=2]
+
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-solo-float smoll.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-2-FLOAT smoll.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-1 smoll.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-dirt smoll.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[resource]
+
+0/name = "mountain-solo-float smoll"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/is_autotile = false
+0/occluder_offset = Vector2( 32, 32 )
+0/navigation_offset = Vector2( 32, 32 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+1/name = "mountain-solo-float smoll2"
+1/texture = ExtResource( 1 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/is_autotile = false
+1/occluder_offset = Vector2( 32, 32 )
+1/navigation_offset = Vector2( 32, 32 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+2/name = "mountain-2-FLOAT smoll"
+2/texture = ExtResource( 2 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/is_autotile = false
+2/occluder_offset = Vector2( 32, 32 )
+2/navigation_offset = Vector2( 32, 32 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+3/name = "mountain-2-FLOAT smoll13"
+3/texture = ExtResource( 2 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/is_autotile = false
+3/occluder_offset = Vector2( 32, 32 )
+3/navigation_offset = Vector2( 32, 32 )
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+4/name = "mountain-2-FLOAT smoll6"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 320, 64 )
+4/is_autotile = false
+4/occluder_offset = Vector2( 160, 32 )
+4/navigation_offset = Vector2( 160, 32 )
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 160, 32 )
+} ]
+5/name = "mountain-2-FLOAT smoll2"
+5/texture = ExtResource( 2 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 64, 0, 64, 64 )
+5/is_autotile = false
+5/occluder_offset = Vector2( 32, 32 )
+5/navigation_offset = Vector2( 32, 32 )
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+6/name = "mountain-2-FLOAT smoll12"
+6/texture = ExtResource( 2 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 64, 0, 64, 64 )
+6/is_autotile = false
+6/occluder_offset = Vector2( 32, 32 )
+6/navigation_offset = Vector2( 32, 32 )
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+7/name = "mountain-2-FLOAT smoll3"
+7/texture = ExtResource( 2 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 128, 0, 64, 64 )
+7/is_autotile = false
+7/occluder_offset = Vector2( 32, 32 )
+7/navigation_offset = Vector2( 32, 32 )
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+8/name = "mountain-2-FLOAT smoll8"
+8/texture = ExtResource( 2 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 128, 0, 128, 64 )
+8/is_autotile = false
+8/occluder_offset = Vector2( 64, 32 )
+8/navigation_offset = Vector2( 64, 32 )
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 64, 32 )
+} ]
+9/name = "mountain-2-FLOAT smoll9"
+9/texture = ExtResource( 2 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 128, 0, 128, 64 )
+9/is_autotile = false
+9/occluder_offset = Vector2( 64, 32 )
+9/navigation_offset = Vector2( 64, 32 )
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 64, 32 )
+} ]
+10/name = "mountain-2-FLOAT smoll10"
+10/texture = ExtResource( 2 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 128, 0, 128, 64 )
+10/is_autotile = false
+10/occluder_offset = Vector2( 64, 32 )
+10/navigation_offset = Vector2( 64, 32 )
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 64, 32 )
+} ]
+11/name = "mountain-2-FLOAT smoll4"
+11/texture = ExtResource( 2 )
+11/tex_offset = Vector2( 0, 0 )
+11/modulate = Color( 1, 1, 1, 1 )
+11/region = Rect2( 192, 0, 64, 64 )
+11/is_autotile = false
+11/occluder_offset = Vector2( 32, 32 )
+11/navigation_offset = Vector2( 32, 32 )
+11/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+12/name = "mountain-2-FLOAT smoll5"
+12/texture = ExtResource( 2 )
+12/tex_offset = Vector2( 0, 0 )
+12/modulate = Color( 1, 1, 1, 1 )
+12/region = Rect2( 256, 0, 64, 64 )
+12/is_autotile = false
+12/occluder_offset = Vector2( 32, 32 )
+12/navigation_offset = Vector2( 32, 32 )
+12/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+13/name = "mountain-2-FLOAT smoll11"
+13/texture = ExtResource( 2 )
+13/tex_offset = Vector2( 0, 0 )
+13/modulate = Color( 1, 1, 1, 1 )
+13/region = Rect2( 256, 0, 64, 64 )
+13/is_autotile = false
+13/occluder_offset = Vector2( 32, 32 )
+13/navigation_offset = Vector2( 32, 32 )
+13/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+14/name = "mountain-1 smoll"
+14/texture = ExtResource( 3 )
+14/tex_offset = Vector2( 0, 0 )
+14/modulate = Color( 1, 1, 1, 1 )
+14/region = Rect2( 0, 0, 320, 64 )
+14/is_autotile = false
+14/occluder_offset = Vector2( 160, 32 )
+14/navigation_offset = Vector2( 160, 32 )
+14/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 160, 32 )
+} ]
+15/name = "mountain-1 smoll13"
+15/texture = ExtResource( 3 )
+15/tex_offset = Vector2( 0, 0 )
+15/modulate = Color( 1, 1, 1, 1 )
+15/region = Rect2( 0, 0, 320, 64 )
+15/is_autotile = false
+15/occluder_offset = Vector2( 160, 32 )
+15/navigation_offset = Vector2( 160, 32 )
+15/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 160, 32 )
+} ]
+16/name = "mountain-1 smoll2"
+16/texture = ExtResource( 3 )
+16/tex_offset = Vector2( 0, 0 )
+16/modulate = Color( 1, 1, 1, 1 )
+16/region = Rect2( 0, 0, 64, 64 )
+16/is_autotile = false
+16/occluder_offset = Vector2( 32, 32 )
+16/navigation_offset = Vector2( 32, 32 )
+16/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+17/name = "mountain-1 smoll11"
+17/texture = ExtResource( 3 )
+17/tex_offset = Vector2( 0, 0 )
+17/modulate = Color( 1, 1, 1, 1 )
+17/region = Rect2( 0, 0, 64, 64 )
+17/is_autotile = false
+17/occluder_offset = Vector2( 32, 32 )
+17/navigation_offset = Vector2( 32, 32 )
+17/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+18/name = "mountain-1 smoll3"
+18/texture = ExtResource( 3 )
+18/tex_offset = Vector2( 0, 0 )
+18/modulate = Color( 1, 1, 1, 1 )
+18/region = Rect2( 64, 0, 64, 64 )
+18/is_autotile = false
+18/occluder_offset = Vector2( 32, 32 )
+18/navigation_offset = Vector2( 32, 32 )
+18/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+19/name = "mountain-1 smoll10"
+19/texture = ExtResource( 3 )
+19/tex_offset = Vector2( 0, 0 )
+19/modulate = Color( 1, 1, 1, 1 )
+19/region = Rect2( 64, 0, 64, 64 )
+19/is_autotile = false
+19/occluder_offset = Vector2( 32, 32 )
+19/navigation_offset = Vector2( 32, 32 )
+19/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+20/name = "mountain-1 smoll4"
+20/texture = ExtResource( 3 )
+20/tex_offset = Vector2( 0, 0 )
+20/modulate = Color( 1, 1, 1, 1 )
+20/region = Rect2( 128, 0, 64, 64 )
+20/is_autotile = false
+20/occluder_offset = Vector2( 32, 32 )
+20/navigation_offset = Vector2( 32, 32 )
+20/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+21/name = "mountain-1 smoll7"
+21/texture = ExtResource( 3 )
+21/tex_offset = Vector2( 0, 0 )
+21/modulate = Color( 1, 1, 1, 1 )
+21/region = Rect2( 128, 0, 128, 64 )
+21/is_autotile = false
+21/occluder_offset = Vector2( 64, 32 )
+21/navigation_offset = Vector2( 64, 32 )
+21/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 64, 32 )
+} ]
+22/name = "mountain-1 smoll8"
+22/texture = ExtResource( 3 )
+22/tex_offset = Vector2( 0, 0 )
+22/modulate = Color( 1, 1, 1, 1 )
+22/region = Rect2( 128, 0, 128, 64 )
+22/is_autotile = false
+22/occluder_offset = Vector2( 64, 32 )
+22/navigation_offset = Vector2( 64, 32 )
+22/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 64, 32 )
+} ]
+23/name = "mountain-1 smoll9"
+23/texture = ExtResource( 3 )
+23/tex_offset = Vector2( 0, 0 )
+23/modulate = Color( 1, 1, 1, 1 )
+23/region = Rect2( 128, 0, 128, 64 )
+23/is_autotile = false
+23/occluder_offset = Vector2( 64, 32 )
+23/navigation_offset = Vector2( 64, 32 )
+23/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 64, 32 )
+} ]
+24/name = "mountain-1 smoll5"
+24/texture = ExtResource( 3 )
+24/tex_offset = Vector2( 0, 0 )
+24/modulate = Color( 1, 1, 1, 1 )
+24/region = Rect2( 192, 0, 64, 64 )
+24/is_autotile = false
+24/occluder_offset = Vector2( 32, 32 )
+24/navigation_offset = Vector2( 32, 32 )
+24/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+25/name = "mountain-1 smoll6"
+25/texture = ExtResource( 3 )
+25/tex_offset = Vector2( 0, 0 )
+25/modulate = Color( 1, 1, 1, 1 )
+25/region = Rect2( 256, 0, 64, 64 )
+25/is_autotile = false
+25/occluder_offset = Vector2( 32, 32 )
+25/navigation_offset = Vector2( 32, 32 )
+25/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+26/name = "mountain-1 smoll12"
+26/texture = ExtResource( 3 )
+26/tex_offset = Vector2( 0, 0 )
+26/modulate = Color( 1, 1, 1, 1 )
+26/region = Rect2( 256, 0, 64, 64 )
+26/is_autotile = false
+26/occluder_offset = Vector2( 32, 32 )
+26/navigation_offset = Vector2( 32, 32 )
+26/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+27/name = "mountain-dirt smoll"
+27/texture = ExtResource( 4 )
+27/tex_offset = Vector2( 0, 0 )
+27/modulate = Color( 1, 1, 1, 1 )
+27/region = Rect2( 0, 0, 320, 64 )
+27/is_autotile = false
+27/occluder_offset = Vector2( 160, 32 )
+27/navigation_offset = Vector2( 160, 32 )
+27/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 160, 32 )
+} ]
+28/name = "mountain-dirt smoll9"
+28/texture = ExtResource( 4 )
+28/tex_offset = Vector2( 0, 0 )
+28/modulate = Color( 1, 1, 1, 1 )
+28/region = Rect2( 0, 0, 320, 64 )
+28/is_autotile = false
+28/occluder_offset = Vector2( 160, 32 )
+28/navigation_offset = Vector2( 160, 32 )
+28/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 160, 32 )
+} ]
+29/name = "mountain-dirt smoll10"
+29/texture = ExtResource( 4 )
+29/tex_offset = Vector2( 0, 0 )
+29/modulate = Color( 1, 1, 1, 1 )
+29/region = Rect2( 0, 0, 320, 64 )
+29/is_autotile = false
+29/occluder_offset = Vector2( 160, 32 )
+29/navigation_offset = Vector2( 160, 32 )
+29/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 160, 32 )
+} ]
+30/name = "mountain-dirt smoll2"
+30/texture = ExtResource( 4 )
+30/tex_offset = Vector2( 0, 0 )
+30/modulate = Color( 1, 1, 1, 1 )
+30/region = Rect2( 0, 0, 64, 64 )
+30/is_autotile = false
+30/occluder_offset = Vector2( 32, 32 )
+30/navigation_offset = Vector2( 32, 32 )
+30/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+31/name = "mountain-dirt smoll3"
+31/texture = ExtResource( 4 )
+31/tex_offset = Vector2( 0, 0 )
+31/modulate = Color( 1, 1, 1, 1 )
+31/region = Rect2( 64, 0, 64, 64 )
+31/is_autotile = false
+31/occluder_offset = Vector2( 32, 32 )
+31/navigation_offset = Vector2( 32, 32 )
+31/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+32/name = "mountain-dirt smoll7"
+32/texture = ExtResource( 4 )
+32/tex_offset = Vector2( 0, 0 )
+32/modulate = Color( 1, 1, 1, 1 )
+32/region = Rect2( 64, 0, 192, 64 )
+32/is_autotile = false
+32/occluder_offset = Vector2( 96, 32 )
+32/navigation_offset = Vector2( 96, 32 )
+32/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 96, 32 )
+} ]
+33/name = "mountain-dirt smoll8"
+33/texture = ExtResource( 4 )
+33/tex_offset = Vector2( 0, 0 )
+33/modulate = Color( 1, 1, 1, 1 )
+33/region = Rect2( 64, 0, 192, 64 )
+33/is_autotile = false
+33/occluder_offset = Vector2( 96, 32 )
+33/navigation_offset = Vector2( 96, 32 )
+33/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 96, 32 )
+} ]
+34/name = "mountain-dirt smoll4"
+34/texture = ExtResource( 4 )
+34/tex_offset = Vector2( 0, 0 )
+34/modulate = Color( 1, 1, 1, 1 )
+34/region = Rect2( 128, 0, 64, 64 )
+34/is_autotile = false
+34/occluder_offset = Vector2( 32, 32 )
+34/navigation_offset = Vector2( 32, 32 )
+34/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+35/name = "mountain-dirt smoll5"
+35/texture = ExtResource( 4 )
+35/tex_offset = Vector2( 0, 0 )
+35/modulate = Color( 1, 1, 1, 1 )
+35/region = Rect2( 192, 0, 64, 64 )
+35/is_autotile = false
+35/occluder_offset = Vector2( 32, 32 )
+35/navigation_offset = Vector2( 32, 32 )
+35/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+36/name = "mountain-dirt smoll6"
+36/texture = ExtResource( 4 )
+36/tex_offset = Vector2( 0, 0 )
+36/modulate = Color( 1, 1, 1, 1 )
+36/region = Rect2( 256, 0, 64, 64 )
+36/is_autotile = false
+36/occluder_offset = Vector2( 32, 32 )
+36/navigation_offset = Vector2( 32, 32 )
+36/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 3.2, 0, 0, 3.2, 32, 32 )
+} ]
+

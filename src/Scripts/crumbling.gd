@@ -8,8 +8,10 @@ var wait = false
 
 func _on_crumbling_body_entered(body):
 	if body.is_in_group("player") and not START_CRUMBLING:
+		print('here')
 		START_CRUMBLING = true
 		count += 5
+		get_node("/root/World/Music/sound/rock2").play()
 		
 var count = 0
 func _physics_process(delta):

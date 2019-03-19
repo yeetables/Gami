@@ -7,7 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 9.03735, 7.35089 )
+extents = Vector2( 5.42885, 6.08079 )
 
 [sub_resource type="Animation" id=2]
 
@@ -30,11 +30,8 @@ tracks/0/keys = {
 
 [node name="Player" type="Node2D"]
 
-position = Vector2( 0.975342, 0 )
+position = Vector2( 9.26584, 0.487671 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Body" type="KinematicBody2D" parent="." index="0" groups=[
 "player",
@@ -49,18 +46,19 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="0"]
 
-position = Vector2( -32.1792, 8.29047 )
 scale = Vector2( 7.97159, 3.06611 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Basic" type="Sprite" parent="Body" index="1"]
 
+position = Vector2( 0, -9 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 5
-_sections_unfolded = [ "Animation", "Region", "Transform" ]
+frame = 4
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body" index="2"]
 
@@ -72,32 +70,7 @@ playback_speed = 1.0
 anims/FoxRun = SubResource( 2 )
 blend_times = [  ]
 
-[node name="Camera2D" type="Camera2D" parent="Body" index="3"]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit_left = -10000000
-limit_top = -10000000
-limit_right = 10000000
-limit_bottom = 10000000
-limit_smoothed = false
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = false
-smoothing_speed = 5.0
-offset_v = 0.0
-offset_h = 0.0
-drag_margin_left = 0.2
-drag_margin_top = 0.2
-drag_margin_right = 0.2
-drag_margin_bottom = 0.2
-editor_draw_screen = true
-editor_draw_limits = false
-editor_draw_drag_margin = false
-
-[node name="jumpsound1" type="AudioStreamPlayer" parent="Body" index="4"]
+[node name="jumpsound1" type="AudioStreamPlayer" parent="Body" index="3"]
 
 stream = ExtResource( 3 )
 volume_db = -8.0
