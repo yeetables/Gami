@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/danger.tres" type="TileSet" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=7]
-[ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=11]
@@ -22,16 +22,10 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-4.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 560, 1636.9 )
 
 [sub_resource type="RectangleShape2D" id=2]
-
-[sub_resource type="RectangleShape2D" id=3]
-
-[sub_resource type="RectangleShape2D" id=4]
-
-[sub_resource type="RectangleShape2D" id=5]
-
-[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 680, 1550 )
 
 [node name="World" type="Node2D"]
 
@@ -201,80 +195,32 @@ stream = ExtResource( 7 )
 [node name="CheckPoints" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="SpawnPoint" type="Node2D" parent="CheckPoints"]
-position = Vector2( 151.255, 539.598 )
-rotation = 0.0190615
+[node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 180, 534.959 )
 
-[node name="SpawnPoint2" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2539.05, -231.902 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 853.259, 220 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint2"]
-position = Vector2( 0, -2 )
-shape = SubResource( 1 )
+[node name="SpawnPoint3" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 2460, -260 )
 
-[node name="SpawnPoint3" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2975.49, -856.2 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnPoint4" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 670, -350 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint3"]
-shape = SubResource( 2 )
+[node name="SpawnPoint5" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 1270, -610 )
 
-[node name="SpawnPoint4" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2201.49, -2341.93 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="SpawnPoint6" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 1020, -780 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint4"]
-shape = SubResource( 3 )
-
-[node name="SpawnPoint5" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 2459.84, -2655.78 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint5"]
-shape = SubResource( 4 )
-
-[node name="SpawnPoint6" type="Area2D" parent="CheckPoints"]
-editor/display_folded = true
-position = Vector2( 3383.74, -3212.42 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint6"]
-shape = SubResource( 5 )
-
-[node name="SpawnPoint7" type="Area2D" parent="CheckPoints"]
-position = Vector2( 1276.93, -1585.54 )
-scale = Vector2( 1.7482, 2.44352 )
-script = ExtResource( 8 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/SpawnPoint7"]
-shape = SubResource( 6 )
+[node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 8 )]
+position = Vector2( 1089.45, -1240 )
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
+editor/display_folded = true
 z_index = -1
 
 [node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
@@ -520,6 +466,20 @@ z_index = -10
 texture = ExtResource( 16 )
 centered = false
 
+[node name="Sprite6" type="Sprite" parent="FLOOR"]
+position = Vector2( -683.747, 262 )
+scale = Vector2( 1, -14.3867 )
+z_index = -10
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Sprite7" type="Sprite" parent="FLOOR"]
+position = Vector2( 3856.25, 245.688 )
+scale = Vector2( 1, -17.36 )
+z_index = -10
+texture = ExtResource( 16 )
+centered = false
+
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
 position = Vector2( 1123, 0 )
 z_index = -10
@@ -539,13 +499,24 @@ texture = ExtResource( 16 )
 centered = false
 
 [node name="Sprite5" type="Sprite" parent="FLOOR"]
-position = Vector2( 4041.13, 6.99994 )
+position = Vector2( 4041.13, 5.99994 )
 z_index = -10
 texture = ExtResource( 16 )
 centered = false
 
+[node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
+position = Vector2( -83.747, -1347.41 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="FLOOR"]
+position = Vector2( 4546.25, -1294.31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D2"]
+shape = SubResource( 2 )
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 offset = Vector2( -10, -285 )
 scale = Vector2( 1.5, 1.5 )
 transform = Transform2D( 1.5, 0, 0, 1.5, -10, -285 )
@@ -593,12 +564,6 @@ texture = ExtResource( 20 )
 centered = false
 offset = Vector2( 0, -120 )
 
-[connection signal="body_entered" from="CheckPoints/SpawnPoint2" to="CheckPoints/SpawnPoint2" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint3" to="CheckPoints/SpawnPoint3" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint4" to="CheckPoints/SpawnPoint4" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint5" to="CheckPoints/SpawnPoint5" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint6" to="CheckPoints/SpawnPoint6" method="_on_SpawnPoint3_body_entered"]
-[connection signal="body_entered" from="CheckPoints/SpawnPoint7" to="CheckPoints/SpawnPoint7" method="_on_SpawnPoint3_body_entered"]
 [connection signal="body_entered" from="Obstacls/Rocks/rock2/Area2D" to="Obstacls/Rocks/rock2/Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Obstacls/Rocks/rock2/Area2D" to="Obstacls/Rocks/rock2/Area2D" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Obstacls/Rocks/rock3/Area2D" to="Obstacls/Rocks/rock3/Area2D" method="_on_Area2D_body_entered"]
