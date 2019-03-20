@@ -1,17 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sounds/Effects/jump11.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.94987, 10.5008 )
 
-custom_solver_bias = 0.0
-extents = Vector2( 5.42885, 6.08079 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.39736, 6.56083 )
 
-[sub_resource type="Animation" id=2]
-
-resource_name = "FoxRun"
+[sub_resource type="Animation" id=3]
 length = 0.85
 loop = true
 step = 0.05
@@ -29,56 +28,36 @@ tracks/0/keys = {
 }
 
 [node name="Player" type="Node2D"]
-
 position = Vector2( 9.26584, 0.487671 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Body" type="KinematicBody2D" parent="." index="0" groups=[
+[node name="Body" type="KinematicBody2D" parent="." groups=[
 "player",
 ]]
-
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Body" index="0"]
-
-scale = Vector2( 7.97159, 3.06611 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Basic" type="Sprite" parent="Body" index="1"]
-
+[node name="Basic" type="Sprite" parent="Body"]
 position = Vector2( 0, -9 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 5
 frame = 4
-_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility", "Z Index" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Body" index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2( -4.84282, 2.32453 )
+scale = Vector2( 3.87247, 1.81915 )
+shape = SubResource( 1 )
 
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/FoxRun = SubResource( 2 )
-blend_times = [  ]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body"]
+position = Vector2( 32.9309, -7.36102 )
+scale = Vector2( 3.87247, 1.81915 )
+shape = SubResource( 2 )
 
-[node name="jumpsound1" type="AudioStreamPlayer" parent="Body" index="3"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
+anims/FoxRun = SubResource( 3 )
 
+[node name="jumpsound1" type="AudioStreamPlayer" parent="Body"]
 stream = ExtResource( 3 )
 volume_db = -8.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
 
 [connection signal="animation_finished" from="Body/AnimationPlayer" to="Body" method="_on_AnimationPlayer_animation_finished"]
-
-

@@ -16,10 +16,10 @@
 [ext_resource path="res://Scenes/Area2DBasic.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scripts/RockArea.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-3.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-4.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -302,6 +302,7 @@ position = Vector2( 2864.13, -2622.97 )
 scale = Vector2( 1.04185, 0.5 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
+editor/display_folded = true
 
 [node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
 position = Vector2( 1230.36, 31.7924 )
@@ -366,6 +367,7 @@ position = Vector2( 1196.14, -3041.96 )
 position = Vector2( 1658.43, -3137.17 )
 
 [node name="Rocks" type="Node2D" parent="Obstacls"]
+editor/display_folded = true
 
 [node name="rock1" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 2130.1, -880 )
@@ -459,6 +461,7 @@ scale = Vector2( 22.0339, 6.48941 )
 script = ExtResource( 15 )
 
 [node name="FLOOR" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
@@ -517,27 +520,26 @@ position = Vector2( 4546.25, -1294.31 )
 shape = SubResource( 2 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2( -10, -285 )
-scale = Vector2( 1.5, 1.5 )
-transform = Transform2D( 1.5, 0, 0, 1.5, -10, -285 )
-scroll_base_scale = Vector2( 0.25, 0.25 )
+editor/display_folded = true
+layer = -15
+offset = Vector2( 0, -100 )
+transform = Transform2D( 1, 0, 0, 1, 0, -100 )
 
 [node name="backmost" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 0, -500 )
 z_index = -15
-motion_scale = Vector2( 0.35, 0.17 )
-motion_mirroring = Vector2( 1024, 0 )
+motion_scale = Vector2( 0.35, 0.05 )
+motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
 texture = ExtResource( 17 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
-editor/display_folded = true
-position = Vector2( 0, -230 )
+position = Vector2( 0, -400 )
 z_index = -15
-motion_scale = Vector2( 0.5, 0.2 )
-motion_mirroring = Vector2( 1024, 0 )
+motion_scale = Vector2( 0.5, 0.1 )
+motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
 texture = ExtResource( 18 )
@@ -546,18 +548,18 @@ centered = false
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2( 0, -300 )
 z_index = -15
-motion_scale = Vector2( 0.65, 0.25 )
-motion_mirroring = Vector2( 1023, 0 )
+motion_scale = Vector2( 0.65, 0.15 )
+motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
 texture = ExtResource( 19 )
 centered = false
 
 [node name="fgtree" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -200 )
+position = Vector2( 0, -190 )
 z_index = -15
-motion_scale = Vector2( 0.8, 0.3 )
-motion_mirroring = Vector2( 1024, 0 )
+motion_scale = Vector2( 0.8, 0.2 )
+motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
 texture = ExtResource( 20 )
