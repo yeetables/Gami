@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
@@ -7,10 +7,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.94987, 10.5008 )
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4.39736, 6.56083 )
-
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 0.85
 loop = true
 step = 0.05
@@ -48,13 +45,8 @@ position = Vector2( -4.84282, 2.32453 )
 scale = Vector2( 3.87247, 1.81915 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body"]
-position = Vector2( 32.9309, -7.36102 )
-scale = Vector2( 3.87247, 1.81915 )
-shape = SubResource( 2 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
-anims/FoxRun = SubResource( 3 )
+anims/FoxRun = SubResource( 2 )
 
 [node name="jumpsound1" type="AudioStreamPlayer" parent="Body"]
 stream = ExtResource( 3 )
