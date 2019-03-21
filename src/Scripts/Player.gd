@@ -134,7 +134,7 @@ func _physics_process(delta):
 		#$jumpsound1.play() 
 		
 	if is_on_floor():
-		if Input.is_action_pressed("space"):
+		if Input.is_action_just_pressed("space"):
 			$jumpsound1.play() 
 			yspeed = jforce
 			
