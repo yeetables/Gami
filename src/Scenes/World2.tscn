@@ -1,14 +1,14 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=5]
-[ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=6]
-[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/TilesetScenes/spikes.tres" type="TileSet" id=9]
+[ext_resource path="res://Scenes/TilesetScenes/spikes.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=12]
@@ -49,14 +49,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="spikes" type="TileMap" parent="Tilemaps"]
+z_index = -20
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -3211172, 3, 0, -3211168, 536870912, 0, -3211164, 536870913, 0, -2752491, -536870909, 0, -2555883, -536870909, 0, -2490347, -536870912, 0, -2359274, -536870910, 0, -2293690, -1073741821, 0, -2228172, -2147483645, 0, -2031594, -1610612736, 0, -2031566, -1073741823, 0, -1900522, -536870912, 0, -1900454, 1073741825, 0, -1900449, 1073741825, 0, -1900444, 1073741825, 0, -1507251, 2, 0, -1507249, 2, 0, -1441712, 0, 0, -1441683, 3, 0, -1441682, 0, 0, -1441676, 3, 0, 2097179, 2, 0, 2097183, 2, 0, 2097255, 2, 0, 2162713, 1, 0, 2162718, 1, 0, 2162786, 3, 0, 2162789, 3, 0, 2162792, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
 pause_mode = 2
 position = Vector2( 240, 490 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
 position = Vector2( 64, 500 )
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
 position = Vector2( 16, 0 )
@@ -159,38 +166,38 @@ editor/display_folded = true
 [node name="sound" type="Node2D" parent="Music"]
 
 [node name="bg" type="AudioStreamPlayer" parent="Music/sound"]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -30.48
 autoplay = true
 
 [node name="scream" type="AudioStreamPlayer2D" parent="Music/sound"]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 
 [node name="rock2" type="AudioStreamPlayer" parent="Music/sound"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 180, 534.959 )
 
-[node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 853.259, 220 )
 
-[node name="SpawnPoint3" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint3" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 2460, -260 )
 
-[node name="SpawnPoint4" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint4" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 670, -350 )
 
-[node name="SpawnPoint5" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint5" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 1270, -610 )
 
-[node name="SpawnPoint6" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint6" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 1020, -780 )
 
-[node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 7 )]
+[node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 1089.45, -1240 )
 
 [node name="Obstacls" type="Node2D" parent="."]
@@ -198,50 +205,44 @@ position = Vector2( 1089.45, -1240 )
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 z_index = -1
 
-[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 487.354, 588.151 )
 scale = Vector2( 2.97941, 0.639072 )
 
-[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1675.8, 586.801 )
 scale = Vector2( 3.41515, 0.639072 )
 
-[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 372.255, -520 )
 rotation = -1.5708
 scale = Vector2( 4.77121, 0.531949 )
 
-[node name="spike8" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike8" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 848.079, -493.962 )
 rotation = -1.5708
 scale = Vector2( 1.63579, 0.639072 )
 
-[node name="spike9" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike9" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1169.22, -519.024 )
 rotation = -1.5708
 scale = Vector2( 0.772995, 0.639072 )
 
-[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1318.16, -309.146 )
 scale = Vector2( 2.67121, 0.503204 )
 
-[node name="spike5" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike5" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1829.44, -313.586 )
 scale = Vector2( 2.38351, 0.618984 )
 
-[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1565.86, -450 )
 scale = Vector2( 4.3183, 0.639072 )
 
-[node name="spike10" parent="Obstacls/Spikes" instance=ExtResource( 8 )]
+[node name="spike10" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
 position = Vector2( 1567.97, -728.177 )
 scale = Vector2( 3.07714, 0.639072 )
-
-[node name="TileMap" type="TileMap" parent="Obstacls/Spikes"]
-tile_set = ExtResource( 9 )
-cell_size = Vector2( 16, 16 )
-format = 1
-tile_data = PoolIntArray( -3211172, 3, 0, -3211168, 536870912, 0, -3211164, 536870913, 0, -2752491, -536870909, 0, -2555883, -536870909, 0, -2490347, -536870912, 0, -2359274, -536870910, 0, -2293690, -1073741821, 0, -2228172, -2147483645, 0, -2031594, -1610612736, 0, -2031566, -1073741823, 0, -1900522, -536870912, 0, -1900454, 1073741825, 0, -1900449, 1073741825, 0, -1900444, 1073741825, 0, -1507251, 2, 0, -1507249, 2, 0, -1441712, 0, 0, -1441683, 3, 0, -1441682, 0, 0, -1441676, 3, 0, 2097179, 2, 0, 2097183, 2, 0, 2097255, 2, 0, 2162713, 1, 0, 2162718, 1, 0, 2162786, 3, 0, 2162789, 3, 0, 2162792, 0, 0 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
