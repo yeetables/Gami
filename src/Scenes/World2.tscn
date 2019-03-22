@@ -30,7 +30,6 @@ extents = Vector2( 680, 1550 )
 [node name="World" type="Node2D"]
 
 [node name="Tilemaps" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="plat" type="TileMap" parent="Tilemaps"]
 scale = Vector2( 0.5, 0.5 )
