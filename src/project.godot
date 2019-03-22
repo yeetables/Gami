@@ -72,5 +72,4 @@ ui_m={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 environment/default_clear_color=Color( 0.105882, 0.0941176, 0.152941, 1 )

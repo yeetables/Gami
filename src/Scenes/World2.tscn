@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/spikes.tres" type="TileSet" id=2]
@@ -8,15 +8,16 @@
 [ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/EndPoint.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -27,6 +28,7 @@ extents = Vector2( 680, 1550 )
 [node name="World" type="Node2D"]
 
 [node name="Tilemaps" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="plat" type="TileMap" parent="Tilemaps"]
 scale = Vector2( 0.5, 0.5 )
@@ -62,6 +64,7 @@ position = Vector2( 240, 490 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 64, 500 )
 script = ExtResource( 4 )
 
@@ -177,7 +180,6 @@ stream = ExtResource( 6 )
 stream = ExtResource( 7 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 180, 534.959 )
@@ -200,101 +202,105 @@ position = Vector2( 1020, -780 )
 [node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 1089.45, -1240 )
 
+[node name="Area2D" parent="CheckPoints" instance=ExtResource( 9 )]
+position = Vector2( 1292.36, -1310 )
+
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 z_index = -1
 
-[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 487.354, 588.151 )
 scale = Vector2( 2.97941, 0.639072 )
 
-[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1675.8, 586.801 )
 scale = Vector2( 3.41515, 0.639072 )
 
-[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 372.255, -520 )
 rotation = -1.5708
 scale = Vector2( 4.77121, 0.531949 )
 
-[node name="spike8" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike8" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 848.079, -493.962 )
 rotation = -1.5708
 scale = Vector2( 1.63579, 0.639072 )
 
-[node name="spike9" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike9" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1169.22, -519.024 )
 rotation = -1.5708
 scale = Vector2( 0.772995, 0.639072 )
 
-[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1318.16, -309.146 )
 scale = Vector2( 2.67121, 0.503204 )
 
-[node name="spike5" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike5" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1829.44, -313.586 )
 scale = Vector2( 2.38351, 0.618984 )
 
-[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1565.86, -450 )
 scale = Vector2( 4.3183, 0.639072 )
 
-[node name="spike10" parent="Obstacls/Spikes" instance=ExtResource( 9 )]
+[node name="spike10" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
 position = Vector2( 1567.97, -728.177 )
 scale = Vector2( 3.07714, 0.639072 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
 
-[node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
+[node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 1230.36, 31.7924 )
 
-[node name="crumbling20" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
+[node name="crumbling20" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 989.918, -480.75 )
 scale = Vector2( 0.540934, 0.5 )
 
-[node name="crumbling19" parent="Obstacls/crumbles" instance=ExtResource( 10 )]
+[node name="crumbling19" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
 position = Vector2( 485.93, 188.005 )
 
-[node name="crumbling2" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling2" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 1588.03, -48.078 )
 
-[node name="crumbling4" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling4" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 1343.39, -717.751 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling5" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling5" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 792.206, -801.634 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling6" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling6" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 385.697, -880 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling21" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling21" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 812.308, -961.145 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling22" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling22" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 385.697, -1040 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling23" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling23" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 809.094, -1120.82 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling24" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling24" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 809.094, -1120.82 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling3" parent="Obstacls/crumbles" instance=ExtResource( 11 )]
+[node name="crumbling3" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 2077.21, -123.11 )
 
 [node name="Rocks" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
 
-[node name="rock1" parent="Obstacls/Rocks" instance=ExtResource( 12 )]
+[node name="rock1" parent="Obstacls/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 2130.1, -880 )
 
 [node name="FLOOR" type="Node2D" parent="."]
@@ -303,45 +309,45 @@ position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite6" type="Sprite" parent="FLOOR"]
 position = Vector2( -683.747, 262 )
 scale = Vector2( 1, -14.3867 )
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite7" type="Sprite" parent="FLOOR"]
 position = Vector2( 3856.25, 245.688 )
 scale = Vector2( 1, -17.36 )
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
 position = Vector2( 1123, 0 )
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="FLOOR"]
 position = Vector2( 2236, 7 )
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite4" type="Sprite" parent="FLOOR"]
 position = Vector2( 3380.99, 6.99994 )
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite5" type="Sprite" parent="FLOOR"]
 position = Vector2( 4041.13, 5.99994 )
 z_index = -10
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
@@ -369,7 +375,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -379,7 +385,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -389,7 +395,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="fgtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -399,7 +405,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 centered = false
 offset = Vector2( 0, -120 )
 
