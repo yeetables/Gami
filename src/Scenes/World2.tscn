@@ -204,6 +204,7 @@ position = Vector2( 1089.45, -1240 )
 
 [node name="Area2D" parent="CheckPoints" instance=ExtResource( 9 )]
 position = Vector2( 1292.36, -1310 )
+scene_file = "res://Scenes/ForestPart2.tscn"
 
 [node name="Obstacls" type="Node2D" parent="."]
 editor/display_folded = true
