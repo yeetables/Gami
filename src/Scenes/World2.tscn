@@ -209,6 +209,7 @@ scene_file = "res://Scenes/ForestPart2.tscn"
 [node name="Obstacls" type="Node2D" parent="."]
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
+editor/display_folded = true
 z_index = -1
 
 [node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
@@ -304,10 +305,11 @@ editor/display_folded = true
 position = Vector2( 2130.1, -880 )
 
 [node name="FLOOR" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
+position = Vector2( -663.747, 5.68799 )
+scale = Vector2( 1.5982, 2.27634 )
 z_index = -10
 texture = ExtResource( 14 )
 centered = false
@@ -328,24 +330,28 @@ centered = false
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
 position = Vector2( 1123, 0 )
+scale = Vector2( 1.08589, 1.76525 )
 z_index = -10
 texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="FLOOR"]
 position = Vector2( 2236, 7 )
+scale = Vector2( 1.08233, 2.51027 )
 z_index = -10
 texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite4" type="Sprite" parent="FLOOR"]
 position = Vector2( 3380.99, 6.99994 )
+scale = Vector2( 1.07349, 2.15557 )
 z_index = -10
 texture = ExtResource( 14 )
 centered = false
 
 [node name="Sprite5" type="Sprite" parent="FLOOR"]
 position = Vector2( 4041.13, 5.99994 )
+scale = Vector2( 1.06778, 2.17151 )
 z_index = -10
 texture = ExtResource( 14 )
 centered = false
