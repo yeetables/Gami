@@ -182,7 +182,7 @@ stream = ExtResource( 7 )
 [node name="CheckPoints" type="Node2D" parent="."]
 
 [node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 8 )]
-position = Vector2( 180, 534.959 )
+position = Vector2( 230, 544.961 )
 
 [node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 8 )]
 position = Vector2( 853.259, 220 )
@@ -207,7 +207,6 @@ position = Vector2( 1292.36, -1310 )
 scene_file = "res://Scenes/ForestPart2.tscn"
 
 [node name="Obstacls" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 z_index = -1
@@ -231,7 +230,7 @@ rotation = -1.5708
 scale = Vector2( 1.63579, 0.639072 )
 
 [node name="spike9" parent="Obstacls/Spikes" instance=ExtResource( 10 )]
-position = Vector2( 1169.22, -519.024 )
+position = Vector2( 1150, -520 )
 rotation = -1.5708
 scale = Vector2( 0.772995, 0.639072 )
 

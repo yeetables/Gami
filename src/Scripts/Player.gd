@@ -47,21 +47,22 @@ func slow_mode(duration = 2.25, strength = 0.99):
 	
 func _physics_process(delta):
 	
-	if timer_active: 
-		
-		var current_time = OS.get_ticks_msec() - time_start
-		var value = circl_ease_in(current_time, start_value, END_VALUE, duration_ms)
-		if current_time >= duration_ms:
-			timer_active = false
-			value = END_VALUE
-		Engine.time_scale = value
-		yspeed = -100
-		
-		if Input.is_action_pressed("ui_lmb"):
-			timer_active = false
-			value = END_VALUE
-			Engine.time_scale = value
-			second_dash()
+	# this is for second dash
+#	if timer_active: 
+#
+#		var current_time = OS.get_ticks_msec() - time_start
+#		var value = circl_ease_in(current_time, start_value, END_VALUE, duration_ms)
+#		if current_time >= duration_ms:
+#			timer_active = false
+#			value = END_VALUE
+#		Engine.time_scale = value
+#		yspeed = -100
+#
+#		if Input.is_action_pressed("ui_lmb"):
+#			timer_active = false
+#			value = END_VALUE
+#			Engine.time_scale = value
+#			second_dash()
 			
 	# timer code done
 	###################################################################################################
@@ -121,7 +122,7 @@ func _physics_process(delta):
 			xspeed = 0
 			
 	if Input.is_action_pressed("ui_lmb"):
-		if not is_on_floor() and landed == true:
+		if not is_on_floor() and landed == true and Global.DASH_ENABLED:
 			dash = true
 	
 	#Jumping is gonna be a pain in the butt.
@@ -143,9 +144,11 @@ func _physics_process(delta):
 	# Dashing code
 	if dash == true:
 		# Checking for slowdown mode
-		if Input.is_action_pressed("ui_rmb"):
-			#get_tree().paused = true
-			slow_mode()
+		
+		# this is for second dash
+#		if Input.is_action_pressed("ui_rmb"):
+#			#get_tree().paused = true
+#			slow_mode()
 			
 		landed = false
 		if xspeed > 0:
