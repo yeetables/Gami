@@ -8,7 +8,7 @@ var animPlay = false
 var DASH_SPEED = 300
 var mousepos
 
-var jforce = 500
+var jforce = 510
 var yspeed = 0
 const UP = Vector2(0,-1)
 var move_dir = Vector2(0,0)
@@ -134,7 +134,7 @@ func _physics_process(delta):
 		#$jumpsound1.play() 
 		
 	if is_on_floor():
-		if Input.is_action_pressed("space"):
+		if Input.is_action_just_pressed("space"):
 			$jumpsound1.play() 
 			yspeed = jforce
 			

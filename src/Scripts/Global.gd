@@ -53,9 +53,9 @@ func add_new_player(scene_path):
 #    set_child_pos(instance, PLAYER_POS)
 	instance.get_node("Body").set_global_position(PLAYER_POS)
 	#instance.get_node("Body/Camera2D").set_global_position(CAMERA_POS)
-	print(PLAYER_POS) #CAMERA_POS)
-	print(instance.get_global_position())
-	print(instance.get_node("Body").get_global_position())
+#	print(PLAYER_POS) #CAMERA_POS)
+#	print(instance.get_global_position())
+#	print(instance.get_node("Body").get_global_position())
 	
 	return instance
 	
@@ -68,9 +68,23 @@ func spawn_holy_tree():
 	world_node.add_child_below_node(second_last_node, instance)
 	instance.set_global_position(TREE_LOCATION)
 	
+func add_player(pos):
+	var scene = ResourceLoader.load(FOX_SCENE_PATH)
+	var instance = scene.instance()
+	get_tree().get_root().get_node("/root/World").add_child(instance)
+	instance.get_node("Body").set_global_position(pos)
+	PLAYER_INSTANCE = instance
+	move_camera(pos)
+	
+func move_camera(pos):
+	var camera_instance = get_tree().get_root().get_node("/root/World/Camera")
+	camera_instance.set_global_position(pos)
+	
 func respawn_player():
 	var spawn_pos = get_tree().get_root().get_node(respawn_node).get_global_position()
-	PLAYER_INSTANCE.get_node("Body").set_global_position(spawn_pos)
+#	PLAYER_INSTANCE.get_node("Body").set_global_position(spawn_pos)
+	PLAYER_INSTANCE.queue_free()
+	add_player(spawn_pos)
 #
 func change_checkPoint(n):
 #	if n == 2:

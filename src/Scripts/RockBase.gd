@@ -1,7 +1,7 @@
 extends Node2D
 
 const ROCK_SCENE = "res://Scenes/fallRocks/Rock.tscn"
-var start = false
+var start = true
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -14,7 +14,7 @@ func _physics_process(delta):
 		if frame_count == 0:
 			create_rock()
 
-		frame_count = (frame_count+1) % 70
+		frame_count = (frame_count+1) % 110
 	
 func create_rock():
 	var scene = ResourceLoader.load(ROCK_SCENE)
