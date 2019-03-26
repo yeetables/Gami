@@ -22,6 +22,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 				end = true
 	elif anim_name == "Player":
 		$Fader.play("Black")
+		$AudioStreamPlayer._set_playing(false) # stop the music
 
 func _on_Fader_animation_finished(anim_name):
 	if anim_name == "White":
@@ -31,4 +32,4 @@ func _on_Fader_animation_finished(anim_name):
 		count += 1
 	if anim_name == "Black":
 		# switch to first level
-		pass
+		get_tree().change_scene("res://Scenes/World2.tscn")

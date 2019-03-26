@@ -1,8 +1,28 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/CutNode.gd" type="Script" id=1]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=4]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=5]
+[ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=6]
+
+[sub_resource type="Animation" id=8]
+length = 0.85
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Basic:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
+}
 
 [sub_resource type="Animation" id=5]
 resource_name = "Player"
@@ -14,10 +34,20 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0, 4.96963 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.73682, 169.492 ), Vector2( 573.115, 165.976 ) ]
+"values": [ Vector2( 1.737, 198 ), Vector2( 644.115, 198 ) ]
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("icon/playerAni")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "FoxRun" ),
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=6]
@@ -35,6 +65,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "test"
+
 [sub_resource type="Animation" id=7]
 length = 2.0
 tracks/0/type = "value"
@@ -48,6 +81,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0.215686 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("download:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.27451 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("TileMap:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -64,6 +121,42 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.215686 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("download:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 0.27451 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("icon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TileMap:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -72,8 +165,22 @@ script = ExtResource( 1 )
 current = true
 
 [node name="icon" type="Sprite" parent="."]
-position = Vector2( 573.115, 165.976 )
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1.737, 198 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Basic" type="Sprite" parent="icon"]
+position = Vector2( 0, -26 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
+vframes = 4
+hframes = 5
+
+[node name="playerAni" type="AnimationPlayer" parent="icon"]
+anims/FoxRun = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -89,26 +196,35 @@ autowrap = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Player = SubResource( 5 )
 anims/Words = SubResource( 6 )
+anims/test = SubResource( 9 )
 
 [node name="Fader" type="AnimationPlayer" parent="."]
 anims/Black = SubResource( 7 )
 anims/White = SubResource( 4 )
 
-[node name="icon2" type="Sprite" parent="."]
-position = Vector2( 1.84961, 250.364 )
-scale = Vector2( 18.6633, 1 )
-texture = ExtResource( 2 )
-
 [node name="Background" type="Sprite" parent="."]
-modulate = Color( 0, 0, 0, 0.215686 )
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 19.4305, 24.45 )
 scale = Vector2( 21.9597, 12.1803 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 volume_db = -18.0
 autoplay = true
+
+[node name="download" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 13.4067, -3.79105 )
+scale = Vector2( 3.50566, 3.58676 )
+texture = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1.73682, 199.492 )
+tile_set = ExtResource( 6 )
+format = 1
+tile_data = PoolIntArray( 65528, 30, 0, 65529, 31, 0, 65530, 34, 0, 65531, 35, 0, 65532, 32, 0, 65535, 32, 0, 2, 32, 0, 5, 31, 0, 6, 34, 0, 7, 36, 0 )
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="Fader" to="." method="_on_Fader_animation_finished"]
