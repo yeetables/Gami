@@ -79,6 +79,7 @@ zoom = Vector2( 1.6, 1.6 )
 [node name="Music" type="Node2D" parent="."]
 
 [node name="sound" type="Node2D" parent="Music"]
+editor/display_folded = true
 
 [node name="bg" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 6 )

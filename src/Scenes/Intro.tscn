@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://Scripts/CutNode.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/cutscenes/Intro.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=6]
@@ -31,7 +31,7 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "Player"
-length = 5.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("icon:position")
 tracks/0/interp = 1
@@ -39,10 +39,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 4.96963 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.737, 198 ), Vector2( 644.115, 198 ) ]
+"values": [ Vector2( 1.737, 198 ), Vector2( 1.737, 198 ), Vector2( 644.115, 198 ) ]
 }
 tracks/1/type = "animation"
 tracks/1/path = NodePath("icon/playerAni")
@@ -52,7 +52,46 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "clips": PoolStringArray( "FoxRun" ),
-"times": PoolRealArray( 0 )
+"times": PoolRealArray( 1 )
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("icon:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TileMap:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "PlayerShow"
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -143,7 +182,7 @@ tracks/2/path = NodePath("icon:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.9, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -155,7 +194,7 @@ tracks/3/path = NodePath("TileMap:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -183,24 +222,25 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 5
+frame = 16
 
 [node name="playerAni" type="AnimationPlayer" parent="icon"]
 anims/FoxRun = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.9 )
 margin_left = -260.0
 margin_top = -51.0
 margin_right = 270.0
 margin_bottom = 49.0
 custom_fonts/font = SubResource( 10 )
-text = "Our lands are wrought with sickness. The most able creates have been forced to flee"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Player = SubResource( 5 )
+anims/PlayerShow = SubResource( 11 )
 anims/Words = SubResource( 6 )
 anims/test = SubResource( 9 )
 
