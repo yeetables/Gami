@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -9,16 +9,18 @@
 [ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/EndPoint.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Assets/Sprites/c.png" type="Texture" id=10]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/spike/spike_area.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/EndPoint.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -26,17 +28,20 @@ extents = Vector2( 560, 1636.9 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 680, 1550 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 11 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="Tilemaps" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="plat" type="TileMap" parent="Tilemaps"]
 scale = Vector2( 0.5, 0.5 )
 tile_set = ExtResource( 2 )
 format = 1
-tile_data = PoolIntArray( -2490285, 43, 0, -2228137, 43, 0, -2228134, 43, 0, -2228131, 43, 0, -1572796, 43, 0, -1441712, 43, 0, -1310647, 43, 0, -1179590, 14, 0, -1179588, 43, 0, -1179585, 43, 0, -1179582, 43, 0, -1179579, 43, 0, -1179576, 43, 0, -1179573, 43, 0, -1179570, 43, 0, -1179567, 43, 0, -720882, 43, 0, -720879, 43, 0, -524232, 43, 0, -262063, 43, 0, -196608, 14, 0, -196606, 14, 0, -196604, 1610612758, 0, -131072, 25, 0, -131071, 23, 0, -131070, 23, 0, -131069, 23, 0, -131068, 23, 0, -130997, 43, 0, -65536, 23, 0, -65535, 23, 0, -65534, 25, 0, -65533, 23, 0, -65532, 25, 0, 0, 23, 0, 1, 23, 0, 63, 43, 0, 66, 43, 0, 65536, 23, 0, 65537, 23, 0, 131072, 25, 0, 131073, 25, 0, 196608, 23, 0, 196609, 23, 0, 196610, 14, 0, 196611, 44, 0, 196612, 45, 0, 196613, 46, 0, 196614, 47, 0, 262144, 23, 0, 262145, 23, 0, 262146, 25, 0, 262147, 23, 0, 262148, 23, 0, 262149, 23, 0, 262150, 25, 0, 262173, 43, 0, 262176, 43, 0, 262179, 43, 0, 262182, 43, 0, 262185, 43, 0, 262188, 43, 0, 262191, 43, 0, 262194, 43, 0, 262197, 43, 0, 262200, 43, 0, 327680, 23, 0, 327681, 25, 0, 327682, 23, 0, 327683, 23, 0, 327684, 25, 0, 327685, 23, 0, 327686, 25, 0, 327698, 43, 0, 327701, 43, 0, 852000, 43, 0, 852003, 43, 0, 852006, 43, 0, 852009, 43, 0, 852012, 43, 0, 852015, 43, 0, 852018, 43, 0, 852021, 43, 0, 852024, 43, 0, 852027, 43, 0, 852030, 43, 0, 1179648, 19, 0, 1179649, 19, 0, 1179650, 19, 0, 1179651, 19, 0, 1179652, 19, 0, 1179653, 19, 0, 1179654, 19, 0, 1179655, 19, 0, 1179656, 19, 0, 1179657, 19, 0, 1179658, 19, 0, 1179659, 19, 0, 1179660, 19, 0, 1179661, 19, 0, 1179662, 19, 0, 1179663, 19, 0, 1179664, 19, 0, 1179665, 19, 0, 1179666, 19, 0, 1179667, 19, 0, 1179668, 19, 0, 1179669, 19, 0, 1179670, 19, 0, 1179671, 19, 0, 1179672, 19, 0, 1179673, 19, 0, 1179674, 19, 0, 1179675, 19, 0, 1179676, 19, 0, 1179677, 19, 0, 1179678, 19, 0, 1179679, 19, 0, 1179680, 19, 0, 1179681, 19, 0, 1179682, 19, 0, 1179683, 19, 0, 1179684, 19, 0, 1179685, 19, 0, 1179686, 19, 0, 1179687, 19, 0, 1179688, 19, 0, 1179689, 19, 0, 1179690, 19, 0, 1179691, 19, 0, 1179692, 19, 0, 1179693, 19, 0, 1179694, 19, 0, 1179695, 19, 0, 1179696, 19, 0, 1179697, 19, 0, 1179698, 19, 0, 1179699, 19, 0, 1179700, 19, 0, 1179701, 19, 0, 1179702, 19, 0, 1179703, 19, 0, 1179704, 19, 0, 1179705, 19, 0, 1179706, 19, 0, 1179707, 19, 0, 1179708, 19, 0, 1179709, 19, 0, 1179710, 19, 0, 1179711, 19, 0, 1179712, 19, 0, 1179713, 19, 0, 1179714, 19, 0, 1179715, 19, 0, 1179716, 19, 0, 1179717, 19, 0, 1179718, 19, 0, 1179719, 19, 0, 1179720, 19, 0, 1179721, 19, 0, 1179722, 19, 0, 1179723, 19, 0, 1179724, 19, 0, 1179725, 19, 0, 1179726, 19, 0, 1179727, 19, 0, 1179728, 19, 0, 1179729, 19, 0, 1179730, 19, 0, 1179731, 19, 0, 1179732, 19, 0, 1179733, 19, 0, 1179734, 19, 0, 1179735, 19, 0, 1179736, 19, 0, 1179737, 19, 0, 1179738, 19, 0, 1179739, 19, 0, 1179740, 19, 0, 1179741, 19, 0, 1179742, 19, 0, 1179743, 19, 0, 1179744, 19, 0, 1179745, 19, 0, 1179746, 19, 0, 1179747, 19, 0, 1179748, 19, 0, 1179749, 19, 0, 1179750, 19, 0, 1179751, 19, 0, 1179752, 19, 0, 1179753, 19, 0, 1179754, 19, 0, 1179755, 19, 0, 1179756, 19, 0, 1179757, 19, 0, 1179758, 19, 0, 1179759, 19, 0, 1179760, 19, 0, 1179761, 19, 0, 1179762, 19, 0, 1179763, 19, 0, 1179764, 19, 0, 1179765, 19, 0, 1179766, 19, 0, 1179767, 19, 0, 1179768, 19, 0, 1179769, 19, 0, 1179770, 19, 0, 1179771, 19, 0, 1179772, 19, 0, 1179773, 19, 0, 1179774, 19, 0, 1179775, 19, 0, 1179776, 19, 0 )
+tile_data = PoolIntArray( -2490285, 43, 0, -2228137, 43, 0, -2228134, 43, 0, -2228131, 43, 0, -1572796, 43, 0, -1441712, 43, 0, -1310647, 43, 0, -1179590, 14, 0, -1179588, 43, 0, -1179585, 43, 0, -1179582, 43, 0, -1179579, 43, 0, -1179576, 43, 0, -1179573, 43, 0, -1179570, 43, 0, -1179567, 43, 0, -720882, 43, 0, -720879, 43, 0, -524232, 43, 0, -262063, 43, 0, -196608, 14, 0, -196606, 14, 0, -196604, 1610612758, 0, -131072, 25, 0, -131071, 23, 0, -131070, 23, 0, -131069, 23, 0, -131068, 23, 0, -130997, 43, 0, -65536, 23, 0, -65535, 23, 0, -65534, 25, 0, -65533, 23, 0, -65532, 25, 0, 0, 23, 0, 1, 23, 0, 63, 43, 0, 66, 43, 0, 65536, 23, 0, 65537, 23, 0, 131072, 25, 0, 131073, 25, 0, 196608, 23, 0, 196609, 23, 0, 196610, 14, 0, 196611, 44, 0, 196612, 45, 0, 196613, 46, 0, 196614, 47, 0, 262144, 23, 0, 262145, 23, 0, 262146, 25, 0, 262147, 23, 0, 262148, 23, 0, 262149, 23, 0, 262150, 25, 0, 262173, 43, 0, 262176, 43, 0, 262179, 43, 0, 262182, 43, 0, 262185, 43, 0, 262188, 43, 0, 262191, 43, 0, 262194, 43, 0, 262197, 43, 0, 262200, 43, 0, 327680, 23, 0, 327681, 25, 0, 327682, 23, 0, 327683, 23, 0, 327684, 25, 0, 327685, 23, 0, 327686, 25, 0, 327698, 43, 0, 327701, 43, 0, 852000, 43, 0, 852003, 43, 0, 852006, 43, 0, 852009, 43, 0, 852012, 43, 0, 852015, 43, 0, 852018, 43, 0, 852021, 43, 0, 852024, 43, 0, 852027, 43, 0, 852030, 43, 0, 1245149, 44, 0, 1245150, 44, 0, 1245151, 44, 0, 1245152, 44, 0, 1245153, 44, 0, 1245154, 44, 0, 1245155, 44, 0, 1245156, 44, 0, 1245157, 44, 0, 1245158, 44, 0, 1245159, 44, 0, 1245160, 44, 0, 1245161, 44, 0, 1245162, 44, 0, 1245163, 44, 0, 1245164, 44, 0, 1245165, 44, 0, 1245166, 44, 0, 1245167, 44, 0, 1245168, 44, 0, 1245169, 44, 0, 1245170, 44, 0, 1245171, 44, 0, 1245172, 44, 0, 1245173, 44, 0, 1245174, 44, 0, 1245175, 44, 0, 1245176, 44, 0, 1245177, 44, 0, 1245178, 44, 0, 1245179, 44, 0, 1245180, 44, 0, 1245181, 44, 0, 1245182, 44, 0, 1245183, 44, 0, 1179648, 44, 0, 1179649, 44, 0, 1179650, 44, 0, 1179651, 44, 0, 1179652, 44, 0, 1179653, 44, 0, 1179654, 44, 0, 1179655, 44, 0, 1179656, 44, 0, 1179657, 44, 0, 1179658, 44, 0, 1179659, 44, 0, 1179660, 44, 0, 1179661, 44, 0, 1179662, 44, 0, 1179663, 44, 0, 1179664, 44, 0, 1179665, 44, 0, 1179666, 44, 0, 1179667, 44, 0, 1179668, 44, 0, 1179669, 44, 0, 1179670, 44, 0, 1179671, 44, 0, 1179672, 44, 0, 1179673, 44, 0, 1179674, 44, 0, 1179675, 44, 0, 1179676, 44, 0, 1179677, 44, 0, 1179678, 44, 0, 1179679, 44, 0, 1179680, 44, 0, 1179681, 44, 0, 1179682, 44, 0, 1179683, 44, 0, 1179684, 44, 0, 1179685, 44, 0, 1179686, 44, 0, 1179687, 44, 0, 1179688, 44, 0, 1179689, 44, 0, 1179690, 44, 0, 1179691, 44, 0, 1179692, 44, 0, 1179693, 44, 0, 1179694, 44, 0, 1179695, 44, 0, 1179696, 44, 0, 1179697, 44, 0, 1179698, 44, 0, 1179699, 44, 0, 1179700, 44, 0, 1179701, 44, 0, 1179702, 44, 0, 1179703, 44, 0, 1179704, 44, 0, 1179705, 44, 0, 1179706, 44, 0, 1179707, 44, 0, 1179708, 44, 0, 1179709, 44, 0, 1179710, 44, 0, 1179711, 44, 0, 1179712, 44, 0, 1179713, 44, 0, 1179714, 44, 0, 1179715, 44, 0, 1179716, 44, 0, 1179717, 44, 0, 1179718, 44, 0, 1179719, 44, 0, 1179720, 44, 0, 1179721, 44, 0, 1179722, 44, 0, 1179723, 44, 0, 1179724, 44, 0, 1179725, 44, 0, 1179726, 44, 0, 1179727, 44, 0, 1179728, 44, 0, 1179729, 44, 0, 1179730, 44, 0, 1179731, 44, 0, 1179732, 44, 0, 1179733, 44, 0, 1179734, 44, 0, 1179735, 44, 0, 1179736, 44, 0, 1179737, 44, 0, 1179738, 44, 0, 1179739, 44, 0, 1179740, 44, 0, 1179741, 44, 0, 1179742, 44, 0, 1179743, 44, 0, 1179744, 44, 0, 1179745, 44, 0, 1179746, 44, 0, 1179747, 44, 0, 1179748, 44, 0, 1179749, 44, 0, 1179750, 44, 0, 1179751, 44, 0, 1179752, 44, 0, 1179753, 44, 0, 1179754, 44, 0, 1179755, 44, 0, 1179756, 44, 0, 1179757, 44, 0, 1179758, 44, 0, 1179759, 44, 0, 1179760, 44, 0, 1179761, 44, 0, 1179762, 44, 0, 1179763, 44, 0, 1179764, 44, 0, 1179765, 44, 0, 1179766, 44, 0, 1179767, 44, 0, 1179768, 44, 0, 1179769, 44, 0, 1179770, 44, 0, 1179771, 44, 0, 1179772, 44, 0, 1179773, 44, 0, 1179774, 44, 0, 1179775, 44, 0, 1179776, 44, 0, 1179777, 44, 0, 1179778, 44, 0, 1179779, 44, 0, 1179780, 44, 0, 1179781, 44, 0, 1179782, 44, 0, 1179783, 44, 0, 1179784, 44, 0, 1179785, 44, 0, 1179786, 44, 0, 1179787, 44, 0, 1179788, 44, 0, 1179789, 44, 0, 1179790, 44, 0, 1179791, 44, 0, 1179792, 44, 0, 1179793, 44, 0, 1179794, 44, 0, 1179795, 44, 0, 1179796, 44, 0, 1179797, 44, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -63,7 +68,7 @@ tile_data = PoolIntArray( -8716066, 2, 0, -8650564, 0, 0, -8650553, 536870915, 0
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
-position = Vector2( 64, 500 )
+position = Vector2( 60.6596, 531.734 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
@@ -93,7 +98,6 @@ stream = ExtResource( 7 )
 stream = ExtResource( 8 )
 
 [node name="FLOOR" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
@@ -104,6 +108,7 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Sprite6" type="Sprite" parent="FLOOR"]
+visible = false
 position = Vector2( -683.747, 262 )
 scale = Vector2( 1, -14.3867 )
 z_index = -10
@@ -111,6 +116,7 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="Sprite7" type="Sprite" parent="FLOOR"]
+visible = false
 position = Vector2( 3856.25, 245.688 )
 scale = Vector2( 1, -17.36 )
 z_index = -10
@@ -146,16 +152,32 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
+editor/display_folded = true
 position = Vector2( -83.747, -1347.41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D"]
 shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="FLOOR"]
+editor/display_folded = true
 position = Vector2( 4546.25, -1294.31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D2"]
 shape = SubResource( 2 )
+
+[node name="c" type="Sprite" parent="FLOOR"]
+position = Vector2( 516.76, -195.839 )
+scale = Vector2( 0.025, 0.038 )
+z_index = 5
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="FLOOR"]
+margin_left = 557.449
+margin_top = -212.829
+margin_right = 813.449
+margin_bottom = -173.829
+custom_fonts/font = SubResource( 3 )
+text = "to dash in the air"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
@@ -170,7 +192,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -180,7 +202,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -190,7 +212,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 centered = false
 
 [node name="fgtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -200,7 +222,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 centered = false
 offset = Vector2( 0, -120 )
 
@@ -210,147 +232,147 @@ editor/display_folded = true
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 z_index = -1
 
-[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 14 )]
+[node name="spike" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1470.1, 416 )
 scale = Vector2( 2.97941, 0.639072 )
 
-[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 14 )]
+[node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1658.43, 416 )
 scale = Vector2( 3.41515, 0.639072 )
 
-[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 14 )]
+[node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1688.26, -1008 )
 scale = Vector2( 6, 0.532 )
 
-[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 14 )]
+[node name="spike4" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1500.1, -115.42 )
 scale = Vector2( 2.67121, 0.503204 )
 
-[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 14 )]
+[node name="spike6" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1696, -770.3 )
 scale = Vector2( 3, 0.3 )
 
-[node name="spike_2_1" parent="Obstacls/Spikes" instance=ExtResource( 14 )]
+[node name="spike_2_1" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1696, -631.7 )
 scale = Vector2( 3, 0.3 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
 
-[node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 15 )]
+[node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 17 )]
 position = Vector2( 2970, 288 )
 
-[node name="crumbling20" parent="Obstacls/crumbles" instance=ExtResource( 15 )]
+[node name="crumbling20" parent="Obstacls/crumbles" instance=ExtResource( 17 )]
 position = Vector2( 504.951, 32 )
 scale = Vector2( 0.540934, 0.5 )
 
-[node name="crumbling19" parent="Obstacls/crumbles" instance=ExtResource( 15 )]
+[node name="crumbling19" parent="Obstacls/crumbles" instance=ExtResource( 17 )]
 position = Vector2( 2592, 369 )
 
-[node name="crumbling2" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling2" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 2246, 224 )
 
-[node name="crumbling4" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling4" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1921.1, -1088 )
 scale = Vector2( 1, 0.5 )
 
-[node name="crumbling5" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling5" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1732.43, -64 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling7" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling7" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 2272, -170.859 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling6" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling6" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 576, -484 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling21" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling21" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 706.576, -960 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling22" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling22" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1230.1, -560 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling23" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling23" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1028.48, -880 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling24" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling24" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1300.14, -1024 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling25" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling25" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1824, -1248 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling26" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling26" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1568, -1248 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling27" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling27" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1312, -1248 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling28" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling28" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 1056, -1248 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling29" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling29" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 800, -1248 )
 scale = Vector2( 0.480058, 0.5 )
 
-[node name="crumbling3" parent="Obstacls/crumbles" instance=ExtResource( 16 )]
+[node name="crumbling3" parent="Obstacls/crumbles" instance=ExtResource( 18 )]
 position = Vector2( 989.463, -32 )
 
 [node name="rocks" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
 
-[node name="RockBase" parent="Obstacls/rocks" instance=ExtResource( 17 )]
+[node name="RockBase" parent="Obstacls/rocks" instance=ExtResource( 19 )]
 position = Vector2( 1322.97, -51 )
 
-[node name="RockBase2" parent="Obstacls/rocks" instance=ExtResource( 17 )]
+[node name="RockBase2" parent="Obstacls/rocks" instance=ExtResource( 19 )]
 position = Vector2( 1487.42, -51 )
 
-[node name="RockBase3" parent="Obstacls/rocks" instance=ExtResource( 17 )]
+[node name="RockBase3" parent="Obstacls/rocks" instance=ExtResource( 19 )]
 position = Vector2( 1505, -474.699 )
 
-[node name="RockBase4" parent="Obstacls/rocks" instance=ExtResource( 17 )]
+[node name="RockBase4" parent="Obstacls/rocks" instance=ExtResource( 19 )]
 position = Vector2( 1335.39, -474.699 )
 
-[node name="RockBase5" parent="Obstacls/rocks" instance=ExtResource( 17 )]
+[node name="RockBase5" parent="Obstacls/rocks" instance=ExtResource( 19 )]
 position = Vector2( 304.523, -705.278 )
 
-[node name="RockBase6" parent="Obstacls/rocks" instance=ExtResource( 17 )]
+[node name="RockBase6" parent="Obstacls/rocks" instance=ExtResource( 19 )]
 position = Vector2( 2496.1, -933.181 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
 editor/display_folded = true
 
-[node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 18 )]
-position = Vector2( 68.4957, 541.116 )
+[node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 20 )]
+position = Vector2( 131.963, 541.116 )
 
-[node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 18 )]
+[node name="SpawnPoint2" parent="CheckPoints" instance=ExtResource( 20 )]
 position = Vector2( 1777.46, 89.0444 )
 
-[node name="SpawnPoint3" parent="CheckPoints" instance=ExtResource( 18 )]
+[node name="SpawnPoint3" parent="CheckPoints" instance=ExtResource( 20 )]
 position = Vector2( 1305.76, -138.859 )
 
-[node name="SpawnPoint4" parent="CheckPoints" instance=ExtResource( 18 )]
+[node name="SpawnPoint4" parent="CheckPoints" instance=ExtResource( 20 )]
 position = Vector2( 1130.25, -311.111 )
 
-[node name="SpawnPoint5" parent="CheckPoints" instance=ExtResource( 18 )]
+[node name="SpawnPoint5" parent="CheckPoints" instance=ExtResource( 20 )]
 position = Vector2( 166.243, -464.813 )
 
-[node name="SpawnPoint6" parent="CheckPoints" instance=ExtResource( 18 )]
+[node name="SpawnPoint6" parent="CheckPoints" instance=ExtResource( 20 )]
 position = Vector2( 1997.42, -610.565 )
 
-[node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 18 )]
+[node name="SpawnPoint7" parent="CheckPoints" instance=ExtResource( 20 )]
 position = Vector2( 2158.47, -1038.17 )
 
-[node name="end" parent="CheckPoints" instance=ExtResource( 19 )]
+[node name="end" parent="CheckPoints" instance=ExtResource( 21 )]
 position = Vector2( 64, -1312 )
 scene_file = "res://Scenes/moutain.tscn"
 

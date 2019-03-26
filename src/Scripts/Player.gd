@@ -86,7 +86,7 @@ func _physics_process(delta):
 		pass
 		
 	
-	if Input.is_key_pressed(KEY_D):
+	if Input.is_action_pressed("ui_right"):
 		$Basic.set_flip_h(false) 
 		if animPlay == false:
 			$AnimationPlayer.play("FoxRun")
@@ -98,7 +98,7 @@ func _physics_process(delta):
 			if xspeed > MAX_SPEED:
 				xspeed = MAX_SPEED
 	
-	elif Input.is_key_pressed(KEY_A):
+	elif Input.is_action_pressed("ui_left"):
 		$Basic.set_flip_h(true)
 		if animPlay == false:
 			$AnimationPlayer.play("FoxRun")

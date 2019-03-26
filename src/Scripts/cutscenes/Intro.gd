@@ -20,8 +20,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			$AnimationPlayer.play("Words")
 			count += 1
 			if count == 3:
-				$icon.visible = true
-				$TileMap.visible = true
+				$Fader.play("PlayerShow")
 		else:
 			if end == false:
 				$AnimationPlayer.play("Player")

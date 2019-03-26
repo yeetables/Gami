@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -15,10 +15,12 @@
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/spaceBar.jpg" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/arrows.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -61,7 +63,7 @@ tile_data = PoolIntArray( -3211172, 3, 0, -3211168, 536870912, 0, -3211164, 5368
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
-position = Vector2( 240, 490 )
+position = Vector2( 150, 539.959 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
@@ -180,6 +182,7 @@ stream = ExtResource( 7 )
 stream = ExtResource( 8 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 9 )]
 position = Vector2( 230, 544.961 )
@@ -207,6 +210,7 @@ position = Vector2( 1292.36, -1310 )
 scene_file = "res://Scenes/ForestPart2.tscn"
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
@@ -305,7 +309,6 @@ editor/display_folded = true
 position = Vector2( 2130.1, -880 )
 
 [node name="FLOOR" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
@@ -375,6 +378,19 @@ position = Vector2( 4546.25, -1294.31 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D2"]
 shape = SubResource( 2 )
 
+[node name="spaceBar" type="Sprite" parent="FLOOR"]
+position = Vector2( 976.253, -174.312 )
+scale = Vector2( 0.645085, 0.67477 )
+texture = ExtResource( 16 )
+region_enabled = true
+region_rect = Rect2( 92.5, 210.382, 313.5, 77 )
+
+[node name="arrows" type="Sprite" parent="FLOOR"]
+position = Vector2( 634.223, -154.228 )
+scale = Vector2( 0.32442, 0.277391 )
+texture = ExtResource( 17 )
+region_rect = Rect2( 142, -1.401, 629, 432 )
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 editor/display_folded = true
 layer = -15
@@ -388,7 +404,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -398,7 +414,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -408,7 +424,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 centered = false
 
 [node name="fgtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -418,7 +434,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 centered = false
 offset = Vector2( 0, -120 )
 

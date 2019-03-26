@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/cutscenes/Intro.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=6]
 [ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=7]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=1]
 length = 0.85
 loop = true
 step = 0.05
@@ -25,13 +25,13 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=2]
 size = 20
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 resource_name = "Player"
-length = 6.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("icon:position")
 tracks/0/interp = 1
@@ -39,10 +39,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 6 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1.737, 198 ), Vector2( 1.737, 198 ), Vector2( 644.115, 198 ) ]
+"values": [ Vector2( 1.737, 198 ), Vector2( 644.115, 198 ) ]
 }
 tracks/1/type = "animation"
 tracks/1/path = NodePath("icon/playerAni")
@@ -52,14 +52,14 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "clips": PoolStringArray( "FoxRun" ),
-"times": PoolRealArray( 1 )
+"times": PoolRealArray( 0 )
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("icon:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -71,7 +71,7 @@ tracks/3/path = NodePath("TileMap:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -79,22 +79,11 @@ tracks/3/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=4]
 resource_name = "PlayerShow"
-tracks/0/type = "value"
-tracks/0/path = NodePath("icon:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+length = 2.0
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -109,7 +98,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 resource_name = "test"
 
 [sub_resource type="Animation" id=7]
@@ -151,7 +140,34 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=8]
+resource_name = "PlayerShow"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TileMap:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("icon:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -222,10 +238,9 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 5
-frame = 16
 
 [node name="playerAni" type="AnimationPlayer" parent="icon"]
-anims/FoxRun = SubResource( 8 )
+anims/FoxRun = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0.9 )
@@ -233,20 +248,21 @@ margin_left = -260.0
 margin_top = -51.0
 margin_right = 270.0
 margin_bottom = 49.0
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1
 autowrap = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Player = SubResource( 5 )
-anims/PlayerShow = SubResource( 11 )
-anims/Words = SubResource( 6 )
-anims/test = SubResource( 9 )
+anims/Player = SubResource( 3 )
+anims/PlayerShow = SubResource( 4 )
+anims/Words = SubResource( 5 )
+anims/test = SubResource( 6 )
 
 [node name="Fader" type="AnimationPlayer" parent="."]
 anims/Black = SubResource( 7 )
-anims/White = SubResource( 4 )
+anims/PlayerShow = SubResource( 8 )
+anims/White = SubResource( 9 )
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
