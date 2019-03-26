@@ -1,10 +1,47 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/temp_flag.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_9.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_0.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_3.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_5.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_6.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_7.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_8.png" type="Texture" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "active"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 0.999999, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.06, 0.06 ), Vector2( 0.06, 0.06 ) ]
+}
 
 [node name="CheckPoint" type="Area2D"]
 script = ExtResource( 1 )
@@ -13,6 +50,11 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -3.8147e-006 )
+scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+anims/active = SubResource( 2 )
 
 [connection signal="body_entered" from="." to="." method="_on_CheckPoint_body_entered"]

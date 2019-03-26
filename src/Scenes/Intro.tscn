@@ -1,11 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/CutNode.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=4]
-[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=5]
-[ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=6]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=6]
+[ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=7]
 
 [sub_resource type="Animation" id=8]
 length = 0.85
@@ -23,6 +24,10 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
+
+[sub_resource type="DynamicFont" id=10]
+size = 20
+font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=5]
 resource_name = "Player"
@@ -140,10 +145,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("TileMap:modulate")
@@ -184,11 +189,12 @@ anims/FoxRun = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -81.2898
-margin_top = -50.8383
-margin_right = 85.7102
-margin_bottom = 49.1617
-text = "Filler"
+margin_left = -260.0
+margin_top = -51.0
+margin_right = 270.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 10 )
+text = "Our lands are wrought with sickness. The most able creates have been forced to flee"
 align = 1
 valign = 1
 autowrap = true
@@ -206,10 +212,10 @@ anims/White = SubResource( 4 )
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 19.4305, 24.45 )
 scale = Vector2( 21.9597, 12.1803 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
+stream = ExtResource( 5 )
 volume_db = -18.0
 autoplay = true
 
@@ -217,12 +223,12 @@ autoplay = true
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 13.4067, -3.79105 )
 scale = Vector2( 3.50566, 3.58676 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 1.73682, 199.492 )
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 7 )
 format = 1
 tile_data = PoolIntArray( 65528, 30, 0, 65529, 31, 0, 65530, 34, 0, 65531, 35, 0, 65532, 32, 0, 65535, 32, 0, 2, 32, 0, 5, 31, 0, 6, 34, 0, 7, 36, 0 )
 
