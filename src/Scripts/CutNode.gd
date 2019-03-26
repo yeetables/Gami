@@ -29,3 +29,6 @@ func _on_Fader_animation_finished(anim_name):
 		$AnimationPlayer.play("Words")
 		print("Flag2")
 		count += 1
+	if anim_name == "Black":
+		# switch to first level
+		pass

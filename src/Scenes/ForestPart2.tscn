@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/TilesetScenes/spikes.tres" type="TileSet" id=3]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=5]
-[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/Background/level1bmusic.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=9]
@@ -77,13 +77,12 @@ current = true
 zoom = Vector2( 1.6, 1.6 )
 
 [node name="Music" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="sound" type="Node2D" parent="Music"]
 
 [node name="bg" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 6 )
-volume_db = -30.48
+volume_db = -18.461
 autoplay = true
 
 [node name="scream" type="AudioStreamPlayer2D" parent="Music/sound"]
@@ -93,6 +92,7 @@ stream = ExtResource( 7 )
 stream = ExtResource( 8 )
 
 [node name="FLOOR" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
