@@ -22,6 +22,8 @@ const TREE_LOCATION = Vector2(415.55,-798.63)
 var WATERAREA_ENTERED = false
 var WATERAREA_DIGGED = false
 
+var DASH_ENABLED = false
+
 func _ready():
 	var root = get_tree().get_root()
 	PLAYER_INSTANCE = root.get_node(FOX_INSTANCE_PATH)
@@ -91,7 +93,11 @@ func change_checkPoint(n):
 #		respawn_node = "/root/World/CheckPoints/SpawnPoint2"
 #	if n == 3:
 #		respawn_node = "/root/World/CheckPoints/SpawnPoint3"
-	respawn_node = n
+	if respawn_node != n:
+		# remove the old checkpoint
+		get_tree().get_root().get_node(respawn_node).queue_free()
+		respawn_node = n
+		
 #func set_child_pos(instance, pos):
 #    for child in instance.get_children():
 #        if child.get_child_count() > 0:

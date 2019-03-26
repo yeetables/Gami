@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gami"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/World2.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -72,5 +72,4 @@ ui_m={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 environment/default_clear_color=Color( 0.105882, 0.0941176, 0.152941, 1 )
