@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/CutNode.gd" type="Script" id=1]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Player"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("icon:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.73682, 169.492 ), Vector2( 573.115, 165.976 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.215686 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.215686 ) ]
+}
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 1.73682, 169.492 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -225.0
+margin_top = -51.0
+margin_right = 228.0
+margin_bottom = 49.0
+text = "Filler"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Player = SubResource( 1 )
+anims/Words = SubResource( 2 )
+
+[node name="Fader" type="AnimationPlayer" parent="."]
+anims/Black = SubResource( 3 )
+anims/White = SubResource( 4 )
+
+[node name="icon2" type="Sprite" parent="."]
+position = Vector2( 1.84961, 250.364 )
+scale = Vector2( 18.6633, 1 )
+texture = ExtResource( 2 )
+
+[node name="download" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.27451 )
+position = Vector2( 13.4067, -3.79105 )
+scale = Vector2( 3.50566, 3.58676 )
+texture = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 19.4305, 24.45 )
+scale = Vector2( 21.9597, 12.1803 )
+texture = ExtResource( 2 )
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="Fader" to="." method="_on_Fader_animation_finished"]

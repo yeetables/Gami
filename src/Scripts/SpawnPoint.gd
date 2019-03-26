@@ -18,7 +18,6 @@ func _ready():
 
 func _on_CheckPoint_body_entered(body):
 	if body.is_in_group('player'):
-		print(get_path(), "new point")
-		
+		$Sprite/AnimationPlayer.play("active")
 		Global.change_checkPoint(get_path())
 
