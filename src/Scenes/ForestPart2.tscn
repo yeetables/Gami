@@ -64,7 +64,7 @@ z_index = -20
 tile_set = ExtResource( 3 )
 cell_size = Vector2( 8, 8 )
 format = 1
-tile_data = PoolIntArray( -8716066, 2, 0, -8650564, 0, 0, -8650553, 536870915, 0, -8650551, 0, 0, -8650536, 3, 0, -8650526, 536870915, 0, -8585028, 3, 0, -6553400, 1073741825, 0, -6487855, 1073741824, 0, -5504824, 1, 0, -5504813, 1, 0, -1310532, 2, 0, -1245007, 0, 0, -1245000, 0, 0, -1179474, 0, 0, 3014828, 1, 0, 3014839, 1, 0, 3014851, 1, 0, 3014862, 1, 0 )
+tile_data = PoolIntArray( -8716066, 2, 0, -8650564, 0, 0, -8650553, 536870915, 0, -8650551, 0, 0, -8650536, 3, 0, -8650526, 536870915, 0, -8585028, 3, 0, -6553400, 1073741825, 0, -6487855, 1073741824, 0, -5504824, 1, 0, -5504813, 1, 0, -1310532, 2, 0, -1245007, 0, 0, -1245000, 0, 0, -1179474, 0, 0, 3014828, 1, 0, 3014839, 1, 0, 3014851, 1, 0, 3014862, 1, 0, 4194591, 3, 0, 4194594, 2, 0, 4194599, 2, 0, 4194603, 1, 0, 4194611, 2, 0, 4194615, 2, 0, 4194617, 3, 0, 4194624, 2, 0, 4194628, 3, 0, 4194643, 0, 0, 4194645, 2, 0, 4194649, 1, 0, 4194664, 2, 0, 4194669, 3, 0, 4194674, 1, 0, 4194686, 0, 0, 4194688, 2, 0, 4194705, 3, 0, 4194713, 1, 0, 4260113, 1, 0, 4260121, 2, 0, 4260133, 0, 0, 4260170, 1, 0, 4260195, 2, 0, 4260222, 2, 0, 4260230, 1, 0, 4325780, 2, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 pause_mode = 2
@@ -166,21 +166,20 @@ position = Vector2( 4546.25, -1294.31 )
 shape = SubResource( 2 )
 
 [node name="c" type="Sprite" parent="FLOOR"]
-position = Vector2( 516.76, -195.839 )
+position = Vector2( 1100, -195.839 )
 scale = Vector2( 0.025, 0.038 )
 z_index = 5
 texture = ExtResource( 10 )
 
 [node name="Label" type="Label" parent="FLOOR"]
-margin_left = 557.449
+margin_left = 1130.0
 margin_top = -212.829
-margin_right = 813.449
+margin_right = 1386.0
 margin_bottom = -173.829
 custom_fonts/font = SubResource( 3 )
 text = "to dash in the air"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -100 )
 transform = Transform2D( 1, 0, 0, 1, 0, -100 )
@@ -227,7 +226,6 @@ centered = false
 offset = Vector2( 0, -120 )
 
 [node name="Obstacls" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 z_index = -1
@@ -239,6 +237,10 @@ scale = Vector2( 2.97941, 0.639072 )
 [node name="spike2" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1658.43, 416 )
 scale = Vector2( 3.41515, 0.639072 )
+
+[node name="spike5" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
+position = Vector2( 2784, 564.234 )
+scale = Vector2( 20, 0.639 )
 
 [node name="spike3" parent="Obstacls/Spikes" instance=ExtResource( 16 )]
 position = Vector2( 1688.26, -1008 )
