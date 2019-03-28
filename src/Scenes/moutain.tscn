@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/world.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=2]
@@ -23,12 +23,17 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-4.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-5.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-6.png" type="Texture" id=23]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 530.261, 2086.29 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 950.346, 2248.64 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 24 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -410,4 +415,14 @@ centered = false
 [node name="Sprite" type="Sprite" parent="mountain para/front rocks"]
 texture = ExtResource( 23 )
 centered = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 1455.73
+margin_top = 13.2706
+margin_right = 1658.73
+margin_bottom = 44.2706
+custom_fonts/font = SubResource( 3 )
+text = "Press 'R' to respawn"
 

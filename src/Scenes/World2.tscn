@@ -32,7 +32,7 @@ extents = Vector2( 680, 1550 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 17.6401, 64 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 22 )
 
@@ -382,6 +382,6 @@ margin_left = 15.7
 margin_top = -340.0
 margin_right = 218.7
 margin_bottom = -309.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 6 )
 text = "Press 'R' to respawn"
 
