@@ -92,7 +92,7 @@ zoom = Vector2( 1.6, 1.6 )
 
 [node name="bg" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 6 )
-volume_db = -30.48
+volume_db = -18.0
 autoplay = true
 
 [node name="scream" type="AudioStreamPlayer2D" parent="Music/sound"]

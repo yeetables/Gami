@@ -294,7 +294,6 @@ position = Vector2( 2836.79, -1308.34 )
 position = Vector2( 1659.33, -1842.75 )
 
 [node name="FLOOR" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
@@ -313,7 +312,7 @@ texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
-position = Vector2( 1123, 0 )
+position = Vector2( 1112, 0 )
 scale = Vector2( 0.992598, 1.84326 )
 z_index = -10
 texture = ExtResource( 17 )
