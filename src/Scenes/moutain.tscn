@@ -124,8 +124,10 @@ position = Vector2( 1720.52, -977.692 )
 position = Vector2( 1983.68, -1413.9 )
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
+editor/display_folded = true
 visible = false
 z_index = -1
 
@@ -289,6 +291,7 @@ position = Vector2( 2836.79, -1308.34 )
 position = Vector2( 1659.33, -1842.75 )
 
 [node name="FLOOR" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
@@ -348,6 +351,7 @@ position = Vector2( 5007.44, -893.079 )
 shape = SubResource( 2 )
 
 [node name="mountain para" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -200 )
 transform = Transform2D( 1, 0, 0, 1, 0, -200 )

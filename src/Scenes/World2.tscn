@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -21,12 +21,17 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=21]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 680, 1550 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+font_data = ExtResource( 22 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -167,7 +172,6 @@ position = Vector2( 1567.97, -728.177 )
 scale = Vector2( 3.07714, 0.639072 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
-editor/display_folded = true
 
 [node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 12 )]
 position = Vector2( 1230.36, 31.7924 )
@@ -214,10 +218,9 @@ scale = Vector2( 0.480058, 0.5 )
 position = Vector2( 2077.21, -123.11 )
 
 [node name="Rocks" type="Node2D" parent="Obstacls"]
-editor/display_folded = true
 
 [node name="rock1" parent="Obstacls/Rocks" instance=ExtResource( 14 )]
-position = Vector2( 2130.1, -880 )
+position = Vector2( 2130.1, -884.5 )
 
 [node name="FLOOR" type="Node2D" parent="."]
 position = Vector2( -476.253, 594.312 )
@@ -350,4 +353,14 @@ motion_mirroring = Vector2( 2046, 0 )
 texture = ExtResource( 21 )
 centered = false
 offset = Vector2( 0, -120 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 15.7
+margin_top = -340.0
+margin_right = 218.7
+margin_bottom = -309.0
+custom_fonts/font = SubResource( 3 )
+text = "Press 'R' to respawn"
 

@@ -66,25 +66,9 @@ func _physics_process(delta):
 			
 	# timer code done
 	###################################################################################################
-
-	if Input.is_key_pressed(KEY_1):
-		MAX_SPEED = 450
-		jforce = 650
-#		ACC = 6
-		print("1st gear")
-	elif Input.is_key_pressed(KEY_2):
-		MAX_SPEED = 600
-		jforce = 530
-#		ACC = 8
-		print("2nd gear")
-	elif Input.is_key_pressed(KEY_3):
-		MAX_SPEED = 625
-		jforce = 700 #Should be 560
-#		ACC = 10
-		print("3rd gear")
-	else:
-		pass
 		
+	if Input.is_key_pressed(KEY_R):
+		respawn()
 	
 	if Input.is_action_pressed("ui_right"):
 		$Basic.set_flip_h(false) 
@@ -219,6 +203,9 @@ func second_dash():
 	#print(direction)
 	dash = false
 	second_dash = true
+	
+func respawn():
+	Global.respawn_player()
 	
 func _ready():
 	# Called when the node is added to the scene for the first time.
