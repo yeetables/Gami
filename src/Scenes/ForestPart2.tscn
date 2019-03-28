@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -31,6 +31,12 @@ extents = Vector2( 680, 1550 )
 [sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 11 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32, 125.435 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 192 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -152,7 +158,6 @@ texture = ExtResource( 9 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
-editor/display_folded = true
 position = Vector2( -83.747, -1347.41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D"]
@@ -178,6 +183,20 @@ margin_right = 1386.0
 margin_bottom = -173.829
 custom_fonts/font = SubResource( 3 )
 text = "to dash in the air"
+
+[node name="wall1" type="StaticBody2D" parent="FLOOR"]
+position = Vector2( 0, 8.24402 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/wall1"]
+position = Vector2( 3164.25, -1299.59 )
+shape = SubResource( 4 )
+
+[node name="wall2" type="StaticBody2D" parent="FLOOR"]
+position = Vector2( 3644.25, -1618.31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/wall2"]
+position = Vector2( -32, -160 )
+shape = SubResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -15
