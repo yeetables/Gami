@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Effects/FoxDeath1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/EndPoint.tscn" type="PackedScene" id=10]
@@ -29,10 +29,10 @@ extents = Vector2( 560, 1636.9 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 680, 1550 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 17.6401, 64 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 20
 font_data = ExtResource( 22 )
 
@@ -87,7 +87,6 @@ current = true
 zoom = Vector2( 1.6, 1.6 )
 
 [node name="Music" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="sound" type="Node2D" parent="Music"]
 
@@ -316,15 +315,15 @@ region_rect = Rect2( 142, -1.401, 629, 432 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/wall1"]
 position = Vector2( 1708.61, -1618.31 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="FLOOR/wall1"]
 position = Vector2( 1738.61, -1682.31 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="FLOOR/wall1"]
 position = Vector2( 1775.48, -1778.31 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -15
@@ -382,6 +381,6 @@ margin_left = 15.7
 margin_top = -340.0
 margin_right = 218.7
 margin_bottom = -309.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to respawn"
 

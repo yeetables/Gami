@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/CameraMan.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Sounds/Background/level1bmusic.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sounds/Effects/fox_scream1.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Effects/FoxDeath1.wav" type="AudioStream" id=7]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/c.png" type="Texture" id=10]
@@ -94,7 +94,6 @@ zoom = Vector2( 1.6, 1.6 )
 [node name="Music" type="Node2D" parent="."]
 
 [node name="sound" type="Node2D" parent="Music"]
-editor/display_folded = true
 
 [node name="bg" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 6 )

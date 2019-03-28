@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Landing2.wav-cef93d6aaf0bd6ad0f0b59a9e70f522b.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Effects/Landing2.wav"
+dest_files=[ "res://.import/Landing2.wav-cef93d6aaf0bd6ad0f0b59a9e70f522b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
