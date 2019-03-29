@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parallax-bg-stuff-forest-edition-Recovered-3.png-d44a4902d270765718ac7da4e21ba8d7.stex"
+path="res://.import/PARALLAX-AAA-4.png-35193a99e4e8a4e8694dc195989738e0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-3.png"
-dest_files=[ "res://.import/parallax-bg-stuff-forest-edition-Recovered-3.png-d44a4902d270765718ac7da4e21ba8d7.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png"
+dest_files=[ "res://.import/PARALLAX-AAA-4.png-35193a99e4e8a4e8694dc195989738e0.stex" ]
 
 [params]
 

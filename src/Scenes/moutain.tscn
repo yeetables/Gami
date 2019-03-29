@@ -16,7 +16,7 @@
 [ext_resource path="res://Scenes/crumbling/crumbling_30.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/F;PPR.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-1.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-3.png" type="Texture" id=20]
@@ -359,7 +359,6 @@ transform = Transform2D( 1, 0, 0, 1, 0, -200 )
 scroll_ignore_camera_zoom = true
 
 [node name="bit of sky" type="ParallaxLayer" parent="mountain para"]
-editor/display_folded = true
 position = Vector2( 0, -500 )
 motion_scale = Vector2( 0.4, 0.4 )
 motion_mirroring = Vector2( 1024, 0 )
