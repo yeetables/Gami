@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/parallax-bg-stuff-forest-edition-Recovered-2.png-38320adbd5fd4642304a4fa2759c6ca6.stex"
+path="res://.import/parallax-bg-between-2.png-8f0dc4d3557e5b05fb17362d74c9fd3e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Background/Parallax BG/parallax-bg-stuff-forest-edition-Recovered-2.png"
-dest_files=[ "res://.import/parallax-bg-stuff-forest-edition-Recovered-2.png-38320adbd5fd4642304a4fa2759c6ca6.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/Inbetween parallax/parallax-bg-between-2.png"
+dest_files=[ "res://.import/parallax-bg-between-2.png-8f0dc4d3557e5b05fb17362d74c9fd3e.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false

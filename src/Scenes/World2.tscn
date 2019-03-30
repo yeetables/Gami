@@ -14,14 +14,15 @@
 [ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/F;PPR.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/F;PPR.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/spaceBar.jpg" type="Texture" id=16]
 [ext_resource path="res://Assets/Sprites/kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.8563640315244091071605.png" type="Texture" id=17]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=21]
 [ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=22]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
