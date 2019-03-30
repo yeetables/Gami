@@ -130,7 +130,6 @@ position = Vector2( 1604.03, -1312 )
 scene_file = "res://Scenes/ForestPart2.tscn"
 
 [node name="Obstacls" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
@@ -176,7 +175,6 @@ position = Vector2( 1567.97, -728.177 )
 scale = Vector2( 3.07714, 0.639072 )
 
 [node name="crumbles" type="Node2D" parent="Obstacls"]
-editor/display_folded = true
 
 [node name="crumbling18" parent="Obstacls/crumbles" instance=ExtResource( 13 )]
 position = Vector2( 1230.36, 31.7924 )
@@ -192,7 +190,7 @@ position = Vector2( 485.93, 188.005 )
 position = Vector2( 1588.03, -48.078 )
 
 [node name="crumbling4" parent="Obstacls/crumbles" instance=ExtResource( 14 )]
-position = Vector2( 1343.39, -717.751 )
+position = Vector2( 1343.39, -720 )
 scale = Vector2( 0.480058, 0.5 )
 
 [node name="crumbling5" parent="Obstacls/crumbles" instance=ExtResource( 14 )]
