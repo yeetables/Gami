@@ -77,7 +77,6 @@ func _physics_process(delta):
 	
 		# Dashing code
 		if dash == true:
-				
 			landed = false
 			if xspeed > 0:
 				xspeed = 900
@@ -111,6 +110,7 @@ func _physics_process(delta):
 			
 		if is_on_floor():
 			landed = true
+			
 		
 		#print(xspeed, yspeed)
 		velocity.x = 1 * xspeed

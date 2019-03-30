@@ -12,6 +12,7 @@ var PLAYER_INSTANCE = null
 
 var DASH_ENABLED = false
 
+
 var CAN_MOVE = true
 
 func _ready():

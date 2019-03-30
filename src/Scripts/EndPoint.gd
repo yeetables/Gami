@@ -19,7 +19,7 @@ func _on_Area2D_body_entered(body):
 		call_deferred("loadNextLevel", scene_file)
 #		Global.switch_scene()
 
-func loadNextLevel(scenenam):
+func loadNextLevel(scene_file):
 	print("transport")
 	get_tree().change_scene(scene_file)
 	
