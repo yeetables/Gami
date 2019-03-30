@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -15,14 +15,15 @@
 [ext_resource path="res://Scenes/crumbling/crumbling_6.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/F;PPR.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Sprites/spaceBar.jpg" type="Texture" id=17]
-[ext_resource path="res://Assets/Sprites/kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.8563640315244091071605.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=19]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=21]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=22]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=23]
+[ext_resource path="res://Assets/Sprites/Objects/spike-spawner.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/F;PPR.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/spaceBar.jpg" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/kisspng-computer-keyboard-arrow-keys-clip-art-5adca3132730b7.8563640315244091071605.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=23]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -32,7 +33,7 @@ extents = Vector2( 680, 1550 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 15
-font_data = ExtResource( 23 )
+font_data = ExtResource( 24 )
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -221,10 +222,13 @@ scale = Vector2( 0.480058, 0.5 )
 position = Vector2( 2077.21, -123.11 )
 
 [node name="Rocks" type="Node2D" parent="Obstacls"]
-editor/display_folded = true
 
 [node name="rock1" parent="Obstacls/Rocks" instance=ExtResource( 15 )]
 position = Vector2( 2130.1, -884.5 )
+
+[node name="spike-spawner" type="Sprite" parent="Obstacls/Rocks/rock1"]
+position = Vector2( 0, -11.5 )
+texture = ExtResource( 16 )
 
 [node name="FLOOR" type="Node2D" parent="."]
 position = Vector2( -476.253, 594.312 )
@@ -233,7 +237,7 @@ position = Vector2( -476.253, 594.312 )
 position = Vector2( -663.747, 5.68799 )
 scale = Vector2( 1.5982, 2.27634 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite6" type="Sprite" parent="FLOOR"]
@@ -241,7 +245,7 @@ visible = false
 position = Vector2( -683.747, 262 )
 scale = Vector2( 1, -14.3867 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite7" type="Sprite" parent="FLOOR"]
@@ -249,35 +253,35 @@ visible = false
 position = Vector2( 3856.25, 245.688 )
 scale = Vector2( 1, -17.36 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
 position = Vector2( 1123, 0 )
 scale = Vector2( 1.08589, 1.76525 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="FLOOR"]
 position = Vector2( 2236, 7 )
 scale = Vector2( 1.08233, 2.51027 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite4" type="Sprite" parent="FLOOR"]
 position = Vector2( 3380.99, 6.99994 )
 scale = Vector2( 1.07349, 2.15557 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="Sprite5" type="Sprite" parent="FLOOR"]
 position = Vector2( 4041.13, 5.99994 )
 scale = Vector2( 1.06778, 2.17151 )
 z_index = -10
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
@@ -299,14 +303,14 @@ shape = SubResource( 2 )
 [node name="spaceBar" type="Sprite" parent="FLOOR"]
 position = Vector2( 1225, -174.312 )
 scale = Vector2( 0.645085, 0.67477 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 region_enabled = true
 region_rect = Rect2( 92.5, 210.382, 313.5, 77 )
 
 [node name="arrows" type="Sprite" parent="FLOOR"]
 position = Vector2( 670, -180 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 region_rect = Rect2( 142, -1.401, 629, 432 )
 
 [node name="wall1" type="StaticBody2D" parent="FLOOR"]
@@ -323,7 +327,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -333,7 +337,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -343,7 +347,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -356,7 +360,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 centered = false
 offset = Vector2( 0, -120 )
 
