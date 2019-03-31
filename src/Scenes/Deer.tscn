@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://deerScene.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/grass-night-1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=4]
@@ -37,7 +37,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0.294118 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "filterIn"
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
@@ -52,7 +52,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.27451 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "filterOut"
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0.27451 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 resource_name = "enter"
 length = 3.0
 tracks/0/type = "value"
@@ -83,8 +83,7 @@ tracks/0/keys = {
 "values": [ Vector2( -613.61, 144.37 ), Vector2( 100, 144.37 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "textCycle"
+[sub_resource type="Animation" id=6]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("deerVoice:modulate")
@@ -133,8 +132,8 @@ texture = ExtResource( 2 )
 [node name="bgAnim" type="AnimationPlayer" parent="."]
 anims/fadeIn = SubResource( 1 )
 anims/fadeOut = SubResource( 2 )
-anims/filterIn = SubResource( 4 )
-anims/filterOut = SubResource( 5 )
+anims/filterIn = SubResource( 3 )
+anims/filterOut = SubResource( 4 )
 
 [node name="deerVoice" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -166,8 +165,8 @@ scale = Vector2( 18.9988, 11.958 )
 texture = ExtResource( 2 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/enter = SubResource( 6 )
-anims/textCycle = SubResource( 3 )
+anims/enter = SubResource( 5 )
+anims/textCycle = SubResource( 6 )
 
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
