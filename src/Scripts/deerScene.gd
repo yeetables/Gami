@@ -113,6 +113,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 		$deerVoice.set_text(deer2[0])
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
+		$PlyAnim.play("textCycle")
 	elif anim_name == "kiss":
 		line = 0
 		count = len(deer3)
