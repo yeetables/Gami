@@ -11,8 +11,7 @@ var PLAYER_POS = Vector2()
 var PLAYER_INSTANCE = null
 
 var DASH_ENABLED = false
-
-
+var FRAGMENTS = 0
 var CAN_MOVE = true
 
 func _ready():
