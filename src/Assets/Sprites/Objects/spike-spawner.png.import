@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/keyboard_key_r.png-67375d8dd3566ebe08e0599635241c43.stex"
+path="res://.import/spike-spawner.png-4c97ed63f54f3a8b7f20198e1e29efd1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/keyboard_key_r.png"
-dest_files=[ "res://.import/keyboard_key_r.png-67375d8dd3566ebe08e0599635241c43.stex" ]
+source_file="res://Assets/Sprites/Objects/spike-spawner.png"
+dest_files=[ "res://.import/spike-spawner.png-4c97ed63f54f3a8b7f20198e1e29efd1.stex" ]
 
 [params]
 

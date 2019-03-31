@@ -10,7 +10,7 @@ var end = false
 
 func _ready():
 	$Fader.play("White")
-	print("Flag1")
+	#print("Flag1")
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Words":
@@ -33,7 +33,7 @@ func _on_Fader_animation_finished(anim_name):
 	if anim_name == "White":
 		$Label.set_text(cutscene1[count])
 		$AnimationPlayer.play("Words")
-		print("Flag2")
+		#print("Flag2")
 		count += 1
 	if anim_name == "Black":
 		# switch to first level

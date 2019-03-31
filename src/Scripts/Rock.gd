@@ -18,6 +18,9 @@ func _on_rock_body_entered(body):
 	if not body.is_in_group("player"):
 		queue_free()
 	else:
-		get_node("/root/World/Music/sound/scream").play()
+		if randi()%2+1 == 1:
+			get_node("/root/World/Music/sound/scream").play()
+		else:
+			get_node("/root/World/Music/sound/scream2").play()
 		Global.respawn_player()
 		queue_free()
