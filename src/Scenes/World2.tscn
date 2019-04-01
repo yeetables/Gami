@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/World.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -24,6 +24,9 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=23]
 [ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://Scenes/StonesAndFragments/vital1.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/StonesAndFragments/vital2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/StonesAndFragments/vital3.tscn" type="PackedScene" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -374,4 +377,18 @@ margin_right = 219.0
 margin_bottom = 47.7924
 custom_fonts/font = SubResource( 3 )
 text = "Press 'R' to respawn"
+
+[node name="Fragments" type="Node2D" parent="."]
+
+[node name="FragmentArea" parent="Fragments" instance=ExtResource( 25 )]
+position = Vector2( 1243.54, 228.005 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FragmentArea2" parent="Fragments" instance=ExtResource( 26 )]
+position = Vector2( 1564.33, -335 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FragmentArea3" parent="Fragments" instance=ExtResource( 27 )]
+position = Vector2( 1856, -768 )
+scale = Vector2( 0.5, 0.5 )
 

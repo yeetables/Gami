@@ -12,7 +12,8 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_Area2D_body_entered(body):
+func _on_FragmentArea_body_entered(body):
 	if body.is_in_group('player'):
 		Global.FRAGMENTS += 1
+		print(Global.FRAGMENTS)
 		queue_free()

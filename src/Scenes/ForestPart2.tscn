@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/ForestPart2Script.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -23,6 +23,9 @@
 [ext_resource path="res://Assets/Sprites/Objects/spike-spawner.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/EndPoint.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/StonesAndFragments/strong1.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/StonesAndFragments/strong2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/StonesAndFragments/strong3.tscn" type="PackedScene" id=26]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -409,4 +412,18 @@ margin_right = -437.0
 margin_bottom = 15.0
 custom_fonts/font = SubResource( 4 )
 text = "Press 'R' to respawn"
+
+[node name="Fragments" type="Node2D" parent="."]
+
+[node name="FragmentArea" parent="Fragments" instance=ExtResource( 24 )]
+position = Vector2( 127.898, 64 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FragmentArea2" parent="Fragments" instance=ExtResource( 25 )]
+position = Vector2( 1688.26, -696 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="FragmentArea3" parent="Fragments" instance=ExtResource( 26 )]
+position = Vector2( 2688, -1248 )
+scale = Vector2( 0.5, 0.5 )
 
