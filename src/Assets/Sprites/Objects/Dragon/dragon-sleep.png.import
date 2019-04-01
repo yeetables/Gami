@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-1.png-bc43fc1c11c72610d10091bd91894889.stex"
+path="res://.import/dragon-sleep.png-667936dc05613f5e56eafde2c7b4476a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-1.png"
-dest_files=[ "res://.import/fox-piece-1.png-bc43fc1c11c72610d10091bd91894889.stex" ]
+source_file="res://Assets/Sprites/Objects/Dragon/dragon-sleep.png"
+dest_files=[ "res://.import/dragon-sleep.png-667936dc05613f5e56eafde2c7b4476a.stex" ]
 
 [params]
 
