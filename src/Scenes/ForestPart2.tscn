@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/ForestPart2Script.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -23,22 +23,28 @@
 [ext_resource path="res://Assets/Sprites/Objects/spike-spawner.png" type="Texture" id=21]
 [ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/EndPoint.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/StonesAndFragments/strong1.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/StonesAndFragments/strong2.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/StonesAndFragments/strong3.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/vital-rock.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/strong-rock.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/StonesAndFragments/strong1.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/StonesAndFragments/strong2.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/StonesAndFragments/strong3.tscn" type="PackedScene" id=28]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 560, 1636.9 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 680, 1550 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=7]
 size = 30
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=8]
 size = 15
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
 font_data = ExtResource( 12 )
 
 [node name="World" type="Node2D"]
@@ -166,14 +172,14 @@ centered = false
 position = Vector2( -83.747, -1347.41 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D"]
-shape = SubResource( 1 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="FLOOR"]
 editor/display_folded = true
 position = Vector2( 4546.25, -1294.31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FLOOR/StaticBody2D2"]
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 
 [node name="c" type="Sprite" parent="FLOOR"]
 position = Vector2( 1100, -195.839 )
@@ -186,7 +192,7 @@ margin_left = 1130.0
 margin_top = -212.829
 margin_right = 1386.0
 margin_bottom = -173.829
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 7 )
 text = "to dash in the air"
 
 [node name="wall1" type="StaticBody2D" parent="FLOOR"]
@@ -410,20 +416,58 @@ margin_left = -640.0
 margin_top = -16.0
 margin_right = -437.0
 margin_bottom = 15.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 8 )
 text = "Press 'R' to respawn"
+
+[node name="Green" type="Sprite" parent="HUD"]
+position = Vector2( 793.732, 16.7924 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 24 )
+
+[node name="Red" type="Sprite" parent="HUD"]
+position = Vector2( 922.782, 16.7924 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 25 )
+
+[node name="GreenFrag" type="Label" parent="HUD"]
+margin_left = 828.0
+margin_right = 837.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 4 )
+text = "3"
+
+[node name="RedFrag" type="Label" parent="HUD"]
+margin_left = 957.462
+margin_right = 967.462
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 4 )
+text = "0"
+
+[node name="Label4" type="Label" parent="HUD"]
+margin_left = 843.0
+margin_right = 866.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 4 )
+text = "/3"
+
+[node name="Label5" type="Label" parent="HUD"]
+margin_left = 972.462
+margin_right = 995.462
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 4 )
+text = "/3"
 
 [node name="Fragments" type="Node2D" parent="."]
 
-[node name="FragmentArea" parent="Fragments" instance=ExtResource( 24 )]
+[node name="FragmentArea" parent="Fragments" instance=ExtResource( 26 )]
 position = Vector2( 127.898, 64 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="FragmentArea2" parent="Fragments" instance=ExtResource( 25 )]
+[node name="FragmentArea2" parent="Fragments" instance=ExtResource( 27 )]
 position = Vector2( 1688.26, -696 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="FragmentArea3" parent="Fragments" instance=ExtResource( 26 )]
+[node name="FragmentArea3" parent="Fragments" instance=ExtResource( 28 )]
 position = Vector2( 2688, -1248 )
 scale = Vector2( 0.5, 0.5 )
 
