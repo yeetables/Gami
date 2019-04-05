@@ -86,11 +86,10 @@ position = Vector2( 150, 539.959 )
 z_index = 1
 
 [node name="Camera" type="KinematicBody2D" parent="."]
-position = Vector2( 796.946, 130 )
+position = Vector2( 150, 250 )
 script = ExtResource( 5 )
 
 [node name="Camera2D" type="Camera2D" parent="Camera"]
-position = Vector2( 16, 0 )
 current = true
 zoom = Vector2( 1.6, 1.6 )
 

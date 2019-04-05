@@ -51,6 +51,8 @@ func add_player(pos):
 	
 func move_camera(pos):
 	var camera_instance = get_tree().get_root().get_node("/root/World/Camera")
+	if (pos.y > 300): # if the player is at the bottom, don't the camera go down there
+			pos.y = 300 # if change this value, need to change CameraMan script as well
 	camera_instance.set_global_position(pos)
 	
 func respawn_player():
