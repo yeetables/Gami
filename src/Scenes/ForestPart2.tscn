@@ -111,13 +111,13 @@ autoplay = true
 [node name="bg2" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 8 )
 
-[node name="scream" type="AudioStreamPlayer2D" parent="Music/sound"]
+[node name="scream" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 9 )
 
 [node name="rock2" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 10 )
 
-[node name="scream2" type="AudioStreamPlayer2D" parent="Music/sound"]
+[node name="scream2" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 11 )
 
 [node name="FLOOR" type="Node2D" parent="."]
