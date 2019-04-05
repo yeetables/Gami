@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/cutscenes/Intro.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=6]
 [ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=7]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="Animation" id=1]
 length = 0.85
@@ -218,6 +219,10 @@ tracks/3/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="DynamicFont" id=10]
+size = 15
+font_data = ExtResource( 8 )
+
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
@@ -225,6 +230,7 @@ script = ExtResource( 1 )
 current = true
 
 [node name="icon" type="Sprite" parent="."]
+editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 1.737, 198 )
 z_index = 1
@@ -286,7 +292,27 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 1.73682, 199.492 )
 tile_set = ExtResource( 7 )
 format = 1
-tile_data = PoolIntArray( 65528, 30, 0, 65529, 31, 0, 65530, 34, 0, 65531, 35, 0, 65532, 32, 0, 65535, 32, 0, 2, 32, 0, 5, 31, 0, 6, 34, 0, 7, 36, 0 )
+tile_data = PoolIntArray( 65528, 30, 0, 65529, 31, 0, 65530, 34, 0, 65531, 35, 0, 65532, 32, 0, 65535, 32, 0, 2, 32, 0, 5, 31, 0, 6, 34, 0, 7, 36, 0, 131064, 30, 0, 131065, 33, 0, 131067, 32, 0, 131070, 32, 0, 65537, 32, 0, 65540, 32, 0, 65543, 36, 0 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="nextline" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 16.0
+margin_top = 47.7924
+margin_right = 229.0
+margin_bottom = 78.7924
+custom_fonts/font = SubResource( 10 )
+text = "Press 'LMB' to fast-forward"
+
+[node name="skip" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 16.0
+margin_top = 16.7924
+margin_right = 229.0
+margin_bottom = 47.7924
+custom_fonts/font = SubResource( 10 )
+text = "Press 'S' to skip"
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="animation_finished" from="Fader" to="." method="_on_Fader_animation_finished"]

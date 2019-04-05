@@ -122,7 +122,6 @@ func _physics_process(delta):
 		velocity.x = 1 * xspeed
 
 		velocity.y = min(-1 * yspeed, 900)
-		print(velocity, yspeed)
 		
 		move_and_slide(velocity, UP)
 
