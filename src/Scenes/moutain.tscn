@@ -107,7 +107,7 @@ stream = ExtResource( 9 )
 stream = ExtResource( 10 )
 volume_db = -10.0
 
-[node name="scream2" type="AudioStreamPlayer2D" parent="Music/sound"]
+[node name="scream2" type="AudioStreamPlayer" parent="Music/sound"]
 stream = ExtResource( 11 )
 
 [node name="CheckPoints" type="Node2D" parent="."]

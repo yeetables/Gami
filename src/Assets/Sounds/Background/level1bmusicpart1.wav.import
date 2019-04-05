@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level1bmusicpart1.wav-79018d3ef8a732721e18c454035b8250.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Background/level1bmusicpart1.wav"
+dest_files=[ "res://.import/level1bmusicpart1.wav-79018d3ef8a732721e18c454035b8250.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0
