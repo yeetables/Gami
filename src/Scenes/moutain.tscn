@@ -18,7 +18,7 @@
 [ext_resource path="res://Scenes/crumbling/crumbling_9.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Sprites/Objects/spike-spawner.png" type="Texture" id=18]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/F;PPR.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/mountain-dirt smoll.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-1.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-2.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-3.png" type="Texture" id=22]
@@ -111,10 +111,9 @@ volume_db = -10.0
 stream = ExtResource( 11 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 12 )]
-position = Vector2( 2832.57, 535.186 )
+position = Vector2( 2832.57, 554.186 )
 
 [node name="SpawnPoint8" parent="CheckPoints" instance=ExtResource( 12 )]
 position = Vector2( 1342.83, 157.661 )
@@ -138,6 +137,7 @@ position = Vector2( 1720.52, -977.692 )
 position = Vector2( 1983.68, -1413.9 )
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
@@ -340,45 +340,29 @@ editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
-position = Vector2( -337.089, 0 )
-scale = Vector2( 1.26894, 1.78643 )
-z_index = -10
-texture = ExtResource( 19 )
-centered = false
-
-[node name="Sprite6" type="Sprite" parent="FLOOR"]
-visible = false
-position = Vector2( -351.037, 252.953 )
-scale = Vector2( 1, -10.76 )
+position = Vector2( -322.387, 3.86896 )
+scale = Vector2( 4.81411, 7.24079 )
 z_index = -10
 texture = ExtResource( 19 )
 centered = false
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
-position = Vector2( 1112, 0 )
-scale = Vector2( 0.992598, 1.84326 )
+position = Vector2( 1102.83, 12.0599 )
+scale = Vector2( 4.81411, 7.24079 )
 z_index = -10
 texture = ExtResource( 19 )
 centered = false
 
 [node name="Sprite3" type="Sprite" parent="FLOOR"]
-position = Vector2( 2236, 7 )
-scale = Vector2( 1, 1.98991 )
+position = Vector2( 2388.53, 4.26782 )
+scale = Vector2( 4.81411, 7.24079 )
 z_index = -10
 texture = ExtResource( 19 )
 centered = false
 
 [node name="Sprite4" type="Sprite" parent="FLOOR"]
-position = Vector2( 3340.96, 6.99994 )
-scale = Vector2( 1.91081, 2.05909 )
-z_index = -10
-texture = ExtResource( 19 )
-centered = false
-
-[node name="Sprite5" type="Sprite" parent="FLOOR"]
-visible = false
-position = Vector2( 4041.13, 6.99994 )
-scale = Vector2( 2.18171, -23.1038 )
+position = Vector2( 3696.69, 10.1118 )
+scale = Vector2( 4.81411, 7.24079 )
 z_index = -10
 texture = ExtResource( 19 )
 centered = false
@@ -396,6 +380,7 @@ position = Vector2( 5007.44, -893.079 )
 shape = SubResource( 2 )
 
 [node name="mountain para" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -200 )
 transform = Transform2D( 1, 0, 0, 1, 0, -200 )
@@ -431,6 +416,7 @@ texture = ExtResource( 22 )
 centered = false
 
 [node name="rocks middle" type="ParallaxLayer" parent="mountain para"]
+editor/display_folded = true
 position = Vector2( 0, -400 )
 motion_scale = Vector2( 0.85, 0.8 )
 motion_mirroring = Vector2( 1024, 0 )
@@ -440,6 +426,7 @@ texture = ExtResource( 23 )
 centered = false
 
 [node name="rocks n dirt" type="ParallaxLayer" parent="mountain para"]
+editor/display_folded = true
 position = Vector2( 0, -300 )
 motion_mirroring = Vector2( 1024, 0 )
 
@@ -454,6 +441,7 @@ texture = ExtResource( 25 )
 centered = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Label" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.588235 )

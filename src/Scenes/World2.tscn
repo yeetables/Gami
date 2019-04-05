@@ -36,11 +36,11 @@ extents = Vector2( 560, 1636.9 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 680, 1550 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=3]
 size = 15
 font_data = ExtResource( 24 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=4]
 size = 24
 font_data = ExtResource( 24 )
 
@@ -381,7 +381,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 219.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 text = "Press 'R' to respawn"
 
 [node name="Green" type="Sprite" parent="HUD"]
@@ -398,28 +398,28 @@ texture = ExtResource( 26 )
 margin_left = 828.0
 margin_right = 837.0
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 4 )
 text = "0"
 
 [node name="RedFrag" type="Label" parent="HUD"]
 margin_left = 957.462
 margin_right = 967.462
 margin_bottom = 29.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 4 )
 text = "0"
 
 [node name="Label4" type="Label" parent="HUD"]
 margin_left = 843.0
 margin_right = 866.0
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 4 )
 text = "/3"
 
 [node name="Label5" type="Label" parent="HUD"]
 margin_left = 972.462
 margin_right = 995.462
 margin_bottom = 31.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 4 )
 text = "/3"
 
 [node name="Fragments" type="Node2D" parent="."]
