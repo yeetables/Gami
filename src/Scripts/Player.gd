@@ -20,6 +20,8 @@ var direction = 0
 
 var JUMPING = false
 
+var falling = false # for fixing the gravity 
+
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
@@ -74,7 +76,7 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("space"):
 				$jumpsound1.play() 
 				yspeed = jforce
-	
+
 		# Dashing code
 		if dash == true:
 			landed = false
@@ -98,7 +100,11 @@ func _physics_process(delta):
 	#			ACC = 200
 				MAX_SPEED = 550
 				yspeed -= 15
-				
+				falling = true
+		if is_on_floor() and falling:
+			falling = false
+			yspeed = 1
+		
 		if count >= 15:
 			dash = false
 			count = 0
@@ -111,14 +117,14 @@ func _physics_process(delta):
 		if is_on_floor():
 			landed = true
 			
-		
 		#print(xspeed, yspeed)
+		
 		velocity.x = 1 * xspeed
-		# control falling speed
-		velocity.y = min(-1 * yspeed, 2000)
-	
+
+		velocity.y = min(-1 * yspeed, 900)
+		print(velocity, yspeed)
+		
 		move_and_slide(velocity, UP)
-	
 
 func respawn_R():
 	Global.respawn_player()
