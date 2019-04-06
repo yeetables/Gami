@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-4.png-2617b6feb6e1873bf5a2d5cabed32a3e.stex"
+path="res://.import/strong-rock-p1.png-a841f7c5310c99c0d9eae34fb18f614d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-4.png"
-dest_files=[ "res://.import/fox-piece-4.png-2617b6feb6e1873bf5a2d5cabed32a3e.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/stonefrags/strong-rock-p1.png"
+dest_files=[ "res://.import/strong-rock-p1.png-a841f7c5310c99c0d9eae34fb18f614d.stex" ]
 
 [params]
 

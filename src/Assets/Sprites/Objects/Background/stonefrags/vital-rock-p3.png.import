@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-6.png-1b38370be4c62541c5f531dca679089f.stex"
+path="res://.import/vital-rock-p3.png-eb569b1f0b0f86f3a060953d6a530063.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-6.png"
-dest_files=[ "res://.import/fox-piece-6.png-1b38370be4c62541c5f531dca679089f.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/stonefrags/vital-rock-p3.png"
+dest_files=[ "res://.import/vital-rock-p3.png-eb569b1f0b0f86f3a060953d6a530063.stex" ]
 
 [params]
 

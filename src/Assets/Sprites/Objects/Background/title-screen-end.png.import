@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex"
+path="res://.import/title-screen-end.png-4bdeb9db80e6ffc03e3fd862bc7405e4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Objects/Player/fox-piece-3.png"
-dest_files=[ "res://.import/fox-piece-3.png-16650fb99bbce1a02af9e2f03298a38c.stex" ]
+source_file="res://Assets/Sprites/Objects/Background/title-screen-end.png"
+dest_files=[ "res://.import/title-screen-end.png-4bdeb9db80e6ffc03e3fd862bc7405e4.stex" ]
 
 [params]
 
