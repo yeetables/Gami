@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/grass-night-1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=4]
 
@@ -126,7 +126,7 @@ position = Vector2( -475.676, 248.757 )
 texture = ExtResource( 3 )
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( -613.61, 144.37 )
+position = Vector2( -137.87, 144.37 )
 texture = ExtResource( 2 )
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
