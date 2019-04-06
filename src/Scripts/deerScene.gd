@@ -16,11 +16,6 @@ var part = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 
 func _on_bgAnim_animation_finished(anim_name):
@@ -29,20 +24,20 @@ func _on_bgAnim_animation_finished(anim_name):
 		$deerVoice.set_text(deer1[0])
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
-		$PlyAnim.play("textCycle")
+		$PlyAnim.play("deerCycle")
 	elif anim_name == "filterIn":
 		if part == 2:
 			$dragonVoice.set_text(drag1)
 			$PlyAnim.set_speed_scale(times[t_count])
 			t_count += 1
-			$PlyAnim.play("textCycle")
+			$PlyAnim.play("dragCycle")
 		elif part == 5:
 			line = 0
 			count = len(drag2)
 			$dragonVoice.set_text(drag2)
 			$PlyAnim.set_speed_scale(times[t_count])
 			t_count += 1
-			$PlyAnim.play("textCycle")
+			$PlyAnim.play("dragCycle")
 	elif anim_name == "filterOut":
 		$PlyAnim.set_speed_scale(1)
 		#$PlyAnim.play("kiss")
@@ -52,7 +47,7 @@ func _on_bgAnim_animation_finished(anim_name):
 
 
 func _on_PlyAnim_animation_finished(anim_name):
-	if anim_name == "textCycle":
+	if anim_name == "deerCycle" or anim_name == "dragCycle":
 		line += 1
 		if part == 0:
 			if line == count:
@@ -63,7 +58,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 				$deerVoice.set_text(deer1[line])
 				$PlyAnim.set_speed_scale(times[t_count])
 				t_count += 1
-				$PlyAnim.play("textCycle")
+				$PlyAnim.play("deerCycle")
 		elif part == 1:
 			if line == count:
 				$bgAnim.set_speed_scale(1)
@@ -73,7 +68,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 				$deerVoice.set_text(deer2[line])
 				$PlyAnim.set_speed_scale(times[t_count])
 				t_count += 1
-				$PlyAnim.play("textCycle")
+				$PlyAnim.play("deerCycle")
 		elif part == 2:
 			$bgAnim.set_speed_scale(1)
 			part += 1
@@ -87,7 +82,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 				$deerVoice.set_text(deer3[line])
 				$PlyAnim.set_speed_scale(times[t_count])
 				t_count += 1
-				$PlyAnim.play("textCycle")
+				$PlyAnim.play("deerCycle")
 		elif part == 4:
 			if line == count:
 				$bgAnim.set_speed_scale(1)
@@ -97,7 +92,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 				$deerVoice.set_text(deer4[line])
 				$PlyAnim.set_speed_scale(times[t_count])
 				t_count += 1
-				$PlyAnim.play("textCycle")
+				$PlyAnim.play("deerCycle")
 		elif part == 5:
 			if line == count:
 				$bgAnim.set_speed_scale(1)
@@ -106,25 +101,25 @@ func _on_PlyAnim_animation_finished(anim_name):
 				$dragonVoice.set_text(drag2[line])
 				$PlyAnim.set_speed_scale(times[t_count])
 				t_count += 1
-				$PlyAnim.play("textCycle")
+				$PlyAnim.play("dragCycle")
 	elif anim_name == "enter":
 		line = 0
 		count = len(deer2)
 		$deerVoice.set_text(deer2[0])
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
-		$PlyAnim.play("textCycle")
+		$PlyAnim.play("deerCycle")
 	elif anim_name == "kiss":
 		line = 0
 		count = len(deer3)
 		$deerVoice.set_text(deer3[0])
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
-		$PlyAnim.play("textCycle")
+		$PlyAnim.play("deerCycle")
 	elif anim_name == "heart":
 		line = 0
 		count = len(deer4)
 		$deerVoice.set_text(deer4[0])
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
-		$PlyAnim.play("textCycle")
+		$PlyAnim.play("deerCycle")
