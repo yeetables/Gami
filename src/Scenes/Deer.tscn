@@ -158,7 +158,6 @@ valign = 1
 autowrap = true
 
 [node name="Background" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0, 0, 0, 0.294118 )
 position = Vector2( -0.162235, 0.260328 )
 scale = Vector2( 18.9988, 11.958 )
