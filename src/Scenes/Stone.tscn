@@ -4,7 +4,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=3]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "fadeIn"
 length = 2.0
 tracks/0/type = "value"
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.27451 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "fadeOut"
 length = 2.0
 tracks/0/type = "value"
@@ -60,8 +60,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 0.294118 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "textCycle"
+[sub_resource type="Animation" id=3]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -120,8 +119,8 @@ scale = Vector2( 4.55635, 4.17896 )
 texture = ExtResource( 3 )
 
 [node name="cycle" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 2 )
-anims/fadeOut = SubResource( 3 )
-anims/textCycle = SubResource( 1 )
+anims/fadeIn = SubResource( 1 )
+anims/fadeOut = SubResource( 2 )
+anims/textCycle = SubResource( 3 )
 
 [connection signal="animation_finished" from="cycle" to="." method="_on_cycle_animation_finished"]

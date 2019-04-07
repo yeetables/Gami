@@ -12,14 +12,14 @@ func _ready():
 	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
 func _process(delta):
 	if Input.is_mouse_button_pressed(BUTTON_RIGHT) == false:
-		#print(Global.PLAYER_POS, position)
+
 		target = Global.PLAYER_POS
+		if (target.y > 300): # if the player is at the bottom, don't the camera go down there
+			target.y = 300 # if change this value, need to change Global.move_camera() function as well
+
 		velocity = (target - position).normalized() * speed
 		if(target - position).length() > 5:
 			move_and_slide(velocity)
