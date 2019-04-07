@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Sounds/Effects/FoxDeath1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sounds/Effects/rock2.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Sounds/Effects/FoxDeath2.wav" type="AudioStream" id=11]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/F;PPR.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/dirt-3-small.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Sprites/c.png" type="Texture" id=13]
 [ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-1.png" type="Texture" id=15]
@@ -124,55 +124,40 @@ stream = ExtResource( 11 )
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
-position = Vector2( -656.3, 0 )
-scale = Vector2( 1.55605, 2.28954 )
+position = Vector2( -656.157, 0 )
+scale = Vector2( 9.37153, 9.65992 )
 z_index = -10
 texture = ExtResource( 12 )
 centered = false
-
-[node name="Sprite6" type="Sprite" parent="FLOOR"]
-visible = false
-position = Vector2( -683.747, 262 )
-scale = Vector2( 1, -14.3867 )
-z_index = -10
-texture = ExtResource( 12 )
-centered = false
-
-[node name="Sprite7" type="Sprite" parent="FLOOR"]
-visible = false
-position = Vector2( 3856.25, 245.688 )
-scale = Vector2( 1, -17.36 )
-z_index = -10
-texture = ExtResource( 12 )
-centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 62 )
 
 [node name="Sprite2" type="Sprite" parent="FLOOR"]
-position = Vector2( 1123, 0 )
-scale = Vector2( 1.01767, 2.33611 )
+position = Vector2( 922.003, 6.33789 )
+scale = Vector2( 9.37153, 9.65992 )
 z_index = -10
 texture = ExtResource( 12 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 62 )
 
 [node name="Sprite3" type="Sprite" parent="FLOOR"]
-position = Vector2( 2236, 7 )
-scale = Vector2( 1.03146, 2.36387 )
+position = Vector2( 2607.91, 6.33789 )
+scale = Vector2( 9.37153, 9.65992 )
 z_index = -10
 texture = ExtResource( 12 )
 centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 62 )
 
 [node name="Sprite4" type="Sprite" parent="FLOOR"]
-position = Vector2( 3380.99, 6.99994 )
-scale = Vector2( 1.06583, 2.33129 )
+position = Vector2( 3552.27, -0.000244141 )
+scale = Vector2( 9.37153, 9.65992 )
 z_index = -10
 texture = ExtResource( 12 )
 centered = false
-
-[node name="Sprite5" type="Sprite" parent="FLOOR"]
-position = Vector2( 4041.13, 5.99994 )
-scale = Vector2( 1.02665, 2.29057 )
-z_index = -10
-texture = ExtResource( 12 )
-centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 62 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="FLOOR"]
 position = Vector2( -83.747, -1347.41 )
