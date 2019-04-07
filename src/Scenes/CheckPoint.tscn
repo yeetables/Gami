@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/SpawnPoint.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_9.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_6.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_7.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Objects/bigrock anim/checkpoint rock anim.png_8.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sounds/New Effects/checkpoint.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 30, 30 )
@@ -56,5 +57,9 @@ texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 anims/active = SubResource( 2 )
+
+[node name="Activated" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = -4.727
 
 [connection signal="body_entered" from="." to="." method="_on_CheckPoint_body_entered"]

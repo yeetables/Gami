@@ -71,6 +71,7 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_lmb"):
 			if not is_on_floor() and landed == true and Global.DASH_ENABLED:
 				dash = true
+				$DashSound.play()
 		
 		if is_on_floor():
 			if Input.is_action_just_pressed("space"):

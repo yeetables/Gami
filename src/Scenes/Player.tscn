@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sounds/Effects/Landing1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/New Effects/dash_heavy.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.94987, 10.5008 )
@@ -55,6 +56,10 @@ volume_db = -8.0
 [node name="DeathTimer" type="Timer" parent="Body"]
 wait_time = 0.5
 one_shot = true
+
+[node name="DashSound" type="AudioStreamPlayer" parent="Body"]
+stream = ExtResource( 4 )
+volume_db = -5.0
 
 [connection signal="animation_finished" from="Body/AnimationPlayer" to="Body" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="Body/DeathTimer" to="Body" method="_on_DeathTimer_timeout"]
