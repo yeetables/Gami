@@ -282,7 +282,6 @@ hframes = 5
 anims/FoxRun = SubResource( 1 )
 
 [node name="Background" type="Sprite" parent="NonBackground"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 521.892, 24.45 )
 scale = Vector2( 21.9597, 12.1803 )
