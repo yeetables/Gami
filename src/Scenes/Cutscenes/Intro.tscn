@@ -3,12 +3,11 @@
 [ext_resource path="res://Scripts/cutscenes/Intro.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=2]
 [ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=6]
 [ext_resource path="res://Scenes/TilesetScenes/MountainTiles.tres" type="TileSet" id=7]
 [ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=8]
-
 
 [sub_resource type="Animation" id=1]
 length = 0.85

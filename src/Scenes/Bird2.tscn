@@ -1,0 +1,205 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/birdScene2.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "fadeIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.294118 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "fadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0.294118 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "filterIn"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("download:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.27451 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "birdCycle"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("birdVoice:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "dragCycle"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("dragVoice:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "enter"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -754.164, 92.1874 ), Vector2( 235.393, 151.119 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "exit"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("bird:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 235.393, 151.119 ), Vector2( 186.283, 44.3056 ), Vector2( 665.101, 13.6122 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "kiss"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0, 180.0, 270.0, 360.0 ]
+}
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="icon" type="Sprite" parent="."]
+position = Vector2( 11.6081, 240.005 )
+scale = Vector2( 19.771, 1 )
+texture = ExtResource( 2 )
+
+[node name="player" type="Sprite" parent="."]
+position = Vector2( 318.358, 146.697 )
+rotation = 6.28319
+texture = ExtResource( 2 )
+
+[node name="bird" type="Sprite" parent="."]
+position = Vector2( -754.164, 92.1874 )
+scale = Vector2( 0.473473, 0.443626 )
+texture = ExtResource( 3 )
+
+[node name="birdVoice" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -153.0
+margin_top = -73.0
+margin_right = 151.0
+margin_bottom = 75.0
+text = "Bird"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="dragVoice" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -153.0
+margin_top = -73.0
+margin_right = 151.0
+margin_bottom = 75.0
+text = "Dragon"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="download" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 3.54264, 3.73537 )
+texture = ExtResource( 4 )
+
+[node name="background" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0.294118 )
+position = Vector2( 3.44366, -0.84616 )
+scale = Vector2( 21.5569, 10.2761 )
+texture = ExtResource( 3 )
+
+[node name="bgAnim" type="AnimationPlayer" parent="."]
+anims/fadeIn = SubResource( 1 )
+anims/fadeOut = SubResource( 2 )
+anims/filterIn = SubResource( 3 )
+
+[node name="PlyAnim" type="AnimationPlayer" parent="."]
+anims/birdCycle = SubResource( 8 )
+anims/dragCycle = SubResource( 9 )
+anims/enter = SubResource( 5 )
+anims/exit = SubResource( 6 )
+anims/kiss = SubResource( 7 )
+
+[connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
+[connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
