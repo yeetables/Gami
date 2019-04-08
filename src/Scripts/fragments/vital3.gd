@@ -23,5 +23,8 @@ func _on_FragmentArea_body_entered(body):
 
 func _on_Collected_finished():
 	if Global.Level1Finished:
-		get_tree().change_scene("res://Scenes/Cutscenes/Stone.tscn")
-	queue_free()
+		queue_free()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	get_tree().change_scene("res://Scenes/Cutscenes/Stone.tscn")

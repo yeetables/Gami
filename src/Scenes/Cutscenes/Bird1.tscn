@@ -155,7 +155,7 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=9]
 size = 20
 font_data = ExtResource( 2 )
 
@@ -290,7 +290,7 @@ margin_left = 16.0
 margin_top = 48.0
 margin_right = 252.0
 margin_bottom = 80.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 9 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
@@ -299,7 +299,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 9 )
 text = "Press 'S' to skip"
 
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
