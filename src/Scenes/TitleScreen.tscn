@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sounds/mainmenu-credits-maybetrailer.wav" type="AudioStream" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -90,12 +91,14 @@ margin_right = 1016.0
 margin_bottom = 588.0
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [node name="Shader" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 540, 320 )
 scale = Vector2( 21.9597, 12.1803 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeOut = SubResource( 4 )
