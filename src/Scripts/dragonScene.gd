@@ -6,15 +6,22 @@ var line = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("start")
 	$bgAnim.play("fadeIn")
 
 
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "walkUp":
+		$Label.set_text(words[line])
+		$PlyAnim.set_speed_scale(times[line])
+		line += 1
+		$PlyAnim.play("textCycle")
+	elif anim_name == "textCycle":
+		print("flag 2")
 		if line == 6:
 			$PlyAnim.set_speed_scale(1)
 			$PlyAnim.play("bright")
-		elif line == 13:
+		elif line == 12:
 			$PlyAnim.set_speed_scale(1)
 			$PlyAnim.play("heart")
 		elif line == 15:
@@ -24,19 +31,26 @@ func _on_PlyAnim_animation_finished(anim_name):
 			$Label.set_text(words[line])
 			$PlyAnim.set_speed_scale(times[line])
 			line += 1
+			$PlyAnim.play("textCycle")
 	elif anim_name == "bright":
+		print("flag 3")
 		$Label.set_text(words[line])
 		$PlyAnim.set_speed_scale(times[line])
 		line += 1
+		$PlyAnim.play("textCycle")
 	elif anim_name == "heart":
+		print("flag 4")
 		$Label.set_text(words[line])
 		$PlyAnim.set_speed_scale(times[line])
 		line += 1
+		$PlyAnim.play("textCycle")
 	elif anim_name == "explode":
+		print("flag 5")
 		pass
 		#No idea
 
 
 func _on_bgAnim_animation_finished(anim_name):
 	if anim_name == "fadeIn":
+		print("flag 1")
 		$PlyAnim.play("walkUp")

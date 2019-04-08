@@ -124,15 +124,15 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=5]
 size = 20
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 length = 0.85
 loop = true
 step = 0.05
@@ -149,8 +149,7 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "deerCycle"
+[sub_resource type="Animation" id=8]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("deerVoice:modulate")
@@ -165,8 +164,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "dragCycle"
+[sub_resource type="Animation" id=9]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("dragonVoice:modulate")
@@ -181,7 +179,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=10]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -206,10 +204,9 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "heart"
+[sub_resource type="Animation" id=11]
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Deer:region_enabled")
 tracks/0/interp = 1
@@ -223,7 +220,7 @@ tracks/0/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=13]
 resource_name = "leave"
 length = 3.0
 tracks/0/type = "value"
@@ -291,7 +288,7 @@ margin_left = -229.0
 margin_top = -97.0
 margin_right = 227.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 5 )
 align = 1
 valign = 1
 autowrap = true
@@ -302,7 +299,7 @@ margin_left = -229.0
 margin_top = -97.0
 margin_right = 227.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 6 )
 align = 1
 valign = 1
 autowrap = true
@@ -322,7 +319,7 @@ vframes = 4
 hframes = 5
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
-anims/FoxRun = SubResource( 8 )
+anims/FoxRun = SubResource( 7 )
 
 [node name="bg" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 7 )
@@ -337,12 +334,12 @@ z_index = 1
 texture = ExtResource( 2 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/deerCycle = SubResource( 5 )
-anims/dragCycle = SubResource( 6 )
-anims/enter = SubResource( 7 )
-anims/heart = SubResource( 9 )
-anims/kiss = SubResource( 13 )
-anims/leave = SubResource( 15 )
+anims/deerCycle = SubResource( 8 )
+anims/dragCycle = SubResource( 9 )
+anims/enter = SubResource( 10 )
+anims/heart = SubResource( 11 )
+anims/kiss = SubResource( 12 )
+anims/leave = SubResource( 13 )
 
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
