@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=2]
@@ -11,6 +11,38 @@ font_data = ExtResource( 2 )
 [sub_resource type="DynamicFont" id=2]
 size = 60
 font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "fadein"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("backtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fadeout"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("backtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -47,4 +79,10 @@ margin_top = 480.0
 margin_right = 960.0
 margin_bottom = 556.0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/fadein = SubResource( 3 )
+anims/fadeout = SubResource( 4 )
+
+[connection signal="mouse_entered" from="backbtn" to="." method="_on_backbtn_mouse_entered"]
+[connection signal="mouse_exited" from="backbtn" to="." method="_on_backbtn_mouse_exited"]
 [connection signal="pressed" from="backbtn" to="." method="_on_backbtn_pressed"]

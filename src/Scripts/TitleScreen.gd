@@ -26,3 +26,19 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			get_tree().change_scene("res://Scenes/Cutscenes/Intro.tscn")
 		elif pressed == "credit":
 			get_tree().change_scene("res://Scenes/Credits.tscn")
+
+
+func _on_playbutton_mouse_entered():
+	$Play/AnimPlay.play("fadein")
+
+
+func _on_playbutton_mouse_exited():
+	$Play/AnimPlay.play("fadeout")
+
+
+func _on_credbutton_mouse_entered():
+	$Credits/AnimCred.play("fadein")
+
+
+func _on_credbutton_mouse_exited():
+	$Credits/AnimCred.play("fadeout")

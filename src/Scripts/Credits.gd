@@ -10,3 +10,11 @@ func _ready():
 
 func _on_backbtn_pressed():
 	get_tree().change_scene("res://Scenes/TitleScreen.tscn")
+
+
+func _on_backbtn_mouse_entered():
+	$AnimationPlayer.play("fadein")
+
+
+func _on_backbtn_mouse_exited():
+	$AnimationPlayer.play("fadeout")
