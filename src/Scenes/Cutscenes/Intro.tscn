@@ -22,7 +22,7 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=21]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=7]
 length = 0.85
 loop = true
 step = 0.05
@@ -95,7 +95,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=6]
 resource_name = "test"
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=14]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground/Background:modulate")
@@ -279,7 +279,7 @@ vframes = 4
 hframes = 5
 
 [node name="playerAni" type="AnimationPlayer" parent="NonBackground/icon"]
-anims/FoxRun = SubResource( 1 )
+anims/FoxRun = SubResource( 7 )
 
 [node name="Background" type="Sprite" parent="NonBackground"]
 modulate = Color( 0, 0, 0, 1 )
@@ -289,7 +289,7 @@ texture = ExtResource( 3 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="NonBackground"]
 stream = ExtResource( 4 )
-volume_db = -18.0
+volume_db = 1.0
 autoplay = true
 
 [node name="burrow" type="Sprite" parent="NonBackground"]
@@ -343,7 +343,7 @@ anims/Words = SubResource( 5 )
 anims/test = SubResource( 6 )
 
 [node name="Fader" type="AnimationPlayer" parent="."]
-anims/Black = SubResource( 7 )
+anims/Black = SubResource( 14 )
 anims/PlayerHide = SubResource( 13 )
 anims/PlayerShow = SubResource( 8 )
 anims/White = SubResource( 9 )

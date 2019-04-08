@@ -20,6 +20,7 @@ func _on_FragmentArea_body_entered(body):
 		get_node("/root/World/HUD/RedFrag").set_text(str(Global.FRAGMENTS_R))
 		$Sprite.texture = null
 		collected = true
+		get_parent().get_parent().get_node("HUD/stoneAnim").play("rockFlash")
 		$Collected.play()
 		
 func _on_Collected_finished():

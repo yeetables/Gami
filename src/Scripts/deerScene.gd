@@ -12,10 +12,32 @@ var t_count = 0
 var times = [1,1,1,1,1,1,1,1,1,1,1,1]
 
 var part = 0
-
+var shouldLeave = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
+	
+func changeScene():
+	get_tree().change_scene("res://Scenes/Cutscenes/Bird1.tscn")
+	
+func _physics_process(delta):
+	# advance to the end of this when we are playing "Words"
+	# just so that they won't accidentally skip a line
+	if ($PlyAnim.get_current_animation() == "deerCycle" or $PlyAnim.get_current_animation() == "dragCycle") and $PlyAnim.is_playing():
+		$HUD/nextline.visible = true
+	else:
+		$HUD/nextline.visible = false
+		
+	if Input.is_action_just_pressed("ui_lmb") and \
+	$PlyAnim.get_current_animation_position() >= 0.5 and \
+	($PlyAnim.get_current_animation() == "deerCycle" or $PlyAnim.get_current_animation() == "dragCycle"):
+		
+		var totalTime = $PlyAnim.get_current_animation_length()
+		var speed = $PlyAnim.get_speed_scale()
+		$PlyAnim.advance(totalTime/speed)
+		
+	if Input.is_action_just_pressed("ui_skip"):
+		changeScene()
 
 func _on_bgAnim_animation_finished(anim_name):
 	if anim_name == "fadeIn":
@@ -33,17 +55,19 @@ func _on_bgAnim_animation_finished(anim_name):
 		elif part == 5:
 			line = 0
 			count = len(drag2)
-			$dragonVoice.set_text(drag2)
+			$dragonVoice.set_text(drag2[line])
 			$PlyAnim.set_speed_scale(times[t_count])
 			t_count += 1
 			$PlyAnim.play("dragCycle")
 	elif anim_name == "filterOut":
-		$PlyAnim.set_speed_scale(1)
-		#$PlyAnim.play("kiss")
+		if shouldLeave:
+			$PlyAnim.play("leave")
+		else:
+			$PlyAnim.set_speed_scale(1)
+			$PlyAnim.play("kiss")
 	elif anim_name == "fadeOut":
-		#get_tree().change_scene("res://Scenes/World2.tscn")
-		pass
-
+		print("done")
+		changeScene()
 
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "deerCycle" or anim_name == "dragCycle":
@@ -76,7 +100,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 			if line == count:
 				$PlyAnim.set_speed_scale(1)
 				part += 1
-				#$PlyAnim.play("heart")
+				$PlyAnim.play("heart")
 			else:
 				$deerVoice.set_text(deer3[line])
 				$PlyAnim.set_speed_scale(times[t_count])
@@ -86,7 +110,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 			if line == count:
 				$bgAnim.set_speed_scale(1)
 				part += 1
-				$bgAnim.play("fadeIn")
+				$bgAnim.play("filterIn")
 			else:
 				$deerVoice.set_text(deer4[line])
 				$PlyAnim.set_speed_scale(times[t_count])
@@ -95,7 +119,8 @@ func _on_PlyAnim_animation_finished(anim_name):
 		elif part == 5:
 			if line == count:
 				$bgAnim.set_speed_scale(1)
-				$bgAnim.play("fadeOut")
+				shouldLeave = true
+				$bgAnim.play("filterOut")
 			else:
 				$dragonVoice.set_text(drag2[line])
 				$PlyAnim.set_speed_scale(times[t_count])
@@ -122,3 +147,5 @@ func _on_PlyAnim_animation_finished(anim_name):
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
 		$PlyAnim.play("deerCycle")
+	elif anim_name == "leave":
+		$bgAnim.play("fadeOut")

@@ -9,6 +9,28 @@ var line = 0
 func _ready():
 	$bgAnim.play("fadeIn")
 
+func changeScene():
+	get_tree().change_scene("res://Scenes/moutain.tscn")
+	
+#warning-ignore:unused_argument
+func _physics_process(delta):
+	# advance to the end of this when we are playing "Words"
+	# just so that they won't accidentally skip a line
+	if ($PlyAnim.get_current_animation() == "birdCycle" or $PlyAnim.get_current_animation() == "dragCycle")and $PlyAnim.is_playing():
+		$HUD/nextline.visible = true
+	else:
+		$HUD/nextline.visible = false
+		
+	if Input.is_action_just_pressed("ui_lmb") and \
+	$PlyAnim.get_current_animation_position() >= 0.5 and \
+	($PlyAnim.get_current_animation() == "birdCycle" or $PlyAnim.get_current_animation() == "dragCycle"):
+		
+		var totalTime = $PlyAnim.get_current_animation_length()
+		var speed = $PlyAnim.get_speed_scale()
+		$PlyAnim.advance(totalTime/speed)
+		
+	if Input.is_action_just_pressed("ui_skip"):
+		changeScene()
 
 func _on_bgAnim_animation_finished(anim_name):
 	if anim_name == "fadeIn":
@@ -20,9 +42,8 @@ func _on_bgAnim_animation_finished(anim_name):
 		line += 1
 		$PlyAnim.play("dragCycle")
 	elif anim_name == "fadeOut":
-		pass
 		#Change scene here. 
-
+		changeScene()
 
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "enter":
