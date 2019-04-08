@@ -12,6 +12,9 @@ func _ready():
 
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "walkUp":
+		#Do like, 2 sleep cycles or something here. 
+		#They do the eye opening. 
+		#Then this cutscene should basically be the same. 
 		$Label.set_text(words[line])
 		$PlyAnim.set_speed_scale(times[line])
 		line += 1
