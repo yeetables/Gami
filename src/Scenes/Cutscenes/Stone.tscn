@@ -12,10 +12,10 @@
 [ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=11]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.94987, 10.5008 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=2]
 length = 0.85
 loop = true
 step = 0.05
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "fadeIn"
 length = 2.0
 tracks/0/type = "value"
@@ -72,7 +72,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "fadeOut"
 length = 2.0
 tracks/0/type = "value"
@@ -124,7 +124,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=5]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -139,7 +139,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=6]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("vignette:modulate")
@@ -154,11 +154,11 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=8]
 size = 15
 font_data = ExtResource( 11 )
 
@@ -196,10 +196,10 @@ frame = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 position = Vector2( -4.84282, 2.32453 )
 scale = Vector2( 3.87247, 1.81915 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
-anims/FoxRun = SubResource( 5 )
+anims/FoxRun = SubResource( 2 )
 
 [node name="jumpsound1" type="AudioStreamPlayer" parent="Body"]
 stream = ExtResource( 4 )
@@ -233,10 +233,10 @@ scale = Vector2( 4.55635, 4.17896 )
 texture = ExtResource( 7 )
 
 [node name="cycle" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 7 )
-anims/fadeOut = SubResource( 8 )
-anims/textCycle = SubResource( 9 )
-anims/vignette = SubResource( 10 )
+anims/fadeIn = SubResource( 3 )
+anims/fadeOut = SubResource( 4 )
+anims/textCycle = SubResource( 5 )
+anims/vignette = SubResource( 6 )
 
 [node name="vignette" type="Sprite" parent="."]
 position = Vector2( 20.5336, 2.08118 )
@@ -254,7 +254,7 @@ margin_left = -222.525
 margin_top = -239.46
 margin_right = 233.475
 margin_bottom = -136.46
-custom_fonts/font = SubResource( 12 )
+custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 autowrap = true
@@ -268,7 +268,7 @@ margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 8 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
@@ -277,7 +277,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 8 )
 text = "Press 'S' to skip"
 
 [connection signal="animation_finished" from="Body/AnimationPlayer" to="Body" method="_on_AnimationPlayer_animation_finished"]
