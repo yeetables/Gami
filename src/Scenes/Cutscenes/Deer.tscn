@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=9]
@@ -289,7 +289,7 @@ valign = 1
 autowrap = true
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( 100, 220 )
+position = Vector2( -613.61, 220 )
 z_index = 1
 __meta__ = {
 "_edit_group_": true
@@ -301,7 +301,6 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 5 )
 vframes = 4
 hframes = 5
-frame = 8
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
 anims/FoxRun = SubResource( 7 )
