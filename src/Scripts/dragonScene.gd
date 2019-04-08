@@ -26,6 +26,7 @@ func _ready():
 	$bgAnim.play("fadeIn")
 	$Dragon/breath.play("sleep")
 	$HUD/nextline.visible = false
+	$Dragon/Node2D.visible = false
 	
 func nextScene():
 	get_tree().change_scene("res://Scenes/Credits.tscn")
@@ -55,6 +56,8 @@ func _on_PlyAnim_animation_finished(anim_name):
 		#They do the eye opening. 
 		#Then this cutscene should basically be the same. 
 		print("done")
+		$Dragon/Node2D.visible = true
+		$"Dragon/sleep dragon".visible = false
 		$Dragon/Node2D/eye.play("eye-open")
 #		$Label.set_text(words[line])
 #		$PlyAnim.set_speed_scale(times[line])
