@@ -26,4 +26,5 @@ func _on_cycle_animation_finished(anim_name):
 			$cycle.play("textCycle")
 	elif anim_name == "fadeOut":
 		#Change scene
-		get_tree().change_scene("res://Scenes/Cutscenes/Deer.tscn")
+#		get_tree().change_scene("res://Scenes/Cutscenes/Deer.tscn")
+		get_tree().change_scene("res://Scenes/Cutscenes/Bird1.tscn")

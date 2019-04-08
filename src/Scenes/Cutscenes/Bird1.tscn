@@ -1,22 +1,56 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/birdScene1.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Inbetween parallax/parallax-bg-between-1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Inbetween parallax/parallax-bg-between-2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Inbetween parallax/parallax-bg-between-3.png" type="Texture" id=7]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=1]
 resource_name = "enter"
-length = 2.0
+length = 3.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:position")
+tracks/0/path = NodePath("Player2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -700.772, 140.421 ), Vector2( 100, 140.421 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Player:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -628.311, 190 ), Vector2( 0, 190 ) ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Player/playerAni")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "FoxRun", "[stop]" ),
+"times": PoolRealArray( 0, 3 )
 }
 
 [sub_resource type="Animation" id=2]
@@ -33,6 +67,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 90.0, 180.0, 270.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "leave"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 190 ), Vector2( 652.076, 190 ) ]
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Player/playerAni")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "FoxRun" ),
+"times": PoolRealArray( 0 )
 }
 
 [sub_resource type="Animation" id=3]
@@ -64,7 +124,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.294118 ) ]
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -80,18 +140,40 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 0.294118 ), Color( 0, 0, 0, 1 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
+
+[sub_resource type="Animation" id=12]
+length = 0.85
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Basic:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 15
+font_data = ExtResource( 2 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
 [node name="voice" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -144.0
+margin_left = -228.0
 margin_top = -72.0
-margin_right = 147.0
+margin_right = 235.0
 margin_bottom = 73.0
+custom_fonts/font = SubResource( 6 )
 text = "Hello, yes, this is bird."
 align = 1
 valign = 1
@@ -100,24 +182,77 @@ autowrap = true
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
-[node name="icon" type="Sprite" parent="."]
-position = Vector2( -0.179688, 235.647 )
-scale = Vector2( 20.0027, 1 )
-texture = ExtResource( 2 )
+[node name="Imported" type="Node2D" parent="."]
+
+[node name="plat" type="TileMap" parent="Imported"]
+scale = Vector2( 0.5, 0.5 )
+tile_set = ExtResource( 3 )
+format = 1
+tile_data = PoolIntArray( -2490285, 43, 0, -2228137, 43, 0, -2228134, 43, 0, -2228131, 43, 0, -1638317, -1073741781, 0, -1572796, 43, 0, -1441712, 43, 0, -1441709, -1073741781, 0, -1310647, 43, 0, -1245101, -1073741781, 0, -1179590, 14, 0, -1179588, 43, 0, -1179585, 43, 0, -1179582, 43, 0, -1179579, 43, 0, -1179576, 43, 0, -1179573, 43, 0, -1179570, 43, 0, -1179567, 43, 0, -1114072, 43, 0, -1114069, 43, 0, -1114066, 43, 0, -524232, 43, 0, -262063, 43, 0, -130997, 43, 0, 63, 43, 0, 66, 43, 0, 262182, 43, 0, 262185, 43, 0, 262188, 43, 0, 262191, 43, 0, 262194, 43, 0, 262197, 43, 0, 262200, 43, 0, 458734, 43, 0, 458737, 43, 0, 458740, 43, 0, 458743, 43, 0, 458746, 43, 0, 458749, 43, 0, 393216, 43, 0, 393219, 43, 0, 393222, 43, 0, 393225, 43, 0, 393228, 43, 0, 393231, 43, 0, 524270, 23, 0, 524271, 23, 0, 524272, 23, 0, 524273, 23, 0, 524274, 23, 0, 524275, 23, 0, 524276, 23, 0, 524277, 23, 0, 524278, 23, 0, 524279, 23, 0, 524280, 23, 0, 524281, 23, 0, 524282, 23, 0, 524283, 23, 0, 524284, 23, 0, 524285, 23, 0, 524286, 23, 0, 524287, 23, 0, 458752, 23, 0, 458753, 23, 0, 458754, 23, 0, 458755, 23, 0, 458756, 23, 0, 458757, 23, 0, 458758, 23, 0, 458759, 23, 0, 458760, 23, 0, 458761, 23, 0, 458762, 23, 0, 458763, 23, 0, 458764, 23, 0, 458765, 23, 0, 458766, 23, 0, 458767, 23, 0, 458768, 23, 0, 458769, 23, 0, 589806, 23, 0, 589807, 23, 0, 589808, 23, 0, 589809, 23, 0, 589810, 23, 0, 589811, 23, 0, 589812, 23, 0, 589813, 23, 0, 589814, 23, 0, 589815, 23, 0, 589816, 23, 0, 589817, 23, 0, 589818, 23, 0, 589819, 23, 0, 589820, 23, 0, 589821, 23, 0, 589822, 23, 0, 589823, 23, 0, 524288, 23, 0, 524289, 23, 0, 524290, 23, 0, 524291, 23, 0, 524292, 23, 0, 524293, 23, 0, 524294, 23, 0, 524295, 23, 0, 524296, 23, 0, 524297, 23, 0, 524298, 23, 0, 524299, 23, 0, 524300, 23, 0, 524301, 23, 0, 524302, 23, 0, 524303, 23, 0, 524304, 23, 0, 524305, 23, 0, 655342, 23, 0, 655343, 23, 0, 655344, 23, 0, 655345, 23, 0, 655346, 23, 0, 655347, 23, 0, 655348, 23, 0, 655349, 23, 0, 655350, 23, 0, 655351, 23, 0, 655352, 23, 0, 655353, 23, 0, 655354, 23, 0, 655355, 23, 0, 655356, 23, 0, 655357, 23, 0, 655358, 23, 0, 655359, 23, 0, 589824, 23, 0, 589825, 23, 0, 589826, 23, 0, 589827, 23, 0, 589828, 23, 0, 589829, 23, 0, 589830, 23, 0, 589831, 23, 0, 589832, 23, 0, 589833, 23, 0, 589834, 23, 0, 589835, 23, 0, 589836, 23, 0, 589837, 23, 0, 589838, 23, 0, 589839, 23, 0, 589840, 23, 0, 589841, 23, 0, 720878, 23, 0, 720879, 23, 0, 720880, 23, 0, 720881, 23, 0, 720882, 23, 0, 720883, 23, 0, 720884, 23, 0, 720885, 23, 0, 720886, 23, 0, 720887, 23, 0, 720888, 23, 0, 720889, 23, 0, 720890, 23, 0, 720891, 23, 0, 720892, 23, 0, 720893, 23, 0, 720894, 23, 0, 720895, 23, 0, 655360, 23, 0, 655361, 23, 0, 655362, 23, 0, 655363, 23, 0, 655364, 23, 0, 655365, 23, 0, 655366, 23, 0, 655367, 23, 0, 655368, 23, 0, 655369, 23, 0, 655370, 23, 0, 655371, 23, 0, 655372, 23, 0, 655373, 23, 0, 655374, 23, 0, 655375, 23, 0, 655376, 23, 0, 655377, 23, 0, 786414, 23, 0, 786415, 23, 0, 786416, 23, 0, 786417, 23, 0, 786418, 23, 0, 786419, 23, 0, 786420, 23, 0, 786421, 23, 0, 786422, 23, 0, 786423, 23, 0, 786424, 23, 0, 786425, 23, 0, 786426, 23, 0, 786427, 23, 0, 786428, 23, 0, 786429, 23, 0, 786430, 23, 0, 786431, 23, 0, 720896, 23, 0, 720897, 23, 0, 720898, 23, 0, 720899, 23, 0, 720900, 23, 0, 720901, 23, 0, 720902, 23, 0, 720903, 23, 0, 720904, 23, 0, 720905, 23, 0, 720906, 23, 0, 720907, 23, 0, 720908, 23, 0, 720909, 23, 0, 720910, 23, 0, 720911, 23, 0, 720912, 23, 0, 720913, 23, 0, 852000, 43, 0, 852003, 43, 0, 852006, 43, 0, 852009, 43, 0, 852012, 43, 0, 852015, 43, 0, 852018, 43, 0, 852021, 43, 0, 852024, 43, 0, 852027, 43, 0, 852030, 43, 0, 1245149, 44, 0, 1245150, 44, 0, 1245151, 44, 0, 1245152, 44, 0, 1245153, 44, 0, 1245154, 44, 0, 1245155, 44, 0, 1245156, 44, 0, 1245157, 44, 0, 1245158, 44, 0, 1245159, 44, 0, 1245160, 44, 0, 1245161, 44, 0, 1245162, 44, 0, 1245163, 44, 0, 1245164, 44, 0, 1245165, 44, 0, 1245166, 44, 0, 1245167, 44, 0, 1245168, 44, 0, 1245169, 44, 0, 1245170, 44, 0, 1245171, 44, 0, 1245172, 44, 0, 1245173, 44, 0, 1245174, 44, 0, 1245175, 44, 0, 1245176, 44, 0, 1245177, 44, 0, 1245178, 44, 0, 1245179, 44, 0, 1245180, 44, 0, 1245181, 44, 0, 1245182, 44, 0, 1245183, 44, 0, 1179648, 44, 0, 1179649, 44, 0, 1179650, 44, 0, 1179651, 44, 0, 1179652, 44, 0, 1179653, 44, 0, 1179654, 44, 0, 1179655, 44, 0, 1179656, 44, 0, 1179657, 44, 0, 1179658, 44, 0, 1179659, 44, 0, 1179660, 44, 0, 1179661, 44, 0, 1179662, 44, 0, 1179663, 44, 0, 1179664, 44, 0, 1179665, 44, 0, 1179666, 44, 0, 1179667, 44, 0, 1179668, 44, 0, 1179669, 44, 0, 1179670, 44, 0, 1179671, 44, 0, 1179672, 44, 0, 1179673, 44, 0, 1179674, 44, 0, 1179675, 44, 0, 1179676, 44, 0, 1179677, 44, 0, 1179678, 44, 0, 1179679, 44, 0, 1179680, 44, 0, 1179681, 44, 0, 1179682, 44, 0, 1179683, 44, 0, 1179684, 44, 0, 1179685, 44, 0, 1179686, 44, 0, 1179687, 44, 0, 1179688, 44, 0, 1179689, 44, 0, 1179690, 44, 0, 1179691, 44, 0, 1179692, 44, 0, 1179693, 44, 0, 1179694, 44, 0, 1179695, 44, 0, 1179696, 44, 0, 1179697, 44, 0, 1179698, 44, 0, 1179699, 44, 0, 1179700, 44, 0, 1179701, 44, 0, 1179702, 44, 0, 1179703, 44, 0, 1179704, 44, 0, 1179705, 44, 0, 1179706, 44, 0, 1179707, 44, 0, 1179708, 44, 0, 1179709, 44, 0, 1179710, 44, 0, 1179711, 44, 0, 1179712, 44, 0, 1179713, 44, 0, 1179714, 44, 0, 1179715, 44, 0, 1179716, 44, 0, 1179717, 44, 0, 1179718, 44, 0, 1179719, 44, 0, 1179720, 44, 0, 1179721, 44, 0, 1179722, 44, 0, 1179723, 44, 0, 1179724, 44, 0, 1179725, 44, 0, 1179726, 44, 0, 1179727, 44, 0, 1179728, 44, 0, 1179729, 44, 0, 1179730, 44, 0, 1179731, 44, 0, 1179732, 44, 0, 1179733, 44, 0, 1179734, 44, 0, 1179735, 44, 0, 1179736, 44, 0, 1179737, 44, 0, 1179738, 44, 0, 1179739, 44, 0, 1179740, 44, 0, 1179741, 44, 0, 1179742, 44, 0, 1179743, 44, 0, 1179744, 44, 0, 1179745, 44, 0, 1179746, 44, 0, 1179747, 44, 0, 1179748, 44, 0, 1179749, 44, 0, 1179750, 44, 0, 1179751, 44, 0, 1179752, 44, 0, 1179753, 44, 0, 1179754, 44, 0, 1179755, 44, 0, 1179756, 44, 0, 1179757, 44, 0, 1179758, 44, 0, 1179759, 44, 0, 1179760, 44, 0, 1179761, 44, 0, 1179762, 44, 0, 1179763, 44, 0, 1179764, 44, 0, 1179765, 44, 0, 1179766, 44, 0, 1179767, 44, 0, 1179768, 44, 0, 1179769, 44, 0, 1179770, 44, 0, 1179771, 44, 0, 1179772, 44, 0, 1179773, 44, 0, 1179774, 44, 0, 1179775, 44, 0, 1179776, 44, 0, 1179777, 44, 0, 1179778, 44, 0, 1179779, 44, 0, 1179780, 44, 0, 1179781, 44, 0, 1179782, 44, 0, 1179783, 44, 0, 1179784, 44, 0, 1179785, 44, 0, 1179786, 44, 0, 1179787, 44, 0, 1179788, 44, 0, 1179789, 44, 0, 1179790, 44, 0, 1179791, 44, 0, 1179792, 44, 0, 1179793, 44, 0, 1179794, 44, 0, 1179795, 44, 0, 1179796, 44, 0, 1179797, 44, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Imported"]
+editor/display_folded = true
+layer = -15
+offset = Vector2( 0, -350 )
+transform = Transform2D( 1, 0, 0, 1, 0, -350 )
+scroll_ignore_camera_zoom = true
+
+[node name="bit of sky" type="ParallaxLayer" parent="Imported/ParallaxBackground"]
+position = Vector2( 0, -300 )
+motion_scale = Vector2( 0.4, 0.2 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="Imported/ParallaxBackground/bit of sky"]
+modulate = Color( 0.513726, 0.227451, 0.67451, 1 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Imported/ParallaxBackground"]
+position = Vector2( 0, -280 )
+motion_scale = Vector2( 0.4, 0.2 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="Imported/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1024, 1104 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Imported/ParallaxBackground"]
+position = Vector2( 0, -180 )
+motion_scale = Vector2( 0.6, 0.4 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="Imported/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Imported/ParallaxBackground"]
+position = Vector2( 0, -400 )
+motion_scale = Vector2( 1, 0.5 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="Imported/ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 7 )
+centered = false
 
 [node name="Bird" type="Sprite" parent="."]
 position = Vector2( 367.801, 61.5194 )
 scale = Vector2( 0.511116, 0.574883 )
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 
-[node name="Player" type="Sprite" parent="."]
+[node name="Player2" type="Sprite" parent="."]
 position = Vector2( -700.772, 140.421 )
 rotation = 6.28319
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
 anims/enter = SubResource( 1 )
 anims/kiss = SubResource( 2 )
+anims/leave = SubResource( 8 )
 anims/textCycle = SubResource( 3 )
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
@@ -125,10 +260,53 @@ anims/fadeIn = SubResource( 4 )
 anims/fadeOut = SubResource( 5 )
 
 [node name="Background" type="Sprite" parent="."]
-modulate = Color( 0, 0, 0, 0.294118 )
+modulate = Color( 0, 0, 0, 0 )
 position = Vector2( -0.179745, 0.302513 )
 scale = Vector2( 20.1303, 11.4579 )
-texture = ExtResource( 2 )
+texture = ExtResource( 8 )
+
+[node name="Player" type="Sprite" parent="."]
+position = Vector2( 652.076, 190 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Basic" type="Sprite" parent="Player"]
+position = Vector2( 0, -26 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+vframes = 4
+hframes = 5
+
+[node name="playerAni" type="AnimationPlayer" parent="Player"]
+anims/FoxRun = SubResource( 12 )
+
+[node name="bg" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 10 )
+volume_db = 1.0
+autoplay = true
+
+[node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
+
+[node name="nextline" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 16.0
+margin_top = 47.7924
+margin_right = 229.0
+margin_bottom = 78.7924
+custom_fonts/font = SubResource( 10 )
+text = "Press 'LMB' to fast-forward"
+
+[node name="skip" type="Label" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_left = 16.0
+margin_top = 16.7924
+margin_right = 229.0
+margin_bottom = 47.7924
+custom_fonts/font = SubResource( 10 )
+text = "Press 'S' to skip"
 
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
