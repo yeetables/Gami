@@ -295,10 +295,10 @@ texture = ExtResource( 5 )
 
 [node name="Label" type="Label" parent="NonBackground"]
 modulate = Color( 1, 1, 1, 0.9 )
-margin_left = 260.155
-margin_top = -70.2106
-margin_right = 790.155
-margin_bottom = 29.7894
+margin_left = 200.0
+margin_top = -115.211
+margin_right = 850.0
+margin_bottom = -15.2106
 custom_fonts/font = SubResource( 2 )
 align = 1
 valign = 1

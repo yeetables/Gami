@@ -508,7 +508,6 @@ scale = Vector2( 0.0611042, 0.0752966 )
 texture = ExtResource( 13 )
 
 [node name="Player" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( -543.376, 385.31 )
 rotation = -0.261799
 z_index = 1
@@ -546,7 +545,6 @@ custom_fonts/font = SubResource( 11 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="background" type="Sprite" parent="HUD"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 483.347, 297.632 )
 scale = Vector2( 19.4618, 12.2911 )
@@ -563,6 +561,7 @@ custom_fonts/font = SubResource( 13 )
 text = "Press 'S' to skip"
 
 [node name="mind-rock" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 2343.7, -400.586 )
 texture = ExtResource( 13 )
 

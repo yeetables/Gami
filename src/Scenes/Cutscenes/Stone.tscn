@@ -214,7 +214,7 @@ stream = ExtResource( 5 )
 volume_db = -5.0
 
 [node name="stone" type="Sprite" parent="."]
-position = Vector2( -3.7948, -37.948 )
+position = Vector2( -3.7948, -22.948 )
 z_index = 1
 texture = ExtResource( 6 )
 
@@ -250,10 +250,10 @@ autoplay = true
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -222.525
-margin_top = -239.46
-margin_right = 233.475
-margin_bottom = -136.46
+margin_left = -468.158
+margin_top = -231.634
+margin_right = 471.842
+margin_bottom = -128.634
 custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
