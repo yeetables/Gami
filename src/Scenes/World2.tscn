@@ -23,7 +23,7 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=21]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=23]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=24]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=24]
 [ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/vital-rock.png" type="Texture" id=25]
 [ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/strong-rock.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/StonesAndFragments/vital1.tscn" type="PackedScene" id=27]
@@ -37,11 +37,11 @@ extents = Vector2( 560, 1636.9 )
 extents = Vector2( 680, 1550 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 15
+size = 18
 font_data = ExtResource( 24 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 24
+size = 40
 font_data = ExtResource( 24 )
 
 [node name="World" type="Node2D"]
@@ -327,7 +327,6 @@ region_rect = Rect2( 142, -1.401, 629, 432 )
 [node name="wall1" type="StaticBody2D" parent="FLOOR"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -100 )
 transform = Transform2D( 1, 0, 0, 1, 0, -100 )
@@ -379,7 +378,7 @@ offset = Vector2( 0, -120 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 16.7924
 margin_right = 219.0
