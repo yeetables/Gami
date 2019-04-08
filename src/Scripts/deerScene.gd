@@ -7,16 +7,15 @@ var deer2 = ["I...eughh...My Leg.", "Please... A falling branch broke my leg. I'
 var drag1 = "You have the power of the Stone of Vitality. Do you feel it within?"
 var deer3 = ["Oh...", "My leg! I can move!"]
 var deer4 = ["I... *sob*... I thought I would die here. Thank you so much. Words can't express...", "I won't forget you, my friend"]
-var drag2 = ["My child... I am proud. You have given our friend a second chance at life.", "Stay strong. You have only just begun."]
+var drag2 = ["My child... I am proud. You have given our friend a second chance at life.", "Stay strong and go forth"]
 var t_count = 0
-var times = []
+var times = [1,1,1,1,1,1,1,1,1,1,1,1]
 
 var part = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
-
 
 func _on_bgAnim_animation_finished(anim_name):
 	if anim_name == "fadeIn":

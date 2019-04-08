@@ -51,6 +51,7 @@ __meta__ = {
 }
 
 [node name="Tilemaps" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="plat" type="TileMap" parent="Tilemaps"]
 scale = Vector2( 0.5, 0.5 )
@@ -135,10 +136,11 @@ position = Vector2( 1020, -765 )
 position = Vector2( 1089.45, -1240 )
 
 [node name="Area2D2" parent="CheckPoints" instance=ExtResource( 11 )]
-position = Vector2( 1470, -1330 )
+position = Vector2( 1650, -1330 )
 scale = Vector2( 3.58073, 2.87204 )
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 editor/display_folded = true
@@ -239,6 +241,7 @@ position = Vector2( 0, -11.5 )
 texture = ExtResource( 16 )
 
 [node name="FLOOR" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -476.253, 594.312 )
 
 [node name="Sprite" type="Sprite" parent="FLOOR"]
@@ -324,6 +327,7 @@ region_rect = Rect2( 142, -1.401, 629, 432 )
 [node name="wall1" type="StaticBody2D" parent="FLOOR"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -100 )
 transform = Transform2D( 1, 0, 0, 1, 0, -100 )
@@ -373,7 +377,6 @@ centered = false
 offset = Vector2( 0, -120 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="Label" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.588235 )
@@ -436,3 +439,4 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 1567.97, -1310 )
 scale = Vector2( 0.5, 0.5 )
 
+[connection signal="body_entered" from="CheckPoints/Area2D2" to="." method="_on_Area2D2_body_entered"]

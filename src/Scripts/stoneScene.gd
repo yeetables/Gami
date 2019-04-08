@@ -1,7 +1,7 @@
 extends Node
 
 var words = ["The Stone of Vitality offers sustenance and strength, and heals all injuries.", "The power of the stone is now yours. You may use it how you see fit. Indeed, I sense there is a creature nearby that could benefit from your newfound abilities."]
-var times = [1, 1]
+var times = [1, 0.75]
 var line = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -25,5 +25,5 @@ func _on_cycle_animation_finished(anim_name):
 			line += 1
 			$cycle.play("textCycle")
 	elif anim_name == "fadeOut":
-		pass
 		#Change scene
+		get_tree().change_scene("res://Scenes/Cutscenes/Deer.tscn")

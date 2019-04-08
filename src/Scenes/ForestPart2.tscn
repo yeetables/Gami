@@ -193,6 +193,7 @@ position = Vector2( 0, 8.24402 )
 position = Vector2( 3644.25, -1618.31 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -350 )
 transform = Transform2D( 1, 0, 0, 1, 0, -350 )
@@ -238,6 +239,7 @@ texture = ExtResource( 18 )
 centered = false
 
 [node name="Obstacls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Spikes" type="Node2D" parent="Obstacls"]
 z_index = -1
@@ -373,6 +375,7 @@ position = Vector2( -0.100098, -10.819 )
 texture = ExtResource( 23 )
 
 [node name="CheckPoints" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SpawnPoint" parent="CheckPoints" instance=ExtResource( 24 )]
 position = Vector2( 131.963, 541.116 )
@@ -400,6 +403,7 @@ position = Vector2( 64, -1312 )
 scene_file = "res://Scenes/moutain.tscn"
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="Label" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.588235 )

@@ -5,7 +5,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "sleep"
-length = 2.7
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("sleep dragon:frame")
 tracks/0/interp = 1
@@ -42,7 +42,7 @@ visible = false
 texture = ExtResource( 1 )
 vframes = 5
 hframes = 6
-frame = 26
+frame = 20
 region_rect = Rect2( 0, 0, 410, 230 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -55,7 +55,6 @@ anims/sleep = SubResource( 1 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 4
-frame = 11
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
 autoplay = "eye-open"
