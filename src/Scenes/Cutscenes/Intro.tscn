@@ -5,9 +5,9 @@
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sprites/Objects/Background/burrow.png" type="Texture" id=5]
-[ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=7]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-1.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-2.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-3.png" type="Texture" id=11]
@@ -22,7 +22,7 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=20]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=21]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=1]
 length = 0.85
 loop = true
 step = 0.05
@@ -43,12 +43,11 @@ tracks/0/keys = {
 size = 20
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=10]
-size = 15
+[sub_resource type="DynamicFont" id=3]
+size = 20
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "Player"
+[sub_resource type="Animation" id=4]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground/icon:position")
@@ -73,11 +72,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "PlayerShow"
+[sub_resource type="Animation" id=5]
 length = 2.0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground/Label:modulate")
@@ -92,10 +90,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "test"
+[sub_resource type="Animation" id=7]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=8]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground/Background:modulate")
@@ -134,7 +131,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 resource_name = "PlayerHide"
 length = 2.0
 tracks/0/type = "value"
@@ -150,8 +147,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "PlayerShow"
+[sub_resource type="Animation" id=10]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground/icon:modulate")
@@ -178,7 +174,7 @@ tracks/1/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground/Background:modulate")
@@ -221,8 +217,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.215686 ) ]
 }
 
-[sub_resource type="Animation" id=11]
-resource_name = "backgroundScroll"
+[sub_resource type="Animation" id=13]
 length = 37.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("NonBackground:position")
@@ -279,7 +274,7 @@ vframes = 4
 hframes = 5
 
 [node name="playerAni" type="AnimationPlayer" parent="NonBackground/icon"]
-anims/FoxRun = SubResource( 7 )
+anims/FoxRun = SubResource( 1 )
 
 [node name="Background" type="Sprite" parent="NonBackground"]
 modulate = Color( 0, 0, 0, 1 )
@@ -316,41 +311,40 @@ scale = Vector2( 0.99962, 1.0073 )
 texture = ExtResource( 7 )
 
 [node name="HUD" type="CanvasLayer" parent="NonBackground"]
-editor/display_folded = true
 
 [node name="nextline" type="Label" parent="NonBackground/HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="NonBackground/HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 text = "Press 'S' to skip"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Player = SubResource( 3 )
-anims/PlayerShow = SubResource( 4 )
-anims/Words = SubResource( 5 )
-anims/test = SubResource( 6 )
+anims/Player = SubResource( 4 )
+anims/PlayerShow = SubResource( 5 )
+anims/Words = SubResource( 6 )
+anims/test = SubResource( 7 )
 
 [node name="Fader" type="AnimationPlayer" parent="."]
-anims/Black = SubResource( 14 )
-anims/PlayerHide = SubResource( 13 )
-anims/PlayerShow = SubResource( 8 )
-anims/White = SubResource( 9 )
+anims/Black = SubResource( 8 )
+anims/PlayerHide = SubResource( 9 )
+anims/PlayerShow = SubResource( 10 )
+anims/White = SubResource( 11 )
 anims/bgWhite = SubResource( 12 )
 
 [node name="BackgroundAnim" type="AnimationPlayer" parent="."]
-anims/backgroundScroll = SubResource( 11 )
+anims/backgroundScroll = SubResource( 13 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -15
