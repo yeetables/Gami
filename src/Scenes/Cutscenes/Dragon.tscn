@@ -380,10 +380,10 @@ anims/fadeOut = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 976.0
-margin_top = -831.0
-margin_right = 1597.0
-margin_bottom = -729.0
+margin_left = 877.0
+margin_top = -808.0
+margin_right = 1827.0
+margin_bottom = -706.0
 custom_fonts/font = SubResource( 9 )
 text = "Hello."
 align = 1
