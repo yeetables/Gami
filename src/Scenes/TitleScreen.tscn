@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/Sounds/mainmenu-credits-maybetrailer.wav" type="AudioStream" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -73,6 +74,8 @@ margin_right = 1016.0
 margin_bottom = 588.0
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
 
 [connection signal="pressed" from="Play/playbutton" to="." method="_on_playbutton_pressed"]
 [connection signal="pressed" from="Credits/credbutton" to="." method="_on_credbutton_pressed"]
