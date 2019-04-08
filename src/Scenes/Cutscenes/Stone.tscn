@@ -155,12 +155,11 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=7]
-size = 20
+size = 40
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=8]
 size = 20
-
 font_data = ExtResource( 11 )
 
 [node name="Node" type="Node"]
