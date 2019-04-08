@@ -18,8 +18,8 @@ func _on_FragmentArea_body_entered(body):
 	if body.is_in_group('player') and not collected:
 		Global.FRAGMENTS_R += 1
 		get_node("/root/World/HUD/RedFrag").set_text(str(Global.FRAGMENTS_R))
-		$Sprite.texture = null
 		collected = true
+		$AnimationPlayer.play("Collected")
 		$Collected.play()
 
 func _on_Collected_finished():
