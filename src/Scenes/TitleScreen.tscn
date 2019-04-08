@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 150
@@ -15,6 +16,22 @@ font_data = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=3]
 size = 60
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "FadeOut"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Shader:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
 
 [node name="Title" type="Control"]
 anchor_right = 1.0
@@ -74,5 +91,15 @@ margin_bottom = 588.0
 
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
 
+[node name="Shader" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 540, 320 )
+scale = Vector2( 21.9597, 12.1803 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeOut = SubResource( 4 )
+
 [connection signal="pressed" from="Play/playbutton" to="." method="_on_playbutton_pressed"]
 [connection signal="pressed" from="Credits/credbutton" to="." method="_on_credbutton_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

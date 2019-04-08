@@ -459,7 +459,7 @@ position = Vector2( 1688.26, -696 )
 scale = Vector2( 0.5, 0.5 )
 
 [node name="FragmentArea3" parent="Fragments" instance=ExtResource( 30 )]
-position = Vector2( 448, -1312 )
+position = Vector2( 2688, -1248 )
 scale = Vector2( 0.5, 0.5 )
 
 [connection signal="finished" from="Music/sound/bg" to="Music/sound" method="_on_bg_finished"]
