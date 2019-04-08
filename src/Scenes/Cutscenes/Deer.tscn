@@ -2,17 +2,17 @@
 
 [ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Tilesets_Terrain/grass-night-1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=13]
+[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=13]
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadeIn"
@@ -126,11 +126,11 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=5]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 20
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=7]
 length = 0.85
@@ -248,7 +248,7 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=14]
 size = 15
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -260,22 +260,6 @@ texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-
-[node name="grass-night-1" type="Sprite" parent="."]
-position = Vector2( 385.5, 248.427 )
-texture = ExtResource( 3 )
-
-[node name="grass-night-2" type="Sprite" parent="."]
-position = Vector2( 86.2072, 248.757 )
-texture = ExtResource( 3 )
-
-[node name="grass-night-3" type="Sprite" parent="."]
-position = Vector2( -214.436, 248.757 )
-texture = ExtResource( 3 )
-
-[node name="grass-night-4" type="Sprite" parent="."]
-position = Vector2( -475.676, 248.757 )
-texture = ExtResource( 3 )
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
 anims/fadeIn = SubResource( 1 )
@@ -314,7 +298,7 @@ __meta__ = {
 [node name="Basic" type="Sprite" parent="Player"]
 position = Vector2( 0, -26 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 vframes = 4
 hframes = 5
 
@@ -322,7 +306,7 @@ hframes = 5
 anims/FoxRun = SubResource( 7 )
 
 [node name="bg" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 7 )
+stream = ExtResource( 6 )
 volume_db = 1.0
 autoplay = true
 
@@ -344,7 +328,7 @@ anims/leave = SubResource( 13 )
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 3.89832, 3.86168 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -381,7 +365,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -391,7 +375,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -401,7 +385,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -414,7 +398,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 centered = false
 offset = Vector2( 0, -120 )
 
@@ -422,7 +406,14 @@ offset = Vector2( 0, -120 )
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.213135, -3.32788 )
 scale = Vector2( 1.01581, 1.01209 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 385.5, 248.427 )
+tile_set = ExtResource( 13 )
+cell_tile_origin = 1
+format = 1
+tile_data = PoolIntArray( -17, 43, 0, -14, 43, 0, -11, 43, 0, -8, 43, 0, -5, 43, 0, -2, 43, 0, -65535, 43, 0 )
 
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]

@@ -261,7 +261,7 @@ scale = Vector2( 20.1303, 11.4579 )
 texture = ExtResource( 8 )
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( 652.076, 190 )
+position = Vector2( -628.311, 190 )
 z_index = 1
 __meta__ = {
 "_edit_group_": true
