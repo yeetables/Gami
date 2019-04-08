@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=2]
@@ -14,9 +14,73 @@ font_data = ExtResource( 3 )
 size = 60
 font_data = ExtResource( 3 )
 
+[sub_resource type="Animation" id=5]
+resource_name = "fadein"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("playtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fadeout"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("playtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0705882, 0.0588235, 0.0588235, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="DynamicFont" id=3]
 size = 60
 font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "fadein"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("credtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fadeout"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("credtext:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "FadeOut"
@@ -57,6 +121,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="playtext" type="Label" parent="Play"]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 832.0
 margin_top = 384.0
 margin_right = 900.0
@@ -69,6 +134,10 @@ margin_left = 832.0
 margin_top = 384.0
 margin_right = 952.0
 margin_bottom = 460.0
+
+[node name="AnimPlay" type="AnimationPlayer" parent="Play"]
+anims/fadein = SubResource( 5 )
+anims/fadeout = SubResource( 6 )
 
 [node name="Credits" type="Control" parent="."]
 margin_left = -64.0
@@ -90,6 +159,10 @@ margin_top = 512.0
 margin_right = 1016.0
 margin_bottom = 588.0
 
+[node name="AnimCred" type="AnimationPlayer" parent="Credits"]
+anims/fadein = SubResource( 7 )
+anims/fadeout = SubResource( 8 )
+
 [node name="BGMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
@@ -103,6 +176,10 @@ texture = ExtResource( 5 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/FadeOut = SubResource( 4 )
 
+[connection signal="mouse_entered" from="Play/playbutton" to="." method="_on_playbutton_mouse_entered"]
+[connection signal="mouse_exited" from="Play/playbutton" to="." method="_on_playbutton_mouse_exited"]
 [connection signal="pressed" from="Play/playbutton" to="." method="_on_playbutton_pressed"]
+[connection signal="mouse_entered" from="Credits/credbutton" to="." method="_on_credbutton_mouse_entered"]
+[connection signal="mouse_exited" from="Credits/credbutton" to="." method="_on_credbutton_mouse_exited"]
 [connection signal="pressed" from="Credits/credbutton" to="." method="_on_credbutton_pressed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
