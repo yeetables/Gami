@@ -16,7 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Gami"
-run/main_scene="res://Scenes/World2.tscn"
+run/main_scene="res://Scenes/TitleScreen.tscn"
+boot_splash/image="res://Assets/title1.png"
 config/icon="res://icon.png"
 
 [autoload]

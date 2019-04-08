@@ -9,8 +9,8 @@
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=9]
-[ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=10]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9.94987, 10.5008 )
@@ -159,7 +159,8 @@ size = 20
 font_data = ExtResource( 10 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 15
+size = 20
+
 font_data = ExtResource( 11 )
 
 [node name="Node" type="Node"]
@@ -260,10 +261,9 @@ valign = 1
 autowrap = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="nextline" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
@@ -272,7 +272,7 @@ custom_fonts/font = SubResource( 8 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0

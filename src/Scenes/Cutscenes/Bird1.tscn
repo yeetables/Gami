@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/birdScene1.gd" type="Script" id=1]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=3]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Mountain parallax/parallax-bg-mountain-edition-1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Inbetween parallax/parallax-bg-between-1.png" type="Texture" id=5]
@@ -156,7 +156,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=9]
-size = 15
+size = 20
 font_data = ExtResource( 2 )
 
 [node name="Node" type="Node"]
@@ -283,11 +283,11 @@ volume_db = 1.0
 autoplay = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="nextline" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
+
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
@@ -295,7 +295,7 @@ custom_fonts/font = SubResource( 9 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0

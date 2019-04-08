@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/ForestPart2Script.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -24,12 +24,13 @@
 [ext_resource path="res://Scenes/fallRocks/RockBase.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/Sprites/Objects/spike-spawner.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/CheckPoint.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/vital-rock.png" type="Texture" id=25]
-[ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/strong-rock.png" type="Texture" id=26]
-[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=27]
-[ext_resource path="res://Scenes/StonesAndFragments/strong1.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/StonesAndFragments/strong2.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/StonesAndFragments/strong3.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=25]
+[ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/vital-rock.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/strong-rock.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=28]
+[ext_resource path="res://Scenes/StonesAndFragments/strong1.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/StonesAndFragments/strong2.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/StonesAndFragments/strong3.tscn" type="PackedScene" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 560, 1636.9 )
@@ -42,12 +43,12 @@ size = 30
 font_data = ExtResource( 14 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 15
-font_data = ExtResource( 14 )
+size = 18
+font_data = ExtResource( 25 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 24
-font_data = ExtResource( 14 )
+size = 40
+font_data = ExtResource( 25 )
 
 [sub_resource type="Animation" id=6]
 resource_name = "rockFlash"
@@ -429,7 +430,7 @@ position = Vector2( 2158.47, -1038.17 )
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 29.767
 margin_top = 17.627
 margin_right = 232.767
@@ -440,12 +441,12 @@ text = "Press 'R' to respawn"
 [node name="Green" type="Sprite" parent="HUD"]
 position = Vector2( 793.732, 16.7924 )
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 
 [node name="Red" type="Sprite" parent="HUD"]
 position = Vector2( 922.782, 16.7924 )
 scale = Vector2( 0.15, 0.15 )
-texture = ExtResource( 26 )
+texture = ExtResource( 27 )
 
 [node name="GreenFrag" type="Label" parent="HUD"]
 margin_left = 828.0
@@ -479,27 +480,29 @@ text = "/3"
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 514.346, 313.495 )
 scale = Vector2( 3.50564, 3.70341 )
-texture = ExtResource( 27 )
+texture = ExtResource( 28 )
 
 [node name="strong-rock" type="Sprite" parent="HUD"]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 507.612, 232.352 )
-texture = ExtResource( 26 )
+texture = ExtResource( 27 )
 
 [node name="stoneAnim" type="AnimationPlayer" parent="HUD"]
 anims/rockFlash = SubResource( 6 )
 
 [node name="Fragments" type="Node2D" parent="."]
 
-[node name="FragmentArea" parent="Fragments" instance=ExtResource( 28 )]
-position = Vector2( 370.764, 553.527 )
+
+[node name="FragmentArea" parent="Fragments" instance=ExtResource( 29 )]
+position = Vector2( 127.898, 64 )
+
 scale = Vector2( 0.5, 0.5 )
 
-[node name="FragmentArea2" parent="Fragments" instance=ExtResource( 29 )]
+[node name="FragmentArea2" parent="Fragments" instance=ExtResource( 30 )]
 position = Vector2( 1688.26, -696 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="FragmentArea3" parent="Fragments" instance=ExtResource( 30 )]
+[node name="FragmentArea3" parent="Fragments" instance=ExtResource( 31 )]
 position = Vector2( 28.4691, -1292.89 )
 scale = Vector2( 0.5, 0.5 )
 

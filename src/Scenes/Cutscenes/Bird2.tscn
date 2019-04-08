@@ -3,8 +3,8 @@
 [ext_resource path="res://Scripts/birdScene2.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=3]
-[ext_resource path="res://Assets/merriweather.regular.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/merriweather.italic.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=6]
 [ext_resource path="res://Assets/Sounds/Background/level1musicpart2b.wav" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=8]
@@ -157,7 +157,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=11]
-size = 15
+size = 20
+
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=12]
@@ -297,10 +298,9 @@ texture = ExtResource( 12 )
 centered = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="nextline" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
@@ -309,7 +309,7 @@ custom_fonts/font = SubResource( 11 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.588235 )
+modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
