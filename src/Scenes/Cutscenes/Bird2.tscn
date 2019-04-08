@@ -158,6 +158,7 @@ tracks/0/keys = {
 
 [sub_resource type="DynamicFont" id=11]
 size = 20
+
 font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=12]

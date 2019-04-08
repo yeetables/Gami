@@ -261,7 +261,7 @@ scale = Vector2( 20.1303, 11.4579 )
 texture = ExtResource( 8 )
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( 652.076, 190 )
+position = Vector2( -628.311, 190 )
 z_index = 1
 __meta__ = {
 "_edit_group_": true
@@ -287,9 +287,10 @@ autoplay = true
 [node name="nextline" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )
 margin_left = 16.0
-margin_top = 48.0
-margin_right = 252.0
-margin_bottom = 80.0
+
+margin_top = 47.7924
+margin_right = 229.0
+margin_bottom = 78.7924
 custom_fonts/font = SubResource( 9 )
 text = "Press 'LMB' to fast-forward"
 
