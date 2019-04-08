@@ -9,7 +9,7 @@ const SQUIRREL_INSTANCE_PATH = "/root/World/PlayerSquirrel"
 var PLAYER_POS = Vector2()
 #var CAMERA_POS = Vector2()
 var PLAYER_INSTANCE = null
-
+var Level1Finished = false
 var DASH_ENABLED = false
 var FRAGMENTS_R = 0
 var FRAGMENTS_G = 0
