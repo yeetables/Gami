@@ -9,14 +9,13 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Inbetween parallax/parallax-bg-between-3.png" type="Texture" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/Sounds/Background/level1musicpart2b.wav" type="AudioStream" id=10]
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=1]
 size = 20
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=1]
-resource_name = "enter"
+[sub_resource type="Animation" id=2]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player2:position")
@@ -53,8 +52,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "kiss"
+[sub_resource type="Animation" id=3]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:rotation_degrees")
@@ -69,7 +67,7 @@ tracks/0/keys = {
 "values": [ 0.0, 90.0, 180.0, 270.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 resource_name = "leave"
 length = 3.0
 tracks/0/type = "value"
@@ -95,8 +93,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "textCycle"
+[sub_resource type="Animation" id=5]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("voice:modulate")
@@ -111,8 +108,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "fadeIn"
+[sub_resource type="Animation" id=6]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -127,8 +123,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "fadeOut"
+[sub_resource type="Animation" id=7]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -143,7 +138,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=8]
 length = 0.85
 loop = true
 step = 0.05
@@ -160,7 +155,7 @@ tracks/0/keys = {
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=14]
 size = 15
 font_data = ExtResource( 2 )
 
@@ -173,7 +168,7 @@ margin_left = -228.0
 margin_top = -72.0
 margin_right = 235.0
 margin_bottom = 73.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 text = "Hello, yes, this is bird."
 align = 1
 valign = 1
@@ -250,14 +245,14 @@ rotation = 6.28319
 texture = ExtResource( 8 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/enter = SubResource( 1 )
-anims/kiss = SubResource( 2 )
-anims/leave = SubResource( 8 )
-anims/textCycle = SubResource( 3 )
+anims/enter = SubResource( 2 )
+anims/kiss = SubResource( 3 )
+anims/leave = SubResource( 4 )
+anims/textCycle = SubResource( 5 )
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 4 )
-anims/fadeOut = SubResource( 5 )
+anims/fadeIn = SubResource( 6 )
+anims/fadeOut = SubResource( 7 )
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 0 )
@@ -280,7 +275,7 @@ vframes = 4
 hframes = 5
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
-anims/FoxRun = SubResource( 12 )
+anims/FoxRun = SubResource( 8 )
 
 [node name="bg" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource( 10 )
@@ -296,7 +291,7 @@ margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 14 )
 text = "Press 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
@@ -305,7 +300,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 14 )
 text = "Press 'S' to skip"
 
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
