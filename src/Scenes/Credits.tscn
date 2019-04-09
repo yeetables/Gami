@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -48,6 +49,10 @@ tracks/0/keys = {
 size = 50
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=6]
+size = 30
+font_data = ExtResource( 4 )
+
 [node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -89,9 +94,9 @@ anims/fadeout = SubResource( 4 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 40.0
-margin_top = 160.0
+margin_top = 128.0
 margin_right = 832.0
-margin_bottom = 576.0
+margin_bottom = 527.0
 custom_fonts/font = SubResource( 5 )
 text = "Aaron Liu: Lead Programmer
 Atharv Vohra: Lead Designer, Programmer, SFX
@@ -99,6 +104,14 @@ Misia Bloniarz: Lead Artist, Producer
 Jessica Atamenko: Lead Writer, Producer
 Liam McDonald: Programmer, Editor
 Pelin Kivrikoglu: Music and Sound"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 556.0
+margin_right = 832.0
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 6 )
+text = "Thanks to all who supported us, and thank you for playing!"
 
 [connection signal="mouse_entered" from="backbtn" to="." method="_on_backbtn_mouse_entered"]
 [connection signal="mouse_exited" from="backbtn" to="." method="_on_backbtn_mouse_exited"]
