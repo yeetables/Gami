@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stonecutscene.wav-87e33b47f8178da65d47dd8d1e7c1887.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Background/stonecutscene.wav"
+dest_files=[ "res://.import/stonecutscene.wav-87e33b47f8178da65d47dd8d1e7c1887.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0
