@@ -15,7 +15,7 @@
 [ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=13]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 30
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -188,7 +188,7 @@ texture = ExtResource( 2 )
 
 [node name="birdVoice" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -400.0
+margin_left = -352.0
 margin_top = -73.0
 margin_right = 400.0
 margin_bottom = 75.0
@@ -298,7 +298,7 @@ margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
 custom_fonts/font = SubResource( 11 )
-text = "Press 'LMB' to fast-forward"
+text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )

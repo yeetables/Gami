@@ -125,7 +125,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="DynamicFont" id=5]
-size = 40
+size = 30
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -268,9 +268,9 @@ anims/filterIn = SubResource( 3 )
 anims/filterOut = SubResource( 4 )
 
 [node name="deerVoice" type="Label" parent="."]
-margin_left = -229.0
+margin_left = 20.0
 margin_top = -97.0
-margin_right = 227.0
+margin_right = 439.0
 margin_bottom = 6.0
 custom_fonts/font = SubResource( 5 )
 align = 1
@@ -340,7 +340,7 @@ margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
 custom_fonts/font = SubResource( 14 )
-text = "Press 'LMB' to fast-forward"
+text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )

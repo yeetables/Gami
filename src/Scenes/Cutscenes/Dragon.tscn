@@ -534,7 +534,7 @@ margin_top = 41.7121
 margin_right = 252.0
 margin_bottom = 73.7121
 custom_fonts/font = SubResource( 13 )
-text = "Press 'LMB' to fast-forward"
+text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="background" type="Sprite" parent="HUD"]
 modulate = Color( 0, 0, 0, 1 )

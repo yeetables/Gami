@@ -12,7 +12,7 @@
 [ext_resource path="res://Assets/Sounds/Background/level1musicpart2b.wav" type="AudioStream" id=10]
 
 [sub_resource type="DynamicFont" id=1]
-size = 40
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=2]
@@ -164,9 +164,9 @@ script = ExtResource( 1 )
 
 [node name="voice" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -360.0
+margin_left = -140.0
 margin_top = -140.0
-margin_right = 358.0
+margin_right = 468.0
 margin_bottom = 5.0
 custom_fonts/font = SubResource( 1 )
 text = "Hello, yes, this is bird."
@@ -189,7 +189,6 @@ __meta__ = {
 }
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Imported"]
-editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -350 )
 transform = Transform2D( 1, 0, 0, 1, 0, -350 )
@@ -291,7 +290,7 @@ margin_top = 48.0
 margin_right = 252.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 9 )
-text = "Press 'LMB' to fast-forward"
+text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )

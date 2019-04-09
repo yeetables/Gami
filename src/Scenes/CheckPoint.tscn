@@ -60,6 +60,6 @@ anims/active = SubResource( 2 )
 
 [node name="Activated" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
-volume_db = -4.727
+volume_db = -10.636
 
 [connection signal="body_entered" from="." to="." method="_on_CheckPoint_body_entered"]

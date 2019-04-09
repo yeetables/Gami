@@ -27,6 +27,7 @@ func _ready():
 	$Dragon/breath.play("sleep")
 	$HUD/nextline.visible = false
 	$Dragon/Node2D.visible = false
+	Global.GAME_FINISHED = true
 	
 func nextScene():
 	get_tree().change_scene("res://Scenes/Credits.tscn")
