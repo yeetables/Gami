@@ -1,18 +1,85 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/Sprites/Objects/Player/NEWFOX-run-HUGE.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=6]
-[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=12]
-[ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=13]
+[ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
+[ext_resource path="res://Assets/Sprites/Objects/Player/deer-COLOR.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Assets/Sprites/Objects/Player/fox-anims-idle-less-untz-COLOR.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=15]
+
+[sub_resource type="Animation" id=17]
+resource_name = "deerHurt"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Deer:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Deer:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Deer:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Deer:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DeerAnim:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.01 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.4 ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "fadeIn"
@@ -126,13 +193,141 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=5]
 size = 30
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 40
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=15]
+resource_name = "FoxIdle"
+length = 1.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Basic:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Basic:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Basic:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 6 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Basic:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Basic:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -55 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("playerAni:playback_speed")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 2.0 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "FoxKiss"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Basic:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Basic:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Basic:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Basic:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="Animation" id=16]
 length = 0.85
 loop = true
 step = 0.05
@@ -147,6 +342,78 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 2, 4, 6, 8, 10, 12, 14, 16 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Basic:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 0.615572 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Basic:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Basic:hframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 5 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Basic:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.9, 0.9 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Basic:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -7, -33 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("playerAni:playback_speed")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -200,7 +467,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": PoolStringArray( "FoxRun", "[stop]" ),
+"clips": PoolStringArray( "FoxRun", "FoxIdle" ),
 "times": PoolRealArray( 0, 3 )
 }
 
@@ -208,16 +475,16 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=12]
 tracks/0/type = "value"
-tracks/0/path = NodePath("Deer:region_enabled")
+tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
+"times": PoolRealArray( 0.03 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, 220 ) ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -248,15 +515,28 @@ tracks/1/keys = {
 
 [sub_resource type="DynamicFont" id=14]
 size = 20
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 0, -10 )
+tile_set = ExtResource( 2 )
+cell_tile_origin = 1
+format = 1
+tile_data = PoolIntArray( 262133, 43, 0, 262136, 43, 0, 262139, 43, 0, 262142, 43, 0, 196609, 43, 0, 196612, 43, 0, 196615, 43, 0 )
+
 [node name="Deer" type="Sprite" parent="."]
-position = Vector2( 378.389, 148.309 )
-rotation = -3.14118
-texture = ExtResource( 2 )
+position = Vector2( 378.389, 134.309 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 2
+
+[node name="DeerAnim" type="AnimationPlayer" parent="."]
+playback_speed = 0.4
+anims/deerHurt = SubResource( 17 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -289,26 +569,30 @@ valign = 1
 autowrap = true
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( -613.61, 220 )
+position = Vector2( 100, 220 )
 z_index = 1
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Basic" type="Sprite" parent="Player"]
-position = Vector2( 0, -26 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-vframes = 4
-hframes = 5
-
-[node name="playerAni" type="AnimationPlayer" parent="Player"]
-anims/FoxRun = SubResource( 7 )
+position = Vector2( -7, -55 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 6 )
+vframes = 5
+hframes = 6
 
 [node name="bg" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 volume_db = 1.0
 autoplay = true
+
+[node name="playerAni" type="AnimationPlayer" parent="Player"]
+autoplay = "FoxIdle"
+playback_speed = 2.0
+anims/FoxIdle = SubResource( 15 )
+anims/FoxKiss = SubResource( 18 )
+anims/FoxRun = SubResource( 16 )
 
 [node name="Background" type="Sprite" parent="."]
 visible = false
@@ -316,7 +600,7 @@ modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -0.162235, 0.260328 )
 scale = Vector2( 18.9988, 11.958 )
 z_index = 1
-texture = ExtResource( 2 )
+texture = ExtResource( 9 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
 anims/deerCycle = SubResource( 8 )
@@ -329,7 +613,7 @@ anims/leave = SubResource( 13 )
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 3.89832, 3.86168 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -364,7 +648,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -374,7 +658,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -384,7 +668,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -397,7 +681,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 centered = false
 offset = Vector2( 0, -120 )
 
@@ -405,14 +689,7 @@ offset = Vector2( 0, -120 )
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.213135, -3.32788 )
 scale = Vector2( 1.01581, 1.01209 )
-texture = ExtResource( 12 )
-
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 0, -10 )
-tile_set = ExtResource( 13 )
-cell_tile_origin = 1
-format = 1
-tile_data = PoolIntArray( 262133, 43, 0, 262136, 43, 0, 262139, 43, 0, 262142, 43, 0, 196609, 43, 0, 196612, 43, 0, 196615, 43, 0 )
+texture = ExtResource( 15 )
 
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]

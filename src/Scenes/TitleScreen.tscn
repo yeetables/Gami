@@ -82,7 +82,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 resource_name = "fadein"
 length = 0.3
 tracks/0/type = "value"
@@ -98,7 +98,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=9]
 resource_name = "fadeout"
 length = 0.3
 tracks/0/type = "value"
@@ -114,7 +114,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=10]
 resource_name = "FadeOut"
 length = 2.0
 tracks/0/type = "value"
@@ -216,8 +216,8 @@ margin_right = 992.0
 margin_bottom = 576.0
 
 [node name="AnimCtrl" type="AnimationPlayer" parent="Controls"]
-anims/fadein = SubResource( 10 )
-anims/fadeout = SubResource( 11 )
+anims/fadein = SubResource( 8 )
+anims/fadeout = SubResource( 9 )
 
 [node name="controltext" type="Label" parent="Controls"]
 margin_left = 832.0
@@ -228,7 +228,7 @@ custom_fonts/font = SubResource( 5 )
 text = "Controls"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/FadeOut = SubResource( 12 )
+anims/FadeOut = SubResource( 10 )
 
 [connection signal="mouse_entered" from="Play/playbutton" to="." method="_on_playbutton_mouse_entered"]
 [connection signal="mouse_exited" from="Play/playbutton" to="." method="_on_playbutton_mouse_exited"]
