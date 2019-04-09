@@ -40,6 +40,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_skip"):
 		changeScene()
 		
+#	print($Player/Basic.hframes)
 	if not $Player/playerAni.is_playing():
 		$Player/playerAni.play("FoxIdle")
 
@@ -69,6 +70,7 @@ func _on_bgAnim_animation_finished(anim_name):
 		else:
 			$PlyAnim.set_speed_scale(1)
 			$PlyAnim.play("kiss")
+#			$Player/playerAni.play("FoxKiss")
 	elif anim_name == "fadeOut":
 		print("done")
 		changeScene()

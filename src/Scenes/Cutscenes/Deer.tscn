@@ -1,14 +1,14 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
 [ext_resource path="res://Assets/Sprites/Objects/Player/deer-COLOR.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/Sprites/Objects/Player/kiss-colored.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Objects/Player/kiss-colored.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/Objects/Player/fox-anims-idle-less-untz-COLOR.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=11]
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=12]
@@ -17,7 +17,58 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=16]
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
+resource_name = "deerHealed"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Deer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DeerHealed:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("DeerHealed:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DeerHealed:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.952941, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=1]
 resource_name = "deerHurt"
 length = 0.5
 loop = true
@@ -81,9 +132,32 @@ tracks/4/keys = {
 "update": 0,
 "values": [ 0.4 ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("DeerHealed:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Deer:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=1]
-resource_name = "fadeIn"
+[sub_resource type="Animation" id=2]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -98,8 +172,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.294118 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "fadeOut"
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -138,8 +211,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "filterIn"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
 tracks/0/interp = 1
@@ -165,8 +237,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "filterOut"
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
 tracks/0/interp = 1
@@ -192,56 +263,56 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 size = 30
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 40
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=8]
 resource_name = "FoxIdle"
 length = 1.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Basic:texture")
+tracks/0/path = NodePath("Idle:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 8 ), ExtResource( 8 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Basic:vframes")
+tracks/1/path = NodePath("Idle:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 5, 5 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Basic:hframes")
+tracks/2/path = NodePath("Idle:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 6, 6 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Basic:frame")
+tracks/3/path = NodePath("Idle:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -253,16 +324,16 @@ tracks/3/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Basic:position")
+tracks/4/path = NodePath("Idle:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -7, -55 ) ]
+"values": [ Vector2( -7, -36 ), Vector2( -7, -36 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("playerAni:playback_speed")
@@ -276,59 +347,156 @@ tracks/5/keys = {
 "update": 0,
 "values": [ 2.0 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Basic:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Kiss:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Idle:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=9]
 resource_name = "FoxKiss"
+length = 1.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("Basic:texture")
+tracks/0/path = NodePath("Kiss:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 7 ), ExtResource( 7 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Basic:vframes")
+tracks/1/path = NodePath("Kiss:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 4, 4 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Basic:hframes")
+tracks/2/path = NodePath("Kiss:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( -0.00999998 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( -0.00999998, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 4, 4 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Basic:frame")
+tracks/3/path = NodePath("Kiss:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.1, 0.64, 1.2, 1.65, 2.27, 2.93, 3.66, 4.59 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.27 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 0, 0, 0, 0, 0, 0, 0 ]
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("playerAni:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( -0.00999996 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Idle:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Kiss:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Basic:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Kiss:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -7, -36 ), Vector2( -7, -36 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=10]
 length = 0.85
 loop = true
 step = 0.05
@@ -351,10 +519,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.615572 ),
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 0.615572, 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 6 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Basic:vframes")
@@ -363,10 +531,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 4 ]
+"values": [ 4, 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Basic:hframes")
@@ -375,10 +543,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 5, 5 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Basic:scale")
@@ -387,10 +555,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.9, 0.9 ) ]
+"values": [ Vector2( 0.9, 0.9 ), Vector2( 0.9, 0.9 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Basic:position")
@@ -399,10 +567,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.85 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -7, -33 ) ]
+"values": [ Vector2( -7, -12 ), Vector2( -7, -12 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("playerAni:playback_speed")
@@ -416,8 +584,44 @@ tracks/6/keys = {
 "update": 0,
 "values": [ 1.0 ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("Basic:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Kiss:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Idle:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=11]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("deerVoice:modulate")
@@ -432,7 +636,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=12]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("dragonVoice:modulate")
@@ -447,7 +651,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=13]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -459,7 +663,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -613.61, 220 ), Vector2( 100, 220 ) ]
+"values": [ Vector2( -613.61, 200 ), Vector2( 100, 200 ) ]
 }
 tracks/1/type = "animation"
 tracks/1/path = NodePath("Player/playerAni")
@@ -472,10 +676,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=14]
 
-[sub_resource type="Animation" id=12]
-length = 2.0
+[sub_resource type="Animation" id=15]
+length = 1.4
 tracks/0/type = "animation"
 tracks/0/path = NodePath("Player/playerAni")
 tracks/0/interp = 1
@@ -483,12 +687,21 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"clips": PoolStringArray( "FoxKiss" ),
-"times": PoolRealArray( -0.01 )
+"clips": PoolStringArray( "FoxKiss", "FoxIdle" ),
+"times": PoolRealArray( 0, 1.21 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("DeerAnim")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "deerHealed" ),
+"times": PoolRealArray( 1.3 )
 }
 
-[sub_resource type="Animation" id=13]
-resource_name = "leave"
+[sub_resource type="Animation" id=16]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -500,7 +713,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 100, 220 ), Vector2( 640, 220 ) ]
+"values": [ Vector2( 100, 200 ), Vector2( 640, 200 ) ]
 }
 tracks/1/type = "animation"
 tracks/1/path = NodePath("Player/playerAni")
@@ -513,7 +726,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=17]
 size = 20
 font_data = ExtResource( 4 )
 
@@ -527,32 +740,40 @@ cell_tile_origin = 1
 format = 1
 tile_data = PoolIntArray( 262133, 43, 0, 262136, 43, 0, 262139, 43, 0, 262142, 43, 0, 196609, 43, 0, 196612, 43, 0, 196615, 43, 0 )
 
+[node name="DeerHealed" type="Sprite" parent="."]
+visible = false
+modulate = Color( 0, 0.952941, 1, 1 )
+position = Vector2( 378.389, 134.309 )
+texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+
 [node name="Deer" type="Sprite" parent="."]
 position = Vector2( 378.389, 134.309 )
 texture = ExtResource( 3 )
 vframes = 4
 hframes = 4
-frame = 2
 
 [node name="DeerAnim" type="AnimationPlayer" parent="."]
 playback_speed = 0.4
-anims/deerHurt = SubResource( 17 )
+anims/deerHealed = SubResource( 18 )
+anims/deerHurt = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 1 )
-anims/fadeOut = SubResource( 2 )
-anims/filterIn = SubResource( 3 )
-anims/filterOut = SubResource( 4 )
+anims/fadeIn = SubResource( 2 )
+anims/fadeOut = SubResource( 3 )
+anims/filterIn = SubResource( 4 )
+anims/filterOut = SubResource( 5 )
 
 [node name="deerVoice" type="Label" parent="."]
 margin_left = 20.0
 margin_top = -97.0
 margin_right = 439.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 align = 1
 valign = 1
 autowrap = true
@@ -563,36 +784,51 @@ margin_left = -229.0
 margin_top = -97.0
 margin_right = 227.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 autowrap = true
 
 [node name="Player" type="Sprite" parent="."]
-position = Vector2( 100, 220 )
+editor/display_folded = true
+position = Vector2( -613.61, 200 )
 z_index = 1
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Basic" type="Sprite" parent="Player"]
-position = Vector2( -7, -55 )
+visible = false
+position = Vector2( -7, -12 )
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 6 )
 vframes = 4
+hframes = 5
+
+[node name="Kiss" type="Sprite" parent="Player"]
+position = Vector2( -7, -36 )
+texture = ExtResource( 7 )
+vframes = 4
 hframes = 4
+frame = 11
+
+[node name="Idle" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( -7, -36 )
+texture = ExtResource( 8 )
+vframes = 5
+hframes = 6
+frame = 2
 
 [node name="bg" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 7 )
+stream = ExtResource( 9 )
 volume_db = 1.0
 autoplay = true
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
-autoplay = "FoxIdle"
-playback_speed = 2.0
-anims/FoxIdle = SubResource( 15 )
-anims/FoxKiss = SubResource( 18 )
-anims/FoxRun = SubResource( 16 )
+anims/FoxIdle = SubResource( 8 )
+anims/FoxKiss = SubResource( 9 )
+anims/FoxRun = SubResource( 10 )
 
 [node name="Background" type="Sprite" parent="."]
 visible = false
@@ -603,12 +839,12 @@ z_index = 1
 texture = ExtResource( 10 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/deerCycle = SubResource( 8 )
-anims/dragCycle = SubResource( 9 )
-anims/enter = SubResource( 10 )
-anims/heart = SubResource( 11 )
-anims/kiss = SubResource( 12 )
-anims/leave = SubResource( 13 )
+anims/deerCycle = SubResource( 11 )
+anims/dragCycle = SubResource( 12 )
+anims/enter = SubResource( 13 )
+anims/heart = SubResource( 14 )
+anims/kiss = SubResource( 15 )
+anims/leave = SubResource( 16 )
 
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -623,7 +859,7 @@ margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
@@ -632,7 +868,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 17 )
 text = "Press 'S' to skip"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
