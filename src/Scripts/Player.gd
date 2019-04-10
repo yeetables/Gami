@@ -59,14 +59,20 @@ func _physics_process(delta):
 					xspeed = -MAX_SPEED
 					
 		else:
-			$AnimationPlayer.stop()
-			animPlay = false
+
 			if xspeed > ((ACC * 2) + 1):
 				xspeed -= 2 * ACC
 			elif xspeed < -16:
 				xspeed += 2 * ACC
 			else:
 				xspeed = 0
+				
+			if is_on_floor() and $AnimationPlayer.get_current_animation() != "FoxIdle":
+				print("??", $AnimationPlayer.get_current_animation(), "??")
+				$AnimationPlayer.play("FoxIdle")
+			else:
+#				$AnimationPlayer.stop()
+				animPlay = false
 				
 		if Input.is_action_pressed("ui_lmb"):
 			if not is_on_floor() and landed == true and Global.DASH_ENABLED:

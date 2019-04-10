@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Controls.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -46,24 +45,20 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=5]
-size = 50
+size = 35
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
-size = 30
-font_data = ExtResource( 4 )
-
-[node name="Credits" type="Control"]
+[node name="Controls" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="credtext" type="Label" parent="."]
+[node name="ctrltext" type="Label" parent="."]
 margin_left = 32.0
 margin_right = 172.0
 margin_bottom = 90.0
 custom_fonts/font = SubResource( 1 )
-text = "Credits"
+text = "Controls"
 
 [node name="BG" type="Sprite" parent="."]
 position = Vector2( 512, 304 )
@@ -92,26 +87,21 @@ margin_bottom = 556.0
 anims/fadein = SubResource( 3 )
 anims/fadeout = SubResource( 4 )
 
-[node name="Label" type="Label" parent="."]
+[node name="controls" type="Label" parent="."]
 margin_left = 40.0
 margin_top = 128.0
-margin_right = 832.0
-margin_bottom = 527.0
+margin_right = 874.0
+margin_bottom = 683.0
 custom_fonts/font = SubResource( 5 )
-text = "Aaron (Hongyang) Liu: Lead Programmer
-Atharv Vohra: Lead Designer, Programmer, SFX
-Misia Bloniarz: Lead Artist, Producer
-Jessica Atamenko: Lead Writer, Producer
-Liam McDonald: Programmer, Editor
-Pelin Kivrikoglu: Music and Sound"
+text = "Movement - Arrow Keys or WASD
 
-[node name="Label2" type="Label" parent="."]
-margin_left = 40.0
-margin_top = 556.0
-margin_right = 832.0
-margin_bottom = 600.0
-custom_fonts/font = SubResource( 6 )
-text = "Thanks to all who supported us, and thank you for playing!"
+Jump - Spacebar or Up Arrow Key
+
+Dash - C or Left Mouse Button
+
+Skip Cutscene - S
+
+Fast-Forward Cutscene - C or Left Mouse Button"
 
 [connection signal="mouse_entered" from="backbtn" to="." method="_on_backbtn_mouse_entered"]
 [connection signal="mouse_exited" from="backbtn" to="." method="_on_backbtn_mouse_exited"]

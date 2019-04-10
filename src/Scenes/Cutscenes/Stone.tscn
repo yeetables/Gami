@@ -251,9 +251,9 @@ autoplay = true
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -468.158
-margin_top = -231.634
+margin_top = -200.0
 margin_right = 471.842
-margin_bottom = -128.634
+margin_bottom = -97.0
 custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
@@ -268,7 +268,7 @@ margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
 custom_fonts/font = SubResource( 8 )
-text = "Press 'LMB' to fast-forward"
+text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )

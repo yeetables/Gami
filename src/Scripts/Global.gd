@@ -14,6 +14,7 @@ var DASH_ENABLED = false
 var FRAGMENTS_R = 0
 var FRAGMENTS_G = 0
 var CAN_MOVE = true
+var GAME_FINISHED = false
 
 func _ready():
 	var root = get_tree().get_root()

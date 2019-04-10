@@ -6,7 +6,7 @@ var deer1 = ["Nnngh...", "Footsteps..? Please. Help..."]
 var deer2 = ["I...eughh...My Leg.", "Please... A falling branch broke my leg. I'm starving, but I can't move.", "I need your help... badly."]
 var drag1 = "You have the power of the Stone of Vitality. Do you feel it within?"
 var deer3 = ["Oh...", "My leg! I can move!"]
-var deer4 = ["I... *sob*... I thought I would die here. Thank you so much. Words can't express...", "I won't forget you, my friend."]
+var deer4 = ["I... I thought I would die here. Thank you so much. Words can't express...", "I won't forget you, my friend."]
 var drag2 = ["My child... I am proud. You have given our friend a second chance at life.", "Stay strong and go forth."]
 var t_count = 0
 var times = [1,1,1,1,1,1,1,1,1,1,1,1]
@@ -16,6 +16,7 @@ var shouldLeave = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
+	$DeerAnim.play("deerHurt")
 	
 func changeScene():
 	get_tree().change_scene("res://Scenes/Cutscenes/Bird1.tscn")
@@ -38,6 +39,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("ui_skip"):
 		changeScene()
+		
+	if not $Player/playerAni.is_playing():
+		$Player/playerAni.play("FoxIdle")
 
 func _on_bgAnim_animation_finished(anim_name):
 	if anim_name == "fadeIn":
@@ -65,6 +69,7 @@ func _on_bgAnim_animation_finished(anim_name):
 		else:
 			$PlyAnim.set_speed_scale(1)
 			$PlyAnim.play("kiss")
+#			$Player/playerAni.play("FoxKiss")
 	elif anim_name == "fadeOut":
 		print("done")
 		changeScene()

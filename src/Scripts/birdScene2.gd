@@ -31,6 +31,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("ui_skip"):
 		changeScene()
+		
+	if not $Player/playerAni.is_playing():
+		$Player/playerAni.play("FoxIdle")
 
 func _on_bgAnim_animation_finished(anim_name):
 	if anim_name == "fadeIn":

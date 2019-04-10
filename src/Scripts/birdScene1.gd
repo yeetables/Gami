@@ -1,12 +1,13 @@
 extends Node
 
-var words = ["...", "Oh, hello there. You're the first creature I've heard in a while.", "I'm blind, you see. So when my flock hurriedly rushed away a few days ago, it was utter chaos! Too noisy... I couldn't make out their direction.", "If you don't mind, could you point me in the direction the sun sets? Or, holler, rather?", "Oh! Was that healing magic? How sweet of you.", "Alas, there is nothing to heal, for nothing is broken. I was born with not born with eyes to see.", "I've had to train my ears instead. They have served me well.", "Until now, that is.", "*Sigh* ... Perhaps I wouldn't make it far even with directions.", "I don't mean to trouble you, but if you could somehow help me find my way, I would be very grateful indeed."]
+var words = ["...", "Oh, hello there. You're the first creature I've heard in a while.", "I'm blind, you see. So when my flock hurriedly rushed away a few days ago, it was utter chaos! Too noisy... I couldn't make out their direction.", "If you don't mind, could you point me in the direction the sun sets? Or, holler, rather?", "Oh! Was that healing magic? How sweet of you.", "Alas, there is nothing to heal, for nothing is broken. I was born with not born with eyes to see.", "I've had to train my ears instead. They have served me well.", "Until now, that is.", "... Perhaps I wouldn't make it far even with directions.", "I don't mean to trouble you, but if you could somehow help me find my way, I would be very grateful indeed."]
 var times = [1.25, 1, 0.5, 0.75, 1, 1, 1, 1, 1, 0.75]
 var line = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
+	$BirdAnim.play("Bird")
 
 func _physics_process(delta):
 	# advance to the end of this when we are playing "Words"
@@ -26,6 +27,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("ui_skip"):
 		get_tree().change_scene("res://Scenes/ForestPart2.tscn")
+		
+	if not $Player/playerAni.is_playing():
+		$Player/playerAni.play("FoxIdle")
 
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "enter":
