@@ -7,6 +7,7 @@ var line = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
+	$BirdAnim.play("Bird")
 
 func _physics_process(delta):
 	# advance to the end of this when we are playing "Words"
@@ -26,6 +27,9 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("ui_skip"):
 		get_tree().change_scene("res://Scenes/ForestPart2.tscn")
+		
+	if not $Player/playerAni.is_playing():
+		$Player/playerAni.play("FoxIdle")
 
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "enter":

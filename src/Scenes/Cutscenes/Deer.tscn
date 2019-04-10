@@ -8,14 +8,14 @@
 [ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/Objects/Player/kiss-colored.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/Objects/Player/fox-anims-idle-less-untz-COLOR.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=9]
-[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=18]
 resource_name = "deerHealed"
@@ -820,23 +820,17 @@ vframes = 5
 hframes = 6
 frame = 2
 
-[node name="bg" type="AudioStreamPlayer" parent="Player"]
-stream = ExtResource( 9 )
-volume_db = 1.0
-autoplay = true
-
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
 anims/FoxIdle = SubResource( 8 )
 anims/FoxKiss = SubResource( 9 )
 anims/FoxRun = SubResource( 10 )
 
 [node name="Background" type="Sprite" parent="."]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -0.162235, 0.260328 )
 scale = Vector2( 18.9988, 11.958 )
 z_index = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
 anims/deerCycle = SubResource( 11 )
@@ -849,9 +843,10 @@ anims/leave = SubResource( 16 )
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 3.89832, 3.86168 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="nextline" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )
@@ -872,6 +867,7 @@ custom_fonts/font = SubResource( 17 )
 text = "Press 'S' to skip"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 layer = -15
 offset = Vector2( 0, -100 )
 transform = Transform2D( 1, 0, 0, 1, 0, -100 )
@@ -884,7 +880,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -894,7 +890,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -904,7 +900,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -917,7 +913,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 centered = false
 offset = Vector2( 0, -120 )
 
@@ -925,7 +921,12 @@ offset = Vector2( 0, -120 )
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.213135, -3.32788 )
 scale = Vector2( 1.01581, 1.01209 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+volume_db = 1.0
+autoplay = true
 
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]

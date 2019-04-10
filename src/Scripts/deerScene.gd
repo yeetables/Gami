@@ -40,7 +40,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_skip"):
 		changeScene()
 		
-#	print($Player/Basic.hframes)
 	if not $Player/playerAni.is_playing():
 		$Player/playerAni.play("FoxIdle")
 
