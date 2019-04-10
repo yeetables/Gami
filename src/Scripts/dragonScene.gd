@@ -19,6 +19,7 @@ var words = [
 ]
 var times = [1, 1, 0.75, 1, 1, 0.6, 0.6, 0.5, 0.75, 1, 1, 0.6, 1, 1, 1]
 var line = 0
+var walkUpDone = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -50,6 +51,9 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_skip"):
 		nextScene()
+	
+	if not $Player/playerAni.is_playing() and walkUpDone:
+		$Player/playerAni.play("FoxIdle")
 		
 func _on_PlyAnim_animation_finished(anim_name):
 	if anim_name == "walkUp":
@@ -57,8 +61,10 @@ func _on_PlyAnim_animation_finished(anim_name):
 		#They do the eye opening. 
 		#Then this cutscene should basically be the same. 
 		print("done")
+		walkUpDone = true
 		$Dragon/Node2D.visible = true
 		$"Dragon/sleep dragon".visible = false
+		$Dragon/breath.stop()
 		$Dragon/Node2D/eye.play("eye-open")
 #		$Label.set_text(words[line])
 #		$PlyAnim.set_speed_scale(times[line])
@@ -107,7 +113,6 @@ func _on_bgAnim_animation_finished(anim_name):
 		
 func _on_eye_animation_finished(anim_name):
 	if anim_name == "eye-open":
-		print("?????")
 		$Label.set_text(words[line])
 		$PlyAnim.set_speed_scale(times[line])
 		line += 1

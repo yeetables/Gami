@@ -594,7 +594,6 @@ scale = Vector2( 3.54264, 3.73537 )
 texture = ExtResource( 5 )
 
 [node name="Player" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 385.79, 168.493 )
 z_index = 1
 __meta__ = {
@@ -708,6 +707,7 @@ texture = ExtResource( 14 )
 centered = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="nextline" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )
@@ -738,6 +738,9 @@ texture = ExtResource( 15 )
 modulate = Color( 0, 0, 0, 0 )
 position = Vector2( -4.0249, -2.5979 )
 texture = ExtResource( 16 )
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
