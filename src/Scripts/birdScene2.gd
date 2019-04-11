@@ -58,6 +58,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 		if line == 1:
 			$PlyAnim.set_speed_scale(1)
 			$PlyAnim.play("kiss")
+			$heartSFX.play()
 		elif line == 6:
 			$PlyAnim.set_speed_scale(1)
 			$PlyAnim.play("exit")

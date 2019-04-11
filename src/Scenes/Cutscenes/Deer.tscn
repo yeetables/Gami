@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
@@ -16,8 +16,9 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Sounds/New Effects/Sys_HeartMax_Up.wav" type="AudioStream" id=17]
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=1]
 resource_name = "deerHealed"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Deer:visible")
@@ -68,8 +69,7 @@ tracks/3/keys = {
 "values": [ Color( 0, 0.952941, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "deerHurt"
+[sub_resource type="Animation" id=2]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -157,7 +157,7 @@ tracks/6/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -172,7 +172,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.294118 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -211,7 +211,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
 tracks/0/interp = 1
@@ -237,7 +237,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
 tracks/0/interp = 1
@@ -263,16 +263,15 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=7]
 size = 30
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 40
 font_data = ExtResource( 5 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "FoxIdle"
+[sub_resource type="Animation" id=9]
 length = 1.4
 loop = true
 tracks/0/type = "value"
@@ -384,8 +383,7 @@ tracks/8/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "FoxKiss"
+[sub_resource type="Animation" id=10]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Kiss:texture")
@@ -496,7 +494,7 @@ tracks/8/keys = {
 "values": [ Vector2( -7, -36 ), Vector2( -7, -36 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 0.85
 loop = true
 step = 0.05
@@ -621,7 +619,7 @@ tracks/9/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("deerVoice:modulate")
@@ -636,7 +634,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("dragonVoice:modulate")
@@ -651,7 +649,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -676,9 +674,9 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="Animation" id=14]
-
 [sub_resource type="Animation" id=15]
+
+[sub_resource type="Animation" id=16]
 length = 1.4
 tracks/0/type = "animation"
 tracks/0/path = NodePath("Player/playerAni")
@@ -701,7 +699,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 1.3 )
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -726,7 +724,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=18]
 size = 20
 font_data = ExtResource( 4 )
 
@@ -756,24 +754,24 @@ hframes = 4
 
 [node name="DeerAnim" type="AnimationPlayer" parent="."]
 playback_speed = 0.4
-anims/deerHealed = SubResource( 18 )
-anims/deerHurt = SubResource( 1 )
+anims/deerHealed = SubResource( 1 )
+anims/deerHurt = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 2 )
-anims/fadeOut = SubResource( 3 )
-anims/filterIn = SubResource( 4 )
-anims/filterOut = SubResource( 5 )
+anims/fadeIn = SubResource( 3 )
+anims/fadeOut = SubResource( 4 )
+anims/filterIn = SubResource( 5 )
+anims/filterOut = SubResource( 6 )
 
 [node name="deerVoice" type="Label" parent="."]
 margin_left = 20.0
 margin_top = -97.0
 margin_right = 439.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 align = 1
 valign = 1
 autowrap = true
@@ -784,7 +782,7 @@ margin_left = -229.0
 margin_top = -97.0
 margin_right = 227.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 align = 1
 valign = 1
 autowrap = true
@@ -821,9 +819,9 @@ hframes = 6
 frame = 2
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
-anims/FoxIdle = SubResource( 8 )
-anims/FoxKiss = SubResource( 9 )
-anims/FoxRun = SubResource( 10 )
+anims/FoxIdle = SubResource( 9 )
+anims/FoxKiss = SubResource( 10 )
+anims/FoxRun = SubResource( 11 )
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
@@ -833,12 +831,12 @@ z_index = 1
 texture = ExtResource( 9 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/deerCycle = SubResource( 11 )
-anims/dragCycle = SubResource( 12 )
-anims/enter = SubResource( 13 )
-anims/heart = SubResource( 14 )
-anims/kiss = SubResource( 15 )
-anims/leave = SubResource( 16 )
+anims/deerCycle = SubResource( 12 )
+anims/dragCycle = SubResource( 13 )
+anims/enter = SubResource( 14 )
+anims/heart = SubResource( 15 )
+anims/kiss = SubResource( 16 )
+anims/leave = SubResource( 17 )
 
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -854,7 +852,7 @@ margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
@@ -863,7 +861,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "Press 'S' to skip"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -927,6 +925,9 @@ texture = ExtResource( 15 )
 stream = ExtResource( 16 )
 volume_db = 1.0
 autoplay = true
+
+[node name="heartSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
 
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
