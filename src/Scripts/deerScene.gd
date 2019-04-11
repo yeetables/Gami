@@ -106,7 +106,6 @@ func _on_PlyAnim_animation_finished(anim_name):
 				$PlyAnim.set_speed_scale(1)
 				part += 1
 				$PlyAnim.play("heart")
-				$heartSFX.play()
 			else:
 				$deerVoice.set_text(deer3[line])
 				$PlyAnim.set_speed_scale(times[t_count])
