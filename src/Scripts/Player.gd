@@ -68,7 +68,6 @@ func _physics_process(delta):
 				xspeed = 0
 				
 			if is_on_floor() and $AnimationPlayer.get_current_animation() != "FoxIdle":
-				print("??", $AnimationPlayer.get_current_animation(), "??")
 				$AnimationPlayer.play("FoxIdle")
 			else:
 #				$AnimationPlayer.stop()

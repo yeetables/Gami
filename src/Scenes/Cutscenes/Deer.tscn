@@ -1,24 +1,30 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/deerScene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/TilesetScenes/platforms.tres" type="TileSet" id=2]
-[ext_resource path="res://Assets/Sprites/Objects/Player/deer-COLOR.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Sprites/Objects/Player/kiss-colored.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Sprites/Objects/Player/fox-anims-idle-less-untz-COLOR.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=10]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=14]
-[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=16]
+[ext_resource path="res://Assets/Sprites/Objects/Player/deer-gets-healed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Objects/Player/deer-healthy.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Objects/Player/deer-COLOR.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/Objects/Player/kiss-colored.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/Objects/Player/fox-anims-idle-less-untz-COLOR.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/Objects/Player/heart anim.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sounds/New Effects/Sys_HeartMax_Up.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-2.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Forest Parallax BG/PARALLAX-AAA-4.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Sounds/Background/cutscene.wav" type="AudioStream" id=20]
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=1]
 resource_name = "deerHealed"
+length = 1.2
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Deer:visible")
 tracks/0/interp = 1
@@ -41,35 +47,110 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("DeerHealed:texture")
+tracks/2/path = NodePath("DeerHealthy:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [  ]
+"values": [ true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("DeerHealed:modulate")
+tracks/3/path = NodePath("DeerHealthy:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DeerAnim:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 0, 0.952941, 1, 1 ) ]
+"values": [ 0.82 ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "deerHurt"
+[sub_resource type="Animation" id=2]
+resource_name = "deerHealing"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("DeerHealed:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DeerHealthy:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Deer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("DeerHealed:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("DeerAnim:playback_speed")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.82 ]
+}
+
+[sub_resource type="Animation" id=3]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -82,7 +163,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Deer:vframes")
@@ -156,8 +237,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/7/type = "value"
+tracks/7/path = NodePath("DeerHealthy:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -172,7 +265,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0.294118 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Background:modulate")
@@ -211,7 +304,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
 tracks/0/interp = 1
@@ -237,7 +330,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath("download:modulate")
 tracks/0/interp = 1
@@ -263,16 +356,15 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 30
-font_data = ExtResource( 4 )
+font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=9]
 size = 40
-font_data = ExtResource( 5 )
+font_data = ExtResource( 7 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "FoxIdle"
+[sub_resource type="Animation" id=10]
 length = 1.4
 loop = true
 tracks/0/type = "value"
@@ -285,7 +377,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ), ExtResource( 8 ) ]
+"values": [ ExtResource( 10 ), ExtResource( 10 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Idle:vframes")
@@ -384,8 +476,7 @@ tracks/8/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "FoxKiss"
+[sub_resource type="Animation" id=11]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Kiss:texture")
@@ -397,7 +488,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ), ExtResource( 9 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Kiss:vframes")
@@ -496,7 +587,7 @@ tracks/8/keys = {
 "values": [ Vector2( -7, -36 ), Vector2( -7, -36 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=12]
 length = 0.85
 loop = true
 step = 0.05
@@ -522,7 +613,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.85 ),
 "transitions": PoolRealArray( 0.615572, 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 8 ), ExtResource( 8 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Basic:vframes")
@@ -621,7 +712,47 @@ tracks/9/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=13]
+resource_name = "heartShow"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Heart:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("heartSFX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=14]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("deerVoice:modulate")
@@ -636,7 +767,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=15]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("dragonVoice:modulate")
@@ -651,7 +782,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=16]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -676,10 +807,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 3 )
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=17]
 
-[sub_resource type="Animation" id=15]
-length = 1.4
+[sub_resource type="Animation" id=18]
+length = 3.4
 tracks/0/type = "animation"
 tracks/0/path = NodePath("Player/playerAni")
 tracks/0/interp = 1
@@ -697,11 +828,21 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"clips": PoolStringArray( "deerHealed" ),
-"times": PoolRealArray( 1.3 )
+"clips": PoolStringArray( "deerHealing" ),
+"times": PoolRealArray( 2.2 )
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Player/heartAni")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "heartShow" ),
+"times": PoolRealArray( 0.4 )
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=19]
 length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -726,9 +867,9 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=20]
 size = 20
-font_data = ExtResource( 4 )
+font_data = ExtResource( 6 )
 
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
@@ -742,38 +883,46 @@ tile_data = PoolIntArray( 262133, 43, 0, 262136, 43, 0, 262139, 43, 0, 262142, 4
 
 [node name="DeerHealed" type="Sprite" parent="."]
 visible = false
-modulate = Color( 0, 0.952941, 1, 1 )
 position = Vector2( 378.389, 134.309 )
 texture = ExtResource( 3 )
+vframes = 4
+hframes = 4
+frame = 11
+
+[node name="DeerHealthy" type="Sprite" parent="."]
+visible = false
+position = Vector2( 378.389, 134.309 )
+texture = ExtResource( 4 )
 vframes = 4
 hframes = 4
 
 [node name="Deer" type="Sprite" parent="."]
 position = Vector2( 378.389, 134.309 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 vframes = 4
 hframes = 4
 
 [node name="DeerAnim" type="AnimationPlayer" parent="."]
-playback_speed = 0.4
-anims/deerHealed = SubResource( 18 )
-anims/deerHurt = SubResource( 1 )
+playback_speed = 0.82
+anims/deerHealed = SubResource( 1 )
+anims/deerHealing = SubResource( 2 )
+anims/deerHurt = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 2 )
-anims/fadeOut = SubResource( 3 )
-anims/filterIn = SubResource( 4 )
-anims/filterOut = SubResource( 5 )
+anims/fadeIn = SubResource( 4 )
+anims/fadeOut = SubResource( 5 )
+anims/filterIn = SubResource( 6 )
+anims/filterOut = SubResource( 7 )
 
 [node name="deerVoice" type="Label" parent="."]
 margin_left = 20.0
 margin_top = -97.0
 margin_right = 439.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 align = 1
 valign = 1
 autowrap = true
@@ -784,13 +933,12 @@ margin_left = -229.0
 margin_top = -97.0
 margin_right = 227.0
 margin_bottom = 6.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 9 )
 align = 1
 valign = 1
 autowrap = true
 
 [node name="Player" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( -613.61, 200 )
 z_index = 1
 __meta__ = {
@@ -801,13 +949,13 @@ __meta__ = {
 visible = false
 position = Vector2( -7, -12 )
 scale = Vector2( 0.9, 0.9 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 vframes = 4
 hframes = 5
 
 [node name="Kiss" type="Sprite" parent="Player"]
 position = Vector2( -7, -36 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 vframes = 4
 hframes = 4
 frame = 11
@@ -815,35 +963,48 @@ frame = 11
 [node name="Idle" type="Sprite" parent="Player"]
 visible = false
 position = Vector2( -7, -36 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 vframes = 5
 hframes = 6
-frame = 2
+frame = 7
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
-anims/FoxIdle = SubResource( 8 )
-anims/FoxKiss = SubResource( 9 )
-anims/FoxRun = SubResource( 10 )
+anims/FoxIdle = SubResource( 10 )
+anims/FoxKiss = SubResource( 11 )
+anims/FoxRun = SubResource( 12 )
+
+[node name="Heart" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( 107.223, -56.8186 )
+texture = ExtResource( 11 )
+vframes = 5
+hframes = 6
+
+[node name="heartAni" type="AnimationPlayer" parent="Player"]
+anims/heartShow = SubResource( 13 )
+
+[node name="heartSFX" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 12 )
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -0.162235, 0.260328 )
 scale = Vector2( 18.9988, 11.958 )
 z_index = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/deerCycle = SubResource( 11 )
-anims/dragCycle = SubResource( 12 )
-anims/enter = SubResource( 13 )
-anims/heart = SubResource( 14 )
-anims/kiss = SubResource( 15 )
-anims/leave = SubResource( 16 )
+anims/deerCycle = SubResource( 14 )
+anims/dragCycle = SubResource( 15 )
+anims/enter = SubResource( 16 )
+anims/heart = SubResource( 17 )
+anims/kiss = SubResource( 18 )
+anims/leave = SubResource( 19 )
 
 [node name="download" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 3.89832, 3.86168 )
-texture = ExtResource( 10 )
+texture = ExtResource( 14 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 editor/display_folded = true
@@ -854,7 +1015,7 @@ margin_left = 16.0
 margin_top = 47.7924
 margin_right = 229.0
 margin_bottom = 78.7924
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="skip" type="Label" parent="HUD"]
@@ -863,7 +1024,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 20 )
 text = "Press 'S' to skip"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -880,7 +1041,7 @@ motion_scale = Vector2( 0.35, 0.05 )
 motion_mirroring = Vector2( 2036, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/backmost"]
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 centered = false
 
 [node name="pine" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -890,7 +1051,7 @@ motion_scale = Vector2( 0.5, 0.1 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/pine"]
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 centered = false
 
 [node name="midtree" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -900,7 +1061,7 @@ motion_scale = Vector2( 0.65, 0.15 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/midtree"]
-texture = ExtResource( 13 )
+texture = ExtResource( 17 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -913,7 +1074,7 @@ motion_scale = Vector2( 0.8, 0.2 )
 motion_mirroring = Vector2( 2046, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/fgtree"]
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 centered = false
 offset = Vector2( 0, -120 )
 
@@ -921,12 +1082,14 @@ offset = Vector2( 0, -120 )
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.213135, -3.32788 )
 scale = Vector2( 1.01581, 1.01209 )
-texture = ExtResource( 15 )
+texture = ExtResource( 19 )
 
 [node name="bg" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 16 )
+stream = ExtResource( 20 )
 volume_db = 1.0
 autoplay = true
+
+[node name="heartSFX" type="AudioStreamPlayer" parent="."]
 
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
