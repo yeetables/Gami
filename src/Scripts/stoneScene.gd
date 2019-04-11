@@ -7,7 +7,7 @@ var line = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$cycle.play("fadeIn")
-
+	$bg.seek(14.82)
 func _physics_process(delta):
 	# advance to the end of this when we are playing "Words"
 	# just so that they won't accidentally skip a line

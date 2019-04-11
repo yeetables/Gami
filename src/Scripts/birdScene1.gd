@@ -8,7 +8,7 @@ var line = 0
 func _ready():
 	$bgAnim.play("fadeIn")
 	$BirdAnim.play("Bird")
-
+	$bg.seek(14.82)
 func _physics_process(delta):
 	# advance to the end of this when we are playing "Words"
 	# just so that they won't accidentally skip a line

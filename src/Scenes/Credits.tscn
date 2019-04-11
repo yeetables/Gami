@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Credits.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/Objects/Background/title-screen.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/Sounds/mainmenu-credits-maybetrailer.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -112,6 +113,9 @@ margin_right = 832.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 6 )
 text = "Thanks to all who supported us, and thank you for playing!"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="mouse_entered" from="backbtn" to="." method="_on_backbtn_mouse_entered"]
 [connection signal="mouse_exited" from="backbtn" to="." method="_on_backbtn_mouse_exited"]
