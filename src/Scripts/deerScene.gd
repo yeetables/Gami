@@ -22,6 +22,8 @@ func changeScene():
 	get_tree().change_scene("res://Scenes/Cutscenes/Bird1.tscn")
 	
 func _physics_process(delta):
+	if not ($DeerAnim.is_playing()):
+		$DeerAnim.play("deerHealed")
 	# advance to the end of this when we are playing "Words"
 	# just so that they won't accidentally skip a line
 	if ($PlyAnim.get_current_animation() == "deerCycle" or $PlyAnim.get_current_animation() == "dragCycle") and $PlyAnim.is_playing():
@@ -144,6 +146,7 @@ func _on_PlyAnim_animation_finished(anim_name):
 		$deerVoice.set_text(deer3[0])
 		$PlyAnim.set_speed_scale(times[t_count])
 		t_count += 1
+		$DeerAnim.play("deerHealed")
 		$PlyAnim.play("deerCycle")
 	elif anim_name == "heart":
 		line = 0
