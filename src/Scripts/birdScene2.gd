@@ -8,12 +8,15 @@ var line = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$bgAnim.play("fadeIn")
-
+	$BirdAnim.play("Bird")
+	$Player/Heart.visible = false
+	
 func changeScene():
 	get_tree().change_scene("res://Scenes/moutain.tscn")
 	
 #warning-ignore:unused_argument
 func _physics_process(delta):
+		
 	# advance to the end of this when we are playing "Words"
 	# just so that they won't accidentally skip a line
 	if ($PlyAnim.get_current_animation() == "birdCycle" or $PlyAnim.get_current_animation() == "dragCycle")and $PlyAnim.is_playing():
