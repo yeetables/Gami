@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Sprites/Objects/Background/stonefrags/vital-rock.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sprites/download.jpg" type="Texture" id=7]
 [ext_resource path="res://Assets/Sprites/vignette.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Sounds/Background/level1music.wav" type="AudioStream" id=9]
+[ext_resource path="res://Assets/Sounds/Background/finalcutscene.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Assets/Fonts/IndieFlower.ttf" type="DynamicFontData" id=11]
 
@@ -214,20 +214,20 @@ stream = ExtResource( 5 )
 volume_db = -5.0
 
 [node name="stone" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -3.7948, -22.948 )
 z_index = 1
 texture = ExtResource( 6 )
 
 [node name="background" type="Sprite" parent="."]
-visible = false
-modulate = Color( 0, 0, 0, 0 )
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( -26.6481, 12.9352 )
 scale = Vector2( 28.7675, 18.8901 )
 z_index = 1
 texture = ExtResource( 2 )
 
 [node name="download" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.27451 )
+modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1.5899, 0.657776 )
 scale = Vector2( 4.55635, 4.17896 )
 texture = ExtResource( 7 )
