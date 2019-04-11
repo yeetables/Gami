@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/dragonScene.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/AmaticSC-Bold.ttf" type="DynamicFontData" id=2]
@@ -20,8 +20,10 @@
 [ext_resource path="res://Assets/Sprites/Objects/Player/fox-run-ver-3-color.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Sprites/Objects/Player/kiss-colored.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Sprites/Objects/Player/fox-anims-idle-less-untz-COLOR.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Sounds/New Effects/Sys_HeartMax_Up.wav" type="AudioStream" id=21]
+[ext_resource path="res://Assets/Sprites/Objects/Player/heart anim.png" type="Texture" id=22]
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=1]
 resource_name = "GoToTheStone"
 length = 6.0
 tracks/0/type = "value"
@@ -179,7 +181,7 @@ tracks/12/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=2]
 length = 1.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Dragon/mind-rock:modulate")
@@ -194,7 +196,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.0352941, 0.360784, 0.67451, 1 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Dragon:modulate")
@@ -221,10 +223,20 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
-length = 1.5
+[sub_resource type="Animation" id=4]
+length = 1.9
+tracks/0/type = "animation"
+tracks/0/path = NodePath("Player/heartAni")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "heartShow" ),
+"times": PoolRealArray( 0 )
+}
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=5]
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Label:modulate")
@@ -239,7 +251,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=6]
 length = 12.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
@@ -312,7 +324,7 @@ tracks/5/keys = {
 "values": [ Vector2( -391.304, -21.614 ), Vector2( -7, -12 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=7]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("HUD/background:modulate")
@@ -327,7 +339,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=8]
 resource_name = "fadeOut"
 length = 2.0
 tracks/0/type = "value"
@@ -343,11 +355,11 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=19]
+[sub_resource type="DynamicFont" id=9]
 size = 80
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=10]
 length = 2.7
 loop = true
 tracks/0/type = "value"
@@ -375,7 +387,7 @@ tracks/1/keys = {
 "values": [ Vector2( 8.46655, -7.26465 ), Vector2( 7.80908, -13.7222 ), Vector2( 9.06641, -7.30469 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=11]
 length = 1.3
 tracks/0/type = "value"
 tracks/0/path = NodePath("eye open:frame")
@@ -390,16 +402,15 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 11, 11 ]
 }
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=12]
 size = 20
 font_data = ExtResource( 14 )
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=13]
 size = 20
 font_data = ExtResource( 14 )
 
-[sub_resource type="Animation" id=8]
-resource_name = "FoxIdle"
+[sub_resource type="Animation" id=14]
 length = 1.4
 loop = true
 tracks/0/type = "value"
@@ -511,8 +522,7 @@ tracks/8/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=9]
-resource_name = "FoxKiss"
+[sub_resource type="Animation" id=15]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Kiss:texture")
@@ -623,7 +633,7 @@ tracks/8/keys = {
 "values": [ Vector2( -7, -36 ), Vector2( -7, -36 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=16]
 length = 0.85
 loop = true
 step = 0.05
@@ -748,20 +758,60 @@ tracks/9/keys = {
 "values": [ false ]
 }
 
+[sub_resource type="Animation" id=17]
+resource_name = "heartShow"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Heart:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Heart:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("heartSFX:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [node name="Node" type="Node"]
 script = ExtResource( 1 )
 
 [node name="PlyAnim" type="AnimationPlayer" parent="."]
-anims/GoToTheStone = SubResource( 11 )
-anims/bright = SubResource( 12 )
-anims/explode = SubResource( 13 )
-anims/heart = SubResource( 14 )
-anims/textCycle = SubResource( 15 )
-anims/walkUp = SubResource( 16 )
+anims/GoToTheStone = SubResource( 1 )
+anims/bright = SubResource( 2 )
+anims/explode = SubResource( 3 )
+anims/heart = SubResource( 4 )
+anims/textCycle = SubResource( 5 )
+anims/walkUp = SubResource( 6 )
 
 [node name="bgAnim" type="AnimationPlayer" parent="."]
-anims/fadeIn = SubResource( 17 )
-anims/fadeOut = SubResource( 18 )
+anims/fadeIn = SubResource( 7 )
+anims/fadeOut = SubResource( 8 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -769,7 +819,7 @@ margin_left = 877.0
 margin_top = -808.0
 margin_right = 1827.0
 margin_bottom = -706.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 9 )
 text = "Hello."
 align = 1
 valign = 1
@@ -854,6 +904,7 @@ scale = Vector2( 0.429719, 0.296297 )
 texture = ExtResource( 10 )
 
 [node name="Dragon" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2268.93, -293.517 )
 scale = Vector2( 2.62177, 3.34077 )
 
@@ -865,7 +916,7 @@ frame = 1
 region_rect = Rect2( 0, 0, 410, 230 )
 
 [node name="breath" type="AnimationPlayer" parent="Dragon"]
-anims/sleep = SubResource( 20 )
+anims/sleep = SubResource( 10 )
 
 [node name="Node2D" type="Node2D" parent="Dragon"]
 position = Vector2( 0, 5.08865 )
@@ -876,7 +927,7 @@ vframes = 3
 hframes = 4
 
 [node name="eye" type="AnimationPlayer" parent="Dragon/Node2D"]
-anims/eye-open = SubResource( 21 )
+anims/eye-open = SubResource( 11 )
 
 [node name="mind-rock" type="Sprite" parent="Dragon"]
 position = Vector2( 8.46655, -7.26465 )
@@ -885,6 +936,7 @@ scale = Vector2( 0.0611042, 0.0752966 )
 texture = ExtResource( 13 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="nextline" type="Label" parent="HUD"]
 modulate = Color( 1, 1, 1, 0.862745 )
@@ -892,7 +944,7 @@ margin_left = 16.0
 margin_top = 41.7121
 margin_right = 252.0
 margin_bottom = 73.7121
-custom_fonts/font = SubResource( 23 )
+custom_fonts/font = SubResource( 12 )
 text = "Press 'c' or 'LMB' to fast-forward"
 
 [node name="background" type="Sprite" parent="HUD"]
@@ -908,7 +960,7 @@ margin_left = 16.0
 margin_top = 16.7924
 margin_right = 229.0
 margin_bottom = 47.7924
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 13 )
 text = "Press 'S' to skip"
 
 [node name="mind-rock" type="Sprite" parent="."]
@@ -959,9 +1011,9 @@ hframes = 6
 frame = 2
 
 [node name="playerAni" type="AnimationPlayer" parent="Player"]
-anims/FoxIdle = SubResource( 8 )
-anims/FoxKiss = SubResource( 9 )
-anims/FoxRun = SubResource( 10 )
+anims/FoxIdle = SubResource( 14 )
+anims/FoxKiss = SubResource( 15 )
+anims/FoxRun = SubResource( 16 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 20.1167, 18.3566 )
@@ -969,6 +1021,20 @@ rotation = -7.85442e-005
 scale = Vector2( 0.999997, 1 )
 offset = Vector2( 200, -200 )
 current = true
+
+[node name="heartSFX" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource( 21 )
+
+[node name="heartAni" type="AnimationPlayer" parent="Player"]
+anims/heartShow = SubResource( 17 )
+
+[node name="Heart" type="Sprite" parent="Player"]
+visible = false
+position = Vector2( 103.798, -46.5442 )
+texture = ExtResource( 22 )
+vframes = 5
+hframes = 6
+frame = 17
 
 [connection signal="animation_finished" from="PlyAnim" to="." method="_on_PlyAnim_animation_finished"]
 [connection signal="animation_finished" from="bgAnim" to="." method="_on_bgAnim_animation_finished"]
