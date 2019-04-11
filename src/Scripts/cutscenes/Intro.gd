@@ -20,7 +20,7 @@ var end = false # if all words has ended
 func _ready():
 #	$Fader.play("White")
 	$NonBackground/HUD/nextline.visible = false
-	$NonBackground/icon.visible = false
+	$NonBackground/Player.visible = false
 	$NonBackground/burrow.visible = false
 	
 	$NonBackground/Label.set_text(cutscene1[count])
@@ -79,8 +79,9 @@ func _on_Fader_animation_finished(anim_name):
 		# switch to first level
 		if not end:
 			$ParallaxBackground.queue_free()
-			$NonBackground/icon.visible = true
+			$NonBackground/Player.visible = true
 			$NonBackground/burrow.visible = true
+			$NonBackground/Player/playerAni.play("Sleep")
 			$Fader.play("PlayerShow")
 			
 	elif anim_name == "PlayerHide":
