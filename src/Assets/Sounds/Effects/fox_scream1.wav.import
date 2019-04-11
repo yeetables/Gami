@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fox_scream1.wav-2b26a2fceea6284740dbb681594cc2a4.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Effects/fox_scream1.wav"
+dest_files=[ "res://.import/fox_scream1.wav-2b26a2fceea6284740dbb681594cc2a4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

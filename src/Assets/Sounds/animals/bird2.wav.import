@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bird2.wav-d05230f95a535a6d830a5119297e6246.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/animals/bird2.wav"
+dest_files=[ "res://.import/bird2.wav-d05230f95a535a6d830a5119297e6246.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

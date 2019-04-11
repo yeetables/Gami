@@ -1,15 +1,12 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
-
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	Global.PLAYER_INSTANCE = $Player
+	Global.DASH_ENABLED = false
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+
+# when the player reaches the end
+func _on_Area2D2_body_entered(body):
+	if body.is_in_group("player"):
+		Global.PLAYER_INSTANCE = null
+		Global.Level1Finished = true

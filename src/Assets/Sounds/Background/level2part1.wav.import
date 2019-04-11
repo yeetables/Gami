@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/level2part1.wav-dee7d6e10d6ef3780a79740cd7af33ec.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Background/level2part1.wav"
+dest_files=[ "res://.import/level2part1.wav-dee7d6e10d6ef3780a79740cd7af33ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
