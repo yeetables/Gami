@@ -19,5 +19,5 @@ func _on_Area2D_body_entered(body):
 
 func loadNextLevel():
 	print("finished")
-	get_tree().change_scene("res://Scenes/CutScenes/Dragon.tscn")
+	get_tree().change_scene("res://Scenes/Cutscenes/Dragon.tscn")
 	
