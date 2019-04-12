@@ -609,7 +609,6 @@ current = true
 
 [node name="bird" type="Sprite" parent="."]
 position = Vector2( -754.164, 92.1874 )
-scale = Vector2( 0.473473, 0.443626 )
 texture = ExtResource( 2 )
 vframes = 5
 hframes = 6
