@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Rock.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Objects/Background/Other/rock1.png" type="Texture" id=2]
+
+[node name="rock" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -0.211525, -23.5337, -2.2121, -22.7643, -18.4476, -13.9925, -21.6792, -12.5305, -22.9104, -9.06801, -25.2187, -1.29654, -28.2965, 5.3977, -30.0663, 7.47522, -29.4507, 15.7084, -26.8346, 21.6331, -16.9189, 25.9073, -15.5582, 28.1054, -9.2777, 30.1989, -2.36919, 30.3036, 2.34115, 27.4774, 4.43464, 30.6176, 9.77303, 31.5597, 15.9488, 30.9316, 21.2872, 28.0008, 24.2181, 24.5465, 23.6947, 23.7091, 27.9864, 20.0455, 30.2892, 17.2193, 25.0555, 3.50697, 23.7994, -3.19218, 21.4966, -6.54176, 13.4366, -11.8802, 5.27203, -17.5326, 1.08506, -21.8242, 0.771034, -23.0803 )
+
+[connection signal="body_entered" from="." to="." method="_on_rock_body_entered"]
