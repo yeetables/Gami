@@ -4,7 +4,7 @@ var count = 0
 var cutscene1 = [
 "My child...", 
 "Your time of rest must end. Wake up.", 
-"Our lands are wrought with sickness. The most abled creatures have been forced to flee.", 
+"Our lands are wrought with sickness. Most creatures have been forced to flee.", 
 "Those who cannot leave struggle greatly. Our state is dire, and I fear the worst.", 
 "Yet you...you have remained untouched. Whether through resilience or pure luck, you have continued to flourish in the midst of the mountain’s decay.", 
 "I can only hope that your shining spirit will be enough to free us from this darkness.", 
