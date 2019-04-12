@@ -1,6 +1,6 @@
 extends Node
 
-var words = ["...", "Oh, hello there. You're the first creature I've heard in a while.", "I'm blind, you see. So when my flock hurriedly rushed away a few days ago, it was utter chaos! Too noisy... I couldn't make out their direction.", "If you don't mind, could you point me in the direction the sun sets? Or, holler, rather?", "Oh! Was that healing magic? How sweet of you.", "Alas, there is nothing to heal, for nothing is broken. I was born with not born with eyes to see.", "I've had to train my ears instead. They have served me well.", "Until now, that is.", "... Perhaps I wouldn't make it far even with directions.", "I don't mean to trouble you, but if you could somehow help me find my way, I would be very grateful indeed."]
+var words = ["...", "Oh, hello there. You're the first creature I've heard in a while.", "I'm blind, you see. So when my flock hurriedly rushed away a few days ago, it was utter chaos! Too noisy... I couldn't make out their direction.", "If you don't mind, could you point me in the direction the sun sets? Or, holler, rather?", "Oh! Was that healing magic? How sweet of you.", "Alas, there is nothing to heal, for nothing is broken. I was not born with eyes to see.", "I've had to train my ears instead. They have served me well.", "Until now, that is.", "... Perhaps I wouldn't make it far even with directions.", "I don't mean to trouble you, but if you could somehow help me find my way, I would be very grateful indeed."]
 var times = [1.25, 1, 0.5, 0.75, 1, 1, 1, 1, 1, 0.75]
 var line = 0
 
